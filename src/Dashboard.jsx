@@ -41,8 +41,8 @@ const peers = [
     metric: "28%",
     metricLabel: "GenAI ACV — up from 15% in Q3 2024",
     theme: "Agentic Workflows",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "Proprietary legal & tax content is the moat. CoCounsel and Westlaw Advantage are live agentic products with accelerating adoption across law firms and corporate legal. Microsoft partnership announced as CoCounsel customer validates the enterprise strategy.",
     keyFact: "85% of employees active on internal AI platform (Open Arena). 300+ AI use cases in development. Magic Quadrant equivalent time savings from internal AI not yet disclosed but margin expansion guidance raised to 100bps/yr through 2028.",
     quote: "Legal AI workflows [are] a significant white space opportunity for TR.",
@@ -64,8 +64,8 @@ const peers = [
     metric: "60+",
     metricLabel: "financial institutions connected via MCP",
     theme: "LSEG Everywhere / MCP",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "Partnered with Anthropic, OpenAI, Microsoft, Databricks, Snowflake & Rogo via MCP (Model Context Protocol). 'LSEG Everywhere' strategy embeds trusted financial data into every AI workflow. First financial data provider to enable ChatGPT access to their data.",
     keyFact: "90% of Data & Feeds revenue protected by IP/tech/infrastructure — highly resilient to LLM disruption. £3B share buyback announced for 2026. New KPI: 24% New Product Vitality Index across subscription businesses.",
     quote: "MCP distribution [is] a potential cross-selling machine, because AI tools can draw on multiple datasets to answer customer questions.",
@@ -87,8 +87,8 @@ const peers = [
     metric: ">50%",
     metricLabel: "of data workflows automated via AI",
     theme: "AI as Internal Efficiency Engine",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "AI is primarily an internal efficiency driver today — over half of workflows automated, 10%+ of applications eliminated in 2025. Three strategic pillars at Nov 2025 Investor Day: Advance Market Leadership, Expand High-Growth Adjacencies, and Amplify AI. External AI products are growing but secondary to private markets expansion.",
     keyFact: "Enterprise Data Office targeting >20% run-rate expense reduction by end of 2027. ACV Growth in Market Intelligence: 6.5–7% for two consecutive quarters — accelerating.",
     quote: "Amplify Enterprise Capabilities and AI: Expedite value creation for our customers by deploying more capabilities at scale across the enterprise.",
@@ -110,8 +110,8 @@ const peers = [
     metric: "35+",
     metricLabel: "AI-powered products live today",
     theme: "Agentic Claims — XactGen",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "Most operationally specific AI roadmap in the peer group. XactXpert (rules + ML), XactAI (genAI estimating), and XactGen (agentic — near-complete claims estimates from aerial imagery, policyholder photos, and policy data) are all live. The XactGen pipeline is the clearest example of agentic AI replacing manual workflow in this group.",
     keyFact: "XactXpert adopted by 7 of the top 10 homeowners insurers; serves tens of thousands of adjusters. Core Lines Reimagine program: 22 modules released in 2025, 25 planned for 2026.",
     quote: "We have deployed generative and agentic AI solutions that are being used by our clients, and we believe we are uniquely positioned to create value for the industry.",
@@ -133,8 +133,8 @@ const peers = [
     metric: "+83%",
     metricLabel: "Adj. EBITDA growth FY 2025",
     theme: "Homes AI + Operational Cost Automation",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "Homes AI launched as the flagship consumer differentiator for Homes.com. AI is also already delivering quantified cost savings in content creation, public records research, code writing, and lease data extraction — savings explicitly included in 2026 guidance. CoStar is using AI both offensively (product) and defensively (cost structure).",
     keyFact: "59th consecutive quarter of double-digit revenue growth. FY 2025 revenue +19% YoY to $3.2B. $700M share repurchase planned in 2026 under the $1.5B authorization.",
     quote: "The launch of Homes AI marks the beginning of a new era for our business. We intend to deploy this transformative capability across every platform in our portfolio.",
@@ -156,8 +156,8 @@ const peers = [
     metric: "25",
     metricLabel: "AI-powered new products launched in 2025",
     theme: "AI-Funded Product Innovation Flywheel",
-    status: "building",
-    statusLabel: "Building",
+    status: "laggard",
+    statusLabel: "Laggard",
     aiSummary: "Distinctive and deliberate strategy: AI cost savings (targeting 5–15% opex reduction) are to be fully reinvested into new product development rather than taken as margin expansion. 3–4 year AI journey already underway internally. AI used for ESG controversy analysis, private asset data gathering, and factor model development.",
     keyFact: "~$15–20M in AI product revenue from 25 new AI-powered products in 2025 — small but accelerating. CEO Fernandez calls MSCI 'a total AI machine.' $3B additional share repurchase authorized in Q3 2025.",
     quote: "If we apply AI dramatically and lower our operating run-the-business expenses by 5%, 10%, 15%, all of that money can go into investing into the change in the business.",
@@ -179,8 +179,8 @@ const peers = [
     metric: "800+",
     metricLabel: "clients opted into AI tools in BoardVantage",
     theme: "Agentic Anti-Financial Crime",
-    status: "executing",
-    statusLabel: "Executing",
+    status: "leader",
+    statusLabel: "Leader",
     aiSummary: "Agentic AI Workforce launched at Verafin — Digital Sanctions Analyst automates screening, documentation, and acknowledgment, reducing human review workload by 80%+. Second agentic worker (Enhanced Due Diligence Analyst) launched in Jan 2026; more planned. Every G-SIB is now a Nasdaq client.",
     keyFact: "Verafin enterprise signings quadrupled YoY. 25 total FinTech cross-sell wins in 2025 (cumulative 42 since Adenza acquisition). FY 2025 net revenues $5.2B — first time over $5B.",
     quote: "Every product roadmap at Nasdaq has AI built into its plans so that we can continue to transform the client experience.",
@@ -202,8 +202,8 @@ const peers = [
     metric: "500K+",
     metricLabel: "AI questions answered via AskGartner in 2025",
     theme: "AskGartner + Content Transformation",
-    status: "lagging",
-    statusLabel: "Credibility Gap",
+    status: "laggard",
+    statusLabel: "Laggard",
     aiSummary: "Strong leading indicators — 6,000+ AI docs, 1,000+ unique use cases documented, 200K+ in-depth client AI conversations, Magic Quadrant creation time cut 75%, and AskGartner users showing substantially higher renewal rates than non-users. But macro headwinds (DOGE, federal cuts, tariff uncertainty) are masking product improvements and contract value growth.",
     keyFact: "Stock down ~35% YTD. CEO Gene Hall is asking for patience: 12–24 month lag between product improvements and renewal cycle impact. Over $2B in stock repurchases completed in 2025.",
     quote: "It can take a couple of years before investors see the payoff.",
@@ -225,8 +225,8 @@ const peers = [
     metric: "45%",
     metricLabel: "sequential growth in AI product launches (Q1 FY26)",
     theme: "AI-Amplified Workstation",
-    status: "building",
-    statusLabel: "Building",
+    status: "laggard",
+    statusLabel: "Laggard",
     aiSummary: "Methodical, margin-disciplined approach. Pitch Creator, BondCliQ, and new AI-ready data server embedded in Workstation. Recent launch of integrated KYC/AML/financial crime risk management within Workstation is a smart compliance adjacency play. CEO's 'amplify, not replace' framing is deliberate positioning for institutional clients wary of disruption.",
     keyFact: "FY 2025 (ended Aug 2025): 5.4% revenue growth, 5.7% ASV increase. Fiscal year ends August 31 — next report March 2026.",
     quote: "AI doesn't replace what makes FactSet essential. It amplifies it.",
@@ -251,8 +251,8 @@ const aiNatives = [
     metric: "$380B",
     metricLabel: "post-money valuation (Series G, Feb 2026)",
     theme: "Enterprise-First / Claude + Claude Code",
-    status: "hypergrowth",
-    statusLabel: "Hypergrowth",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
     aiSummary: "Enterprise AI market leader by revenue share. 85% of revenue from business customers — the inverse of OpenAI. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). 500+ customers spending $1M+/yr. 8 of Fortune 10 are customers. Three-year revenue growth: ~$0 → $1B → ~$10B → $14B. IPO preparations underway (Wilson Sonsini engaged).",
     keyFact: "$30B Series G led by GIC & Coatue closed Feb 12, 2026. Partners include Microsoft ($5B), NVIDIA ($10B), Amazon ($4B), Google. The Claude Partner Network launched with $100M investment (Mar 2026). Claude Code: 4% of all public GitHub commits worldwide authored by Claude Code as of Feb 2026.",
     quote: "Claude is increasingly becoming critical to how businesses work.",
@@ -274,8 +274,8 @@ const aiNatives = [
     metric: "$25B",
     metricLabel: "annualized revenue run-rate (Feb 2026)",
     theme: "Practical Adoption — Consumer + Enterprise 2026",
-    status: "hypergrowth",
-    statusLabel: "Hypergrowth",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
     aiSummary: "Dominant consumer AI brand globally (910M WAU). Pivoting 2026 strategy to 'practical adoption' and enterprise. 9M+ paying business users; ChatGPT Enterprise is the fastest-growing enterprise platform in history. Revenue directly tracks compute capacity — 10x growth from 2023 to 2025. IPO preparations active (H2 2026 filing target).",
     keyFact: "Raised $40B+ in 2025 at $500B valuation. Renegotiated Microsoft deal: 20% revenue share through 2032. Inference costs reached $8.4B in 2025, projected $14.1B in 2026 — a structural constraint. Gross margin 33% vs. Anthropic's improving trajectory.",
     quote: "The priority is closing the gap between what AI now makes possible and how people, companies, and countries are using it day to day.",
@@ -297,8 +297,8 @@ const aiNatives = [
     metric: "$240B",
     metricLabel: "Google Cloud backlog (up 55% QoQ, 2x YoY)",
     theme: "Full-Stack AI: TPU Chips → Cloud → Consumer",
-    status: "executing",
-    statusLabel: "Scaling",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
     aiSummary: "The only company in the entire group that is simultaneously a hyperscaler, frontier model lab, custom chip designer (TPUs), and global advertising platform — and all four are growing. Gemini Enterprise: 8M+ paid seats at 2,800+ companies. Revenue from generative AI solutions +400% YoY in Q4. Alphabet annual revenues exceeded $400B for the first time.",
     keyFact: "Guided $175–185B CapEx for 2026 — nearly doubling 2025. Gemini processes 10B tokens/min via direct API. 750M monthly active users on the Gemini app. Cloud operating margin expanded from 17.5% to 30.1% in Q4 2025.",
     quote: "We were able to lower Gemini serving unit costs by 78% over 2025 through model optimizations, efficiency and utilization improvements.",
@@ -312,10 +312,9 @@ const aiNatives = [
 ];
 
 const statusConfig = {
-  executing:   { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
-  building:    { bg: "#EBF5FB", text: "#1A6FA0", border: "#A8D3ED", dot: "#4899D4" },
-  lagging:     { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", dot: "#CC2030" },
-  hypergrowth: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", dot: "#0028A1" },
+  leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
+  laggard:     { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", dot: "#CC2030" },
+  frontrunner: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", dot: "#0028A1" },
 };
 
 function Badge({ status, label }) {
@@ -327,7 +326,7 @@ function Badge({ status, label }) {
       border: `1px solid ${s.border}`,
       borderRadius: "20px", padding: "3px 9px",
       fontSize: "10px", fontWeight: 700, letterSpacing: "0.06em",
-      fontFamily: "'DM Mono', monospace",
+      fontFamily: "Arial, monospace",
     }}>
       <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: s.dot, flexShrink: 0 }} />
       {label}
@@ -365,15 +364,15 @@ function CompanyCard({ company, expanded, onToggle }) {
                   background: company.tag, color: company.tagText,
                   fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em",
                   padding: "2px 7px", borderRadius: "4px",
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "Arial, monospace",
                 }}>{company.ticker}</span>
                 <Badge status={company.status} label={company.statusLabel} />
               </div>
-              <div style={{ fontSize: "15px", fontWeight: 700, color: M.textDark, fontFamily: "'Syne', sans-serif", lineHeight: 1.2 }}>{company.name}</div>
+              <div style={{ fontSize: "15px", fontWeight: 700, color: M.textDark, fontFamily: "Arial, sans-serif", lineHeight: 1.2 }}>{company.name}</div>
               <div style={{ fontSize: "10px", color: M.midGray, marginTop: "2px", letterSpacing: "0.03em" }}>{company.sector}</div>
             </div>
             <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "12px" }}>
-              <div style={{ fontSize: "22px", fontWeight: 800, color: company.accent, fontFamily: "'DM Mono', monospace", lineHeight: 1 }}>{company.metric}</div>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: company.accent, fontFamily: "Arial, monospace", lineHeight: 1 }}>{company.metric}</div>
               <div style={{ fontSize: "10px", color: M.midGray, marginTop: "2px", maxWidth: "130px", textAlign: "right", lineHeight: 1.4 }}>{company.metricLabel}</div>
             </div>
           </div>
@@ -422,7 +421,7 @@ function CompanyCard({ company, expanded, onToggle }) {
                 background: M.offWhite, border: `1px solid ${M.border}`,
                 borderRadius: "6px", padding: "10px 12px", marginBottom: "12px",
               }}>
-                <div style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.12em", fontWeight: 700, marginBottom: "4px", fontFamily: "'DM Mono', monospace" }}>KEY FACT</div>
+                <div style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.12em", fontWeight: 700, marginBottom: "4px", fontFamily: "Arial, monospace" }}>KEY FACT</div>
                 <div style={{ fontSize: "11px", color: M.textDark, lineHeight: 1.65 }}>{company.keyFact}</div>
               </div>
 
@@ -442,21 +441,21 @@ function CompanyCard({ company, expanded, onToggle }) {
                   background: "#EDFAF3", border: "1px solid #A8DFC0",
                   borderRadius: "6px", padding: "8px 10px",
                 }}>
-                  <div style={{ fontSize: "9px", color: M.green, letterSpacing: "0.1em", fontWeight: 700, marginBottom: "4px", fontFamily: "'DM Mono', monospace" }}>GUIDANCE / OUTLOOK</div>
+                  <div style={{ fontSize: "9px", color: M.green, letterSpacing: "0.1em", fontWeight: 700, marginBottom: "4px", fontFamily: "Arial, monospace" }}>GUIDANCE / OUTLOOK</div>
                   <div style={{ fontSize: "10px", color: "#2D4A3E", lineHeight: 1.6 }}>{company.guidance}</div>
                 </div>
                 <div style={{
                   background: "#FEF0F2", border: "1px solid #F5B8BE",
                   borderRadius: "6px", padding: "8px 10px",
                 }}>
-                  <div style={{ fontSize: "9px", color: M.red, letterSpacing: "0.1em", fontWeight: 700, marginBottom: "4px", fontFamily: "'DM Mono', monospace" }}>WATCH / RISK</div>
+                  <div style={{ fontSize: "9px", color: M.red, letterSpacing: "0.1em", fontWeight: 700, marginBottom: "4px", fontFamily: "Arial, monospace" }}>WATCH / RISK</div>
                   <div style={{ fontSize: "10px", color: "#5A1820", lineHeight: 1.6 }}>{company.risk}</div>
                 </div>
               </div>
 
               {/* Source */}
               <div style={{ display: "flex", alignItems: "center", gap: "6px", paddingTop: "8px", borderTop: `1px solid ${M.border}` }}>
-                <span style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.08em", fontFamily: "'DM Mono', monospace" }}>SOURCE:</span>
+                <span style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.08em", fontFamily: "Arial, monospace" }}>SOURCE:</span>
                 <a href={company.sourceUrl} target="_blank" rel="noreferrer"
                   onClick={e => e.stopPropagation()}
                   style={{ fontSize: "10px", color: M.lightBlue, textDecoration: "none", borderBottom: `1px solid ${M.skyBlue}` }}>
@@ -487,13 +486,13 @@ function SectionBanner({ title, subtitle, stats }) {
       display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px",
     }}>
       <div>
-        <div style={{ fontSize: "11px", fontWeight: 700, color: M.primary, letterSpacing: "0.08em", marginBottom: "3px", fontFamily: "'DM Mono', monospace" }}>{title}</div>
+        <div style={{ fontSize: "11px", fontWeight: 700, color: M.primary, letterSpacing: "0.08em", marginBottom: "3px", fontFamily: "Arial, monospace" }}>{title}</div>
         <div style={{ fontSize: "12px", color: "#4A5568", maxWidth: "620px", lineHeight: 1.6 }}>{subtitle}</div>
       </div>
       <div style={{ display: "flex", gap: "20px" }}>
         {stats.map(s => (
           <div key={s.label} style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "22px", fontWeight: 800, color: s.color, fontFamily: "'DM Mono', monospace", lineHeight: 1 }}>{s.value}</div>
+            <div style={{ fontSize: "22px", fontWeight: 800, color: s.color, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.value}</div>
             <div style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.08em", marginTop: "2px" }}>{s.label}</div>
           </div>
         ))}
@@ -508,7 +507,7 @@ function ThemeGrid({ themes }) {
       <div style={{
         background: M.navy, borderRadius: "8px", padding: "18px 20px",
       }}>
-        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.06em", marginBottom: "14px", fontFamily: "'Syne', sans-serif" }}>
+        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.06em", marginBottom: "14px", fontFamily: "Arial, sans-serif" }}>
           Cross-Group Themes
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "10px" }}>
@@ -518,7 +517,7 @@ function ThemeGrid({ themes }) {
               borderRadius: "6px", padding: "12px 14px",
               borderTop: `3px solid ${t.color}`,
             }}>
-              <div style={{ fontSize: "11px", fontWeight: 700, color: t.color, marginBottom: "6px", fontFamily: "'Syne', sans-serif" }}>{t.title}</div>
+              <div style={{ fontSize: "11px", fontWeight: 700, color: t.color, marginBottom: "6px", fontFamily: "Arial, sans-serif" }}>{t.title}</div>
               <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.72)", lineHeight: 1.6 }}>{t.text}</div>
             </div>
           ))}
@@ -537,9 +536,9 @@ export default function Dashboard() {
   const toggleNative = i => setExpandedNatives(p => ({ ...p, [i]: !p[i] }));
 
   return (
-    <div style={{ background: M.offWhite, minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", color: M.textDark }}>
+    <div style={{ background: M.offWhite, minHeight: "100vh", fontFamily: "Arial, sans-serif", color: M.textDark }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500;600&display=swap');
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: ${M.offWhite}; }
@@ -557,15 +556,15 @@ export default function Dashboard() {
                   background: M.primary, color: "#FFF",
                   fontSize: "11px", fontWeight: 800, letterSpacing: "0.12em",
                   padding: "3px 10px", borderRadius: "3px",
-                  fontFamily: "'Syne', sans-serif",
+                  fontFamily: "Arial, sans-serif",
                 }}>INTELLIGENCE</div>
-                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em", fontFamily: "'DM Mono', monospace" }}>DASHBOARD</div>
+                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em", fontFamily: "Arial, monospace" }}>DASHBOARD</div>
               </div>
               <h1 style={{
-                fontFamily: "'Syne', sans-serif", fontSize: "24px", fontWeight: 800,
+                fontFamily: "Arial, sans-serif", fontSize: "24px", fontWeight: 800,
                 color: "#FFFFFF", lineHeight: 1.15, letterSpacing: "-0.02em",
               }}>
-                AI Strategy Monitor
+                AI Disclosures Monitor
               </h1>
               <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "12px", marginTop: "5px" }}>
                 12 Companies · Most Recent Earnings & Investor Disclosures · All Claims Verified Against Primary Sources
@@ -575,11 +574,11 @@ export default function Dashboard() {
               {[
                 { v: "12", l: "COMPANIES", c: M.lightBlue },
                 { v: "Mar '26", l: "DATA AS OF", c: "#FFF" },
-                { v: "7", l: "EXECUTING", c: "#6ED9A0" },
-                { v: "1", l: "FLAGGED", c: "#F59090" },
+                { v: "7", l: "LEADERS", c: "#6ED9A0" },
+                { v: "3", l: "LAGGARDS", c: "#F59090" },
               ].map(s => (
                 <div key={s.l} style={{ textAlign: "center" }}>
-                  <div style={{ fontSize: "20px", fontWeight: 800, color: s.c, fontFamily: "'DM Mono', monospace", lineHeight: 1 }}>{s.v}</div>
+                  <div style={{ fontSize: "20px", fontWeight: 800, color: s.c, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.v}</div>
                   <div style={{ fontSize: "9px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", marginTop: "3px" }}>{s.l}</div>
                 </div>
               ))}
@@ -598,7 +597,7 @@ export default function Dashboard() {
                 border: "none", padding: "9px 18px 10px",
                 borderRadius: "6px 6px 0 0",
                 cursor: "pointer", fontSize: "12px", fontWeight: 700,
-                fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.03em",
+                fontFamily: "Arial, sans-serif", letterSpacing: "0.03em",
                 transition: "all 0.2s",
                 display: "flex", alignItems: "center", gap: "7px",
               }}>
@@ -607,7 +606,7 @@ export default function Dashboard() {
                   background: activeTab === tab.id ? M.surface : "rgba(255,255,255,0.12)",
                   color: activeTab === tab.id ? M.primary : "rgba(255,255,255,0.55)",
                   fontSize: "9px", padding: "1px 6px",
-                  borderRadius: "10px", fontFamily: "'DM Mono', monospace",
+                  borderRadius: "10px", fontFamily: "Arial, monospace",
                 }}>{tab.count}</span>
               </button>
             ))}
@@ -625,9 +624,8 @@ export default function Dashboard() {
               title="PEER GROUP — DATA, ANALYTICS & INFORMATION SERVICES"
               subtitle={<>TRI, LSEG, SPGI, VRSK, CSGP, MSCI, Nasdaq, Gartner, FactSet — all incumbents navigating AI as both opportunity and threat. Shared thesis: <strong>proprietary data + domain expertise = durable moat.</strong> Key divergence: speed of AI monetisation.</>}
               stats={[
-                { value: peers.filter(p => p.status === "executing").length, label: "EXECUTING", color: M.green },
-                { value: peers.filter(p => p.status === "building").length, label: "BUILDING", color: M.lightBlue },
-                { value: peers.filter(p => p.status === "lagging").length, label: "FLAGGED", color: M.red },
+                { value: peers.filter(p => p.status === "leader").length, label: "LEADERS", color: M.green },
+                { value: peers.filter(p => p.status === "laggard").length, label: "LAGGARDS", color: M.red },
               ]}
             />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: "12px" }}>
@@ -665,7 +663,7 @@ export default function Dashboard() {
 
             {/* Revenue scale */}
             <div style={{ background: M.white, border: `1px solid ${M.border}`, borderRadius: "8px", padding: "18px 20px", marginTop: "20px" }}>
-              <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, marginBottom: "16px", fontFamily: "'Syne', sans-serif" }}>Revenue Scale — All 12 Companies</div>
+              <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, marginBottom: "16px", fontFamily: "Arial, sans-serif" }}>Revenue Scale — All 12 Companies</div>
               {[
                 { name: "Alphabet", rev: "$403B total", growth: "+15% YoY", pct: 100, color: "#4899D4" },
                 { name: "OpenAI", rev: "~$25B ARR", growth: "~10x/3yr", pct: 6.2, color: "#1A7A4A" },
@@ -683,7 +681,7 @@ export default function Dashboard() {
                 <div key={item.name} style={{ marginBottom: "9px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px", alignItems: "baseline" }}>
                     <div style={{ fontSize: "11px", color: M.textDark, fontWeight: 500 }}>{item.name}</div>
-                    <div style={{ fontSize: "11px", color: M.midGray, fontFamily: "'DM Mono', monospace" }}>
+                    <div style={{ fontSize: "11px", color: M.midGray, fontFamily: "Arial, monospace" }}>
                       {item.rev} <span style={{ color: item.color, fontWeight: 600 }}>{item.growth}</span>
                     </div>
                   </div>
@@ -692,7 +690,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               ))}
-              <div style={{ fontSize: "9px", color: M.midGray, marginTop: "10px", fontFamily: "'DM Mono', monospace" }}>
+              <div style={{ fontSize: "9px", color: M.midGray, marginTop: "10px", fontFamily: "Arial, monospace" }}>
                 * Alphabet shown as 100% baseline · ARR figures for private companies are run-rate estimates from public disclosures
               </div>
             </div>
@@ -709,10 +707,10 @@ export default function Dashboard() {
 
       {/* ── FOOTER ─────────────────────────────────────────────────── */}
       <div style={{ background: M.white, borderTop: `1px solid ${M.border}`, padding: "12px 28px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-        <div style={{ fontSize: "10px", color: M.midGray, fontFamily: "'DM Mono', monospace" }}>
+        <div style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>
           All claims verified against primary source earnings transcripts, SEC filings &amp; official press releases · Click any card to expand · Click source links to verify directly
         </div>
-        <div style={{ fontSize: "10px", color: M.midGray, fontFamily: "'DM Mono', monospace" }}>Data as of March 30, 2026</div>
+        <div style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>Data as of March 30, 2026</div>
       </div>
     </div>
   );
