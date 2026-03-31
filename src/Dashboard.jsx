@@ -378,14 +378,25 @@ function DisclosuresTimeline() {
   const [filter, setFilter] = useState("all");
   const [collapsedQuarters, setCollapsedQuarters] = useState({});
 
-  // Build company metadata lookup from peers + aiNatives
+  // Build company metadata lookup keyed by DISCLOSURE company name (matched by ticker).
+  // Peers use full names ("Moody's Corporation", "Verisk Analytics", "MSCI Inc.", etc.)
+  // but disclosures use short names ("Moody's", "Verisk", "MSCI", "Nasdaq", "Alphabet").
+  // Matching on ticker avoids any name-mismatch silently dropping a company.
   const companyMeta = {};
+  const companyOrder = [];
   [...peers, ...aiNatives].forEach(c => {
-    companyMeta[c.name] = { accent: c.accent, ticker: c.ticker, tag: c.tag, tagText: c.tagText };
+    // For unique tickers, match by ticker alone. For shared tickers (e.g. both
+    // Anthropic and OpenAI use "PRIVATE"), also require the first word of the
+    // peer name to appear in the disclosure company name so they don't collide.
+    const firstWord = c.name.toLowerCase().split(/[\s/]/)[0];
+    const disclosureName =
+      (disclosures.find(d => d.ticker === c.ticker && d.company.toLowerCase().includes(firstWord))
+       ?? disclosures.find(d => d.ticker === c.ticker))?.company ?? c.name;
+    if (!companyMeta[disclosureName]) {
+      companyMeta[disclosureName] = { accent: c.accent, ticker: c.ticker, tag: c.tag, tagText: c.tagText };
+      companyOrder.push(disclosureName);
+    }
   });
-
-  // Canonical company display order
-  const companyOrder = [...peers.map(p => p.name), ...aiNatives.map(n => n.name)];
 
   // Filter by selected company
   const filtered = filter === "all" ? disclosures : disclosures.filter(d => d.company === filter);
