@@ -31,14 +31,15 @@ const M = {
 
 const lastUpdated = "March 31, 2026";
 const whatsNew = [
-  "FactSet Q2 FY2026 earnings released today (Mar 31): revenue +7.1% to $611M, organic ASV +6.7%, raised FY2026 guidance — strongest organic growth in 5+ quarters",
-  "FactSet deployed AI Document Search to 85K+ users (Mar 26) — significant scale milestone for AI beta rollout",
-  "Moody's Token Integration Engine: first credit rating agency to go on-chain (Canton Network, Mar 18)",
-  "Thomson Reuters revealed 'Thomson' — proprietary legally-trained LLM coming summer 2026 (Mar 24)",
-  "OpenAI GPT-5.4 launched Mar 5: native computer use, 1M context, 33% fewer hallucinations — enterprise AI arms race intensifies",
-  "S&P Global acquired Enertel AI (power price forecasting) and expanded Capital IQ Pro with ProntoNLP + Drift AI (Mar 12–18)",
-  "Verisk AI Fraud Study: 36% of consumers would alter insurance claims; 98% of insurers say AI editing fuels fraud (Mar 17)",
-  "Anthropic Claude Sonnet 4.6 released Feb 17 (missed last refresh): $3/MTok, 1M context, SWE-bench 79.6%",
+  "FactSet Q2 FY2026 earnings (Mar 31): revenue +7.1% to $611M, organic ASV +6.7%, raised FY2026 guidance — strongest organic growth in 5+ quarters",
+  "FactSet appointed Kate Stepp as first-ever Chief AI Officer and Bob Stolte as CTO (effective Mar 2) — C-suite restructured around AI strategy",
+  "FactSet AI Document Search deployed to 85K+ users (Mar 26); ComplyAdvantage KYC/AML integration in Workstation (Mar 3); AI Doc Ingest for Cobalt private markets (Feb 4)",
+  "Moody's Token Integration Engine: first credit rating agency on the Canton blockchain network (Mar 18)",
+  "Thomson Reuters 'Thomson' — proprietary legally-trained LLM revealed for summer 2026 launch (Mar 24)",
+  "OpenAI GPT-5.4 launched Mar 5: native computer use, 1M context, 33% fewer hallucinations",
+  "S&P Global acquired Enertel AI + expanded Capital IQ Pro with ProntoNLP and Drift AI (Mar 12–18)",
+  "Verisk AI Fraud Study: 36% of consumers would alter claims; 98% of insurers say AI editing tools fuel fraud (Mar 17)",
+  "Anthropic Claude Sonnet 4.6 released Feb 17 (missed prior refresh): $3/MTok, SWE-bench 79.6%, 1M context",
 ];
 
 const peers = [
@@ -420,7 +421,10 @@ const disclosures = [
   // ── FDS — FactSet ─────────────────────────────────────────────────
   { date: "Dec 18, 2025", company: "FactSet", ticker: "FDS", quarter: "Q1 FY2026", summary: "45%+ sequential growth in AI product adoption. Revenue $608M (+6.9% YoY). Adjusted EPS $4.51 (beat $4.35 forecast). Mercury AI chatbot launched for pitch decks, research, memos. Conversational API powered by Mercury available for client integration.", source: "FactSet Q1 FY2026 Earnings", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
   { date: "Dec 16, 2025", company: "FactSet", ticker: "FDS", quarter: "Q1 FY2026", summary: "First production-grade MCP server for real-time financial intelligence announced. 45 firms and 800+ institutional users in successful Explorer beta program. Asia-Pacific: 8% organic ASV growth driven partly by AI-ready data demand. GenAI Data Packages consolidating critical data feeds.", source: "FactSet AI-Ready Data MCP Server", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-meets-demand-for-ai-ready-data-first-announce-mcp-sans-intermediary" },
-  { date: "Mar 26, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "AI Document Search deployed in broad beta to 85,000+ users globally — one of the largest AI feature rollouts in FactSet's history. Document Search enables exploration and extraction of insights from earnings calls, transcripts, news, filings, and unstructured data while preserving FactSet's hallmark auditability. Global release scheduled for phased rollout through late spring 2026. Also: AI Doc Ingest for Cobalt launched for private capital managers to extract and structure portfolio company data from unstructured documents.", source: "FactSet AI Beta 85K Users", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-deploys-ai-beta-more-85k-users-announces-ai-enabled" },
+  { date: "Feb 4, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "AI Doc Ingest for Cobalt launched: private capital clients can now extract and structure portfolio company data from unstructured documents (PDFs, spreadsheets, scanned reports) directly into the Cobalt Portfolio Monitoring platform. Eliminates manual data entry for private credit and equity managers. Extends FactSet's AI-first data strategy into the private markets workflow.", source: "FactSet AI Doc Ingest for Cobalt Launch", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-launches-ai-doc-ingest-cobalt-transforming-private" },
+  { date: "Mar 3, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "ComplyAdvantage integration launched in Workstation for corporate banks: AI-driven KYC, AML, and sanctions screening embedded directly in the FactSet workflow. Automates up to 80% of KYC/AML/sanctions review steps. Reduces client onboarding time by up to 50%. ML decreases compliance alert errors by up to 70%. Relationship managers can now handle onboarding, screening, and risk monitoring alongside business development in a single portal.", source: "FactSet ComplyAdvantage Workstation Integration", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-integrates-advanced-ai-financial-crime-risk-management" },
+  { date: "Mar 4, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "Kate Stepp appointed Chief AI Officer (effective Mar 2, 2026): first dedicated CAIO in FactSet history, reporting to CEO. Stepp was previously CTO since Sep 2022 — her elevation signals FactSet treating AI as the primary strategic function. Bob Stolte simultaneously appointed Chief Technology Officer, taking over platform modernization, engineering execution, cybersecurity, and IT business continuity. C-suite restructuring explicitly designed to 'accelerate enterprise AI and platform strategy.'", source: "FactSet CAIO & CTO Appointments", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-announces-appointments-chief-ai-officer-and-chief" },
+  { date: "Mar 26, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "AI Document Search deployed in broad beta to 85,000+ users globally — one of the largest AI feature rollouts in FactSet's history. Document Search enables exploration and extraction of insights from earnings calls, transcripts, news, filings, and unstructured data while preserving FactSet's hallmark auditability. Global release scheduled for phased rollout through late spring 2026.", source: "FactSet AI Beta 85K Users", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-deploys-ai-beta-more-85k-users-announces-ai-enabled" },
   { date: "Mar 31, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "Q2 FY2026 earnings (ended Feb 28, 2026): GAAP revenue $611M (+7.1% YoY), organic revenue +6.8% — strongest organic growth in 5+ quarters. Annual Subscription Value $2,449M (+6.7%). Adj. diluted EPS $4.46 (+4.2%). Raised FY2026 guidance: GAAP rev $2.45–2.47B, adj. EPS $17.25–17.75 (prior: $16.90–17.60). Growth driven by institutional buy-side and wealth management clients. Shares rose ~7% on results.", source: "FDS Q2 FY2026 Earnings", sourceUrl: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
 
   // ── AI NATIVES ────────────────────────────────────────────────────
@@ -732,77 +736,241 @@ function FinancialsTable() {
   );
 }
 
+function WhatsNewBanner() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{
+      background: M.white, border: "1px solid " + M.primary,
+      borderLeft: "4px solid " + M.primary, borderRadius: "6px",
+      marginBottom: "18px", overflow: "hidden",
+    }}>
+      {/* Header row — always visible, click to toggle */}
+      <div
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "10px 16px", cursor: "pointer",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "10px", fontWeight: 700, color: M.primary, letterSpacing: "0.08em", fontFamily: "Arial, monospace" }}>
+            WHAT'S NEW — {lastUpdated}
+          </span>
+          {!open && (
+            <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>
+              {whatsNew.length} update{whatsNew.length !== 1 ? "s" : ""}
+            </span>
+          )}
+        </div>
+        <span style={{
+          fontSize: "11px", color: M.primary,
+          transition: "transform 0.2s",
+          transform: open ? "rotate(180deg)" : "none",
+        }}>▾</span>
+      </div>
+      {/* Expandable content */}
+      {open && (
+        <div style={{ padding: "0 16px 12px 16px", borderTop: "1px solid " + M.skyBlue }}>
+          {whatsNew.map((item, i) => (
+            <div key={i} style={{
+              fontSize: "11px", color: "#4A5568", lineHeight: 1.7,
+              paddingLeft: "14px", position: "relative",
+              paddingTop: i === 0 ? "10px" : "0",
+            }}>
+              <span style={{ position: "absolute", left: "0", color: M.primary, fontWeight: 700 }}>·</span>
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function DisclosuresTimeline() {
   const [filter, setFilter] = useState("all");
-  const companies = ["all", ...Array.from(new Set(disclosures.map(d => d.company)))];
+  const [collapsedQuarters, setCollapsedQuarters] = useState({});
+
+  // Build company metadata lookup from peers + aiNatives
+  const companyMeta = {};
+  [...peers, ...aiNatives].forEach(c => {
+    companyMeta[c.name] = { accent: c.accent, ticker: c.ticker, tag: c.tag, tagText: c.tagText };
+  });
+
+  // Canonical company display order
+  const companyOrder = [...peers.map(p => p.name), ...aiNatives.map(n => n.name)];
+
+  // Filter by selected company
   const filtered = filter === "all" ? disclosures : disclosures.filter(d => d.company === filter);
+
+  // Parse quarter string to sortable number (higher = more recent)
+  const parseQuarter = (q) => {
+    const m = q.match(/Q(\d)\s*(?:FY)?(\d{4})/);
+    if (m) return parseInt(m[2]) * 10 + parseInt(m[1]);
+    const fy = q.match(/FY\s*(\d{4})/);
+    if (fy) return parseInt(fy[1]) * 10 + 4;
+    return 0;
+  };
+
+  // Parse date string to sortable number for within-quarter ordering
+  const parseDate = (d) => {
+    try { return new Date(d).getTime(); } catch { return 0; }
+  };
+
+  // Group: { companyName: { quarter: [disclosures...] } }
+  const grouped = {};
+  filtered.forEach(d => {
+    if (!grouped[d.company]) grouped[d.company] = {};
+    if (!grouped[d.company][d.quarter]) grouped[d.company][d.quarter] = [];
+    grouped[d.company][d.quarter].push(d);
+  });
+
+  // Sort within each quarter by date (most recent first)
+  Object.values(grouped).forEach(byQ => {
+    Object.values(byQ).forEach(arr => arr.sort((a, b) => parseDate(b.date) - parseDate(a.date)));
+  });
+
+  const presentCompanies = companyOrder.filter(name => grouped[name]);
+
+  const toggleQuarter = (key) => setCollapsedQuarters(p => ({ ...p, [key]: !p[key] }));
+
+  // Filter pills — use canonical order
+  const filterOptions = ["all", ...companyOrder.filter(n => disclosures.some(d => d.company === n))];
 
   return (
     <div>
       <SectionBanner
-        title="AI DISCLOSURES TIMELINE"
-        subtitle={<>Every AI-related disclosure across all tracked companies, organized by date. Each entry links to its <strong>primary source document</strong>.</>}
+        title="AI DISCLOSURES — BY COMPANY & QUARTER"
+        subtitle={<>Every verified AI disclosure organized by <strong>company reporting quarter</strong>. A quarter includes all announcements, earnings releases, and presentations for that period.</>}
         stats={[
           { value: disclosures.length, label: "TOTAL DISCLOSURES", color: M.primary },
           { value: new Set(disclosures.map(d => d.company)).size, label: "COMPANIES", color: M.lightBlue },
+          { value: new Set(disclosures.map(d => d.quarter)).size, label: "QUARTERS TRACKED", color: M.green },
         ]}
       />
 
       {/* Company filter */}
-      <div style={{ display: "flex", gap: "6px", marginBottom: "16px", flexWrap: "wrap" }}>
-        {companies.map(c => (
-          <button key={c} onClick={() => setFilter(c)} style={{
-            background: filter === c ? M.navy : M.white,
-            color: filter === c ? "#FFF" : M.textDark,
-            border: "1px solid " + (filter === c ? M.navy : M.border),
-            borderRadius: "20px", padding: "5px 14px", fontSize: "11px",
-            fontWeight: filter === c ? 700 : 500, cursor: "pointer",
-            fontFamily: "Arial, sans-serif", transition: "all 0.15s",
-          }}>
-            {c === "all" ? "All Companies" : c}
-          </button>
-        ))}
+      <div style={{ display: "flex", gap: "6px", marginBottom: "20px", flexWrap: "wrap" }}>
+        {filterOptions.map(c => {
+          const meta = companyMeta[c];
+          const isActive = filter === c;
+          return (
+            <button key={c} onClick={() => setFilter(c)} style={{
+              background: isActive ? (meta ? meta.accent : M.navy) : M.white,
+              color: isActive ? "#FFF" : M.textDark,
+              border: "1px solid " + (isActive ? (meta ? meta.accent : M.navy) : M.border),
+              borderRadius: "20px", padding: "5px 14px", fontSize: "11px",
+              fontWeight: isActive ? 700 : 500, cursor: "pointer",
+              fontFamily: "Arial, sans-serif", transition: "all 0.15s",
+            }}>
+              {c === "all" ? "All Companies" : c}
+            </button>
+          );
+        })}
       </div>
 
-      {/* Timeline entries */}
-      <div style={{ position: "relative", paddingLeft: "24px" }}>
-        {/* Vertical line */}
-        <div style={{ position: "absolute", left: "7px", top: "0", bottom: "0", width: "2px", background: M.border }} />
+      {/* Companies */}
+      {presentCompanies.map(companyName => {
+        const meta = companyMeta[companyName] || { accent: M.primary, ticker: "—", tag: "#F0F4FF", tagText: M.primary };
+        const quarters = Object.keys(grouped[companyName]).sort((a, b) => parseQuarter(b) - parseQuarter(a));
+        const discCount = Object.values(grouped[companyName]).reduce((s, arr) => s + arr.length, 0);
 
-        {filtered.map((d, i) => (
-          <div key={i} style={{ position: "relative", marginBottom: "16px" }}>
-            {/* Dot */}
-            <div style={{ position: "absolute", left: "-20px", top: "6px", width: "10px", height: "10px", borderRadius: "50%", background: M.primary, border: "2px solid " + M.white, boxShadow: "0 0 0 2px " + M.border }} />
-
+        return (
+          <div key={companyName} style={{ marginBottom: "28px" }}>
+            {/* Company header bar */}
             <div style={{
-              background: M.white, border: "1px solid " + M.border, borderRadius: "8px",
-              padding: "14px 16px", transition: "box-shadow 0.2s",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 3px 12px rgba(0,40,161,0.08)"; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px", flexWrap: "wrap", gap: "8px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span style={{ fontSize: "10px", fontWeight: 700, color: M.primary, background: "#F0F4FF", padding: "2px 7px", borderRadius: "4px", fontFamily: "Arial, monospace" }}>{d.ticker}</span>
-                  <span style={{ fontSize: "12px", fontWeight: 600, color: M.textDark }}>{d.company}</span>
-                </div>
-                <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{d.date}</span>
-              </div>
+              display: "flex", alignItems: "center", gap: "10px",
+              background: M.navy, borderRadius: "6px 6px 0 0",
+              padding: "10px 16px", borderLeft: "4px solid " + meta.accent,
+            }}>
+              <span style={{
+                background: meta.tag, color: meta.tagText,
+                fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em",
+                padding: "2px 7px", borderRadius: "4px", fontFamily: "Arial, monospace",
+              }}>{meta.ticker}</span>
+              <span style={{ fontSize: "13px", fontWeight: 700, color: "#FFF", fontFamily: "Arial, sans-serif" }}>{companyName}</span>
+              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", marginLeft: "auto", fontFamily: "Arial, monospace" }}>
+                {discCount} disclosure{discCount !== 1 ? "s" : ""} · {quarters.length} quarter{quarters.length !== 1 ? "s" : ""}
+              </span>
+            </div>
 
-              <p style={{ fontSize: "12px", color: "#4A5568", lineHeight: 1.7, margin: "0 0 10px 0" }}>
-                {d.summary}
-              </p>
+            {/* Quarters */}
+            <div style={{ border: "1px solid " + M.border, borderTop: "none", borderRadius: "0 0 6px 6px", overflow: "hidden" }}>
+              {quarters.map((quarter, qi) => {
+                const qKey = companyName + ":" + quarter;
+                const isCollapsed = collapsedQuarters[qKey];
+                const entries = grouped[companyName][quarter];
+                const isLast = qi === quarters.length - 1;
 
-              <a href={d.sourceUrl} target="_blank" rel="noreferrer" style={{
-                fontSize: "10px", color: M.lightBlue, textDecoration: "none",
-                borderBottom: "1px solid " + M.skyBlue, fontFamily: "Arial, monospace",
-              }}>
-                {d.source} ↗
-              </a>
+                return (
+                  <div key={quarter} style={{ borderBottom: isLast ? "none" : "1px solid " + M.border }}>
+                    {/* Quarter header — clickable to collapse */}
+                    <div
+                      onClick={() => toggleQuarter(qKey)}
+                      style={{
+                        display: "flex", alignItems: "center", gap: "10px",
+                        padding: "9px 16px", cursor: "pointer",
+                        background: isCollapsed ? M.offWhite : "#FAFBFF",
+                        transition: "background 0.15s",
+                        borderLeft: "4px solid " + meta.accent,
+                      }}
+                      onMouseEnter={e => { e.currentTarget.style.background = "#EEF2F8"; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = isCollapsed ? M.offWhite : "#FAFBFF"; }}
+                    >
+                      <span style={{
+                        background: meta.accent, color: "#FFF",
+                        fontSize: "9px", fontWeight: 700, letterSpacing: "0.08em",
+                        padding: "2px 8px", borderRadius: "3px", fontFamily: "Arial, monospace",
+                      }}>{quarter}</span>
+                      <span style={{ fontSize: "11px", color: M.midGray, fontFamily: "Arial, monospace" }}>
+                        {entries.length} disclosure{entries.length !== 1 ? "s" : ""}
+                      </span>
+                      <span style={{
+                        marginLeft: "auto", fontSize: "11px", color: M.midGray,
+                        transition: "transform 0.2s",
+                        transform: isCollapsed ? "none" : "rotate(180deg)",
+                      }}>▾</span>
+                    </div>
+
+                    {/* Disclosure entries */}
+                    {!isCollapsed && (
+                      <div style={{ padding: "8px 16px 12px 20px" }}>
+                        {entries.map((d, di) => (
+                          <div key={di} style={{
+                            position: "relative", paddingLeft: "16px", marginBottom: di < entries.length - 1 ? "10px" : "0",
+                            paddingBottom: di < entries.length - 1 ? "10px" : "0",
+                            borderBottom: di < entries.length - 1 ? "1px dashed " + M.border : "none",
+                          }}>
+                            {/* Timeline dot */}
+                            <div style={{
+                              position: "absolute", left: "0", top: "5px",
+                              width: "7px", height: "7px", borderRadius: "50%",
+                              background: meta.accent, flexShrink: 0,
+                            }} />
+
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "5px", flexWrap: "wrap", gap: "6px" }}>
+                              <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{d.date}</span>
+                            </div>
+                            <p style={{ fontSize: "12px", color: "#4A5568", lineHeight: 1.7, margin: "0 0 7px 0" }}>
+                              {d.summary}
+                            </p>
+                            <a href={d.sourceUrl} target="_blank" rel="noreferrer" style={{
+                              fontSize: "10px", color: M.lightBlue, textDecoration: "none",
+                              borderBottom: "1px solid " + M.skyBlue, fontFamily: "Arial, monospace",
+                            }}>
+                              {d.source} ↗
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 }
@@ -899,15 +1067,8 @@ export default function Dashboard() {
       {/* ── CONTENT ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "22px 28px 40px" }}>
 
-        {/* WHAT'S NEW BANNER */}
-        <div style={{ background: M.white, border: "1px solid " + M.primary, borderLeft: "4px solid " + M.primary, borderRadius: "6px", padding: "12px 16px", marginBottom: "18px" }}>
-          <div style={{ fontSize: "10px", fontWeight: 700, color: M.primary, letterSpacing: "0.08em", marginBottom: "6px", fontFamily: "Arial, monospace" }}>WHAT'S NEW — {lastUpdated}</div>
-          {whatsNew.map((item, i) => (
-            <div key={i} style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.6, paddingLeft: "12px", position: "relative" }}>
-              <span style={{ position: "absolute", left: "0", color: M.primary }}>•</span>{item}
-            </div>
-          ))}
-        </div>
+        {/* WHAT'S NEW BANNER — collapsible */}
+        <WhatsNewBanner />
 
         {/* PEER GROUP TAB */}
         {activeTab === "peers" && (
