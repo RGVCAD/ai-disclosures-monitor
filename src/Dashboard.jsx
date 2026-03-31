@@ -441,9 +441,9 @@ function DisclosuresTimeline() {
         title="AI DISCLOSURES — BY COMPANY & QUARTER"
         subtitle={<>Every verified AI disclosure organized by <strong>company reporting quarter</strong>. A quarter includes all announcements, earnings releases, and presentations for that period.</>}
         stats={[
-          { value: disclosures.length, label: "TOTAL DISCLOSURES", color: M.primary },
-          { value: new Set(disclosures.map(d => d.company)).size, label: "COMPANIES", color: M.lightBlue },
-          { value: new Set(disclosures.map(d => d.quarter)).size, label: "QUARTERS TRACKED", color: M.green },
+          { value: filtered.length, label: filter === "all" ? "TOTAL DISCLOSURES" : "DISCLOSURES", color: M.primary },
+          { value: filter === "all" ? new Set(disclosures.map(d => d.company)).size : 1, label: "COMPANIES", color: M.lightBlue },
+          { value: new Set(filtered.map(d => d.quarter)).size, label: "QUARTERS TRACKED", color: M.green },
         ]}
       />
 
@@ -613,15 +613,15 @@ export default function Dashboard() {
                 AI Disclosures Monitor
               </h1>
               <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "12px", marginTop: "5px" }}>
-                13 Companies · 42 Quantitative AI Disclosures · Q1 2025 Through Q1 2026 · Hard Metrics Linked to Primary Sources
+                {[...peers, ...aiNatives].length} Companies · {disclosures.length} Quantitative AI Disclosures · Hard Metrics Linked to Primary Sources
               </p>
             </div>
             <div style={{ display: "flex", gap: "24px", paddingBottom: "2px" }}>
               {[
-                { v: "13", l: "COMPANIES", c: M.lightBlue },
+                { v: [...peers, ...aiNatives].length, l: "COMPANIES", c: M.lightBlue },
                 { v: lastUpdated.split(",")[0].replace("March ", "Mar "), l: "DATA AS OF", c: "#FFF" },
-                { v: "8", l: "LEADERS", c: "#6ED9A0" },
-                { v: "3", l: "LAGGARDS", c: "#F59090" },
+                { v: peers.filter(p => p.status === "leader").length, l: "LEADERS", c: "#6ED9A0" },
+                { v: peers.filter(p => p.status === "laggard").length, l: "LAGGARDS", c: "#F59090" },
               ].map(s => (
                 <div key={s.l} style={{ textAlign: "center" }}>
                   <div style={{ fontSize: "20px", fontWeight: 800, color: s.c, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.v}</div>
