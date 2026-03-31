@@ -285,12 +285,12 @@ function FinancialsTable() {
     { key: "reportedGrowth", label: "Reported Rev Growth", w: "auto" },
     { key: "organicGrowth", label: "Organic CCY Growth", w: "auto" },
     { key: "adjMargin", label: "Adj. Operating Margin", w: "auto" },
-    { key: "source", label: "Source", w: "180px" },
+    { key: "source", label: "Source", w: "auto" },
   ];
 
   return (
-    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", whiteSpace: "nowrap" }}>
         <thead>
           <tr style={{ background: M.navy }}>
             {cols.map(c => (
