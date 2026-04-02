@@ -634,10 +634,10 @@ export default function Dashboard() {
           {/* Tabs */}
           <div style={{ display: "flex", gap: "3px" }}>
             {[
-              { id: "peers", label: "Peer Group", sub: "10 companies", count: 10 },
+              { id: "peers", label: "Peers", sub: "10 companies", count: 10 },
               { id: "natives", label: "AI Natives", sub: "3 companies", count: 3 },
-              { id: "financials", label: "Financials", sub: "peer comparison", count: 10 },
-              { id: "timeline", label: "Disclosures", sub: "by date", count: disclosures.length },
+              { id: "timeline", label: "AI Disclosures", sub: "by date", count: disclosures.length },
+              { id: "financials", label: "Peer Financials", sub: "peer comparison", count: 10 },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
                 background: activeTab === tab.id ? M.white : "transparent",
