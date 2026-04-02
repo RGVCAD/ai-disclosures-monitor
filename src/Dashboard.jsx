@@ -758,25 +758,17 @@ export default function Dashboard() {
         {/* FINANCIALS TAB */}
         {activeTab === "financials" && (
           <div style={{ position: "relative" }}>
-            {/* DRAFT WATERMARK OVERLAY */}
-            <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 10 }}>
-              {[0, 1, 2, 3, 4, 5].map(row => (
-                [0, 1, 2].map(col => (
-                  <div key={row + "-" + col} style={{
-                    position: "absolute",
-                    top: (row * 220 + 60) + "px",
-                    left: (col * 420 - 80) + "px",
-                    transform: "rotate(-30deg)",
-                    fontSize: "42px",
-                    fontWeight: 900,
-                    fontFamily: "Arial, sans-serif",
-                    color: "rgba(0, 40, 161, 0.07)",
-                    letterSpacing: "8px",
-                    whiteSpace: "nowrap",
-                    userSelect: "none",
-                  }}>DRAFT — DATA IN PROGRESS</div>
-                ))
-              )).flat()}
+            {/* WIP WATERMARK OVERLAY */}
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", zIndex: 10 }}>
+              <div style={{
+                fontSize: "220px",
+                fontWeight: 900,
+                fontFamily: "Arial, sans-serif",
+                color: "rgba(220, 38, 38, 0.13)",
+                letterSpacing: "30px",
+                transform: "rotate(-25deg)",
+                userSelect: "none",
+              }}>WIP</div>
             </div>
             <>
               <SectionBanner
