@@ -757,43 +757,65 @@ export default function Dashboard() {
 
         {/* FINANCIALS TAB */}
         {activeTab === "financials" && (
-          <>
-            <SectionBanner
-              title="FINANCIAL COMPARISON — 10 PEER COMPANIES"
-              subtitle={<>Reported revenue growth, organic constant-currency revenue growth, and adjusted operating margin from most recent full-year results. <strong>All figures from primary earnings releases.</strong></>}
-              stats={[
-                { value: Math.max(...financials.map(f => f.organicGrowth)).toFixed(1) + "%", label: "HIGHEST ORG. GROWTH", color: M.green },
-                { value: Math.max(...financials.map(f => f.adjMargin)).toFixed(1) + "%", label: "HIGHEST ADJ. MARGIN", color: M.primary },
-              ]}
-            />
-
-            {/* Bar Charts */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "14px", marginBottom: "20px" }}>
-              {[
-                { key: "reportedGrowth", label: "Reported Revenue Growth (%)", color: M.lightBlue },
-                { key: "organicGrowth", label: "Organic CCY Revenue Growth (%)", color: M.green },
-                { key: "adjMargin", label: "Adjusted Operating Margin (%)", color: M.primary },
-              ].map(chart => (
-                <div key={chart.key} style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", padding: "16px" }}>
-                  <div style={{ fontSize: "11px", fontWeight: 700, color: M.textDark, marginBottom: "14px", fontFamily: "Arial, sans-serif" }}>{chart.label}</div>
-                  {[...financials].sort((a, b) => b[chart.key] - a[chart.key]).map(f => (
-                    <div key={f.ticker} style={{ marginBottom: "6px" }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
-                        <span style={{ fontSize: "10px", color: M.textDark }}>{f.ticker}</span>
-                        <span style={{ fontSize: "10px", fontWeight: 600, color: chart.color, fontFamily: "Arial, monospace" }}>{f[chart.key]}%</span>
-                      </div>
-                      <div style={{ height: "6px", background: M.offWhite, borderRadius: "3px", border: "1px solid " + M.border }}>
-                        <div style={{ height: "100%", width: Math.max(2, (f[chart.key] / Math.max(...financials.map(x => x[chart.key]))) * 100) + "%", background: chart.color, borderRadius: "3px", transition: "width 0.3s" }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
+          <div style={{ position: "relative" }}>
+            {/* DRAFT WATERMARK OVERLAY */}
+            <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 10 }}>
+              {[0, 1, 2, 3, 4, 5].map(row => (
+                [0, 1, 2].map(col => (
+                  <div key={row + "-" + col} style={{
+                    position: "absolute",
+                    top: (row * 220 + 60) + "px",
+                    left: (col * 420 - 80) + "px",
+                    transform: "rotate(-30deg)",
+                    fontSize: "42px",
+                    fontWeight: 900,
+                    fontFamily: "Arial, sans-serif",
+                    color: "rgba(0, 40, 161, 0.07)",
+                    letterSpacing: "8px",
+                    whiteSpace: "nowrap",
+                    userSelect: "none",
+                  }}>DRAFT — DATA IN PROGRESS</div>
+                ))
+              )).flat()}
             </div>
+            <>
+              <SectionBanner
+                title="FINANCIAL COMPARISON — 10 PEER COMPANIES"
+                subtitle={<>Reported revenue growth, organic constant-currency revenue growth, and adjusted operating margin from most recent full-year results. <strong>All figures from primary earnings releases.</strong></>}
+                stats={[
+                  { value: Math.max(...financials.map(f => f.organicGrowth)).toFixed(1) + "%", label: "HIGHEST ORG. GROWTH", color: M.green },
+                  { value: Math.max(...financials.map(f => f.adjMargin)).toFixed(1) + "%", label: "HIGHEST ADJ. MARGIN", color: M.primary },
+                ]}
+              />
 
-            {/* Sortable Table */}
-            <FinancialsTable />
-          </>
+              {/* Bar Charts */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "14px", marginBottom: "20px" }}>
+                {[
+                  { key: "reportedGrowth", label: "Reported Revenue Growth (%)", color: M.lightBlue },
+                  { key: "organicGrowth", label: "Organic CCY Revenue Growth (%)", color: M.green },
+                  { key: "adjMargin", label: "Adjusted Operating Margin (%)", color: M.primary },
+                ].map(chart => (
+                  <div key={chart.key} style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", padding: "16px" }}>
+                    <div style={{ fontSize: "11px", fontWeight: 700, color: M.textDark, marginBottom: "14px", fontFamily: "Arial, sans-serif" }}>{chart.label}</div>
+                    {[...financials].sort((a, b) => b[chart.key] - a[chart.key]).map(f => (
+                      <div key={f.ticker} style={{ marginBottom: "6px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
+                          <span style={{ fontSize: "10px", color: M.textDark }}>{f.ticker}</span>
+                          <span style={{ fontSize: "10px", fontWeight: 600, color: chart.color, fontFamily: "Arial, monospace" }}>{f[chart.key]}%</span>
+                        </div>
+                        <div style={{ height: "6px", background: M.offWhite, borderRadius: "3px", border: "1px solid " + M.border }}>
+                          <div style={{ height: "100%", width: Math.max(2, (f[chart.key] / Math.max(...financials.map(x => x[chart.key]))) * 100) + "%", background: chart.color, borderRadius: "3px", transition: "width 0.3s" }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Sortable Table */}
+              <FinancialsTable />
+            </>
+          </div>
         )}
 
         {/* AI NATIVES TAB */}
