@@ -600,11 +600,11 @@ export const differentiationMap = [
     title: "Proprietary Training Data as a Licensing Business",
     color: "#7B4FA6",
     desc: "Selling data access to frontier model providers for training, fine-tuning, or RAG — a new revenue stream that didn't exist two years ago, separate from the core analytics business.",
-    mcoPosition: "active",
-    mcoNote: "MCO's partnerships with Anthropic and OpenAI likely include data licensing components, though terms aren't public. The 600M+ entity data estate is among the most valuable proprietary corpora in financial services. The opportunity is to formalize and quantify this as a distinct revenue stream.",
+    mcoPosition: "early",
+    mcoNote: "MCO has not disclosed any data licensing arrangements with AI model providers. The MCP partnerships with Anthropic, Databricks, and OpenAI are distribution channels for Moody's AI tools — not confirmed data licensing deals. The 600M+ entity data estate is a potentially valuable corpus, but no revenue from AI training data licensing has been reported. The opportunity exists but MCO has not publicly acted on it.",
     peers: [
       { ticker: "LSEG", status: "leading", evidence: "90% of data revenue from non-replicable content. Active data licensing across 5 AI partners. MaaS marketplace monetizes proprietary models." },
-      { ticker: "MCO", status: "active", evidence: "Partnerships with Anthropic, Databricks, OpenAI include data access. 600M+ entity data estate. Licensing terms not publicly quantified." },
+      { ticker: "MCO", status: "early", evidence: "MCP partnerships are distribution channels, not confirmed data licensing deals. 600M+ entity data estate is potentially valuable for AI training but no licensing revenue disclosed." },
       { ticker: "TRI", status: "active", evidence: "Building proprietary 'Thomson' LLM on own legal corpus — choosing to use data internally rather than license externally. Reuters news content licensing agreements with AI providers." },
       { ticker: "VRSK", status: "active", evidence: "Decades of insurance loss data. ISO data partnerships. No explicit AI licensing deals announced but data is highly valuable for training." },
       { ticker: "SPGI", status: "early", evidence: "$1B+ cumulative AI investment includes Kensho. Data assets are vast but licensing strategy for AI training not disclosed." },
@@ -702,7 +702,7 @@ export const standardsAdoption = [
     peers: [
       { ticker: "LSEG", status: "piloting", evidence: "Hybrid consumption + subscription model in development for MCP data access and AI agent queries." },
       { ticker: "NDAQ", status: "piloting", evidence: "Enterprise AI platform pricing evolving. Verafin moving toward per-workflow pricing for agentic workers." },
-      { ticker: "MCO", status: "planned", evidence: "GenAI sold as subscription upgrade (2x ARR growth). Smart APIs could enable consumption pricing but not yet." },
+      { ticker: "MCO", status: "planned", evidence: "GenAI sold as subscription upgrade (2x ARR growth for adopters). No consumption-based or per-interaction pricing disclosed." },
       { ticker: "TRI", status: "planned", evidence: "CoCounsel is subscription. No consumption pricing disclosed but scale of 1M users could support it." },
       { ticker: "VRSK", status: "planned", evidence: "Transactional AI modules exist but full consumption model not restructured." },
       { ticker: "SPGI", status: "none", evidence: "Traditional subscription model. AI features bundled into existing platforms." },
@@ -719,7 +719,7 @@ export const standardsAdoption = [
     peers: [
       { ticker: "NDAQ", status: "adopted", evidence: "Agentic workforce in anti-financial crime with full audit trails, regulatory approval workflows, human oversight for high-stakes decisions." },
       { ticker: "VRSK", status: "adopted", evidence: "Human-in-the-loop for all AI claims tools. VIC2026: responsible AI with governance, privacy, compliance emphasis." },
-      { ticker: "MCO", status: "piloting", evidence: "Agentic Solutions include human-in-the-loop for credit decisions. 'Decision-grade' framing implies oversight standards." },
+      { ticker: "MCO", status: "piloting", evidence: "Agentic Solutions described as producing 'decision-grade' outputs for credit decisions. Specific audit trail or compliance oversight framework details not disclosed." },
       { ticker: "TRI", status: "piloting", evidence: "CoCounsel verifies citations. Next-gen entering more autonomous mode but with legal accuracy safeguards." },
       { ticker: "FDS", status: "piloting", evidence: "AI for Banking: 'full traceability.' Private cloud deployment option for compliance-sensitive clients." },
       { ticker: "SPGI", status: "planned", evidence: "Enterprise Data Office governance framework. Document Intelligence with citations. Formal agentic standards not disclosed." },

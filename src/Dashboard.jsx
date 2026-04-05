@@ -598,48 +598,75 @@ function StatusPill({ status, styles }) {
   );
 }
 
+// ─── COLLAPSIBLE SECTION WRAPPER ────────────────────────────────────────────
+function CollapsibleSection({ title, subtitle, defaultOpen = true, accentColor, children }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div style={{
+      marginBottom: "20px", borderRadius: "8px", overflow: "hidden",
+      border: "1px solid " + M.border,
+    }}>
+      <div
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "12px 18px", cursor: "pointer",
+          background: accentColor || M.navy,
+          transition: "background 0.15s",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
+            {title}
+          </span>
+          {subtitle && (
+            <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.55)", fontFamily: "Arial, monospace" }}>
+              {subtitle}
+            </span>
+          )}
+        </div>
+        <span style={{
+          fontSize: "12px", color: "rgba(255,255,255,0.7)",
+          transition: "transform 0.2s",
+          transform: open ? "rotate(180deg)" : "none",
+        }}>▾</span>
+      </div>
+      {open && (
+        <div style={{ padding: "16px 18px", background: M.offWhite }}>
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── WHAT'S NEW THIS CYCLE ──────────────────────────────────────────────────
 function CycleBriefing() {
   const [viewMode, setViewMode] = useState("themes"); // "themes" | "companies"
   const [expandedTheme, setExpandedTheme] = useState(null);
 
   return (
-    <div style={{
-      background: M.white, border: "1px solid " + M.border, borderRadius: "8px",
-      overflow: "hidden", marginBottom: "20px",
-    }}>
-      {/* Header */}
-      <div style={{
-        background: "linear-gradient(135deg, #001A6E, #0028A1)", padding: "16px 20px",
-        display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px",
-      }}>
-        <div>
-          <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-            WHAT'S NEW THIS CYCLE
-          </div>
-          <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>
-            90-day peer competitive briefing · {cycleWindow}
-          </div>
-        </div>
-        <div style={{ display: "flex", gap: "4px" }}>
-          {[
-            { id: "themes", label: "By Theme" },
-            { id: "companies", label: "By Company" },
-          ].map(v => (
-            <button key={v.id} onClick={() => setViewMode(v.id)} style={{
-              background: viewMode === v.id ? "rgba(255,255,255,0.2)" : "transparent",
-              color: "#FFF", border: "1px solid rgba(255,255,255,0.25)",
-              borderRadius: "4px", padding: "4px 12px", fontSize: "10px", fontWeight: 600,
-              cursor: "pointer", fontFamily: "Arial, sans-serif",
-              transition: "all 0.15s",
-            }}>{v.label}</button>
-          ))}
-        </div>
+    <div>
+      {/* View toggle */}
+      <div style={{ display: "flex", gap: "4px", marginBottom: "14px" }}>
+        {[
+          { id: "themes", label: "By Theme" },
+          { id: "companies", label: "By Company" },
+        ].map(v => (
+          <button key={v.id} onClick={() => setViewMode(v.id)} style={{
+            background: viewMode === v.id ? M.primary : M.white,
+            color: viewMode === v.id ? "#FFF" : M.textDark,
+            border: "1px solid " + (viewMode === v.id ? M.primary : M.border),
+            borderRadius: "4px", padding: "5px 14px", fontSize: "10px", fontWeight: 600,
+            cursor: "pointer", fontFamily: "Arial, sans-serif",
+            transition: "all 0.15s",
+          }}>{v.label}</button>
+        ))}
       </div>
 
       {/* Theme View */}
       {viewMode === "themes" && (
-        <div style={{ padding: "14px 18px" }}>
+        <div>
           {cycleThemes.map((t, i) => (
             <div key={t.theme} style={{
               marginBottom: i < cycleThemes.length - 1 ? "10px" : 0,
@@ -707,7 +734,7 @@ function CycleBriefing() {
 
       {/* Company View */}
       {viewMode === "companies" && (
-        <div style={{ padding: "14px 18px" }}>
+        <div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "10px" }}>
             {cycleCompanySummaries.map(c => {
               const peerData = peers.find(p => p.ticker === c.ticker);
@@ -1032,14 +1059,29 @@ export default function Dashboard() {
               { title: "GenAI Adoption Accelerating Revenue Growth", text: "Companies that can quantify GenAI's impact on customer economics are seeing accelerating revenue. Thomson Reuters' GenAI ACV doubled from 15% to 28% in three quarters. Moody's GenAI-adopter customers are growing at 2x the overall MA rate. Nasdaq's Verafin enterprise signings quadrupled YoY. Verisk's XactXpert is adopted by 7 of the top 10 homeowners insurers. The inflection from 'we're building AI' to 'AI is driving our numbers' happened in late 2025 for the leaders.", color: "#A8BCE8" },
               { title: "The Execution Gap Is Widening", text: "A clear bifurcation is emerging between leaders with live, monetized AI products and laggards still in the 'building' or 'experimenting' phase. Gartner's AskGartner shows strong leading indicators but contract value grew only 1%, with the stock down 35% YTD. FactSet's methodical approach is sound but ASV growth needs to accelerate. MSCI's AI revenue (~$15-20M) remains small relative to total revenue. The market is increasingly pricing in execution speed, not just strategy articulation.", color: M.red },
             ]} />
-            {/* ── WHAT'S NEW THIS CYCLE ──────────────────────────── */}
-            <CycleBriefing />
+            {/* ── WHAT'S NEW THIS CYCLE (collapsible) ────────────── */}
+            <CollapsibleSection
+              title="WHAT'S NEW THIS CYCLE"
+              subtitle={cycleWindow}
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <CycleBriefing />
+            </CollapsibleSection>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: "12px" }}>
-              {peers.map((c, i) => (
-                <CompanyCard key={c.ticker + i} company={c} expanded={!!expandedPeers[i]} onToggle={() => togglePeer(i)} />
-              ))}
-            </div>
+            {/* ── COMPANY CARDS (collapsible) ─────────────────────── */}
+            <CollapsibleSection
+              title="COMPANY PROFILES"
+              subtitle={`${peers.length} peer companies`}
+              defaultOpen={true}
+              accentColor={M.navy}
+            >
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: "12px" }}>
+                {peers.map((c, i) => (
+                  <CompanyCard key={c.ticker + i} company={c} expanded={!!expandedPeers[i]} onToggle={() => togglePeer(i)} />
+                ))}
+              </div>
+            </CollapsibleSection>
 
             {/* ── STRATEGIC INSIGHTS ─────────────────────────────────── */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "24px" }}>
