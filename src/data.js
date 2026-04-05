@@ -499,7 +499,7 @@ export const cycleThemes = [
     theme: "AI Product Metrics & Adoption",
     color: "#0028A1",
     highlights: [
-      { ticker: "MCO", text: "40% of MA product ARR GenAI-enabled. ~$200M GenAI adopter cohort growing at 2x overall MA rate. Research Assistant: fastest-adopted product in company history (100K+ interactions). 97% retention, +18 NPS uplift." },
+      { ticker: "MCO", text: "New Q4 2025 metrics (Feb 18): 97% retention rate for GenAI product customers, +18 NPS uplift for CreditView Research Assistant adopters, 5x customer-reported productivity improvements. CreditLens: ~20% annual growth with ~67% avg revenue uplift on AI-enabled upgrade." },
       { ticker: "TRI", text: "AI-enabled products reached 28% of ACV (up from 15% a year ago). 85%+ employees using Open Arena. 80%+ engineers using AI coding tools. $200M+ annual AI investment." },
       { ticker: "SPGI", text: "66% of 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts. 10%+ of enterprise applications eliminated. Targeting 20%+ run-rate expense reduction by 2027." },
       { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
@@ -518,7 +518,7 @@ export const cycleThemes = [
 ];
 
 export const cycleCompanySummaries = [
-  { ticker: "MCO", summary: "40% GenAI-enabled MA ARR. Agentic Solutions signed $3M+ bank deal. MCP servers via Anthropic, Databricks, OpenAI. Research Assistant fastest-adopted product in history. TIE blockchain credit analysis launched." },
+  { ticker: "MCO", summary: "Agentic Solutions: $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). MCP servers launched via Anthropic, Databricks, OpenAI. New Q4 metrics: 97% GenAI retention, +18 NPS uplift, 5x productivity gains. CreditLens ~20% growth, ~67% revenue uplift on AI upgrade. TIE blockchain credit analysis launched (Mar 18)." },
   { ticker: "SPGI", summary: "Acquired Enertel AI for power forecasting. Capital IQ Pro expanded with Drift AI and ProntoNLP. 66% of employees on Spark Assist. Google Cloud multi-year partnership for agentic innovation." },
   { ticker: "TRI", summary: "CoCounsel hit 1M users. Proprietary 'Thomson' LLM for summer 2026. Smokeball partnership for small/mid-size law. 28% AI ACV (up from 15%). New CFO joining May." },
   { ticker: "LSEG", summary: "MCP expanded to M365 Copilot. MaaS marketplace launched with Societe Generale. 60+ institutions on MCP. 350K users migrated to Workspace. EBITDA margin surpassed 50%." },
