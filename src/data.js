@@ -446,3 +446,287 @@ export const disclosures = [
   { date: "Feb 4, 2026", company: "Alphabet", ticker: "GOOGL", quarter: "Q4 2025", summary: "Google Cloud Q4: $17.7B revenue (+48% YoY), operating margin 30.1% (up from 17.5% YoY). Cloud backlog $240B+ (doubled YoY). Generative AI product revenue grew nearly 400% YoY. Gemini unit costs reduced 78% over 2025. 2025 annual revenue exceeded $400B for first time.", source: "Alphabet Q4 2025 Earnings", sourceUrl: "https://www.cnbc.com/2026/02/04/alphabet-googl-q4-2025-earnings.html" },
   { date: "Feb 4, 2026", company: "Alphabet", ticker: "GOOGL", quarter: "Q4 2025", summary: "Gemini: 750M+ monthly active users, 8M+ Enterprise seats across 2,800+ companies (sold in 4 months). 10B+ tokens/minute via direct API. AI Overviews: 2B+ monthly users across 200+ countries, 40+ languages. AI Mode surpassed 100M MAU in US and India alone. CapEx guidance: $175-185B for 2026.", source: "Alphabet Q4 2025 Earnings Call", sourceUrl: "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q4-2025/" },
 ];
+
+// ─── WHAT'S NEW THIS CYCLE — 90-DAY PEER COMPETITIVE BRIEFING ──────────────
+// Theme-grouped view of the most significant peer-group disclosures from the
+// last ~90 days, followed by company-level one-liners for drill-down.
+// Updated by the daily refresh task alongside disclosures.
+// ────────────────────────────────────────────────────────────────────────────
+
+export const cycleWindow = "Jan 5 – Apr 5, 2026";
+
+export const cycleThemes = [
+  {
+    theme: "Agentic AI Products",
+    color: "#1A7A4A",
+    highlights: [
+      { ticker: "NDAQ", text: "Agentic AI Workforce: 350+ clients adopted, 80%+ AML alert workload reduction. Digital Sanctions Analyst and Enhanced Due Diligence Analyst both live. Targeting hundreds of AI agents globally in 2026, thousands by 2027." },
+      { ticker: "VRSK", text: "XactGen launched: agentic AI producing near-complete claims estimates from aerial imagery and policyholder photos. 22 customer-facing AI modules released in 2025 (beat target), 25 planned for 2026." },
+      { ticker: "TRI", text: "CoCounsel hit 1M users across 107 countries. Proprietary 'Thomson' LLM announced for summer 2026 — outperforming general models on 4 of 10 legal task benchmarks. Next-gen CoCounsel entering beta Apr 20." },
+      { ticker: "MCO", text: "Agentic Solutions signed $3M+ tier-1 bank deal: automates credit memo creation (40 hrs to ~2 min). MCP servers distributed via Anthropic, Databricks, OpenAI partnerships." },
+      { ticker: "FDS", text: "AI for Banking launched in alpha (Mar 30) with Finster AI partnership. AI Document Search deployed to 85K+ users. Mercury AI chatbot live for pitch decks and research." },
+    ],
+  },
+  {
+    theme: "MCP & Data Distribution",
+    color: "#4899D4",
+    highlights: [
+      { ticker: "LSEG", text: "Expanded Microsoft partnership: LSEG data now in M365 Copilot (Teams, Excel). 33 petabytes accessible via MCP. Model-as-a-Service marketplace launched with Societe Generale. 60+ institutions connected." },
+      { ticker: "FDS", text: "First production-grade MCP server for real-time financial intelligence. 120+ clients actively engaged. API call volume at 3x February levels by March." },
+      { ticker: "MSCI", text: "IndexAI Insights launched with AI connectors for ChatGPT and Claude. MSCI app available in both OpenAI and Anthropic ecosystems." },
+      { ticker: "MCO", text: "MCP server distribution via Anthropic, Databricks, OpenAI. Data estate covers 600M+ entities globally, positioning as the trusted data layer for AI workflows." },
+    ],
+  },
+  {
+    theme: "AI Talent & Leadership",
+    color: "#7B4FA6",
+    highlights: [
+      { ticker: "FDS", text: "Kate Stepp appointed first Chief AI Officer (Mar 4), previously CTO. Bob Stolte named CTO. C-suite restructuring explicitly designed to 'accelerate enterprise AI and platform strategy.'" },
+      { ticker: "TRI", text: "New CFO Gary Bischoping joining May 8, 2026 — part of leadership refresh to support AI-driven growth strategy." },
+    ],
+  },
+  {
+    theme: "Acquisitions & Partnerships",
+    color: "#C97B00",
+    highlights: [
+      { ticker: "SPGI", text: "Acquired Enertel AI Corporation (Mar 18) — AI/ML-driven short-term power price forecasting for North American electricity markets. Capital IQ Pro expanded with Drift AI for Excel-based financial modeling and ProntoNLP sentiment analytics." },
+      { ticker: "MSCI", text: "Acquired Vantager (Mar 2) — AI-native platform automating pre-investment due diligence for institutional private markets investors. Processed thousands of private funds, 100K+ underlying investments." },
+      { ticker: "TRI", text: "Smokeball partnership (Mar 25): integrates CoCounsel Legal with practice management for small/mid-size law firms. Real-time data connector syncs documents across platforms." },
+      { ticker: "CSGP", text: "Matterport integration delivering 40x more detail views on listings. Subscribers with Matterport show 37% higher renewal rates." },
+    ],
+  },
+  {
+    theme: "AI Product Metrics & Adoption",
+    color: "#0028A1",
+    highlights: [
+      { ticker: "MCO", text: "40% of MA product ARR GenAI-enabled. ~$200M GenAI adopter cohort growing at 2x overall MA rate. Research Assistant: fastest-adopted product in company history (100K+ interactions). 97% retention, +18 NPS uplift." },
+      { ticker: "TRI", text: "AI-enabled products reached 28% of ACV (up from 15% a year ago). 85%+ employees using Open Arena. 80%+ engineers using AI coding tools. $200M+ annual AI investment." },
+      { ticker: "SPGI", text: "66% of 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts. 10%+ of enterprise applications eliminated. Targeting 20%+ run-rate expense reduction by 2027." },
+      { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
+      { ticker: "NDAQ", text: "Verafin enterprise signings quadrupled YoY. 1,300+ clients using GenAI Entity Research Copilot. $1B+ in check fraud caught in 2025. Targeting $100M in AI-driven efficiencies by 2027." },
+    ],
+  },
+  {
+    theme: "Internal AI Deployment",
+    color: "#CC2030",
+    highlights: [
+      { ticker: "SPGI", text: "Spark Assist GenAI platform: 66% of all 40,000 employees active. 10%+ of enterprise applications eliminated. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027." },
+      { ticker: "LSEG", text: "350,000+ users migrated from Eikon to Workspace. 4,000 employees deployed on ChatGPT Enterprise. Workspace GenAI rolling out to all users H1 2026." },
+      { ticker: "FDS", text: "4 internal AI tools delivering 25%+ reduction in manual data curation. AI coding assistants authoring ~20% of successful code commits. 80% cost reduction in vectorizing client data." },
+    ],
+  },
+];
+
+export const cycleCompanySummaries = [
+  { ticker: "MCO", summary: "40% GenAI-enabled MA ARR. Agentic Solutions signed $3M+ bank deal. MCP servers via Anthropic, Databricks, OpenAI. Research Assistant fastest-adopted product in history. TIE blockchain credit analysis launched." },
+  { ticker: "SPGI", summary: "Acquired Enertel AI for power forecasting. Capital IQ Pro expanded with Drift AI and ProntoNLP. 66% of employees on Spark Assist. Google Cloud multi-year partnership for agentic innovation." },
+  { ticker: "TRI", summary: "CoCounsel hit 1M users. Proprietary 'Thomson' LLM for summer 2026. Smokeball partnership for small/mid-size law. 28% AI ACV (up from 15%). New CFO joining May." },
+  { ticker: "LSEG", summary: "MCP expanded to M365 Copilot. MaaS marketplace launched with Societe Generale. 60+ institutions on MCP. 350K users migrated to Workspace. EBITDA margin surpassed 50%." },
+  { ticker: "VRSK", summary: "Investor Day: 6-8% OCC revenue growth targets (2026-2028). XactGen agentic claims launched. 22 AI modules released (beat target). Insurance fraud study: 76% of insurers see more sophisticated manipulated media." },
+  { ticker: "CSGP", summary: "Homes AI launched: 3.8x longer sessions, 7x more leads, 64% bounce rate reduction. 115M monthly unique visitors. $100M annualized agent revenue. 50% of software dev dedicated to AI." },
+  { ticker: "MSCI", summary: "Acquired Vantager for AI-native private markets diligence. IndexAI Insights launched with ChatGPT and Claude connectors. 25 AI products generating $15-20M. Targeting 5-15% opex reduction for reinvestment." },
+  { ticker: "NDAQ", summary: "Agentic AI Workforce: 350+ clients, 80%+ workload reduction. $100M AI efficiency target by 2027. Verafin enterprise signings 4x YoY. First to exceed $5B net revenue." },
+  { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. But CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028." },
+  { ticker: "FDS", summary: "First CAIO appointed (Kate Stepp). AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
+];
+
+
+// ─── DIFFERENTIATION OPPORTUNITIES — COMPETITIVE SCORECARD ─────────────────
+// Each opportunity maps to specific peers with their execution status.
+// Status: "leading" | "active" | "early" | "gap"
+// mcoPosition: describes where MCO stands and what the opportunity is.
+// Updated by the daily refresh task when new disclosures shift the landscape.
+// ────────────────────────────────────────────────────────────────────────────
+
+export const differentiationMap = [
+  {
+    title: "Agentic Workflows That Replace, Not Assist",
+    color: "#1A7A4A",
+    desc: "AI agents that autonomously execute multi-step workflows, replacing manual processes entirely rather than augmenting them. The key metric: measurable headcount displacement or cycle-time elimination at customer sites.",
+    mcoPosition: "leading",
+    mcoNote: "Agentic Solutions is live with a $3M+ tier-1 bank deal (credit memos from 40 hrs to ~2 min). MCO has one of the most concrete agentic deployments in the peer group, but needs to scale client count and publish more ROI case studies to maintain lead.",
+    peers: [
+      { ticker: "MCO", status: "leading", evidence: "Agentic Solutions live: credit assessment, KYC screening, portfolio monitoring. $3M+ tier-1 bank deal signed." },
+      { ticker: "VRSK", status: "leading", evidence: "XactGen: agentic claims from aerial imagery + policy data. Adopted by 7 of top 10 homeowners insurers." },
+      { ticker: "NDAQ", status: "leading", evidence: "Digital Sanctions Analyst: 80%+ workload reduction, 350+ clients. Enhanced Due Diligence Analyst launched Jan 2026." },
+      { ticker: "TRI", status: "leading", evidence: "CoCounsel: 1M users, end-to-end legal research. Next-gen agentic beta Apr 2026." },
+      { ticker: "CSGP", status: "active", evidence: "Homes AI: full real estate search experience via natural language. 3.8x longer sessions." },
+      { ticker: "FDS", status: "active", evidence: "AI for Banking in alpha: automates deal processes, pitch materials, memos. Mercury AI chatbot live." },
+      { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent with Google Gemini. SparkAIR for querying proprietary datasets. Not yet agentic at customer-facing level." },
+      { ticker: "MSCI", status: "early", evidence: "AI Portfolio Insights launched but still assistive, not autonomous. Focus on data production automation internally." },
+      { ticker: "LSEG", status: "early", evidence: "AI Copilot agents piloted via Microsoft Copilot Studio. Not yet agentic-grade for client workflows." },
+      { ticker: "IT", status: "gap", evidence: "AskGartner is conversational but assistive-only. Apr 2 prediction: >50% of enterprises will abandon copilots — but Gartner itself hasn't shipped agentic products." },
+    ],
+  },
+  {
+    title: "Becoming the Data Layer for Third-Party AI",
+    color: "#4899D4",
+    desc: "Making proprietary data accessible inside ChatGPT, Claude, Copilot, and other AI platforms via MCP or equivalent connectors. The company becomes the trusted, governed data source regardless of which model the customer uses.",
+    mcoPosition: "active",
+    mcoNote: "MCO has MCP partnerships with Anthropic, Databricks, and OpenAI but hasn't disclosed client adoption numbers. LSEG leads with 60+ institutions and quantified pipeline. MCO's 600M+ entity data estate is a unique asset — the opportunity is to quantify distribution reach and highlight data uniqueness.",
+    peers: [
+      { ticker: "LSEG", status: "leading", evidence: "60+ institutions on MCP. Partners: Anthropic, OpenAI, Microsoft, Databricks, Snowflake, Rogo. 33 petabytes accessible. MaaS marketplace live." },
+      { ticker: "MCO", status: "active", evidence: "MCP servers via Anthropic, Databricks, OpenAI. 600M+ entity data estate. Smart APIs for agentic access. Client adoption not yet quantified." },
+      { ticker: "FDS", status: "active", evidence: "First production-grade MCP server for financial intelligence. 120+ clients engaged. 800+ institutional users in Explorer beta." },
+      { ticker: "MSCI", status: "active", evidence: "AI connectors for ChatGPT and Claude. IndexAI Insights launched. Expansion planned to Private Assets." },
+      { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent integrated with Google Gemini. SparkAIR GenAI suite for institutional clients. No MCP server announced." },
+      { ticker: "TRI", status: "early", evidence: "Building proprietary 'Thomson' LLM rather than distributing via third-party models. Data layer strategy focused on owned platforms." },
+      { ticker: "VRSK", status: "gap", evidence: "No MCP or third-party AI distribution strategy disclosed. Data access remains through Verisk-owned platforms." },
+      { ticker: "NDAQ", status: "gap", evidence: "AI products are Nasdaq-hosted (Verafin). No third-party data distribution via MCP or equivalent." },
+      { ticker: "CSGP", status: "gap", evidence: "Homes AI is a destination experience, not a data layer. No MCP or API strategy for third-party AI platforms." },
+      { ticker: "IT", status: "gap", evidence: "Gartner research is behind paywalls. No data distribution strategy for third-party AI models." },
+    ],
+  },
+  {
+    title: "Vertical AI Products With Consumption Pricing",
+    color: "#C97B00",
+    desc: "Shifting from flat subscription to usage-based pricing for AI features — per query, per analysis, per automated workflow. Captures value proportional to efficiency gains delivered.",
+    mcoPosition: "early",
+    mcoNote: "MCO's GenAI-adopter cohort grows at 2x the overall MA rate, suggesting strong upsell economics. But pricing is still subscription-based with AI as an upgrade/enablement tier, not pure consumption. The opportunity is to develop consumption metrics for agentic workflows.",
+    peers: [
+      { ticker: "LSEG", status: "leading", evidence: "Developing hybrid consumption + subscription pricing for MCP data access. Consumption model in development for AI agent queries." },
+      { ticker: "NDAQ", status: "active", evidence: "Verafin AI products priced on platform value with enterprise licensing. Moving toward consumption for agentic workers." },
+      { ticker: "MCO", status: "early", evidence: "GenAI sold as subscription upgrade/enablement (2x ARR growth for adopters). Not yet consumption-priced per AI interaction." },
+      { ticker: "TRI", status: "early", evidence: "CoCounsel priced as subscription add-on. No consumption pricing disclosed." },
+      { ticker: "VRSK", status: "early", evidence: "Transactional AI modules exist but pricing model not restructured for AI specifically." },
+      { ticker: "SPGI", status: "gap", evidence: "Traditional subscription model. AI features bundled into existing platforms." },
+      { ticker: "FDS", status: "gap", evidence: "ASV subscription model. AI features included in existing workstation pricing." },
+      { ticker: "MSCI", status: "gap", evidence: "$15-20M AI revenue from 25 products but pricing model not disclosed as consumption-based." },
+      { ticker: "CSGP", status: "gap", evidence: "Agent subscription model ($100M annualized). Homes AI free to consumers." },
+      { ticker: "IT", status: "gap", evidence: "Contract Value subscription model. No AI-specific consumption pricing." },
+    ],
+  },
+  {
+    title: "Proprietary Training Data as a Licensing Business",
+    color: "#7B4FA6",
+    desc: "Selling data access to frontier model providers for training, fine-tuning, or RAG — a new revenue stream that didn't exist two years ago, separate from the core analytics business.",
+    mcoPosition: "active",
+    mcoNote: "MCO's partnerships with Anthropic and OpenAI likely include data licensing components, though terms aren't public. The 600M+ entity data estate is among the most valuable proprietary corpora in financial services. The opportunity is to formalize and quantify this as a distinct revenue stream.",
+    peers: [
+      { ticker: "LSEG", status: "leading", evidence: "90% of data revenue from non-replicable content. Active data licensing across 5 AI partners. MaaS marketplace monetizes proprietary models." },
+      { ticker: "MCO", status: "active", evidence: "Partnerships with Anthropic, Databricks, OpenAI include data access. 600M+ entity data estate. Licensing terms not publicly quantified." },
+      { ticker: "TRI", status: "active", evidence: "Building proprietary 'Thomson' LLM on own legal corpus — choosing to use data internally rather than license externally. Reuters news content licensing agreements with AI providers." },
+      { ticker: "VRSK", status: "active", evidence: "Decades of insurance loss data. ISO data partnerships. No explicit AI licensing deals announced but data is highly valuable for training." },
+      { ticker: "SPGI", status: "early", evidence: "$1B+ cumulative AI investment includes Kensho. Data assets are vast but licensing strategy for AI training not disclosed." },
+      { ticker: "FDS", status: "early", evidence: "GenAI Data Packages launched consolidating data feeds for AI-ready consumption. MCP server enables access but licensing model not detailed." },
+      { ticker: "MSCI", status: "early", evidence: "Index data and ESG data highly valued for AI training. AI connectors provide access but explicit licensing not quantified." },
+      { ticker: "NDAQ", status: "gap", evidence: "Market data is commoditized. Verafin fraud data is proprietary but no AI licensing strategy disclosed." },
+      { ticker: "CSGP", status: "gap", evidence: "14M Matterport spaces (50B sq ft) could be valuable for spatial AI training but no licensing strategy disclosed." },
+      { ticker: "IT", status: "gap", evidence: "6,000+ AI insights and 1,000+ use cases behind paywall. No data licensing for AI model training." },
+    ],
+  },
+  {
+    title: "AI-Powered Cross-Sell Into Adjacent Markets",
+    color: "#0028A1",
+    desc: "Using AI to lower the cost of entering adjacent verticals, expanding TAM without proportional cost increases. The companies with the broadest data estates and most flexible AI infrastructure capture new markets fastest.",
+    mcoPosition: "leading",
+    mcoNote: "MCO's private credit revenue is up 60% YoY and agentic solutions span credit assessment, KYC, portfolio monitoring, and sales intelligence — the broadest AI-enabled adjacency play in the peer group. TIE blockchain integration opens DeFi credit markets. The opportunity is to quantify how AI reduces cost-to-serve in new verticals.",
+    peers: [
+      { ticker: "MCO", status: "leading", evidence: "Private credit revenue +60% YoY. Agentic Solutions spans credit, KYC, portfolio monitoring, sales intelligence. TIE opens blockchain/DeFi credit markets." },
+      { ticker: "CSGP", status: "leading", evidence: "Commercial to residential real estate via Homes AI. Matterport acquisition adds spatial intelligence (14M spaces, 177 countries). $100M agent revenue." },
+      { ticker: "SPGI", status: "active", evidence: "Push into private markets via iLEVEL, energy forecasting via Enertel AI acquisition, biopharma analytics via Visible Alpha." },
+      { ticker: "NDAQ", status: "active", evidence: "25 total FinTech cross-sell wins in 2025 (42 cumulative since Adenza). Every G-SIB now a client." },
+      { ticker: "TRI", status: "active", evidence: "CoCounsel expanding from law firms to corporate legal to tax/audit. Smokeball partnership targets small/mid-size firms." },
+      { ticker: "FDS", status: "active", evidence: "AI for Banking expands from buy-side into investment banking workflows. ComplyAdvantage integration adds KYC/AML." },
+      { ticker: "VRSK", status: "early", evidence: "Core Lines Reimagine expanding into specialty insurance. Conversational AI for life/annuity (Ask Max, Tell Max)." },
+      { ticker: "MSCI", status: "early", evidence: "Expanding from index/ESG into private markets due diligence via Vantager acquisition. Wealth management as new AI growth vector." },
+      { ticker: "LSEG", status: "early", evidence: "Focus on deepening existing D&A relationships rather than new verticals. MCP could enable adjacency but strategy is distribution, not vertical expansion." },
+      { ticker: "IT", status: "gap", evidence: "Divesting Digital Markets. CV growth only 1%. AI investment focused on defending core Research business, not expanding into new markets." },
+    ],
+  },
+];
+
+
+// ─── EMERGING STANDARDS & PROTOCOLS — ADOPTION SCORECARD ───────────────────
+// Each standard maps to specific peers with their adoption stage.
+// Status: "adopted" | "piloting" | "planned" | "none"
+// Updated by the daily refresh task.
+// ────────────────────────────────────────────────────────────────────────────
+
+export const standardsAdoption = [
+  {
+    title: "Model Context Protocol (MCP) as Financial Data API",
+    color: "#FFD166",
+    desc: "MCP is rapidly becoming the standard for how AI models access proprietary financial data. Companies not developing an MCP strategy risk exclusion from the AI workflow layer where customer decisions are increasingly made.",
+    peers: [
+      { ticker: "LSEG", status: "adopted", evidence: "60+ institutions. 5 AI partners. MaaS marketplace live. Consumption pricing in development." },
+      { ticker: "MCO", status: "adopted", evidence: "MCP servers via Anthropic, Databricks, OpenAI. Distributing through partner marketplaces." },
+      { ticker: "FDS", status: "adopted", evidence: "Production-grade MCP server. 120+ clients. API volume 3x growth in one month." },
+      { ticker: "MSCI", status: "piloting", evidence: "AI connectors for ChatGPT and Claude. IndexAI Insights launched. MCP-like access layer." },
+      { ticker: "SPGI", status: "piloting", evidence: "Kensho Data Retrieval Agent with Google Gemini. SparkAIR for institutional queries. No formal MCP server." },
+      { ticker: "TRI", status: "planned", evidence: "Building proprietary 'Thomson' LLM — prioritizing owned data layer over third-party distribution." },
+      { ticker: "VRSK", status: "none", evidence: "No MCP or equivalent third-party AI data distribution disclosed." },
+      { ticker: "NDAQ", status: "none", evidence: "AI products hosted on Nasdaq platforms. No third-party data API strategy." },
+      { ticker: "CSGP", status: "none", evidence: "Destination platform model. No data distribution via AI APIs." },
+      { ticker: "IT", status: "none", evidence: "Research behind paywall. No data access layer for AI models." },
+    ],
+  },
+  {
+    title: "AI Governance & Explainability Requirements",
+    color: "#4899D4",
+    desc: "Built-in explainability, audit trails, and human-in-the-loop safeguards for AI outputs. Becoming table stakes for selling AI into regulated financial institutions.",
+    peers: [
+      { ticker: "MCO", status: "adopted", evidence: "'Decision-grade contextual intelligence' — explainable, defensible AI outputs as core brand promise." },
+      { ticker: "VRSK", status: "adopted", evidence: "Human-in-the-loop governance across all AI products. VIC2026 sessions on responsible AI adoption. Augmented Underwriting with structured audit trails." },
+      { ticker: "NDAQ", status: "adopted", evidence: "Full audit trails for agentic workers. Regulatory approval workflows. Human oversight for high-stakes AML decisions." },
+      { ticker: "TRI", status: "adopted", evidence: "CoCounsel verifies citations remain in good law. Westlaw-sourced authority with built-in explainability." },
+      { ticker: "FDS", status: "piloting", evidence: "AI Document Search preserves 'hallmark auditability.' Traceability emphasized in AI for Banking." },
+      { ticker: "SPGI", status: "piloting", evidence: "Document Intelligence 2.0 provides precise citations. Governance framework under Enterprise Data Office." },
+      { ticker: "LSEG", status: "piloting", evidence: "Governed marketplace model for MaaS. Trusted data emphasis. Governance specifics not detailed." },
+      { ticker: "MSCI", status: "planned", evidence: "ESG controversy analysis uses AI but governance framework for AI outputs not formalized publicly." },
+      { ticker: "CSGP", status: "planned", evidence: "Homes AI consumer-facing but no formal AI governance disclosures for regulated use cases." },
+      { ticker: "IT", status: "planned", evidence: "Publishes AI governance research for clients but limited disclosure of own AI governance practices." },
+    ],
+  },
+  {
+    title: "AI-Adjusted Financial Guidance",
+    color: "#1A7A4A",
+    desc: "Explicitly quantifying AI's impact on forward financial guidance — margin expansion, cost savings, or revenue attribution. Investors increasingly expect this level of specificity.",
+    peers: [
+      { ticker: "TRI", status: "adopted", evidence: "Guides 100bps/yr EBITDA margin expansion from AI (2026-2028) despite $200M+ annual investment." },
+      { ticker: "SPGI", status: "adopted", evidence: "Targets >20% run-rate expense reduction from Enterprise Data Office AI by 2027. AI savings quantified in guidance." },
+      { ticker: "CSGP", status: "adopted", evidence: "AI cost savings explicitly included in 2026 EBITDA guidance ($740-800M). AI efficiencies in content, research, code." },
+      { ticker: "NDAQ", status: "adopted", evidence: "$100M in AI-driven run-rate efficiencies targeted by year-end 2027. Quantified at Investor Day." },
+      { ticker: "VRSK", status: "adopted", evidence: "Investor Day targets: 25-75 bps annual EBITDA margin expansion (2026-2028). AI central to compounding growth." },
+      { ticker: "MCO", status: "piloting", evidence: "GenAI adopter cohort at 2x ARR growth rate. AI impact visible in metrics but not yet a separate guidance line item." },
+      { ticker: "FDS", status: "piloting", evidence: "Captured 50%+ of targeted 100bps productivity gain for FY2026. AI impact quantified in earnings calls but not formal guidance." },
+      { ticker: "MSCI", status: "planned", evidence: "Targets 5-15% opex reduction from AI but reinvests fully — margin expansion deferred by design." },
+      { ticker: "LSEG", status: "planned", evidence: "80-100bps margin expansion guided but not attributed specifically to AI (vs. Workspace migration, scale effects)." },
+      { ticker: "IT", status: "none", evidence: "No AI-specific financial guidance. CV growth only 1%. AI investment not quantified in forward guidance." },
+    ],
+  },
+  {
+    title: "Consumption-Based AI Pricing Models",
+    color: "#0028A1",
+    desc: "Transitioning from flat subscription to usage-based pricing for AI features. Aligns revenue with customer value — an agentic workflow that saves one client 100 hours and another 1,000 should be priced differently.",
+    peers: [
+      { ticker: "LSEG", status: "piloting", evidence: "Hybrid consumption + subscription model in development for MCP data access and AI agent queries." },
+      { ticker: "NDAQ", status: "piloting", evidence: "Enterprise AI platform pricing evolving. Verafin moving toward per-workflow pricing for agentic workers." },
+      { ticker: "MCO", status: "planned", evidence: "GenAI sold as subscription upgrade (2x ARR growth). Smart APIs could enable consumption pricing but not yet." },
+      { ticker: "TRI", status: "planned", evidence: "CoCounsel is subscription. No consumption pricing disclosed but scale of 1M users could support it." },
+      { ticker: "VRSK", status: "planned", evidence: "Transactional AI modules exist but full consumption model not restructured." },
+      { ticker: "SPGI", status: "none", evidence: "Traditional subscription model. AI features bundled into existing platforms." },
+      { ticker: "FDS", status: "none", evidence: "ASV subscription model. AI features included in workstation pricing." },
+      { ticker: "MSCI", status: "none", evidence: "AI products on subscription. No consumption pricing disclosed." },
+      { ticker: "CSGP", status: "none", evidence: "Agent subscription model. Homes AI free to consumers." },
+      { ticker: "IT", status: "none", evidence: "Contract Value subscription. No AI consumption pricing." },
+    ],
+  },
+  {
+    title: "Agentic AI Compliance & Oversight Standards",
+    color: "#CC2030",
+    desc: "Defining how autonomous AI agents operate in regulated environments — human oversight, audit trails, accountability frameworks. Early adopters are setting norms before regulators formalize them.",
+    peers: [
+      { ticker: "NDAQ", status: "adopted", evidence: "Agentic workforce in anti-financial crime with full audit trails, regulatory approval workflows, human oversight for high-stakes decisions." },
+      { ticker: "VRSK", status: "adopted", evidence: "Human-in-the-loop for all AI claims tools. VIC2026: responsible AI with governance, privacy, compliance emphasis." },
+      { ticker: "MCO", status: "piloting", evidence: "Agentic Solutions include human-in-the-loop for credit decisions. 'Decision-grade' framing implies oversight standards." },
+      { ticker: "TRI", status: "piloting", evidence: "CoCounsel verifies citations. Next-gen entering more autonomous mode but with legal accuracy safeguards." },
+      { ticker: "FDS", status: "piloting", evidence: "AI for Banking: 'full traceability.' Private cloud deployment option for compliance-sensitive clients." },
+      { ticker: "SPGI", status: "planned", evidence: "Enterprise Data Office governance framework. Document Intelligence with citations. Formal agentic standards not disclosed." },
+      { ticker: "LSEG", status: "planned", evidence: "Governed marketplace model. MaaS with security framework. Agentic oversight not yet formalized." },
+      { ticker: "MSCI", status: "none", evidence: "No agentic products requiring compliance oversight disclosed." },
+      { ticker: "CSGP", status: "none", evidence: "Consumer AI (Homes AI). No regulated agentic compliance needs." },
+      { ticker: "IT", status: "none", evidence: "Research/advisory model. No agentic products requiring compliance standards." },
+    ],
+  },
+];

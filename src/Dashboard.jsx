@@ -29,7 +29,7 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiNatives, financials, disclosures } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiNatives, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, differentiationMap, standardsAdoption } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
@@ -573,6 +573,351 @@ function DisclosuresTimeline() {
   );
 }
 
+// ─── STATUS STYLING HELPERS ─────────────────────────────────────────────────
+const diffStatusStyles = {
+  leading:  { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", label: "LEADING" },
+  active:   { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", label: "ACTIVE" },
+  early:    { bg: "#FFF8EC", text: "#A56500", border: "#F5DCA0", label: "EARLY" },
+  gap:      { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", label: "GAP" },
+};
+const stdStatusStyles = {
+  adopted:  { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", label: "ADOPTED" },
+  piloting: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", label: "PILOTING" },
+  planned:  { bg: "#FFF8EC", text: "#A56500", border: "#F5DCA0", label: "PLANNED" },
+  none:     { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", label: "NOT STARTED" },
+};
+
+function StatusPill({ status, styles }) {
+  const s = styles[status] || styles.gap || styles.none;
+  return (
+    <span style={{
+      display: "inline-block", fontSize: "8px", fontWeight: 700, letterSpacing: "0.08em",
+      padding: "2px 6px", borderRadius: "3px", fontFamily: "Arial, monospace",
+      background: s.bg, color: s.text, border: "1px solid " + s.border,
+    }}>{s.label}</span>
+  );
+}
+
+// ─── WHAT'S NEW THIS CYCLE ──────────────────────────────────────────────────
+function CycleBriefing() {
+  const [viewMode, setViewMode] = useState("themes"); // "themes" | "companies"
+  const [expandedTheme, setExpandedTheme] = useState(null);
+
+  return (
+    <div style={{
+      background: M.white, border: "1px solid " + M.border, borderRadius: "8px",
+      overflow: "hidden", marginBottom: "20px",
+    }}>
+      {/* Header */}
+      <div style={{
+        background: "linear-gradient(135deg, #001A6E, #0028A1)", padding: "16px 20px",
+        display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px",
+      }}>
+        <div>
+          <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
+            WHAT'S NEW THIS CYCLE
+          </div>
+          <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>
+            90-day peer competitive briefing · {cycleWindow}
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: "4px" }}>
+          {[
+            { id: "themes", label: "By Theme" },
+            { id: "companies", label: "By Company" },
+          ].map(v => (
+            <button key={v.id} onClick={() => setViewMode(v.id)} style={{
+              background: viewMode === v.id ? "rgba(255,255,255,0.2)" : "transparent",
+              color: "#FFF", border: "1px solid rgba(255,255,255,0.25)",
+              borderRadius: "4px", padding: "4px 12px", fontSize: "10px", fontWeight: 600,
+              cursor: "pointer", fontFamily: "Arial, sans-serif",
+              transition: "all 0.15s",
+            }}>{v.label}</button>
+          ))}
+        </div>
+      </div>
+
+      {/* Theme View */}
+      {viewMode === "themes" && (
+        <div style={{ padding: "14px 18px" }}>
+          {cycleThemes.map((t, i) => (
+            <div key={t.theme} style={{
+              marginBottom: i < cycleThemes.length - 1 ? "10px" : 0,
+              border: "1px solid " + M.border, borderRadius: "6px",
+              borderLeft: "4px solid " + t.color, overflow: "hidden",
+            }}>
+              <div
+                onClick={() => setExpandedTheme(expandedTheme === i ? null : i)}
+                style={{
+                  display: "flex", alignItems: "center", justifyContent: "space-between",
+                  padding: "10px 14px", cursor: "pointer",
+                  background: expandedTheme === i ? M.offWhite : M.white,
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = M.offWhite; }}
+                onMouseLeave={e => { if (expandedTheme !== i) e.currentTarget.style.background = M.white; }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: t.color, flexShrink: 0 }} />
+                  <span style={{ fontSize: "12px", fontWeight: 700, color: M.textDark }}>{t.theme}</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>
+                    {t.highlights.length} compan{t.highlights.length === 1 ? "y" : "ies"}
+                  </span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  {/* Show ticker pills in collapsed state */}
+                  {expandedTheme !== i && t.highlights.slice(0, 5).map(h => (
+                    <span key={h.ticker} style={{
+                      fontSize: "9px", fontWeight: 700, color: M.primary,
+                      background: "#F0F4FF", padding: "1px 5px", borderRadius: "3px",
+                      fontFamily: "Arial, monospace",
+                    }}>{h.ticker}</span>
+                  ))}
+                  <span style={{
+                    fontSize: "11px", color: M.midGray,
+                    transition: "transform 0.2s",
+                    transform: expandedTheme === i ? "rotate(180deg)" : "none",
+                    marginLeft: "4px",
+                  }}>▾</span>
+                </div>
+              </div>
+              {expandedTheme === i && (
+                <div style={{ padding: "0 14px 12px 26px" }}>
+                  {t.highlights.map((h, hi) => (
+                    <div key={h.ticker} style={{
+                      display: "flex", gap: "10px", alignItems: "flex-start",
+                      paddingTop: "10px",
+                      borderTop: hi > 0 ? "1px dashed " + M.border : "none",
+                      marginTop: hi > 0 ? "8px" : 0,
+                    }}>
+                      <span style={{
+                        fontSize: "9px", fontWeight: 700, color: M.primary,
+                        background: "#F0F4FF", padding: "2px 6px", borderRadius: "3px",
+                        fontFamily: "Arial, monospace", flexShrink: 0, marginTop: "2px",
+                      }}>{h.ticker}</span>
+                      <span style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65 }}>{h.text}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Company View */}
+      {viewMode === "companies" && (
+        <div style={{ padding: "14px 18px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "10px" }}>
+            {cycleCompanySummaries.map(c => {
+              const peerData = peers.find(p => p.ticker === c.ticker);
+              const accent = peerData ? peerData.accent : M.primary;
+              return (
+                <div key={c.ticker} style={{
+                  border: "1px solid " + M.border, borderRadius: "6px",
+                  borderLeft: "4px solid " + accent, padding: "10px 14px",
+                  background: M.white,
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                    <span style={{
+                      fontSize: "10px", fontWeight: 700, color: accent,
+                      background: peerData ? peerData.tag : "#F0F4FF",
+                      padding: "2px 7px", borderRadius: "4px", fontFamily: "Arial, monospace",
+                    }}>{c.ticker}</span>
+                    <span style={{ fontSize: "12px", fontWeight: 600, color: M.textDark }}>{peerData ? peerData.name : c.ticker}</span>
+                  </div>
+                  <p style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, margin: 0 }}>{c.summary}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── ENHANCED DIFFERENTIATION OPPORTUNITIES ─────────────────────────────────
+function DifferentiationScorecard() {
+  const [expanded, setExpanded] = useState(null);
+
+  return (
+    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
+      <div style={{ background: "linear-gradient(135deg, #0028A1, #001A6E)", padding: "14px 18px" }}>
+        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
+          Differentiation Opportunities
+        </div>
+        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Competitive scorecard — where leaders can pull ahead</div>
+      </div>
+      <div style={{ padding: "14px 18px" }}>
+        {differentiationMap.map((item, i) => {
+          const isExpanded = expanded === i;
+          const leaders = item.peers.filter(p => p.status === "leading").length;
+          const gaps = item.peers.filter(p => p.status === "gap").length;
+          const mcoStyle = diffStatusStyles[item.mcoPosition];
+
+          return (
+            <div key={item.title} style={{
+              marginBottom: "12px", paddingBottom: "12px",
+              borderBottom: i < differentiationMap.length - 1 ? "1px solid " + M.border : "none",
+            }}>
+              <div
+                onClick={() => setExpanded(isExpanded ? null : i)}
+                style={{ cursor: "pointer" }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
+                  <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, flex: 1 }}>{item.title}</div>
+                  <span style={{
+                    fontSize: "9px", fontWeight: 700, color: mcoStyle.text,
+                    background: mcoStyle.bg, border: "1px solid " + mcoStyle.border,
+                    padding: "2px 7px", borderRadius: "3px", fontFamily: "Arial, monospace",
+                  }}>MCO: {mcoStyle.label}</span>
+                  <span style={{
+                    fontSize: "11px", color: M.midGray,
+                    transition: "transform 0.2s",
+                    transform: isExpanded ? "rotate(180deg)" : "none",
+                  }}>▾</span>
+                </div>
+                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, paddingLeft: "16px" }}>{item.desc}</div>
+                {/* Summary counts */}
+                <div style={{ display: "flex", gap: "12px", paddingLeft: "16px", marginTop: "6px" }}>
+                  <span style={{ fontSize: "10px", color: "#1A7A4A", fontFamily: "Arial, monospace" }}>{leaders} leading</span>
+                  <span style={{ fontSize: "10px", color: "#0028A1", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "active").length} active</span>
+                  <span style={{ fontSize: "10px", color: "#A56500", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "early").length} early</span>
+                  <span style={{ fontSize: "10px", color: "#A8001A", fontFamily: "Arial, monospace" }}>{gaps} gap</span>
+                </div>
+              </div>
+
+              {isExpanded && (
+                <div style={{ marginTop: "10px", paddingLeft: "16px" }}>
+                  {/* MCO Position callout */}
+                  <div style={{
+                    background: mcoStyle.bg, border: "1px solid " + mcoStyle.border,
+                    borderRadius: "6px", padding: "10px 12px", marginBottom: "12px",
+                    borderLeft: "3px solid " + mcoStyle.text,
+                  }}>
+                    <div style={{ fontSize: "9px", fontWeight: 700, color: mcoStyle.text, letterSpacing: "0.1em", marginBottom: "4px", fontFamily: "Arial, monospace" }}>MCO POSITION</div>
+                    <div style={{ fontSize: "11px", color: M.textDark, lineHeight: 1.65 }}>{item.mcoNote}</div>
+                  </div>
+
+                  {/* Peer grid */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "6px" }}>
+                    {item.peers.map(p => (
+                      <div key={p.ticker} style={{
+                        display: "flex", alignItems: "flex-start", gap: "8px",
+                        padding: "8px 10px", borderRadius: "4px",
+                        background: p.ticker === "MCO" ? "#F0F4FF" : M.offWhite,
+                        border: p.ticker === "MCO" ? "1px solid #A8BCE8" : "1px solid " + M.border,
+                      }}>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "3px", flexShrink: 0, alignItems: "center", minWidth: "42px" }}>
+                          <span style={{
+                            fontSize: "9px", fontWeight: 700, fontFamily: "Arial, monospace",
+                            color: p.ticker === "MCO" ? M.primary : M.textDark,
+                          }}>{p.ticker}</span>
+                          <StatusPill status={p.status} styles={diffStatusStyles} />
+                        </div>
+                        <span style={{ fontSize: "10px", color: "#4A5568", lineHeight: 1.55 }}>{p.evidence}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── ENHANCED EMERGING STANDARDS & PROTOCOLS ────────────────────────────────
+function StandardsScorecard() {
+  const [expanded, setExpanded] = useState(null);
+
+  return (
+    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
+      <div style={{ background: "linear-gradient(135deg, #001A6E, #0028A1)", padding: "14px 18px" }}>
+        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
+          Emerging Standards & Protocols
+        </div>
+        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Adoption scorecard — industry norms being established in real time</div>
+      </div>
+      <div style={{ padding: "14px 18px" }}>
+        {standardsAdoption.map((item, i) => {
+          const isExpanded = expanded === i;
+          const adopted = item.peers.filter(p => p.status === "adopted").length;
+          const notStarted = item.peers.filter(p => p.status === "none").length;
+          const mcoEntry = item.peers.find(p => p.ticker === "MCO");
+          const mcoStatus = mcoEntry ? mcoEntry.status : "none";
+
+          return (
+            <div key={item.title} style={{
+              marginBottom: "12px", paddingBottom: "12px",
+              borderBottom: i < standardsAdoption.length - 1 ? "1px solid " + M.border : "none",
+            }}>
+              <div
+                onClick={() => setExpanded(isExpanded ? null : i)}
+                style={{ cursor: "pointer" }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
+                  <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, flex: 1 }}>{item.title}</div>
+                  <span style={{
+                    fontSize: "9px", fontWeight: 700,
+                    color: stdStatusStyles[mcoStatus].text,
+                    background: stdStatusStyles[mcoStatus].bg,
+                    border: "1px solid " + stdStatusStyles[mcoStatus].border,
+                    padding: "2px 7px", borderRadius: "3px", fontFamily: "Arial, monospace",
+                  }}>MCO: {stdStatusStyles[mcoStatus].label}</span>
+                  <span style={{
+                    fontSize: "11px", color: M.midGray,
+                    transition: "transform 0.2s",
+                    transform: isExpanded ? "rotate(180deg)" : "none",
+                  }}>▾</span>
+                </div>
+                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, paddingLeft: "16px" }}>{item.desc}</div>
+                {/* Summary counts */}
+                <div style={{ display: "flex", gap: "12px", paddingLeft: "16px", marginTop: "6px" }}>
+                  <span style={{ fontSize: "10px", color: "#1A7A4A", fontFamily: "Arial, monospace" }}>{adopted} adopted</span>
+                  <span style={{ fontSize: "10px", color: "#0028A1", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "piloting").length} piloting</span>
+                  <span style={{ fontSize: "10px", color: "#A56500", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "planned").length} planned</span>
+                  <span style={{ fontSize: "10px", color: "#A8001A", fontFamily: "Arial, monospace" }}>{notStarted} not started</span>
+                </div>
+              </div>
+
+              {isExpanded && (
+                <div style={{ marginTop: "10px", paddingLeft: "16px" }}>
+                  {/* Peer grid */}
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "6px" }}>
+                    {item.peers.map(p => (
+                      <div key={p.ticker} style={{
+                        display: "flex", alignItems: "flex-start", gap: "8px",
+                        padding: "8px 10px", borderRadius: "4px",
+                        background: p.ticker === "MCO" ? "#F0F4FF" : M.offWhite,
+                        border: p.ticker === "MCO" ? "1px solid #A8BCE8" : "1px solid " + M.border,
+                      }}>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "3px", flexShrink: 0, alignItems: "center", minWidth: "50px" }}>
+                          <span style={{
+                            fontSize: "9px", fontWeight: 700, fontFamily: "Arial, monospace",
+                            color: p.ticker === "MCO" ? M.primary : M.textDark,
+                          }}>{p.ticker}</span>
+                          <StatusPill status={p.status} styles={stdStatusStyles} />
+                        </div>
+                        <span style={{ fontSize: "10px", color: "#4A5568", lineHeight: 1.55 }}>{p.evidence}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const [expandedPeers, setExpandedPeers] = useState({});
   const [expandedNatives, setExpandedNatives] = useState({});
@@ -687,6 +1032,9 @@ export default function Dashboard() {
               { title: "GenAI Adoption Accelerating Revenue Growth", text: "Companies that can quantify GenAI's impact on customer economics are seeing accelerating revenue. Thomson Reuters' GenAI ACV doubled from 15% to 28% in three quarters. Moody's GenAI-adopter customers are growing at 2x the overall MA rate. Nasdaq's Verafin enterprise signings quadrupled YoY. Verisk's XactXpert is adopted by 7 of the top 10 homeowners insurers. The inflection from 'we're building AI' to 'AI is driving our numbers' happened in late 2025 for the leaders.", color: "#A8BCE8" },
               { title: "The Execution Gap Is Widening", text: "A clear bifurcation is emerging between leaders with live, monetized AI products and laggards still in the 'building' or 'experimenting' phase. Gartner's AskGartner shows strong leading indicators but contract value grew only 1%, with the stock down 35% YTD. FactSet's methodical approach is sound but ASV growth needs to accelerate. MSCI's AI revenue (~$15-20M) remains small relative to total revenue. The market is increasingly pricing in execution speed, not just strategy articulation.", color: M.red },
             ]} />
+            {/* ── WHAT'S NEW THIS CYCLE ──────────────────────────── */}
+            <CycleBriefing />
+
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: "12px" }}>
               {peers.map((c, i) => (
                 <CompanyCard key={c.ticker + i} company={c} expanded={!!expandedPeers[i]} onToggle={() => togglePeer(i)} />
@@ -695,60 +1043,8 @@ export default function Dashboard() {
 
             {/* ── STRATEGIC INSIGHTS ─────────────────────────────────── */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "24px" }}>
-
-              {/* Differentiation Opportunities */}
-              <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
-                <div style={{ background: "linear-gradient(135deg, #0028A1, #001A6E)", padding: "14px 18px" }}>
-                  <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-                    Differentiation Opportunities
-                  </div>
-                  <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Where leaders can pull ahead of the pack</div>
-                </div>
-                <div style={{ padding: "14px 18px" }}>
-                  {[
-                    { title: "Agentic Workflows That Replace, Not Assist", desc: "Verisk's XactGen and Nasdaq's Digital Sanctions Analyst are the clearest examples of AI replacing entire manual processes rather than augmenting them. Companies that can demonstrate measurable headcount displacement or cycle-time elimination at their customers will command premium pricing and stickier contracts. Moody's Agentic Solutions and Thomson Reuters' CoCounsel are positioned to follow this path.", color: M.green },
-                    { title: "Becoming the Data Layer for Third-Party AI", desc: "LSEG's MCP strategy — making its data available inside ChatGPT, Claude, and Databricks — creates a distribution advantage that's difficult to replicate. Moody's is following with MCP servers on Databricks Marketplace. The opportunity is to become the trusted, governed data source that every AI model in financial services pulls from, regardless of which model the customer chooses.", color: M.lightBlue },
-                    { title: "Vertical AI Products With Consumption Pricing", desc: "The shift from flat subscription to consumption-based pricing for AI features is nascent but potentially transformative. Companies that can meter usage of AI agents — per query, per analysis, per automated workflow — can capture value proportional to the efficiency gains delivered. LSEG is developing this model; first movers will set pricing benchmarks for the industry.", color: M.amber },
-                    { title: "Proprietary Training Data as a Licensing Business", desc: "As frontier models require ever-larger datasets, companies with unique proprietary corpora (Moody's credit data, Verisk's insurance loss history, Thomson Reuters' legal precedent library) have an emerging licensing opportunity. This is a new revenue stream that didn't exist two years ago — selling data access to model providers for training or RAG, separate from the core analytics business.", color: "#7B4FA6" },
-                    { title: "AI-Powered Cross-Sell Into Adjacent Markets", desc: "CoStar's expansion from commercial to residential real estate via Homes AI, S&P Global's push into private markets, and Moody's private credit revenue (up 60% YoY) all show how AI can lower the cost of entering adjacent verticals. The companies with the broadest data estates and most flexible AI infrastructure will be best positioned to expand TAM without proportional cost increases.", color: M.primary },
-                  ].map(item => (
-                    <div key={item.title} style={{ marginBottom: "14px", paddingBottom: "14px", borderBottom: "1px solid " + M.border }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                        <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
-                        <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark }}>{item.title}</div>
-                      </div>
-                      <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.7, paddingLeft: "16px" }}>{item.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Emerging Standards & Protocols */}
-              <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
-                <div style={{ background: "linear-gradient(135deg, #001A6E, #0028A1)", padding: "14px 18px" }}>
-                  <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-                    Emerging Standards & Protocols
-                  </div>
-                  <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Industry norms being established in real time</div>
-                </div>
-                <div style={{ padding: "14px 18px" }}>
-                  {[
-                    { title: "Model Context Protocol (MCP) as Financial Data API", desc: "MCP is rapidly becoming the standard for how AI models access proprietary financial data. LSEG and Moody's are the earliest movers, distributing MCP servers through multiple channels (Anthropic, OpenAI, Databricks, Snowflake). Any company not developing an MCP strategy risks being excluded from the AI workflow layer where customer decisions are increasingly being made.", color: "#FFD166" },
-                    { title: "AI Governance & Explainability Requirements", desc: "Moody's emphasis on 'decision-grade' and 'accurate, explainable and defensible' AI outputs is setting an implicit industry standard. As regulators (EU AI Act, potential U.S. frameworks) formalize AI governance requirements, companies with built-in explainability, audit trails, and human-in-the-loop safeguards will have a compliance advantage. This is becoming table stakes for selling AI into regulated financial institutions.", color: M.lightBlue },
-                    { title: "AI-Adjusted Financial Guidance", desc: "A new disclosure norm is emerging: companies are explicitly quantifying AI's financial impact in forward guidance. Thomson Reuters guides 100bps annual margin expansion from AI. CoStar includes AI cost savings in 2026 numbers. S&P Global targets >20% run-rate expense reduction from AI by 2027. Investors are beginning to expect this level of specificity — companies that can't quantify AI's P&L impact will face valuation pressure.", color: M.green },
-                    { title: "Consumption-Based AI Pricing Models", desc: "The subscription-to-consumption pricing transition is being pioneered by LSEG and Nasdaq in financial data. As AI features deliver variable value (an agentic workflow that saves one client 100 hours saves another 1,000), consumption pricing aligns revenue with customer value. The companies establishing these pricing frameworks now are setting norms that the rest of the industry will follow.", color: M.primary },
-                    { title: "Agentic AI Compliance & Oversight Standards", desc: "Nasdaq's rollout of agentic workers in anti-financial crime (with 80%+ workload reduction) is creating precedent for how autonomous AI agents operate in regulated environments. The emerging standard includes: human oversight for high-stakes decisions, full audit trails for every agent action, regulatory approval workflows, and clear accountability when agents make errors. These guardrails are being defined by early adopters before regulators formalize them.", color: M.red },
-                  ].map(item => (
-                    <div key={item.title} style={{ marginBottom: "14px", paddingBottom: "14px", borderBottom: "1px solid " + M.border }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                        <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
-                        <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark }}>{item.title}</div>
-                      </div>
-                      <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.7, paddingLeft: "16px" }}>{item.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <DifferentiationScorecard />
+              <StandardsScorecard />
             </div>
 
           </>
