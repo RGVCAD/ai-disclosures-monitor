@@ -619,10 +619,10 @@ export const differentiationMap = [
     title: "AI-Powered Cross-Sell Into Adjacent Markets",
     color: "#0028A1",
     desc: "Using AI to lower the cost of entering adjacent verticals, expanding TAM without proportional cost increases. The companies with the broadest data estates and most flexible AI infrastructure capture new markets fastest.",
-    mcoPosition: "leading",
-    mcoNote: "MCO's private credit revenue is up 60% YoY and agentic solutions span credit assessment, KYC, portfolio monitoring, and sales intelligence — the broadest AI-enabled adjacency play in the peer group. TIE blockchain integration opens DeFi credit markets. The opportunity is to quantify how AI reduces cost-to-serve in new verticals.",
+    mcoPosition: "active",
+    mcoNote: "MCO's Agentic Solutions span credit assessment, KYC screening, portfolio monitoring, and sales intelligence — multiple workflow adjacencies powered by AI. TIE blockchain integration opens credit analysis to DeFi markets. CreditLens AI-enabled lending suite saw ~67% revenue uplift on upgrade. The opportunity is to quantify how AI specifically lowers cost-to-serve in new verticals.",
     peers: [
-      { ticker: "MCO", status: "leading", evidence: "Private credit revenue +60% YoY. Agentic Solutions spans credit, KYC, portfolio monitoring, sales intelligence. TIE opens blockchain/DeFi credit markets." },
+      { ticker: "MCO", status: "active", evidence: "Agentic Solutions spans credit assessment, KYC, portfolio monitoring, sales intelligence. TIE opens blockchain/DeFi credit markets. CreditLens AI upgrade: ~67% revenue uplift." },
       { ticker: "CSGP", status: "leading", evidence: "Commercial to residential real estate via Homes AI. Matterport acquisition adds spatial intelligence (14M spaces, 177 countries). $100M agent revenue." },
       { ticker: "SPGI", status: "active", evidence: "Push into private markets via iLEVEL, energy forecasting via Enertel AI acquisition, biopharma analytics via Visible Alpha." },
       { ticker: "NDAQ", status: "active", evidence: "25 total FinTech cross-sell wins in 2025 (42 cumulative since Adenza). Every G-SIB now a client." },
