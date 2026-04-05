@@ -769,14 +769,7 @@ function DifferentiationScorecard() {
   const [expanded, setExpanded] = useState(null);
 
   return (
-    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
-      <div style={{ background: "linear-gradient(135deg, #0028A1, #001A6E)", padding: "14px 18px" }}>
-        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-          Differentiation Opportunities
-        </div>
-        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Competitive scorecard — where leaders can pull ahead</div>
-      </div>
-      <div style={{ padding: "14px 18px" }}>
+    <div>
         {differentiationMap.map((item, i) => {
           const isExpanded = expanded === i;
           const leaders = item.peers.filter(p => p.status === "leading").length;
@@ -853,7 +846,6 @@ function DifferentiationScorecard() {
             </div>
           );
         })}
-      </div>
     </div>
   );
 }
@@ -863,14 +855,7 @@ function StandardsScorecard() {
   const [expanded, setExpanded] = useState(null);
 
   return (
-    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflow: "hidden" }}>
-      <div style={{ background: "linear-gradient(135deg, #001A6E, #0028A1)", padding: "14px 18px" }}>
-        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-          Emerging Standards & Protocols
-        </div>
-        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.6)", marginTop: "3px" }}>Adoption scorecard — industry norms being established in real time</div>
-      </div>
-      <div style={{ padding: "14px 18px" }}>
+    <div>
         {standardsAdoption.map((item, i) => {
           const isExpanded = expanded === i;
           const adopted = item.peers.filter(p => p.status === "adopted").length;
@@ -940,7 +925,6 @@ function StandardsScorecard() {
             </div>
           );
         })}
-      </div>
     </div>
   );
 }
@@ -1054,7 +1038,7 @@ export default function Dashboard() {
             <ThemeGrid themes={[
               { title: "Proprietary Data as the Moat", text: "Every peer group company makes the same core strategic argument: curated, domain-specific, licensed data cannot be replicated by general-purpose LLMs. Moody's (600M+ entities), LSEG (90% IP-protected revenue), Verisk (insurance loss data spanning decades), and Thomson Reuters (legal/tax corpus) all position their data estates as the irreplaceable foundation that AI enhances rather than disrupts. The companies monetizing this thesis fastest are those embedding AI directly into existing subscription workflows rather than selling AI as a standalone product.", color: M.lightBlue },
               { title: "Agentic AI Is Replacing Manual Workflows", text: "The frontier has moved from chatbots and copilots to autonomous multi-step agents. Moody's Agentic Solutions automates credit assessment and KYC screening. Verisk's XactGen produces near-complete insurance claims estimates from aerial imagery alone. Nasdaq's Digital Sanctions Analyst cuts human review workload by 80%+. Thomson Reuters' CoCounsel handles legal research workflows end-to-end. CoStar's Homes AI spans the full real estate search experience. The common pattern: these aren't demos — they're live products processing real customer workloads.", color: "#6ED9A0" },
-              { title: "MCP Is Becoming the Standard for Financial Data Access", text: "Model Context Protocol (MCP) is emerging as the de facto API standard for connecting enterprise AI models to proprietary financial data. LSEG has 60+ institutions connected and partnerships with Anthropic, OpenAI, Microsoft, Databricks, Snowflake, and Rogo. Moody's is distributing MCP servers through Databricks Marketplace and Claude for Financial Services. This infrastructure layer is critical — whoever controls the data plumbing for AI workflows controls the customer relationship.", color: "#FFD166" },
+              { title: "MCP as the Financial Data Standard", text: "Model Context Protocol (MCP) is emerging as the de facto API standard for connecting enterprise AI models to proprietary financial data. LSEG has 60+ institutions connected and partnerships with Anthropic, OpenAI, Microsoft, Databricks, Snowflake, and Rogo. Moody's is distributing MCP servers through Databricks Marketplace and Claude for Financial Services. This infrastructure layer is critical — whoever controls the data plumbing for AI workflows controls the customer relationship.", color: "#FFD166" },
               { title: "AI Investment Is Self-Funding", text: "The most disciplined operators are using AI savings to fund AI investment, creating a virtuous cycle. S&P Global has automated >50% of data workflows and eliminated 10%+ of applications. Thomson Reuters is guiding 100bps of annual margin expansion through 2028 from AI efficiencies. MSCI is targeting 5-15% opex reduction to reinvest entirely into new products. CoStar's AI cost savings are explicitly included in 2026 guidance. Even FactSet's 'amplify, not replace' strategy is designed to protect margins while investing.", color: "#F59090" },
               { title: "GenAI Adoption Accelerating Revenue Growth", text: "Companies that can quantify GenAI's impact on customer economics are seeing accelerating revenue. Thomson Reuters' GenAI ACV doubled from 15% to 28% in three quarters. Moody's GenAI-adopter customers are growing at 2x the overall MA rate. Nasdaq's Verafin enterprise signings quadrupled YoY. Verisk's XactXpert is adopted by 7 of the top 10 homeowners insurers. The inflection from 'we're building AI' to 'AI is driving our numbers' happened in late 2025 for the leaders.", color: "#A8BCE8" },
               { title: "The Execution Gap Is Widening", text: "A clear bifurcation is emerging between leaders with live, monetized AI products and laggards still in the 'building' or 'experimenting' phase. Gartner's AskGartner shows strong leading indicators but contract value grew only 1%, with the stock down 35% YTD. FactSet's methodical approach is sound but ASV growth needs to accelerate. MSCI's AI revenue (~$15-20M) remains small relative to total revenue. The market is increasingly pricing in execution speed, not just strategy articulation.", color: M.red },
@@ -1085,8 +1069,22 @@ export default function Dashboard() {
 
             {/* ── STRATEGIC INSIGHTS ─────────────────────────────────── */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "24px" }}>
-              <DifferentiationScorecard />
-              <StandardsScorecard />
+              <CollapsibleSection
+                title="DIFFERENTIATION OPPORTUNITIES"
+                subtitle="competitive scorecard"
+                defaultOpen={true}
+                accentColor="#0028A1"
+              >
+                <DifferentiationScorecard />
+              </CollapsibleSection>
+              <CollapsibleSection
+                title="EMERGING STANDARDS"
+                subtitle="adoption scorecard"
+                defaultOpen={true}
+                accentColor="#001A6E"
+              >
+                <StandardsScorecard />
+              </CollapsibleSection>
             </div>
 
           </>
