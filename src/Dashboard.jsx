@@ -248,8 +248,8 @@ function ThemeGrid({ themes }) {
               onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
               onMouseLeave={e => { if (!expandedThemes[i]) e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <div style={{ fontSize: "11px", fontWeight: 700, color: "#FFFFFF", fontFamily: "Arial, sans-serif" }}>{t.title}</div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", minWidth: 0 }}>
+                <div title={t.title} style={{ fontSize: "11px", fontWeight: 700, color: "#FFFFFF", fontFamily: "Arial, sans-serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", minWidth: 0, flex: 1 }}>{t.title}</div>
                 <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)", transition: "transform 0.2s", transform: expandedThemes[i] ? "rotate(180deg)" : "none", flexShrink: 0, marginLeft: "8px" }}>▾</span>
               </div>
               {expandedThemes[i] && (

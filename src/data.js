@@ -4,13 +4,13 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 5, 2026";
+export const lastUpdated = "April 6, 2026";
 export const whatsNew = [
+  "OpenAI closes $122B financing round at $852B valuation (Apr 5): anchored by Amazon ($50B), Nvidia & SoftBank ($30B each), Microsoft; 900M+ weekly active users; revolving credit facility expanded to $4.7B",
+  "Anthropic blacklisted by US government as national-security supply-chain risk (Apr 5): company declined military surveillance/weapons use of Claude; federal judge temporarily blocks order; UK actively courting Anthropic for expansion",
+  "Morningstar launches AI Assistant in Direct Advisory Suite (early Apr): embedded in beta for 4,000 advisors; streamlines research, meeting prep, client proposals; client data not used for model training",
   "Anthropic acquired Coefficient Bio for ~$400M (Apr 3): AI biotech startup for drug discovery; team joins healthcare life sciences group",
   "OpenAI Codex pay-as-you-go pricing (Apr 3): 2M+ weekly developers, 6x usage growth since Jan; ChatGPT Business seat price cut to $20/mo; GPT-4o fully retired",
-  "Google Gemini API Flex & Priority tiers (Apr 2): Flex offers 50% cost reduction for background tasks; Priority adds premium reliability for real-time workloads",
-  "Gartner predicts enterprises will abandon assistive AI (Apr 2): >50% expected to drop copilots/smart advisors by 2028, shifting to outcome-focused workflow platforms",
-  "Anthropic signed MOU with Australian government (Apr 1): data center investment exploration, AUD 3M university research partnerships, AI safety sharing",
 ];
 
 export const peers = [
@@ -268,7 +268,7 @@ export const aiNatives = [
     sourceDate: "Feb 12, 2026",
     sourceUrl: "https://techcrunch.com/2026/02/12/anthropic-raises-another-30-billion-in-series-g-with-a-new-value-of-380-billion/",
     guidance: "$14B ARR (Feb 2026); $18–26B ARR target for 2026; FCF positive by 2028",
-    risk: "Pentagon supply-chain risk designation effective Jun 30, 2026 — defense contractors required to cut ties. Could open enterprise gov segment to competitors.",
+    risk: "US government blacklisted Anthropic as national-security supply-chain risk (Apr 5) after declining military surveillance/weapons use of Claude. Federal judge temporarily blocked order. Pentagon deadline Jun 30, 2026 — defense contractors required to cut ties. UK actively courting for expansion.",
   },
   {
     ticker: "PRIVATE",
@@ -277,20 +277,20 @@ export const aiNatives = [
     accent: "#1A7A4A",
     tag: "#EDFAF3",
     tagText: "#1A7A4A",
-    headline: "$25B ARR — 910M Weekly Active Users",
-    metric: "$25B",
-    metricLabel: "annualized revenue run-rate (Feb 2026)",
+    headline: "$122B Raised at $852B Valuation — 900M+ WAU",
+    metric: "$852B",
+    metricLabel: "post-money valuation (Apr 2026 close)",
     theme: "Practical Adoption — Consumer + Enterprise 2026",
     status: "frontrunner",
     statusLabel: "Frontrunner",
     aiSummary: "Dominant consumer AI brand globally (910M WAU). Pivoting 2026 strategy to 'practical adoption' and enterprise. 9M+ paying business users; ChatGPT Enterprise is the fastest-growing enterprise platform in history. Revenue directly tracks compute capacity — 10x growth from 2023 to 2025. IPO preparations active (H2 2026 filing target).",
-    keyFact: "Raised $40B+ in 2025 at $500B valuation. Renegotiated Microsoft deal: 20% revenue share through 2032. Inference costs reached $8.4B in 2025, projected $14.1B in 2026 — a structural constraint. Gross margin 33% vs. Anthropic's improving trajectory.",
+    keyFact: "Closed $122B round (Apr 5): Amazon $50B, NVIDIA $30B, SoftBank $30B, Microsoft. Revolving credit facility expanded to $4.7B. Renegotiated Microsoft deal: 20% revenue share through 2032. Inference costs: $8.4B in 2025, projected $14.1B in 2026. Gross margin 33%.",
     quote: "The priority is closing the gap between what AI now makes possible and how people, companies, and countries are using it day to day.",
     speaker: "CFO Sarah Friar",
     source: "OpenAI Business Strategy Blog",
     sourceDate: "Jan 18, 2026",
     sourceUrl: "https://www.cnbc.com/2026/01/19/openai-to-focus-on-practical-adoption-in-2026-says-finance-chief-sarah-friar.html",
-    guidance: "~$25B ARR (Feb 2026); 2026 cash burn ~$8.5B; IPO targeted H2 2026",
+    guidance: "~$25B ARR (Feb 2026); $852B valuation (Apr 2026); 2026 cash burn ~$8.5B; IPO targeted H2 2026",
     risk: "33% gross margin constrained by $14.1B projected inference costs in 2026; consumer subscription saturation risk in some markets; $13B+ Microsoft revenue share through 2027",
   },
   {
@@ -426,8 +426,10 @@ export const disclosures = [
   { date: "Feb 12, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q1 2026", summary: "$30B Series G at $380B valuation (second-largest venture round ever). $14B ARR at time of raise, 85% from enterprise. Claude Code at $2.5B+ annualized revenue. Business subscriptions quadrupled since January 2026. Paid consumer subscriptions doubled Jan-Feb 2026. 300,000+ business customers.", source: "Anthropic Series G", sourceUrl: "https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html" },
   { date: "Apr 1, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Signed MOU with Australian government under National AI Plan. Exploring data center and energy infrastructure investment in Australia. AUD 3M in research partnerships with Australian National University and Garvan Institute focused on genomics and disease diagnosis. Committed to sharing AI safety research and emerging model capabilities/risks with Australian regulators. First formal government AI partnership under Australia's National AI strategy.", source: "Australian Government Anthropic MOU", sourceUrl: "https://www.industry.gov.au/news/australian-government-has-signed-memorandum-understanding-mou-global-ai-innovator-anthropic" },
   { date: "Apr 3, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Acquired AI biotech startup Coefficient Bio for approximately $400M in stock. Coefficient Bio (fewer than 10 employees, founded by former Genentech/Prescient Design researchers) built an AI platform for drug discovery planning, clinical regulatory strategy, and drug opportunity identification. Team joins Anthropic's healthcare life sciences group. Follows Oct 2025 Claude for Life Sciences launch. Strategic bet that embedding Claude in biopharma R&D workflows captures recurring enterprise revenue.", source: "TechCrunch - Anthropic Coefficient Bio Acquisition", sourceUrl: "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" },
+  { date: "Apr 5, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "US government blacklisted Anthropic as a national-security supply-chain risk after the company declined to allow military use of Claude for surveillance or autonomous weapons. Defense contractors required to cut ties by Jun 30, 2026. Federal judge temporarily blocked the blacklisting order. Britain actively courting Anthropic for UK expansion as US relationship deteriorates.", source: "Let's Data Science - Anthropic Blacklisting", sourceUrl: "https://letsdatascience.com/news/us-blacklists-anthropic-as-security-risk-5e0f08ff" },
 
   // ── OpenAI ────────────────────────────────────────────────────────
+  { date: "Apr 5, 2026", company: "OpenAI", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Closed $122B financing round (final, up from $110B announced in Feb) at $852B post-money valuation. Anchored by Amazon ($50B), NVIDIA ($30B), SoftBank ($30B), and Microsoft. ~$3B from retail investors via bank channels. 900M+ weekly active users, 50M+ paid subscribers, enterprise now 40%+ of revenue. Revolving credit facility expanded to $4.7B. GPT-5.4 model launched in the quarter.", source: "OpenAI Financing Announcement", sourceUrl: "https://openai.com/index/accelerating-the-next-phase-ai/" },
   { date: "Apr 3, 2026", company: "OpenAI", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Codex shifted to pay-as-you-go pricing for ChatGPT Business and Enterprise plans. ChatGPT Business seat price reduced from $25 to $20/month. Codex-only seats billed on token consumption with no rate limits; eligible workspaces receive up to $500 in promotional credits per member. Codex usage grew 6x since Jan 2026, now serving 2M+ weekly developers with 70%+ month-over-month growth. GPT-4o fully retired from all plans on same date.", source: "OpenAI Codex Flexible Pricing", sourceUrl: "https://openai.com/index/codex-flexible-pricing-for-teams/" },
   { date: "Mar 31, 2026", company: "OpenAI", ticker: "PRIVATE", quarter: "Q1 2026", summary: "Closed $122B funding round (up from $110B announced in Feb) at $852B valuation. Led by SoftBank and Andreessen Horowitz; Amazon $50B, NVIDIA $30B, SoftBank $30B. ~$3B from retail investors via bank channels. Revenue now $2B/month. 900M+ weekly active users, 50M+ paid subscribers. IPO preparations advancing — included in ARK Invest ETFs.", source: "OpenAI $122B Funding Round", sourceUrl: "https://openai.com/index/accelerating-the-next-phase-ai/" },
   { date: "Mar 24, 2026", company: "OpenAI", ticker: "PRIVATE", quarter: "Q1 2026", summary: "Sora video generation tool discontinued. App shutdown scheduled Apr 26, 2026; API sunset Sep 24, 2026. Product peaked at ~1M users before declining below 500K; daily compute costs approximately $1M. Strategic pivot toward coding and enterprise products confirmed by leadership. Disney $1B partnership collapsed as a result. Signals company-wide shift from creative AI tools to productivity and enterprise use cases.", source: "OpenAI Sora Discontinuation", sourceUrl: "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/" },
@@ -453,7 +455,7 @@ export const disclosures = [
 // Updated by the daily refresh task alongside disclosures.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const cycleWindow = "Jan 5 – Apr 5, 2026";
+export const cycleWindow = "Jan 6 – Apr 6, 2026";
 
 export const cycleThemes = [
   {
