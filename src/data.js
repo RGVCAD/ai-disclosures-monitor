@@ -4,13 +4,13 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 6, 2026";
+export const lastUpdated = "April 8, 2026";
 export const whatsNew = [
+  "Anthropic launches Project Glasswing with Claude Mythos Preview (Apr 7): cybersecurity initiative with 12 partners (AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks); $100M in usage credits; discovered thousands of zero-day vulnerabilities including 27-year-old OpenBSD bug; model deemed too powerful for public release",
+  "MSCI acquires PM Insights for private markets secondary data (Apr 7): covers $5.5T+ market cap across private company securities; aggregates daily pricing, valuation, transaction and liquidity data from institutional broker-dealers and bank secondary desks",
   "OpenAI closes $122B financing round at $852B valuation (Apr 5): anchored by Amazon ($50B), Nvidia & SoftBank ($30B each), Microsoft; 900M+ weekly active users; revolving credit facility expanded to $4.7B",
   "Anthropic blacklisted by US government as national-security supply-chain risk (Apr 5): company declined military surveillance/weapons use of Claude; federal judge temporarily blocks order; UK actively courting Anthropic for expansion",
   "Morningstar launches AI Assistant in Direct Advisory Suite (early Apr): embedded in beta for 4,000 advisors; streamlines research, meeting prep, client proposals; client data not used for model training",
-  "Anthropic acquired Coefficient Bio for ~$400M (Apr 3): AI biotech startup for drug discovery; team joins healthcare life sciences group",
-  "OpenAI Codex pay-as-you-go pricing (Apr 3): 2M+ weekly developers, 6x usage growth since Jan; ChatGPT Business seat price cut to $20/mo; GPT-4o fully retired",
 ];
 
 export const peers = [
@@ -166,7 +166,7 @@ export const peers = [
     status: "laggard",
     statusLabel: "Laggard",
     aiSummary: "Distinctive and deliberate strategy: AI cost savings (targeting 5–15% opex reduction) are to be fully reinvested into new product development rather than taken as margin expansion. 3–4 year AI journey already underway internally. AI used for ESG controversy analysis, private asset data gathering, and factor model development.",
-    keyFact: "~$15–20M in AI product revenue from 25 new AI-powered products in 2025 — small but accelerating. CEO Fernandez calls MSCI 'a total AI machine.' $3B additional share repurchase authorized in Q3 2025.",
+    keyFact: "~$15–20M in AI product revenue from 25 new AI-powered products in 2025 — small but accelerating. CEO Fernandez calls MSCI 'a total AI machine.' $3B additional share repurchase authorized in Q3 2025. Acquired PM Insights (Apr 7, 2026) for private markets secondary data covering $5.5T+ market cap.",
     quote: "If we apply AI dramatically and lower our operating run-the-business expenses by 5%, 10%, 15%, all of that money can go into investing into the change in the business.",
     speaker: "CEO Henry Fernandez",
     source: "MSCI Q3 2025 Earnings Call",
@@ -260,8 +260,8 @@ export const aiNatives = [
     theme: "Enterprise-First / Claude + Claude Code",
     status: "frontrunner",
     statusLabel: "Frontrunner",
-    aiSummary: "Enterprise AI market leader by revenue share. 85% of revenue from business customers — the inverse of OpenAI. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). 500+ customers spending $1M+/yr. 8 of Fortune 10 are customers. Three-year revenue growth: ~$0 → $1B → ~$10B → $14B. IPO preparations underway (Wilson Sonsini engaged).",
-    keyFact: "$30B Series G led by GIC & Coatue closed Feb 12, 2026. Partners include Microsoft ($5B), NVIDIA ($10B), Amazon ($4B), Google. The Claude Partner Network launched with $100M investment (Mar 2026). Claude Code: 4% of all public GitHub commits worldwide authored by Claude Code as of Feb 2026.",
+    aiSummary: "Enterprise AI market leader by revenue share. 85% of revenue from business customers — the inverse of OpenAI. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). 500+ customers spending $1M+/yr. 8 of Fortune 10 are customers. Three-year revenue growth: ~$0 → $1B → ~$10B → $14B. IPO preparations underway. Project Glasswing (Apr 7): Claude Mythos Preview deployed for cybersecurity with 12 major tech/finance partners; found thousands of zero-day vulnerabilities; model deemed too powerful for public release.",
+    keyFact: "$30B Series G led by GIC & Coatue closed Feb 12, 2026. Partners include Microsoft ($5B), NVIDIA ($10B), Amazon ($4B), Google. The Claude Partner Network launched with $100M investment (Mar 2026). Claude Code: 4% of all public GitHub commits worldwide. Project Glasswing: $100M in usage credits + $4M to open-source security orgs. Partners: AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks.",
     quote: "Claude is increasingly becoming critical to how businesses work.",
     speaker: "CFO Krishna Rao",
     source: "Anthropic Series G Announcement",
@@ -393,6 +393,7 @@ export const disclosures = [
   { date: "Jan 28, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q4 2025", summary: "25 AI-powered products launched in 2025 generating $15-20M in revenue. 120+ internal AI projects underway. CEO Fernandez: transformation into 'total AI machine.' Data production throughput doubled. Data production costs reduced 25%. 11 consecutive years of double-digit adjusted EPS growth.", source: "MSCI Q4 2025 Earnings", sourceUrl: "https://ir.msci.com/news-releases/news-release-details/msci-reports-financial-results-fourth-quarter-and-full-year-2025" },
   { date: "Jan 28, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q4 2025", summary: "Q4 2025: 10%+ organic revenue growth, 13%+ adjusted EBITDA growth, ~12% adjusted EPS growth. Total run rate $3.3B+ (13% growth). Index-linked AUM ~$7 trillion. Run-rate operating expense reduction targets: 5%, 10%, 15% in phased approach through 2026.", source: "MSCI Q4 2025 Financial Results", sourceUrl: "https://ir.msci.com/news-releases/news-release-details/msci-reports-financial-results-fourth-quarter-and-full-year-2025" },
   { date: "Sep 2025", company: "MSCI", ticker: "MSCI", quarter: "Q3 2025", summary: "AI Portfolio Insights launched: combines generative AI with advanced analytics for portfolio risk/return analysis. MSCI Global AI Index launched Oct 15, 2025 tracking 100 leading global AI companies. AI-ESG firms shown to improve ratings 2.3x faster with 147 bps average financing cost reduction.", source: "MSCI AI Portfolio Insights Launch", sourceUrl: "https://www.msci.com/data-and-analytics/risk-management-solutions/ai-portfolio-insights" },
+  { date: "Apr 7, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q2 2026", summary: "Acquired PM Insights: specialist private markets data and analytics firm providing daily secondary market reference data — pricing, valuation, transaction and liquidity data for private company securities. Aggregates proprietary data from institutional broker-dealers and bank secondary desks covering $5.5T+ estimated market cap. Advances MSCI's strategy to bring institutional-grade data and pricing transparency to private asset investing. Results reported within Index segment.", source: "MSCI PM Insights Acquisition", sourceUrl: "https://www.msci.com/discover-msci/media-room/msci-advances-transparency-in-private-markets-with-acquisition-of-pm-insights" },
 
   // ── NDAQ — Nasdaq ─────────────────────────────────────────────────
   { date: "Mar 11, 2026", company: "Nasdaq", ticker: "NDAQ", quarter: "Q1 2026", summary: "2026 Global Financial Crime Report: illicit financial activity surged to $4.4T in 2025 (up $1.3T since 2023). 90% of financial institutions reporting increased AI-driven attacks. AI-powered fraud and money laundering accelerating across all channels. Report validates demand for Nasdaq Verafin agentic AI compliance solutions.", source: "Nasdaq Verafin 2026 Global Financial Crime Report", sourceUrl: "https://www.globenewswire.com/news-release/2026/03/11/3253546/6948/en/Nasdaq-Verafin-Report-Finds-the-Financial-Crime-Epidemic-Reaching-Alarming-New-Heights-as-Illicit-Financial-Activity-Surges-to-4-4-Trillion-in-2025.html" },
@@ -427,6 +428,7 @@ export const disclosures = [
   { date: "Apr 1, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Signed MOU with Australian government under National AI Plan. Exploring data center and energy infrastructure investment in Australia. AUD 3M in research partnerships with Australian National University and Garvan Institute focused on genomics and disease diagnosis. Committed to sharing AI safety research and emerging model capabilities/risks with Australian regulators. First formal government AI partnership under Australia's National AI strategy.", source: "Australian Government Anthropic MOU", sourceUrl: "https://www.industry.gov.au/news/australian-government-has-signed-memorandum-understanding-mou-global-ai-innovator-anthropic" },
   { date: "Apr 3, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Acquired AI biotech startup Coefficient Bio for approximately $400M in stock. Coefficient Bio (fewer than 10 employees, founded by former Genentech/Prescient Design researchers) built an AI platform for drug discovery planning, clinical regulatory strategy, and drug opportunity identification. Team joins Anthropic's healthcare life sciences group. Follows Oct 2025 Claude for Life Sciences launch. Strategic bet that embedding Claude in biopharma R&D workflows captures recurring enterprise revenue.", source: "TechCrunch - Anthropic Coefficient Bio Acquisition", sourceUrl: "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" },
   { date: "Apr 5, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "US government blacklisted Anthropic as a national-security supply-chain risk after the company declined to allow military use of Claude for surveillance or autonomous weapons. Defense contractors required to cut ties by Jun 30, 2026. Federal judge temporarily blocked the blacklisting order. Britain actively courting Anthropic for UK expansion as US relationship deteriorates.", source: "Let's Data Science - Anthropic Blacklisting", sourceUrl: "https://letsdatascience.com/news/us-blacklists-anthropic-as-security-risk-5e0f08ff" },
+  { date: "Apr 7, 2026", company: "Anthropic", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Project Glasswing launched: cybersecurity initiative pairing Claude Mythos Preview — an unreleased frontier model with 'step change' capabilities — with 12 major partners (AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, Linux Foundation, Microsoft, Nvidia, Palo Alto Networks). Mythos found thousands of high-severity zero-day vulnerabilities including a 27-year-old OpenBSD bug and a 16-year-old FFmpeg flaw. $100M in usage credits committed plus $4M to open-source security orgs. 40+ additional organizations granted access. Model deemed too powerful for public release.", source: "TechCrunch - Anthropic Mythos Project Glasswing", sourceUrl: "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/" },
 
   // ── OpenAI ────────────────────────────────────────────────────────
   { date: "Apr 5, 2026", company: "OpenAI", ticker: "PRIVATE", quarter: "Q2 2026", summary: "Closed $122B financing round (final, up from $110B announced in Feb) at $852B post-money valuation. Anchored by Amazon ($50B), NVIDIA ($30B), SoftBank ($30B), and Microsoft. ~$3B from retail investors via bank channels. 900M+ weekly active users, 50M+ paid subscribers, enterprise now 40%+ of revenue. Revolving credit facility expanded to $4.7B. GPT-5.4 model launched in the quarter.", source: "OpenAI Financing Announcement", sourceUrl: "https://openai.com/index/accelerating-the-next-phase-ai/" },
@@ -455,7 +457,7 @@ export const disclosures = [
 // Updated by the daily refresh task alongside disclosures.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const cycleWindow = "Jan 6 – Apr 6, 2026";
+export const cycleWindow = "Jan 8 – Apr 8, 2026";
 
 export const cycleThemes = [
   {
@@ -492,7 +494,7 @@ export const cycleThemes = [
     color: "#C97B00",
     highlights: [
       { ticker: "SPGI", text: "Acquired Enertel AI Corporation (Mar 18) — AI/ML-driven short-term power price forecasting for North American electricity markets. Capital IQ Pro expanded with Drift AI for Excel-based financial modeling and ProntoNLP sentiment analytics." },
-      { ticker: "MSCI", text: "Acquired Vantager (Mar 2) — AI-native platform automating pre-investment due diligence for institutional private markets investors. Processed thousands of private funds, 100K+ underlying investments." },
+      { ticker: "MSCI", text: "Acquired Vantager (Mar 2) for AI-native private markets diligence and PM Insights (Apr 7) for secondary market data covering $5.5T+ market cap. Accelerating end-to-end private markets data strategy." },
       { ticker: "TRI", text: "Smokeball partnership (Mar 25): integrates CoCounsel Legal with practice management for small/mid-size law firms. Real-time data connector syncs documents across platforms." },
       { ticker: "CSGP", text: "Matterport integration delivering 40x more detail views on listings. Subscribers with Matterport show 37% higher renewal rates." },
     ],
@@ -526,7 +528,7 @@ export const cycleCompanySummaries = [
   { ticker: "LSEG", summary: "MCP expanded to M365 Copilot. MaaS marketplace launched with Societe Generale. 60+ institutions on MCP. 350K users migrated to Workspace. EBITDA margin surpassed 50%." },
   { ticker: "VRSK", summary: "Investor Day: 6-8% OCC revenue growth targets (2026-2028). XactGen agentic claims launched. 22 AI modules released (beat target). Insurance fraud study: 76% of insurers see more sophisticated manipulated media." },
   { ticker: "CSGP", summary: "Homes AI launched: 3.8x longer sessions, 7x more leads, 64% bounce rate reduction. 115M monthly unique visitors. $100M annualized agent revenue. 50% of software dev dedicated to AI." },
-  { ticker: "MSCI", summary: "Acquired Vantager for AI-native private markets diligence. IndexAI Insights launched with ChatGPT and Claude connectors. 25 AI products generating $15-20M. Targeting 5-15% opex reduction for reinvestment." },
+  { ticker: "MSCI", summary: "Acquired Vantager for AI-native private markets diligence (Mar 2) and PM Insights for secondary market data covering $5.5T+ market cap (Apr 7). IndexAI Insights launched with ChatGPT and Claude connectors. 25 AI products generating $15-20M. Targeting 5-15% opex reduction for reinvestment." },
   { ticker: "NDAQ", summary: "Agentic AI Workforce: 350+ clients, 80%+ workload reduction. $100M AI efficiency target by 2027. Verafin enterprise signings 4x YoY. First to exceed $5B net revenue." },
   { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. But CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028." },
   { ticker: "FDS", summary: "First CAIO appointed (Kate Stepp). AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
@@ -631,7 +633,7 @@ export const differentiationMap = [
       { ticker: "TRI", status: "active", evidence: "CoCounsel expanding from law firms to corporate legal to tax/audit. Smokeball partnership targets small/mid-size firms." },
       { ticker: "FDS", status: "active", evidence: "AI for Banking expands from buy-side into investment banking workflows. ComplyAdvantage integration adds KYC/AML." },
       { ticker: "VRSK", status: "early", evidence: "Core Lines Reimagine expanding into specialty insurance. Conversational AI for life/annuity (Ask Max, Tell Max)." },
-      { ticker: "MSCI", status: "early", evidence: "Expanding from index/ESG into private markets due diligence via Vantager acquisition. Wealth management as new AI growth vector." },
+      { ticker: "MSCI", status: "active", evidence: "Expanding from index/ESG into private markets via Vantager (diligence) and PM Insights ($5.5T+ secondary market data) acquisitions. Wealth management as new AI growth vector." },
       { ticker: "LSEG", status: "early", evidence: "Focus on deepening existing D&A relationships rather than new verticals. MCP could enable adjacency but strategy is distribution, not vertical expansion." },
       { ticker: "IT", status: "gap", evidence: "Divesting Digital Markets. CV growth only 1%. AI investment focused on defending core Research business, not expanding into new markets." },
     ],
