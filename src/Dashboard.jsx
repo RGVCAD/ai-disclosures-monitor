@@ -156,6 +156,17 @@ function CompanyCard({ company, expanded, onToggle }) {
                 <div style={{ fontSize: "10px", color: M.midGray }}>— {company.speaker}</div>
               </div>
 
+              {/* vs. MCO */}
+              {company.mcoComparison && company.ticker !== "MCO" && (
+                <div style={{
+                  background: "#F0F4FF", border: "1px solid #A8BCE8",
+                  borderRadius: "6px", padding: "10px 12px", marginBottom: "12px",
+                }}>
+                  <div style={{ fontSize: "9px", color: M.primary, letterSpacing: "0.12em", fontWeight: 700, marginBottom: "4px", fontFamily: "Arial, monospace" }}>VS. MCO</div>
+                  <div style={{ fontSize: "11px", color: M.textDark, lineHeight: 1.65 }}>{company.mcoComparison}</div>
+                </div>
+              )}
+
               {/* Guidance + Risk */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "12px" }}>
                 <div style={{

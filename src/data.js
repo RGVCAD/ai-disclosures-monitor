@@ -36,6 +36,7 @@ export const peers = [
     sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/",
     guidance: "High-single-digit rev growth; Adj. op. margin 52–53%; Adj. EPS $16.40–17.00; FCF $2.8–3.0B",
     risk: "Competition from SPGI in AI-driven analytics; regulatory scrutiny on rating agencies; cyclical exposure to debt issuance volumes",
+    mcoComparison: "Moody's is the benchmark for this peer set on GenAI monetization: 40% of MA product ARR is GenAI-enabled, the GenAI adopter cohort ARR is growing at 2x the MA average, and Research Assistant is the fastest-adopted product in company history. The MCP distribution partnerships with Anthropic, Databricks, and OpenAI, combined with the Token Integration Engine on Canton, push Moody's further ahead of peers still framing AI as an internal efficiency play.",
   },
   {
     ticker: "SPGI",
@@ -59,6 +60,7 @@ export const peers = [
     sourceUrl: "https://investor.spglobal.com/news-releases/news-details/2025/SP-Global-to-Present-Next-Phase-of-its-Growth-Strategy-and-Medium-Term-Financial-Targets-at-Investor-Day-2025/default.aspx",
     guidance: "6–8% organic CCY rev growth; 9–10% Adj. EPS growth; Mobility spin-off filing Q2 2026",
     risk: "AI product narrative less developed vs. TRI/VRSK; Mobility spin creates near-term noise; higher-than-expected bond issuance assumptions in guidance",
+    mcoComparison: "SPGI leads MCO on internal AI efficiency — 66% of 40,000 employees on Spark Assist, >50% of workflows automated, and a 20%+ run-rate expense reduction target by 2027. External AI product velocity is catching up (ChatIQ, Kensho/Gemini, Enertel AI, Capital IQ Pro expansion) but lacks MCO's quantified external ARR flywheel. SPGI's AI story is framed as operating leverage; MCO's is framed as product monetization — reflecting where each company sees its moat.",
   },
   {
     ticker: "TRI",
@@ -82,6 +84,7 @@ export const peers = [
     sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/",
     guidance: "7.5–8% organic rev growth; +100bps EBITDA margin/yr through 2026–2028; ~$2.1B FCF",
     risk: "Stock fell ~7% post-earnings despite beat — market pricing in AI disruption risk from general-purpose models",
+    mcoComparison: "TRI is the closest structural analog to MCO on GenAI monetization: 28% AI ACV (up from 15% a year ago) vs. MCO's 40% MA GenAI-enabled ARR. CoCounsel reaching 1M users in 107 countries and the upcoming 'Thomson' proprietary legal LLM show a content-moat strategy that mirrors MCO's Research Assistant + credit-data moat. MCO still leads on agentic distribution (MCP with Anthropic/Databricks/OpenAI), while TRI leads on consumer-facing legal vertical depth.",
   },
   {
     ticker: "LSEG",
@@ -105,6 +108,7 @@ export const peers = [
     sourceUrl: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results",
     guidance: "6.5–7.5% organic rev growth; +80–100bps EBITDA margin; ≥£2.7B FCF (2026)",
     risk: "MCP monetisation is nascent — adoption strong but revenue contribution not yet quantified; consumption pricing model still being developed",
+    mcoComparison: "LSEG's 'LSEG Everywhere / MCP' positioning directly overlaps MCO's Agentic Solutions + MCP strategy — both are first movers in partnering with Anthropic, OpenAI, Microsoft, Databricks and Snowflake. LSEG is broader in scope (60+ institutions, Model-as-a-Service marketplace, Microsoft Copilot integration across 33 petabytes) while MCO goes deeper in credit/risk vertical workflows. Neither has fully priced the MCP consumption model, so this is a parallel race rather than a head-to-head displacement risk.",
   },
   {
     ticker: "VRSK",
@@ -128,6 +132,7 @@ export const peers = [
     sourceUrl: "https://www.stocktitan.net/news/VRSK/verisk-reports-fourth-quarter-and-full-year-2025-financial-b4bhfuj9ttxi.html",
     guidance: "Rev $3.19–3.24B; Adj. EBITDA $1.79–1.83B; Adj. EPS $7.45–7.75 (2026)",
     risk: "Terminated AccuLynx acquisition (FTC review); transactional revenue expected to trough in Q1 2026",
+    mcoComparison: "Verisk has the most operationally-specific agentic AI in this peer group — XactGen generating near-complete claims estimates from imagery and policy data, 22 AI modules released in 2025 and 25 planned for 2026, and 35+ AI products live. Verisk's moat is deeply vertical in insurance, whereas MCO's is in credit and risk. The structural insight is that both companies convert a proprietary data estate into agentic workflow automation — Verisk's playbook is directly instructive for how MCO can productize Research Assistant into end-to-end credit memo generation.",
   },
   {
     ticker: "CSGP",
@@ -151,6 +156,7 @@ export const peers = [
     sourceUrl: "https://www.costargroup.com/press-room/2026/costar-group-full-year-2025-revenue-increased-19-year-over-year-net-income-7",
     guidance: "Rev $3.78–3.82B; Adj. EBITDA $740–800M (2026 margin ~20% at midpoint)",
     risk: "Homes.com residential investment still maturing; Q4 bookings lighter than some expectations; commercial CRE recovery pace uncertain",
+    mcoComparison: "CoStar is using AI both offensively (Homes AI consumer product with 3.8x longer sessions, 7x more favorites) and defensively (AI-quantified cost savings already embedded in 2026 guidance). MCO's CRE risk assessment workflows overlap CoStar's commercial real estate intelligence, but CoStar's consumer-facing residential AI has no MCO analog. The defensive playbook — explicitly sizing AI cost savings inside forward guidance — is a useful template MCO has not yet adopted publicly.",
   },
   {
     ticker: "MSCI",
@@ -174,6 +180,7 @@ export const peers = [
     sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/10/28/msci-msci-q3-2025-earnings-call-transcript/",
     guidance: "$3.3B+ run rate; private markets & wealth management as AI growth vectors; ~$7T index-linked AUM",
     risk: "AI product revenue (~$15–20M) still small vs. total revenue; near-term margin compression as investment cycle ramps; Q1 2026 operating income down ~5%",
+    mcoComparison: "MSCI's explicit decision to reinvest 5–15% AI opex savings into new products — rather than taking the savings as margin — is a structurally different capital allocation choice than MCO's margin-accretive GenAI ramp. Both are pushing hard into private markets (MSCI's Vantager + PM Insights acquisitions mirror MCO's private credit push), and the IndexAI Insights connectors in ChatGPT and Claude are a direct competitive parallel to MCO's MCP server distribution. MCO's near-term earnings profile looks cleaner; MSCI's bet is on a longer-duration product flywheel.",
   },
   {
     ticker: "NDAQ",
@@ -197,6 +204,7 @@ export const peers = [
     sourceUrl: "https://www.nasdaq.com/newsroom/nasdaq-q4-earnings-outstanding-2025-nasdaq-exceeds-5-billion-net-revenue-first-time",
     guidance: "ARR $3.1B (+10% YoY); Solutions rev $4B; 24% diluted EPS growth FY 2025",
     risk: "Financial crime AI product rollout subject to regulatory approval timelines; margin compression from Adenza integration costs",
+    mcoComparison: "Nasdaq's Agentic AI Workforce at Verafin — Digital Sanctions Analyst, Enhanced Due Diligence Analyst, GenAI Entity Research Copilot — is the most direct agentic-compliance competitor to MCO's KYC automation and screening workflows. Verafin claims 80%+ alert-review reduction and caught $1B+ in check fraud in 2025, and every G-SIB is a client. The $100M AI-driven run-rate efficiency target by 2027 also mirrors MCO's GenAI productivity framing. This is the peer most likely to compete directly with MCO on agentic AFC and third-party risk workflows.",
   },
   {
     ticker: "IT",
@@ -220,6 +228,7 @@ export const peers = [
     sourceUrl: "https://news.alphastreet.com/gartner-inc-it-q4-2025-earnings-call-transcript/",
     guidance: "FY 2025 rev $6.5B (+4%); Q1 2026 Adj. EBITDA ≥$370M; CV acceleration expected H2 2026",
     risk: "Contract value grew only 1% overall (4% ex-federal); consulting revenue declining YoY; Digital Markets business being divested",
+    mcoComparison: "AskGartner is a direct structural analog to MCO's Research Assistant — both convert a proprietary insight corpus (6,000+ Gartner AI docs vs. Moody's 600M-entity data estate) into a conversational research product. But Gartner's leading indicators are failing to translate into contract value (CV +1% overall, +4% ex-federal) while MCO's MA ARR is compounding at 8%. Gartner's April 2026 prediction that enterprises will abandon assistive copilots for outcome-focused workflow platforms is essentially validation of the agentic direction MCO is already pursuing.",
   },
   {
     ticker: "FDS",
@@ -243,6 +252,7 @@ export const peers = [
     sourceUrl: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html",
     guidance: "FY2026 (to Aug 2026): Organic ASV +5.4–6.7%; GAAP rev $2.45–2.47B; Adj. EPS $17.25–17.75 (raised)",
     risk: "Adjusted operating margin contracted to 35.0% (from 36.3% prior year) as AI/tech investment ramps; GAAP EPS declined 4.5% YoY; competitive pressure from Bloomberg, LSEG, and AI-native entrants",
+    mcoComparison: "FactSet's AI platform build-out is accelerating: 85K+ users on AI Document Search, a production-grade MCP server, Mercury AI chatbot, AI for Banking (with Finster AI), ComplyAdvantage integration for KYC/AML, and AI Doc Ingest for Cobalt. The 'amplify, not replace' framing and the elevation of Kate Stepp to first Chief AI Officer signal AI is now the primary strategic axis. FactSet lags MCO on external GenAI ARR monetization but is closing fast on distribution (MCP, Explorer, Workstation). Margin compression (35.0% from 36.3%) is the cost of this investment cycle.",
   },
 ];
 
