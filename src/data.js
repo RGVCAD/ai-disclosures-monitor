@@ -246,7 +246,7 @@ export const peers = [
   },
 ];
 
-export const aiNatives = [
+export const aiBig4 = [
   {
     ticker: "PRIVATE",
     name: "Anthropic",
@@ -315,6 +315,82 @@ export const aiNatives = [
     sourceUrl: "https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx",
     guidance: "Cloud +48% YoY in Q4 2025; $175–185B CapEx in 2026; Cloud op. margin 30.1%",
     risk: "Antitrust exposure (Search monopoly ruling); $175–185B CapEx requires sustained AI monetisation to justify; Waymo still burning cash",
+  },
+  {
+    ticker: "META",
+    name: "Meta Platforms",
+    sector: "Hyperscaler, Frontier AI & Social Platforms",
+    accent: "#4A5568",
+    tag: "#F0F4FF",
+    tagText: "#0028A1",
+    headline: "Placeholder — deep research pending (Phase 3)",
+    metric: "TBD",
+    metricLabel: "placeholder metric",
+    theme: "Open-Weights Llama + AI Ad Stack",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
+    aiSummary: "Placeholder entry for Phase 3 research. Meta operates Llama (open-weights frontier family), Meta AI assistant across WhatsApp / Instagram / Facebook / Messenger, and an AI-driven ad platform. Deep research pending — headline, metrics, quotes, guidance, and risks will be filled in during the next research cycle.",
+    keyFact: "Placeholder — to be populated in Phase 3 research cycle.",
+    quote: "Placeholder quote pending deep research.",
+    speaker: "TBD",
+    source: "Pending",
+    sourceDate: "Pending",
+    sourceUrl: "https://about.fb.com/",
+    guidance: "Placeholder — to be populated in Phase 3.",
+    risk: "Placeholder — to be populated in Phase 3.",
+  },
+];
+
+// ─── OTHER FIRMS ────────────────────────────────────────────────────────────
+// Companies that are leading in AI disclosures but are not part of the DAIS peer
+// group and are not AI-native hyperscalers. Starts minimal — deeper research
+// pending in Phase 3.
+export const otherFirms = [
+  {
+    ticker: "ACN",
+    name: "Accenture",
+    sector: "Global Consulting & Managed Services",
+    accent: "#4A5568",
+    tag: "#F0F4FF",
+    tagText: "#0028A1",
+    headline: "Placeholder — deep research pending (Phase 3)",
+    metric: "TBD",
+    metricLabel: "placeholder metric",
+    theme: "Enterprise GenAI Services & Reinvention",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
+    aiSummary: "Placeholder entry. Accenture is one of the largest enterprise GenAI services providers — GenAI bookings have been a major disclosure theme across recent earnings. Deep research pending — headline, metrics, quotes, guidance, and risks will be filled in during the next research cycle.",
+    keyFact: "Placeholder — to be populated in Phase 3 research cycle.",
+    quote: "Placeholder quote pending deep research.",
+    speaker: "TBD",
+    source: "Pending",
+    sourceDate: "Pending",
+    sourceUrl: "https://www.accenture.com/us-en/about/company-index",
+    guidance: "Placeholder — to be populated in Phase 3.",
+    risk: "Placeholder — to be populated in Phase 3.",
+  },
+  {
+    ticker: "CRM",
+    name: "Salesforce",
+    sector: "Enterprise SaaS — CRM & Agentforce",
+    accent: "#4A5568",
+    tag: "#F0F4FF",
+    tagText: "#0028A1",
+    headline: "Placeholder — deep research pending (Phase 3)",
+    metric: "TBD",
+    metricLabel: "placeholder metric",
+    theme: "Agentforce — Agentic CRM Platform",
+    status: "frontrunner",
+    statusLabel: "Frontrunner",
+    aiSummary: "Placeholder entry. Salesforce has made Agentforce (agentic AI for CRM) the centrepiece of its 2025–2026 narrative, with consumption pricing and deployment metrics disclosed at recent earnings and Dreamforce. Deep research pending — headline, metrics, quotes, guidance, and risks will be filled in during the next research cycle.",
+    keyFact: "Placeholder — to be populated in Phase 3 research cycle.",
+    quote: "Placeholder quote pending deep research.",
+    speaker: "TBD",
+    source: "Pending",
+    sourceDate: "Pending",
+    sourceUrl: "https://investor.salesforce.com/",
+    guidance: "Placeholder — to be populated in Phase 3.",
+    risk: "Placeholder — to be populated in Phase 3.",
   },
 ];
 

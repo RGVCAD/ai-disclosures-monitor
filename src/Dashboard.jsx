@@ -29,11 +29,11 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiNatives, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, differentiationMap, standardsAdoption } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, differentiationMap, standardsAdoption } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
-  laggard:     { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", dot: "#CC2030" },
+  laggard:     { bg: "#FEF3E0", text: "#A56500", border: "#F5D8A8", dot: "#C97B00" },
   frontrunner: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", dot: "#0028A1" },
 };
 
@@ -71,9 +71,9 @@ function CompanyCard({ company, expanded, onToggle }) {
       onMouseEnter={e => { if (!expanded) { e.currentTarget.style.boxShadow = "0 3px 12px rgba(0,40,161,0.10)"; }}}
       onMouseLeave={e => { if (!expanded) { e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,40,161,0.05)"; }}}
     >
-      {/* Left accent border */}
+      {/* Left accent border — status-driven (green leader / amber laggard / gray other) */}
       <div style={{ display: "flex" }}>
-        <div style={{ width: "4px", background: company.accent, flexShrink: 0 }} />
+        <div style={{ width: "4px", background: statusConfig[company.status]?.dot || M.border, flexShrink: 0 }} />
 
         <div style={{ flex: 1, padding: "16px 16px 14px" }}>
           {/* Top row */}
@@ -81,7 +81,8 @@ function CompanyCard({ company, expanded, onToggle }) {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "5px", flexWrap: "wrap" }}>
                 <span style={{
-                  background: company.tag, color: company.tagText,
+                  background: M.offWhite, color: M.textDark,
+                  border: "1px solid " + M.border,
                   fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em",
                   padding: "2px 7px", borderRadius: "4px",
                   fontFamily: "Arial, monospace",
@@ -92,7 +93,7 @@ function CompanyCard({ company, expanded, onToggle }) {
               <div style={{ fontSize: "10px", color: M.midGray, marginTop: "2px", letterSpacing: "0.03em" }}>{company.sector}</div>
             </div>
             <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "12px" }}>
-              <div style={{ fontSize: "22px", fontWeight: 800, color: company.accent, fontFamily: "Arial, monospace", lineHeight: 1 }}>{company.metric}</div>
+              <div style={{ fontSize: "22px", fontWeight: 800, color: M.textDark, fontFamily: "Arial, monospace", lineHeight: 1 }}>{company.metric}</div>
               <div style={{ fontSize: "10px", color: M.midGray, marginTop: "2px", maxWidth: "130px", textAlign: "right", lineHeight: 1.4 }}>{company.metricLabel}</div>
             </div>
           </div>
@@ -147,9 +148,9 @@ function CompanyCard({ company, expanded, onToggle }) {
 
               {/* Quote */}
               <div style={{
-                borderLeft: `3px solid ${company.accent}`,
+                borderLeft: `3px solid ${M.border}`,
                 paddingLeft: "12px", marginBottom: "12px",
-                background: company.tag, borderRadius: "0 6px 6px 0", padding: "10px 12px 10px 14px",
+                background: M.offWhite, borderRadius: "0 6px 6px 0", padding: "10px 12px 10px 14px",
               }}>
                 <div style={{ fontSize: "12px", color: M.textDark, fontStyle: "italic", lineHeight: 1.6, marginBottom: "5px" }}>"{company.quote}"</div>
                 <div style={{ fontSize: "10px", color: M.midGray }}>— {company.speaker}</div>
@@ -384,7 +385,7 @@ function DisclosuresTimeline() {
   // Matching on ticker avoids any name-mismatch silently dropping a company.
   const companyMeta = {};
   const companyOrder = [];
-  [...peers, ...aiNatives].forEach(c => {
+  [...peers, ...aiBig4, ...otherFirms].forEach(c => {
     // For unique tickers, match by ticker alone. For shared tickers (e.g. both
     // Anthropic and OpenAI use "PRIVATE"), also require the first word of the
     // peer name to appear in the disclosure company name so they don't collide.
@@ -393,7 +394,14 @@ function DisclosuresTimeline() {
       (disclosures.find(d => d.ticker === c.ticker && d.company.toLowerCase().includes(firstWord))
        ?? disclosures.find(d => d.ticker === c.ticker))?.company ?? c.name;
     if (!companyMeta[disclosureName]) {
-      companyMeta[disclosureName] = { accent: c.accent, ticker: c.ticker, tag: c.tag, tagText: c.tagText };
+      // Neutralized — all companies now use the same subtle gray/navy palette.
+      // Color only surfaces for Leaders/Laggards badges and MCO status callouts.
+      companyMeta[disclosureName] = {
+        accent: M.midGray,
+        ticker: c.ticker,
+        tag: M.offWhite,
+        tagText: M.textDark,
+      };
       companyOrder.push(disclosureName);
     }
   });
@@ -469,7 +477,7 @@ function DisclosuresTimeline() {
 
       {/* Companies */}
       {presentCompanies.map(companyName => {
-        const meta = companyMeta[companyName] || { accent: M.primary, ticker: "—", tag: "#F0F4FF", tagText: M.primary };
+        const meta = companyMeta[companyName] || { accent: M.midGray, ticker: "—", tag: M.offWhite, tagText: M.textDark };
         const quarters = Object.keys(grouped[companyName]).sort((a, b) => parseQuarter(b) - parseQuarter(a));
         const discCount = Object.values(grouped[companyName]).reduce((s, arr) => s + arr.length, 0);
 
@@ -599,37 +607,50 @@ function StatusPill({ status, styles }) {
 }
 
 // ─── COLLAPSIBLE SECTION WRAPPER ────────────────────────────────────────────
-function CollapsibleSection({ title, subtitle, defaultOpen = true, accentColor, children }) {
+function CollapsibleSection({ title, subtitle, description, defaultOpen = true, accentColor, children }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div style={{
-      marginBottom: "20px", borderRadius: "8px", overflow: "hidden",
+      marginBottom: "16px", borderRadius: "8px", overflow: "hidden",
       border: "1px solid " + M.border,
     }}>
       <div
         onClick={() => setOpen(o => !o)}
         style={{
-          display: "flex", alignItems: "center", justifyContent: "space-between",
-          padding: "12px 18px", cursor: "pointer",
+          cursor: "pointer",
           background: accentColor || M.navy,
           transition: "background 0.15s",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
-            {title}
-          </span>
-          {subtitle && (
-            <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.55)", fontFamily: "Arial, monospace" }}>
-              {subtitle}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "12px 18px 10px",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "#FFF", letterSpacing: "0.06em", fontFamily: "Arial, sans-serif" }}>
+              {title}
             </span>
-          )}
+            {subtitle && (
+              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.55)", fontFamily: "Arial, monospace" }}>
+                {subtitle}
+              </span>
+            )}
+          </div>
+          <span style={{
+            fontSize: "12px", color: "rgba(255,255,255,0.7)",
+            transition: "transform 0.2s",
+            transform: open ? "rotate(180deg)" : "none",
+          }}>▾</span>
         </div>
-        <span style={{
-          fontSize: "12px", color: "rgba(255,255,255,0.7)",
-          transition: "transform 0.2s",
-          transform: open ? "rotate(180deg)" : "none",
-        }}>▾</span>
+        {description && (
+          <div style={{
+            fontSize: "11px", color: "rgba(255,255,255,0.78)",
+            lineHeight: 1.55, padding: "0 18px 12px",
+            fontFamily: "Arial, sans-serif",
+          }}>
+            {description}
+          </div>
+        )}
       </div>
       {open && (
         <div style={{ padding: "16px 18px", background: M.offWhite }}>
@@ -932,10 +953,12 @@ function StandardsScorecard() {
 export default function Dashboard() {
   const [expandedPeers, setExpandedPeers] = useState({});
   const [expandedNatives, setExpandedNatives] = useState({});
+  const [expandedOther, setExpandedOther] = useState({});
   const [activeTab, setActiveTab] = useState("peers");
 
   const togglePeer = i => setExpandedPeers(p => ({ ...p, [i]: !p[i] }));
   const toggleNative = i => setExpandedNatives(p => ({ ...p, [i]: !p[i] }));
+  const toggleOther = i => setExpandedOther(p => ({ ...p, [i]: !p[i] }));
 
   return (
     <div style={{ background: M.offWhite, minHeight: "100vh", fontFamily: "Arial, sans-serif", color: M.textDark }}>
@@ -969,15 +992,15 @@ export default function Dashboard() {
                 AI Disclosures Monitor
               </h1>
               <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "12px", marginTop: "5px" }}>
-                {[...peers, ...aiNatives].length} Companies · {disclosures.length} Quantitative AI Disclosures · Hard Metrics Linked to Primary Sources
+                {[...peers, ...aiBig4, ...otherFirms].length} Companies · {disclosures.length} Quantitative AI Disclosures · Hard Metrics Linked to Primary Sources
               </p>
             </div>
             <div style={{ display: "flex", gap: "24px", paddingBottom: "2px" }}>
               {[
-                { v: [...peers, ...aiNatives].length, l: "COMPANIES", c: M.lightBlue },
+                { v: [...peers, ...aiBig4, ...otherFirms].length, l: "COMPANIES", c: M.lightBlue },
                 { v: lastUpdated.split(",")[0].replace("March ", "Mar "), l: "DATA AS OF", c: "#FFF" },
                 { v: peers.filter(p => p.status === "leader").length, l: "LEADERS", c: "#6ED9A0" },
-                { v: peers.filter(p => p.status === "laggard").length, l: "LAGGARDS", c: "#F59090" },
+                { v: peers.filter(p => p.status === "laggard").length, l: "LAGGARDS", c: "#F5B478" },
               ].map(s => (
                 <div key={s.l} style={{ textAlign: "center" }}>
                   <div style={{ fontSize: "20px", fontWeight: 800, color: s.c, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.v}</div>
@@ -990,10 +1013,11 @@ export default function Dashboard() {
           {/* Tabs */}
           <div style={{ display: "flex", gap: "3px" }}>
             {[
-              { id: "peers", label: "Peers", sub: "10 companies", count: 10 },
-              { id: "natives", label: "AI Natives", sub: "3 companies", count: 3 },
+              { id: "peers", label: "Peers", sub: `${peers.length} companies`, count: peers.length },
+              { id: "natives", label: "AI Big 4", sub: `${aiBig4.length} companies`, count: aiBig4.length },
+              { id: "otherfirms", label: "Other Firms", sub: `${otherFirms.length} companies`, count: otherFirms.length },
               { id: "timeline", label: "AI Disclosures", sub: "by date", count: disclosures.length },
-              { id: "financials", label: "Peer Financials", sub: "peer comparison", count: 10 },
+              { id: "financials", label: "Peer Financials", sub: "peer comparison", count: financials.length },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
                 background: activeTab === tab.id ? M.white : "transparent",
@@ -1021,43 +1045,92 @@ export default function Dashboard() {
       {/* ── CONTENT ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "22px 28px 40px" }}>
 
-        {/* WHAT'S NEW BANNER — collapsible */}
-        <WhatsNewBanner />
-
         {/* PEER GROUP TAB */}
         {activeTab === "peers" && (
           <>
-            <SectionBanner
-              title="PEER GROUP — DATA, ANALYTICS & INFORMATION SERVICES"
-              subtitle={<>MCO, SPGI, TRI, LSEG, VRSK, CSGP, MSCI, Nasdaq, Gartner, FactSet — all incumbents navigating AI as both opportunity and threat. Shared thesis: <strong>proprietary data + domain expertise = durable moat.</strong> Key divergence: speed of AI monetisation.</>}
-              stats={[
-                { value: peers.filter(p => p.status === "leader").length, label: "LEADERS", color: M.green },
-                { value: peers.filter(p => p.status === "laggard").length, label: "LAGGARDS", color: M.red },
-              ]}
-            />
+            {/* ── 1. PEER GROUP (collapsible) ─────────────────────── */}
+            <CollapsibleSection
+              title="PEER GROUP"
+              subtitle={`${peers.length} companies`}
+              description="Overview of the 10 peers we track, how they're grouped, and their sector roles."
+              defaultOpen={false}
+              accentColor={M.navy}
+            >
+              <SectionBanner
+                title="PEER GROUP — DATA, ANALYTICS & INFORMATION SERVICES"
+                subtitle={<>MCO, SPGI, TRI, LSEG, VRSK, CSGP, MSCI, Nasdaq, Gartner, FactSet — all incumbents navigating AI as both opportunity and threat. Shared thesis: <strong>proprietary data + domain expertise = durable moat.</strong> Key divergence: speed of AI monetisation.</>}
+                stats={[
+                  { value: peers.filter(p => p.status === "leader").length, label: "LEADERS", color: M.green },
+                  { value: peers.filter(p => p.status === "laggard").length, label: "LAGGARDS", color: M.amber },
+                ]}
+              />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "8px" }}>
+                {peers.map(p => (
+                  <div key={p.ticker} style={{
+                    background: M.white, border: "1px solid " + M.border,
+                    borderRadius: "6px", padding: "10px 12px",
+                    display: "flex", alignItems: "center", gap: "10px",
+                  }}>
+                    <div style={{
+                      fontSize: "10px", fontWeight: 700, fontFamily: "Arial, monospace",
+                      color: M.textDark, minWidth: "42px",
+                    }}>{p.ticker}</div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: "11px", fontWeight: 600, color: M.textDark, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</div>
+                      <div style={{ fontSize: "9px", color: M.midGray, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.sector}</div>
+                    </div>
+                    <Badge status={p.status} label={p.statusLabel} />
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* ── 2. RECENT HIGHLIGHTS (collapsible) ──────────────── */}
+            <CollapsibleSection
+              title="RECENT HIGHLIGHTS"
+              subtitle={`${whatsNew.length} items · as of ${lastUpdated}`}
+              description="The five most significant AI disclosures across the peer group in the last few days."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <WhatsNewBanner />
+            </CollapsibleSection>
+
+            {/* ── 3. CROSS-GROUP THEMES (collapsible) ─────────────── */}
+            <CollapsibleSection
+              title="CROSS-GROUP THEMES"
+              subtitle="6 themes"
+              description="The AI themes that cut across multiple peers this cycle — agentic workflows, MCP distribution, internal AI efficiency, and more."
+              defaultOpen={false}
+              accentColor={M.navy}
+            >
             <ThemeGrid themes={[
               { title: "Proprietary Data as the Moat", text: "Every peer group company makes the same core strategic argument: curated, domain-specific, licensed data cannot be replicated by general-purpose LLMs. Moody's (600M+ entities), LSEG (90% IP-protected revenue), Verisk (insurance loss data spanning decades), and Thomson Reuters (legal/tax corpus) all position their data estates as the irreplaceable foundation that AI enhances rather than disrupts. The companies monetizing this thesis fastest are those embedding AI directly into existing subscription workflows rather than selling AI as a standalone product.", color: M.lightBlue },
               { title: "Agentic AI Is Replacing Manual Workflows", text: "The frontier has moved from chatbots and copilots to autonomous multi-step agents. Moody's Agentic Solutions automates credit assessment and KYC screening. Verisk's XactGen produces near-complete insurance claims estimates from aerial imagery alone. Nasdaq's Digital Sanctions Analyst cuts human review workload by 80%+. Thomson Reuters' CoCounsel handles legal research workflows end-to-end. CoStar's Homes AI spans the full real estate search experience. The common pattern: these aren't demos — they're live products processing real customer workloads.", color: "#6ED9A0" },
               { title: "MCP as the Financial Data Standard", text: "Model Context Protocol (MCP) is emerging as the de facto API standard for connecting enterprise AI models to proprietary financial data. LSEG has 60+ institutions connected and partnerships with Anthropic, OpenAI, Microsoft, Databricks, Snowflake, and Rogo. Moody's is distributing MCP servers through Databricks Marketplace and Claude for Financial Services. This infrastructure layer is critical — whoever controls the data plumbing for AI workflows controls the customer relationship.", color: "#FFD166" },
               { title: "AI Investment Is Self-Funding", text: "The most disciplined operators are using AI savings to fund AI investment, creating a virtuous cycle. S&P Global has automated >50% of data workflows and eliminated 10%+ of applications. Thomson Reuters is guiding 100bps of annual margin expansion through 2028 from AI efficiencies. MSCI is targeting 5-15% opex reduction to reinvest entirely into new products. CoStar's AI cost savings are explicitly included in 2026 guidance. Even FactSet's 'amplify, not replace' strategy is designed to protect margins while investing.", color: "#F59090" },
               { title: "GenAI Adoption Accelerating Revenue Growth", text: "Companies that can quantify GenAI's impact on customer economics are seeing accelerating revenue. Thomson Reuters' GenAI ACV doubled from 15% to 28% in three quarters. Moody's GenAI-adopter customers are growing at 2x the overall MA rate. Nasdaq's Verafin enterprise signings quadrupled YoY. Verisk's XactXpert is adopted by 7 of the top 10 homeowners insurers. The inflection from 'we're building AI' to 'AI is driving our numbers' happened in late 2025 for the leaders.", color: "#A8BCE8" },
-              { title: "The Execution Gap Is Widening", text: "A clear bifurcation is emerging between leaders with live, monetized AI products and laggards still in the 'building' or 'experimenting' phase. Gartner's AskGartner shows strong leading indicators but contract value grew only 1%, with the stock down 35% YTD. FactSet's methodical approach is sound but ASV growth needs to accelerate. MSCI's AI revenue (~$15-20M) remains small relative to total revenue. The market is increasingly pricing in execution speed, not just strategy articulation.", color: M.red },
+              { title: "The Execution Gap Is Widening", text: "A clear bifurcation is emerging between leaders with live, monetized AI products and laggards still in the 'building' or 'experimenting' phase. Gartner's AskGartner shows strong leading indicators but contract value grew only 1%, with the stock down 35% YTD. FactSet's methodical approach is sound but ASV growth needs to accelerate. MSCI's AI revenue (~$15-20M) remains small relative to total revenue. The market is increasingly pricing in execution speed, not just strategy articulation.", color: M.amber },
             ]} />
-            {/* ── WHAT'S NEW THIS CYCLE (collapsible) ────────────── */}
+            </CollapsibleSection>
+
+            {/* ── 4. WHAT'S NEW THIS CYCLE (collapsible) ────────── */}
             <CollapsibleSection
               title="WHAT'S NEW THIS CYCLE"
               subtitle={cycleWindow}
+              description="Theme-grouped competitive briefing covering the most important peer AI disclosures from the last ~90 days."
               defaultOpen={false}
               accentColor={M.primary}
             >
               <CycleBriefing />
             </CollapsibleSection>
 
-            {/* ── COMPANY CARDS (collapsible) ─────────────────────── */}
+            {/* ── 5. COMPANY PROFILES (collapsible) ──────────────── */}
             <CollapsibleSection
               title="COMPANY PROFILES"
               subtitle={`${peers.length} peer companies`}
-              defaultOpen={true}
+              description="One-card summary per peer with headline metric, AI strategy, key quote, guidance, and risks. Leader/Laggard status is shown on each card."
+              defaultOpen={false}
               accentColor={M.navy}
             >
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: "12px" }}>
@@ -1067,25 +1140,27 @@ export default function Dashboard() {
               </div>
             </CollapsibleSection>
 
-            {/* ── STRATEGIC INSIGHTS ─────────────────────────────────── */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "24px" }}>
-              <CollapsibleSection
-                title="DIFFERENTIATION OPPORTUNITIES"
-                subtitle="competitive scorecard"
-                defaultOpen={true}
-                accentColor="#0028A1"
-              >
-                <DifferentiationScorecard />
-              </CollapsibleSection>
-              <CollapsibleSection
-                title="EMERGING STANDARDS"
-                subtitle="adoption scorecard"
-                defaultOpen={true}
-                accentColor="#001A6E"
-              >
-                <StandardsScorecard />
-              </CollapsibleSection>
-            </div>
+            {/* ── 6. DIFFERENTIATION OPPORTUNITIES (collapsible) ── */}
+            <CollapsibleSection
+              title="DIFFERENTIATION OPPORTUNITIES"
+              subtitle="competitive scorecard"
+              description="Five AI themes where MCO could win or lose ground, with every peer's execution status and MCO's current position called out."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <DifferentiationScorecard />
+            </CollapsibleSection>
+
+            {/* ── 7. EMERGING STANDARDS (collapsible) ────────────── */}
+            <CollapsibleSection
+              title="EMERGING STANDARDS"
+              subtitle="adoption scorecard"
+              description="Adoption scorecard for new AI protocols and practices — MCP, governance, consumption pricing, AI-adjusted guidance, and agentic compliance."
+              defaultOpen={false}
+              accentColor={M.navy}
+            >
+              <StandardsScorecard />
+            </CollapsibleSection>
 
           </>
         )}
@@ -1150,8 +1225,8 @@ export default function Dashboard() {
         {activeTab === "natives" && (
           <>
             <SectionBanner
-              title="AI NATIVES — FRONTIER MODEL LABS & HYPERSCALERS"
-              subtitle={<>Anthropic, OpenAI, and Alphabet — simultaneously <strong>suppliers, partners, and competitive threats</strong> to the peer group. Understanding their trajectory is essential for any AI disruption risk assessment of the peers above.</>}
+              title="AI BIG 4 — FRONTIER MODEL LABS & HYPERSCALERS"
+              subtitle={<>Anthropic, OpenAI, Alphabet, and Meta — simultaneously <strong>suppliers, partners, and competitive threats</strong> to the peer group. Understanding their trajectory is essential for any AI disruption risk assessment of the peers above.</>}
               stats={[
                 { value: "$14B", label: "ANTHROPIC ARR", color: M.primary },
                 { value: "$25B", label: "OPENAI ARR", color: M.green },
@@ -1160,7 +1235,7 @@ export default function Dashboard() {
             />
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "14px" }}>
-              {aiNatives.map((c, i) => (
+              {aiBig4.map((c, i) => (
                 <CompanyCard key={c.name} company={c} expanded={!!expandedNatives[i]} onToggle={() => toggleNative(i)} />
               ))}
             </div>
@@ -1205,6 +1280,33 @@ export default function Dashboard() {
               { title: "Enterprise vs. Consumer Economics", text: "Anthropic (85% enterprise) projects FCF positive by 2028. OpenAI (majority consumer) carries $14B+ inference costs in 2026. Enterprise-first is proving superior unit economics.", color: "#6ED9A0" },
               { title: "Two Historic IPOs Coming", text: "Anthropic (Wilson Sonsini engaged) & OpenAI (H2 2026 filing target) are both prepping public offerings. First-ever direct investor access to frontier AI models.", color: "#FFD166" },
             ]} />
+          </>
+        )}
+
+        {/* OTHER FIRMS TAB — minimal: profile cards + disclosures log */}
+        {activeTab === "otherfirms" && (
+          <>
+            <SectionBanner
+              title="OTHER FIRMS — AI DISCLOSURE LEADERS OUTSIDE THE PEER GROUP"
+              subtitle={<>Companies that are <strong>not DAIS peers and not AI-native labs</strong>, but are leading in AI disclosures and worth tracking for benchmarking. Starting with Accenture and Salesforce. Deeper research coming in a future cycle.</>}
+              stats={[
+                { value: otherFirms.length, label: "COMPANIES", color: M.primary },
+                { value: "Phase 3", label: "RESEARCH STATUS", color: M.amber },
+              ]}
+            />
+            <CollapsibleSection
+              title="COMPANY PROFILES"
+              subtitle={`${otherFirms.length} firms`}
+              description="One-card summary per firm. Placeholder content for now — headline metrics, quotes, guidance, and risks will be populated in Phase 3."
+              defaultOpen={true}
+              accentColor={M.navy}
+            >
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "14px" }}>
+                {otherFirms.map((c, i) => (
+                  <CompanyCard key={c.ticker + i} company={c} expanded={!!expandedOther[i]} onToggle={() => toggleOther(i)} />
+                ))}
+              </div>
+            </CollapsibleSection>
           </>
         )}
 
