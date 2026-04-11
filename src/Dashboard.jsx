@@ -1042,7 +1042,6 @@ export default function Dashboard() {
             {/* ── 1. PEER GROUP (collapsible) ─────────────────────── */}
             <CollapsibleSection
               title="PEER GROUP"
-              subtitle={`${peers.length} companies`}
               description="Overview of the 10 peers we track, how they're grouped, and their sector roles."
               defaultOpen={false}
               accentColor={M.navy}
@@ -1074,7 +1073,6 @@ export default function Dashboard() {
             {/* ── 2. RECENT HIGHLIGHTS (collapsible) ──────────────── */}
             <CollapsibleSection
               title="RECENT HIGHLIGHTS"
-              subtitle={`${whatsNew.length} items · as of ${lastUpdated}`}
               description="The five most significant AI disclosures across the peer group in the last few days."
               defaultOpen={false}
               accentColor={M.primary}
@@ -1099,7 +1097,6 @@ export default function Dashboard() {
             {/* ── 3. CROSS-GROUP THEMES (collapsible) ─────────────── */}
             <CollapsibleSection
               title="CROSS-GROUP THEMES"
-              subtitle="6 themes"
               description="The AI themes that cut across multiple peers this cycle — agentic workflows, MCP distribution, internal AI efficiency, and more."
               defaultOpen={false}
               accentColor={M.navy}
@@ -1117,7 +1114,6 @@ export default function Dashboard() {
             {/* ── 4. WHAT'S NEW THIS CYCLE (collapsible) ────────── */}
             <CollapsibleSection
               title="WHAT'S NEW THIS CYCLE"
-              subtitle={cycleWindow}
               description="Theme-grouped competitive briefing covering the most important peer AI disclosures from the last ~90 days."
               defaultOpen={false}
               accentColor={M.primary}
@@ -1128,7 +1124,6 @@ export default function Dashboard() {
             {/* ── 5. COMPANY PROFILES (collapsible) ──────────────── */}
             <CollapsibleSection
               title="COMPANY PROFILES"
-              subtitle={`${peers.length} peer companies`}
               description="One-card summary per peer with headline metric, AI strategy, key quote, guidance, and risks. Leader/Laggard status is shown on each card."
               defaultOpen={false}
               accentColor={M.navy}
@@ -1145,7 +1140,6 @@ export default function Dashboard() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))", gap: "16px" }}>
               <CollapsibleSection
                 title="DIFFERENTIATION OPPORTUNITIES"
-                subtitle="competitive scorecard"
                 description="Five AI themes where MCO could win or lose ground, with every peer's execution status and MCO's current position called out."
                 defaultOpen={false}
                 accentColor={M.navy}
@@ -1155,7 +1149,6 @@ export default function Dashboard() {
 
               <CollapsibleSection
                 title="EMERGING STANDARDS"
-                subtitle="adoption scorecard"
                 description="Adoption scorecard for new AI protocols and practices — MCP, governance, consumption pricing, AI-adjusted guidance, and agentic compliance."
                 defaultOpen={false}
                 accentColor={M.navy}
