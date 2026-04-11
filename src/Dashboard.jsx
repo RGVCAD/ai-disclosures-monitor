@@ -234,6 +234,7 @@ function ThemeGrid({ themes }) {
           style={{
             background: M.white,
             border: "1px solid " + M.border,
+            borderTop: "3px solid " + M.green,
             borderRadius: "6px", padding: "12px 14px",
             cursor: "pointer",
             transition: "background 0.2s",
