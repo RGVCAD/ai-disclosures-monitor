@@ -1048,30 +1048,25 @@ export default function Dashboard() {
               defaultOpen={false}
               accentColor={M.navy}
             >
-              <SectionBanner
-                title="PEER GROUP — DATA, ANALYTICS & INFORMATION SERVICES"
-                subtitle={<>MCO, SPGI, TRI, LSEG, VRSK, CSGP, MSCI, Nasdaq, Gartner, FactSet — all incumbents navigating AI as both opportunity and threat. Shared thesis: <strong>proprietary data + domain expertise = durable moat.</strong> Key divergence: speed of AI monetisation.</>}
-                stats={[
-                  { value: peers.filter(p => p.status === "leader").length, label: "LEADERS", color: M.green },
-                  { value: peers.filter(p => p.status === "laggard").length, label: "LAGGARDS", color: M.amber },
-                ]}
-              />
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "8px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "8px" }}>
                 {peers.map(p => (
                   <div key={p.ticker} style={{
                     background: M.white, border: "1px solid " + M.border,
                     borderRadius: "6px", padding: "10px 12px",
-                    display: "flex", alignItems: "center", gap: "10px",
+                    display: "flex", flexDirection: "column", gap: "6px",
+                    minWidth: 0,
                   }}>
-                    <div style={{
-                      fontSize: "10px", fontWeight: 700, fontFamily: "Arial, monospace",
-                      color: M.textDark, minWidth: "42px",
-                    }}>{p.ticker}</div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "6px" }}>
+                      <span style={{
+                        fontSize: "10px", fontWeight: 700, fontFamily: "Arial, monospace",
+                        color: M.textDark,
+                      }}>{p.ticker}</span>
+                      <Badge status={p.status} label={p.statusLabel} />
+                    </div>
+                    <div style={{ minWidth: 0 }}>
                       <div style={{ fontSize: "11px", fontWeight: 600, color: M.textDark, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</div>
                       <div style={{ fontSize: "9px", color: M.midGray, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.sector}</div>
                     </div>
-                    <Badge status={p.status} label={p.statusLabel} />
                   </div>
                 ))}
               </div>
