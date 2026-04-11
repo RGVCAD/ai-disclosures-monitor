@@ -668,7 +668,6 @@ export const cycleCompanySummaries = [
 export const otherFirmsWhatsNew = [
   "Salesforce Q4 FY2026 (Feb 25): Agentforce ARR reaches $800M (+169% YoY); 29,000 cumulative deals, 12,000 paid; 20 trillion tokens consumed and 2.4 billion agentic work units executed — first large-cap SaaS vendor to quantify agent utilization at this scale",
   "Accenture Q2 FY2026 (Mar 19): $1.6B new GenAI bookings in the quarter; cumulative $11.5B Advanced AI bookings since FY23; 550,000 employees GenAI-trained — the largest enterprise AI reskilling effort disclosed by any tracked firm",
-  "Meta Q4 2025 (Jan 28, 2026): 2026 CapEx guided to $115–135B (from $72B in 2025) to fund the superintelligence buildout; Q4 revenue $48.4B (+21%); Zuckerberg frames 2026 as the year to 'advance personal superintelligence'",
   "Accenture + Anthropic expanded partnership (Dec 9): deploying Claude across all 550,000 Accenture employees — the largest enterprise Claude rollout disclosed to date",
   "Salesforce Agentforce 360 launched at Dreamforce (Oct 13, 2025): deep Anthropic/Claude integration across the Agentforce stack; positioned as the enterprise operating layer for agentic workflows",
 ];
@@ -686,7 +685,6 @@ export const otherFirmsCycleThemes = [
     color: "#0028A1",
     highlights: [
       { ticker: "CRM", text: "Agentforce: $800M ARR (+169% YoY), 29,000 cumulative deals, 2.4B agentic work units executed, 20T tokens consumed. Data Cloud + AI ARR topped $1.2B. Standout metric: first large-cap SaaS to quantify agent-level utilization at this scale." },
-      { ticker: "META", text: "2026 CapEx guided to $115–135B (from $72B in 2025) to build out superintelligence infrastructure. Q4 2025 revenue $48.4B (+21%). Llama 4 released Apr 5 with native multimodality and 10M-token context window." },
       { ticker: "ACN", text: "FY2025: $5.1B new GenAI bookings, $3B in GenAI revenue, $11.5B cumulative Advanced AI bookings since FY23. 550,000 employees GenAI-trained. Q2 FY2026 new GenAI bookings: $1.6B in quarter." },
     ],
   },
@@ -695,7 +693,6 @@ export const otherFirmsCycleThemes = [
     color: "#C97B00",
     highlights: [
       { ticker: "ACN", text: "Expanded Anthropic partnership (Dec 9): deploying Claude across 550,000 employees — largest enterprise Claude rollout. NeuraFlash acquisition (Aug 14) adds Salesforce/Agentforce implementation capacity." },
-      { ticker: "META", text: "Scale AI strategic investment (Jun 12): $14.3B for 49% stake, bringing Alexandr Wang to lead new Superintelligence Labs (Jun 30). Largest AI talent+data acquisition of 2025." },
       { ticker: "CRM", text: "Agentforce 360 (Oct 13) launched with deep Claude/Anthropic integration. Informatica acquisition announced to strengthen Data Cloud foundation for agent workflows." },
     ],
   },
@@ -709,9 +706,70 @@ export const otherFirmsCycleThemes = [
 ];
 
 export const otherFirmsCycleSummaries = [
-  { ticker: "META", summary: "2026 CapEx guided to $115–135B (from $72B in 2025) for superintelligence buildout. Q4 2025 revenue $48.4B (+21%). Superintelligence Labs formed Jun 30 with Alexandr Wang (ex-Scale AI) leading, following $14.3B Scale AI investment for 49% stake. Llama 4 released Apr 5 with 10M-token context window. Zuckerberg framing 2026 as the year to advance 'personal superintelligence.'" },
   { ticker: "ACN", summary: "Q2 FY2026 new GenAI bookings: $1.6B. Cumulative $11.5B Advanced AI bookings since FY23; FY2025 delivered $5.1B new GenAI bookings and $3B in GenAI revenue. Expanded Anthropic partnership (Dec 9) deploying Claude across 550,000 employees — largest enterprise Claude rollout. NeuraFlash acquisition (Aug 14) for Salesforce/Agentforce implementation capacity. AI Refinery for Industry launched (Jun 27)." },
   { ticker: "CRM", summary: "Q4 FY2026 (Feb 25): Agentforce ARR hit $800M (+169% YoY) in 15 months. 29,000 cumulative deals, 12,000 paid. 20 trillion tokens consumed and 2.4 billion agentic work units executed — first large-cap SaaS vendor to quantify agent utilization at this scale. Agentforce 360 launched at Dreamforce with Claude/Anthropic integration. Data Cloud + AI ARR topped $1.2B (+120%)." },
+];
+
+// ─── AI BIG 4 CYCLE BRIEFING ─────────────────────────────────────────────
+// Parallel briefing data for the frontier model labs and hyperscalers
+// (Anthropic, OpenAI, Alphabet, Meta). Kept separate from the peer cycle
+// briefing so the Peers tab narrative stays focused on the competitive set.
+// ─────────────────────────────────────────────────────────────────────────
+
+export const aiBig4WhatsNew = [
+  "Anthropic launches Claude Managed Agents (Apr 8): suite of composable APIs for building and hosting cloud-hosted AI agents, with secure code execution and session tracing; public beta on the Claude Platform — direct enterprise-agent competition with OpenAI and Google",
+  "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
+  "Anthropic Project Glasswing + Claude Mythos Preview (Apr 7): cybersecurity initiative with 12 partners (AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks); $100M in usage credits; thousands of zero-day vulnerabilities discovered including a 27-year-old OpenBSD bug; model deemed too powerful for public release",
+  "OpenAI closes $122B funding round at $852B valuation (Apr 5): Amazon $50B, NVIDIA $30B, SoftBank $30B, Microsoft; renegotiated Microsoft deal keeps 20% revenue share through 2032; H2 2026 IPO filing targeted",
+  "Meta Q4 2025 earnings (Jan 28, 2026): 2026 CapEx guided to $115–135B (from $72B in 2025) to fund the superintelligence buildout; Q4 revenue $48.4B (+21%); Zuckerberg frames 2026 as the year to 'advance personal superintelligence'",
+  "Alphabet Q4 2025 (Feb 4): Google Cloud backlog hit $240B (+55% QoQ, 2x YoY); Gemini serving unit costs down 78% over 2025; 2026 CapEx guided to $175–185B — nearly doubling 2025; Cloud operating margin expanded to 30.1%",
+];
+
+export const aiBig4CycleThemes = [
+  {
+    theme: "Agentic AI Products",
+    color: "#1A7A4A",
+    highlights: [
+      { ticker: "ANTH", text: "Claude Managed Agents launched Apr 8 in public beta — composable APIs for cloud-hosted AI agents with secure code execution and session tracing. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). Claude Code responsible for ~4% of all public GitHub commits worldwide." },
+      { ticker: "GOOGL", text: "Gemini Enterprise: 8M+ paid seats at 2,800+ companies; generative AI solutions revenue +400% YoY in Q4 2025. Gemini processes 10B tokens/min via direct API. 750M monthly active users on the Gemini app." },
+      { ticker: "OAI", text: "ChatGPT Enterprise described as the fastest-growing enterprise platform in history with 9M+ paying business users. 2026 strategic pivot to 'practical adoption' and enterprise use cases per CFO Sarah Friar (Jan 18)." },
+    ],
+  },
+  {
+    theme: "Capex & Infrastructure Scale-Up",
+    color: "#0028A1",
+    highlights: [
+      { ticker: "META", text: "2026 CapEx guided to $115–135B (from $72B in 2025) — nearly doubling, concentrated on frontier model training and inference infrastructure. Q1 2026 revenue guide $53.5–56.5B; total expenses $162–169B." },
+      { ticker: "GOOGL", text: "Google Cloud backlog hit $240B (+55% QoQ, 2x YoY). 2026 CapEx guided to $175–185B — nearly doubling 2025. Gemini serving unit costs down 78% over 2025 through model optimizations, efficiency and utilization improvements (Pichai, Feb 4)." },
+      { ticker: "OAI", text: "Closed $122B funding round at $852B valuation (Apr 5): Amazon $50B, NVIDIA $30B, SoftBank $30B. Inference costs: $8.4B in 2025 → $14.1B projected 2026. Gross margin 33% constrained by inference economics." },
+      { ticker: "ANTH", text: "$30B Series G at $380B valuation (Feb 12): GIC, Coatue lead; Microsoft $5B, NVIDIA $10B, Amazon $4B, Google. Signed multiyear CoreWeave compute deal Apr 10 — adds a fourth hyperscale supplier alongside AWS, Google, Microsoft." },
+    ],
+  },
+  {
+    theme: "Frontier Models & Releases",
+    color: "#C97B00",
+    highlights: [
+      { ticker: "META", text: "Llama 4 released April 2025 — 1.2B+ cumulative Llama downloads by April 2026. Meta AI assistant crossed 1B monthly active users in May 2025. Meta Superintelligence Labs formed Jun 2025, led by former Scale AI CEO Alexandr Wang." },
+      { ticker: "ANTH", text: "Project Glasswing + Claude Mythos Preview (Apr 7): cybersecurity deployment with 12 partners (AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks). Thousands of zero-day vulnerabilities discovered; model deemed too powerful for public release." },
+      { ticker: "GOOGL", text: "Full-stack AI: only company that is simultaneously hyperscaler, frontier model lab, custom chip designer (TPUs), and global ad platform — and all four are growing. Alphabet annual revenues crossed $400B for the first time." },
+    ],
+  },
+  {
+    theme: "Partnerships & Ecosystem",
+    color: "#4A5568",
+    highlights: [
+      { ticker: "ANTH", text: "Claude Partner Network launched with $100M investment (Mar 2026). 500+ customers spending $1M+/yr; 8 of Fortune 10 are customers. 85% of revenue from business customers — inverse of OpenAI's mix." },
+      { ticker: "META", text: "$14.3B Scale AI strategic investment (June 2025) for 49% stake, bringing Alexandr Wang to lead Meta Superintelligence Labs — the largest AI talent+data acquisition of 2025." },
+      { ticker: "OAI", text: "Renegotiated Microsoft partnership: 20% revenue share through 2032; revolving credit facility expanded to $4.7B. Revenue directly tracking compute capacity — 10x growth from 2023 to 2025." },
+    ],
+  },
+];
+
+export const aiBig4CycleSummaries = [
+  { ticker: "ANTH", name: "Anthropic", summary: "$14B ARR (Feb 2026); 10x growth for 3 consecutive years. $30B Series G at $380B post-money valuation (Feb 12). 85% of revenue from business customers — inverse of OpenAI. Claude Code hit $2.5B ARR and accounts for ~4% of all public GitHub commits. 500+ customers spending $1M+/yr; 8 of Fortune 10 are customers. Claude Managed Agents launched Apr 8 in public beta. Project Glasswing (Apr 7) deployed with 12 tech/finance partners. Signed multiyear CoreWeave deal (Apr 10). Guiding $18–26B ARR for 2026 and FCF positive by 2028. Risk: US blacklisted Anthropic as supply-chain risk; Pentagon deadline Jun 30, 2026 for defense contractors." },
+  { ticker: "OAI", name: "OpenAI", summary: "~$25B ARR (Feb 2026); $852B post-money valuation after $122B Apr 2026 close (Amazon $50B, NVIDIA $30B, SoftBank $30B). 910M WAU globally, 9M+ paying business users. ChatGPT Enterprise described as fastest-growing enterprise platform in history. 2026 strategic pivot to 'practical adoption' (CFO Sarah Friar, Jan 18). Inference costs $8.4B in 2025 → $14.1B projected 2026; gross margin 33%. Renegotiated Microsoft deal: 20% revenue share through 2032. H2 2026 IPO filing targeted." },
+  { ticker: "GOOGL", summary: "Alphabet annual revenues crossed $400B for the first time. Google Cloud backlog $240B (+55% QoQ, 2x YoY); Cloud operating margin expanded from 17.5% to 30.1% in Q4 2025; Cloud +48% YoY. Gemini serving unit costs down 78% over 2025 (Pichai). Gemini Enterprise: 8M+ paid seats at 2,800+ companies; generative AI solutions revenue +400% YoY. Gemini processes 10B tokens/min via direct API; 750M MAU on the Gemini app. 2026 CapEx guided to $175–185B — nearly doubling 2025." },
+  { ticker: "META", summary: "2026 CapEx guided to $115–135B (from $72B in 2025) for superintelligence buildout. Q4 2025 revenue $48.4B (+21%). Meta Superintelligence Labs formed Jun 2025 with Alexandr Wang (ex-Scale AI) leading, following $14.3B Scale AI investment for 49% stake. Llama 4 released Apr 2025; 1.2B+ cumulative Llama downloads by Apr 2026. Meta AI assistant crossed 1B MAU in May 2025. Reality Labs shipping Ray-Ban Display + Neural Band. Zuckerberg framing 2026 as the year to 'advance personal superintelligence.'" },
 ];
 
 

@@ -29,7 +29,7 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, differentiationMap, standardsAdoption } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, aiBig4WhatsNew, aiBig4CycleThemes, aiBig4CycleSummaries, differentiationMap, standardsAdoption } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
@@ -763,7 +763,8 @@ function CycleBriefing({ themes = cycleThemes, summaries = cycleCompanySummaries
         <div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "10px" }}>
             {summaries.map(c => {
-              const peerData = lookupPool.find(p => p.ticker === c.ticker);
+              const peerData = lookupPool.find(p => p.ticker === c.ticker) || lookupPool.find(p => p.name === c.name);
+              const displayName = c.name || (peerData ? peerData.name : c.ticker);
               return (
                 <div key={c.ticker} style={{
                   border: "1px solid " + M.border, borderRadius: "6px",
@@ -776,7 +777,7 @@ function CycleBriefing({ themes = cycleThemes, summaries = cycleCompanySummaries
                       background: M.offWhite, border: "1px solid " + M.border,
                       padding: "2px 7px", borderRadius: "4px", fontFamily: "Arial, monospace",
                     }}>{c.ticker}</span>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: M.textDark }}>{peerData ? peerData.name : c.ticker}</span>
+                    <span style={{ fontSize: "12px", fontWeight: 600, color: M.textDark }}>{displayName}</span>
                   </div>
                   <p style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, margin: 0 }}>{c.summary}</p>
                 </div>
@@ -1240,6 +1241,44 @@ export default function Dashboard() {
               ]}
             />
 
+            {/* ── RECENT HIGHLIGHTS (collapsible) ──────────────── */}
+            <CollapsibleSection
+              title="RECENT HIGHLIGHTS"
+              description="The most significant AI Big 4 disclosures in the current cycle."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <div style={{
+                background: M.white, border: "1px solid " + M.border,
+                borderRadius: "6px", padding: "14px 18px",
+              }}>
+                {aiBig4WhatsNew.map((item, i) => (
+                  <div key={i} style={{
+                    fontSize: "12px", color: "#4A5568", lineHeight: 1.75,
+                    paddingLeft: "16px", position: "relative",
+                    marginBottom: i < aiBig4WhatsNew.length - 1 ? "8px" : "0",
+                  }}>
+                    <span style={{ position: "absolute", left: "4px", top: "0", color: M.primary, fontWeight: 700 }}>·</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* ── WHAT'S NEW THIS CYCLE (collapsible) ────────── */}
+            <CollapsibleSection
+              title="WHAT'S NEW THIS CYCLE"
+              description="Theme-grouped briefing covering the most important AI Big 4 disclosures from the last ~90 days."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <CycleBriefing
+                themes={aiBig4CycleThemes}
+                summaries={aiBig4CycleSummaries}
+                lookupPool={aiBig4}
+              />
+            </CollapsibleSection>
+
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: "14px" }}>
               {aiBig4.map((c, i) => (
                 <CompanyCard key={c.name} company={c} expanded={!!expandedNatives[i]} onToggle={() => toggleNative(i)} />
@@ -1335,7 +1374,7 @@ export default function Dashboard() {
               <CycleBriefing
                 themes={otherFirmsCycleThemes}
                 summaries={otherFirmsCycleSummaries}
-                lookupPool={[...aiBig4, ...otherFirms]}
+                lookupPool={otherFirms}
               />
             </CollapsibleSection>
 
