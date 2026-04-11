@@ -6,6 +6,7 @@
 
 export const lastUpdated = "April 11, 2026";
 export const whatsNew = [
+  "Salesforce Q4 FY2026 (Feb 25): Agentforce ARR reaches $800M (+169% YoY); 29,000 cumulative deals, 12,000 paid; 20 trillion tokens consumed and 2.4 billion agentic work units executed across the install base — first large-cap SaaS vendor to quantify agent utilization at this scale",
   "Anthropic launches Claude Managed Agents (Apr 8): suite of composable APIs for building and hosting cloud-hosted AI agents, with secure code execution and session tracing; public beta on the Claude Platform — direct enterprise-agent competition with OpenAI and Google",
   "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
   "FactSet names Joshua Warren CFO, effective April 13 (Apr 8): Warren joins from Envestnet (previously BlackRock iShares and Corporate Strategy); succeeds Helen Shan; follows Mar 4 appointment of Kate Stepp as first Chief AI Officer — second C-suite change tied to the AI platform strategy",
@@ -594,6 +595,7 @@ export const cycleThemes = [
       { ticker: "TRI", text: "CoCounsel hit 1M users across 107 countries. Proprietary 'Thomson' LLM announced for summer 2026 — outperforming general models on 4 of 10 legal task benchmarks. Next-gen CoCounsel entering beta Apr 20." },
       { ticker: "MCO", text: "Agentic Solutions signed $3M+ tier-1 bank deal: automates credit memo creation (40 hrs to ~2 min). MCP servers distributed via Anthropic, Databricks, OpenAI partnerships." },
       { ticker: "FDS", text: "AI for Banking launched in alpha (Mar 30) with Finster AI partnership. AI Document Search deployed to 85K+ users. Mercury AI chatbot live for pitch decks and research." },
+      { ticker: "CRM", text: "Agentforce ARR hit $800M (+169% YoY) in 15 months. 29,000 cumulative deals signed, 12,000 paid. 20 trillion tokens consumed and 2.4 billion agentic work units executed — first vendor to publicly quantify agent utilization at this scale. Agentforce 360 launched at Dreamforce with Claude/Anthropic integration." },
     ],
   },
   {
@@ -622,6 +624,8 @@ export const cycleThemes = [
       { ticker: "MSCI", text: "Acquired Vantager (Mar 2) for AI-native private markets diligence and PM Insights (Apr 7) for secondary market data covering $5.5T+ market cap. Accelerating end-to-end private markets data strategy." },
       { ticker: "TRI", text: "Smokeball partnership (Mar 25): integrates CoCounsel Legal with practice management for small/mid-size law firms. Real-time data connector syncs documents across platforms." },
       { ticker: "CSGP", text: "Matterport integration delivering 40x more detail views on listings. Subscribers with Matterport show 37% higher renewal rates." },
+      { ticker: "ACN", text: "Expanded Anthropic partnership (Dec 9): deploying Claude across 550,000 employees — largest enterprise Claude rollout. NeuraFlash acquisition (Aug 14) adds Salesforce/Agentforce implementation capacity. $11.5B cumulative Advanced AI bookings since FY23." },
+      { ticker: "META", text: "Scale AI strategic investment (Jun 12): $14.3B for 49% stake, bringing Alexandr Wang to lead new Superintelligence Labs (Jun 30). Largest AI talent+data acquisition of 2025." },
     ],
   },
   {
@@ -633,6 +637,9 @@ export const cycleThemes = [
       { ticker: "SPGI", text: "66% of 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts. 10%+ of enterprise applications eliminated. Targeting 20%+ run-rate expense reduction by 2027." },
       { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
       { ticker: "NDAQ", text: "Verafin enterprise signings quadrupled YoY. 1,300+ clients using GenAI Entity Research Copilot. $1B+ in check fraud caught in 2025. Targeting $100M in AI-driven efficiencies by 2027." },
+      { ticker: "CRM", text: "Agentforce: $800M ARR (+169% YoY), 29,000 cumulative deals, 2.4B agentic work units executed, 20T tokens consumed. Data Cloud + AI ARR topped $1.2B. Standout metric: first large-cap SaaS to quantify agent-level utilization at this scale." },
+      { ticker: "META", text: "2026 CapEx guided to $115–135B (from $72B in 2025) to build out superintelligence infrastructure. Q4 2025 revenue $48.4B (+21%). Llama 4 released Apr 5 with native multimodality and 10M-token context window." },
+      { ticker: "ACN", text: "FY2025: $5.1B new GenAI bookings, $3B in GenAI revenue, $11.5B cumulative Advanced AI bookings since FY23. 550,000 employees GenAI-trained (vs ~100K peers have). Q2 FY2026 new GenAI bookings: $1.6B in quarter." },
     ],
   },
   {
@@ -642,6 +649,7 @@ export const cycleThemes = [
       { ticker: "SPGI", text: "Spark Assist GenAI platform: 66% of all 40,000 employees active. 10%+ of enterprise applications eliminated. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027." },
       { ticker: "LSEG", text: "350,000+ users migrated from Eikon to Workspace. 4,000 employees deployed on ChatGPT Enterprise. Workspace GenAI rolling out to all users H1 2026." },
       { ticker: "FDS", text: "4 internal AI tools delivering 25%+ reduction in manual data curation. AI coding assistants authoring ~20% of successful code commits. 80% cost reduction in vectorizing client data." },
+      { ticker: "ACN", text: "550,000 employees GenAI-trained — largest enterprise AI reskilling effort among tracked peers. Deploying Claude internally across the full workforce via the expanded Anthropic partnership (Dec 9)." },
     ],
   },
 ];
@@ -657,6 +665,9 @@ export const cycleCompanySummaries = [
   { ticker: "NDAQ", summary: "Agentic AI Workforce: 350+ clients, 80%+ workload reduction. $100M AI efficiency target by 2027. Verafin enterprise signings 4x YoY. First to exceed $5B net revenue." },
   { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028. Apr 7: new research reinforced the thesis — only 28% of I&O AI use cases meet ROI, 20% fail outright — plus an agentic-SCM TAM forecast of $53B by 2030." },
   { ticker: "FDS", summary: "Second C-suite change tied to AI strategy: Joshua Warren named CFO effective Apr 13 (from Envestnet / BlackRock), succeeding Helen Shan — follows Mar 4 Kate Stepp CAIO appointment. AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
+  { ticker: "META", summary: "2026 CapEx guided to $115–135B (from $72B in 2025) for superintelligence buildout. Q4 2025 revenue $48.4B (+21%). Superintelligence Labs formed Jun 30 with Alexandr Wang (ex-Scale AI) leading, following $14.3B Scale AI investment for 49% stake. Llama 4 released Apr 5 with 10M-token context window. Zuckerberg framing 2026 as the year to advance 'personal superintelligence.'" },
+  { ticker: "ACN", summary: "Q2 FY2026 new GenAI bookings: $1.6B. Cumulative $11.5B Advanced AI bookings since FY23; FY2025 delivered $5.1B new GenAI bookings and $3B in GenAI revenue. Expanded Anthropic partnership (Dec 9) deploying Claude across 550,000 employees — largest enterprise Claude rollout. NeuraFlash acquisition (Aug 14) for Salesforce/Agentforce implementation capacity. AI Refinery for Industry launched (Jun 27)." },
+  { ticker: "CRM", summary: "Q4 FY2026 (Feb 25): Agentforce ARR hit $800M (+169% YoY) in 15 months. 29,000 cumulative deals, 12,000 paid. 20 trillion tokens consumed and 2.4 billion agentic work units executed — first large-cap SaaS vendor to quantify agent utilization at this scale. Agentforce 360 launched at Dreamforce with Claude/Anthropic integration. Data Cloud + AI ARR topped $1.2B (+120%)." },
 ];
 
 
