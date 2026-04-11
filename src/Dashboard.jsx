@@ -687,7 +687,7 @@ function CycleBriefing() {
             <div key={t.theme} style={{
               marginBottom: i < cycleThemes.length - 1 ? "10px" : 0,
               border: "1px solid " + M.border, borderRadius: "6px",
-              borderLeft: "4px solid " + t.color, overflow: "hidden",
+              overflow: "hidden",
             }}>
               <div
                 onClick={() => setExpandedTheme(expandedTheme === i ? null : i)}
@@ -701,7 +701,6 @@ function CycleBriefing() {
                 onMouseLeave={e => { if (expandedTheme !== i) e.currentTarget.style.background = M.white; }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: t.color, flexShrink: 0 }} />
                   <span style={{ fontSize: "12px", fontWeight: 700, color: M.textDark }}>{t.theme}</span>
                   <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>
                     {t.highlights.length} compan{t.highlights.length === 1 ? "y" : "ies"}
@@ -754,17 +753,16 @@ function CycleBriefing() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "10px" }}>
             {cycleCompanySummaries.map(c => {
               const peerData = peers.find(p => p.ticker === c.ticker);
-              const accent = peerData ? peerData.accent : M.primary;
               return (
                 <div key={c.ticker} style={{
                   border: "1px solid " + M.border, borderRadius: "6px",
-                  borderLeft: "4px solid " + accent, padding: "10px 14px",
+                  padding: "10px 14px",
                   background: M.white,
                 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
                     <span style={{
-                      fontSize: "10px", fontWeight: 700, color: accent,
-                      background: peerData ? peerData.tag : "#F0F4FF",
+                      fontSize: "10px", fontWeight: 700, color: M.textDark,
+                      background: M.offWhite, border: "1px solid " + M.border,
                       padding: "2px 7px", borderRadius: "4px", fontFamily: "Arial, monospace",
                     }}>{c.ticker}</span>
                     <span style={{ fontSize: "12px", fontWeight: 600, color: M.textDark }}>{peerData ? peerData.name : c.ticker}</span>
