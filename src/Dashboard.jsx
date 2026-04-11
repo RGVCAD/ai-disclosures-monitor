@@ -29,7 +29,7 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, differentiationMap, standardsAdoption } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, differentiationMap, standardsAdoption } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
@@ -668,7 +668,7 @@ function CollapsibleSection({ title, subtitle, description, defaultOpen = true, 
 }
 
 // ─── WHAT'S NEW THIS CYCLE ──────────────────────────────────────────────────
-function CycleBriefing() {
+function CycleBriefing({ themes = cycleThemes, summaries = cycleCompanySummaries, lookupPool = peers }) {
   const [viewMode, setViewMode] = useState("themes"); // "themes" | "companies"
   const [expandedTheme, setExpandedTheme] = useState(null);
 
@@ -694,9 +694,9 @@ function CycleBriefing() {
       {/* Theme View */}
       {viewMode === "themes" && (
         <div>
-          {cycleThemes.map((t, i) => (
+          {themes.map((t, i) => (
             <div key={t.theme} style={{
-              marginBottom: i < cycleThemes.length - 1 ? "10px" : 0,
+              marginBottom: i < themes.length - 1 ? "10px" : 0,
               border: "1px solid " + M.border, borderRadius: "6px",
               overflow: "hidden",
             }}>
@@ -762,8 +762,8 @@ function CycleBriefing() {
       {viewMode === "companies" && (
         <div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "10px" }}>
-            {cycleCompanySummaries.map(c => {
-              const peerData = peers.find(p => p.ticker === c.ticker);
+            {summaries.map(c => {
+              const peerData = lookupPool.find(p => p.ticker === c.ticker);
               return (
                 <div key={c.ticker} style={{
                   border: "1px solid " + M.border, borderRadius: "6px",
@@ -1297,13 +1297,52 @@ export default function Dashboard() {
               subtitle={<>Companies that are <strong>not DAIS peers and not AI-native labs</strong>, but are leading in AI disclosures and worth tracking for benchmarking. Starting with Accenture and Salesforce. Deeper research coming in a future cycle.</>}
               stats={[
                 { value: otherFirms.length, label: "COMPANIES", color: M.primary },
-                { value: "Phase 3", label: "RESEARCH STATUS", color: M.amber },
+                { value: otherFirmsWhatsNew.length, label: "CYCLE UPDATES", color: M.amber },
               ]}
             />
+
+            {/* ── RECENT HIGHLIGHTS (collapsible) ──────────────── */}
+            <CollapsibleSection
+              title="RECENT HIGHLIGHTS"
+              description="The most significant AI disclosures from non-peer firms in the current cycle."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <div style={{
+                background: M.white, border: "1px solid " + M.border,
+                borderRadius: "6px", padding: "14px 18px",
+              }}>
+                {otherFirmsWhatsNew.map((item, i) => (
+                  <div key={i} style={{
+                    fontSize: "12px", color: "#4A5568", lineHeight: 1.75,
+                    paddingLeft: "16px", position: "relative",
+                    marginBottom: i < otherFirmsWhatsNew.length - 1 ? "8px" : "0",
+                  }}>
+                    <span style={{ position: "absolute", left: "4px", top: "0", color: M.primary, fontWeight: 700 }}>·</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* ── WHAT'S NEW THIS CYCLE (collapsible) ────────── */}
+            <CollapsibleSection
+              title="WHAT'S NEW THIS CYCLE"
+              description="Theme-grouped briefing covering the most important non-peer AI disclosures from the last ~90 days."
+              defaultOpen={false}
+              accentColor={M.primary}
+            >
+              <CycleBriefing
+                themes={otherFirmsCycleThemes}
+                summaries={otherFirmsCycleSummaries}
+                lookupPool={[...aiBig4, ...otherFirms]}
+              />
+            </CollapsibleSection>
+
             <CollapsibleSection
               title="COMPANY PROFILES"
               subtitle={`${otherFirms.length} firms`}
-              description="One-card summary per firm. Placeholder content for now — headline metrics, quotes, guidance, and risks will be populated in Phase 3."
+              description="One-card summary per firm with headline metric, AI strategy, key quote, guidance, and risks."
               defaultOpen={true}
               accentColor={M.navy}
             >
