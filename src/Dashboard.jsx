@@ -227,39 +227,29 @@ function ThemeGrid({ themes }) {
   const toggleTheme = (i) => setExpandedThemes(p => ({ ...p, [i]: !p[i] }));
 
   return (
-    <div style={{ marginBottom: "20px" }}>
-      <div style={{
-        background: M.navy, borderRadius: "8px", padding: "18px 20px",
-      }}>
-        <div style={{ fontSize: "12px", fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.06em", marginBottom: "14px", fontFamily: "Arial, sans-serif" }}>
-          Cross-Group Themes
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "10px" }}>
+      {themes.map((t, i) => (
+        <div key={t.title}
+          onClick={() => toggleTheme(i)}
+          style={{
+            background: M.white,
+            border: "1px solid " + M.border,
+            borderRadius: "6px", padding: "12px 14px",
+            cursor: "pointer",
+            transition: "background 0.2s",
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = M.surface; }}
+          onMouseLeave={e => { e.currentTarget.style.background = M.white; }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", minWidth: 0 }}>
+            <div title={t.title} style={{ fontSize: "11px", fontWeight: 700, color: M.textDark, fontFamily: "Arial, sans-serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", minWidth: 0, flex: 1 }}>{t.title}</div>
+            <span style={{ fontSize: "10px", color: M.midGray, transition: "transform 0.2s", transform: expandedThemes[i] ? "rotate(180deg)" : "none", flexShrink: 0, marginLeft: "8px" }}>▾</span>
+          </div>
+          {expandedThemes[i] && (
+            <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.7, marginTop: "10px", paddingTop: "10px", borderTop: "1px solid " + M.border }}>{t.text}</div>
+          )}
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "10px" }}>
-          {themes.map((t, i) => (
-            <div key={t.title}
-              onClick={() => toggleTheme(i)}
-              style={{
-                background: expandedThemes[i] ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: "6px", padding: "12px 14px",
-                borderTop: "3px solid " + t.color,
-                cursor: "pointer",
-                transition: "background 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; }}
-              onMouseLeave={e => { if (!expandedThemes[i]) e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", minWidth: 0 }}>
-                <div title={t.title} style={{ fontSize: "11px", fontWeight: 700, color: "#FFFFFF", fontFamily: "Arial, sans-serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", minWidth: 0, flex: 1 }}>{t.title}</div>
-                <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)", transition: "transform 0.2s", transform: expandedThemes[i] ? "rotate(180deg)" : "none", flexShrink: 0, marginLeft: "8px" }}>▾</span>
-              </div>
-              {expandedThemes[i] && (
-                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.72)", lineHeight: 1.7, marginTop: "10px", paddingTop: "10px", borderTop: "1px solid rgba(255,255,255,0.12)" }}>{t.text}</div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
@@ -582,18 +572,22 @@ function DisclosuresTimeline() {
 }
 
 // ─── STATUS STYLING HELPERS ─────────────────────────────────────────────────
+// All Leading/Active/Early/Gap pills render neutral gray — only the MCO callout
+// uses Moody's blue. Same treatment applied to the Emerging Standards pills below.
 const diffStatusStyles = {
-  leading:  { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", label: "LEADING" },
-  active:   { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", label: "ACTIVE" },
-  early:    { bg: "#FFF8EC", text: "#A56500", border: "#F5DCA0", label: "EARLY" },
-  gap:      { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", label: "GAP" },
+  leading:  { bg: M.offWhite, text: "#4A5568", border: M.border, label: "LEADING" },
+  active:   { bg: M.offWhite, text: "#4A5568", border: M.border, label: "ACTIVE" },
+  early:    { bg: M.offWhite, text: "#4A5568", border: M.border, label: "EARLY" },
+  gap:      { bg: M.offWhite, text: "#4A5568", border: M.border, label: "GAP" },
 };
 const stdStatusStyles = {
-  adopted:  { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", label: "ADOPTED" },
-  piloting: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", label: "PILOTING" },
-  planned:  { bg: "#FFF8EC", text: "#A56500", border: "#F5DCA0", label: "PLANNED" },
-  none:     { bg: "#FEF0F2", text: "#A8001A", border: "#F5B8BE", label: "NOT STARTED" },
+  adopted:  { bg: M.offWhite, text: "#4A5568", border: M.border, label: "ADOPTED" },
+  piloting: { bg: M.offWhite, text: "#4A5568", border: M.border, label: "PILOTING" },
+  planned:  { bg: M.offWhite, text: "#4A5568", border: M.border, label: "PLANNED" },
+  none:     { bg: M.offWhite, text: "#4A5568", border: M.border, label: "NOT STARTED" },
 };
+// Moody's-blue pill reused by both scorecards for the "MCO:" callout.
+const mcoPillStyle = { bg: "#F0F4FF", text: M.primary, border: "#A8BCE8" };
 
 function StatusPill({ status, styles }) {
   const s = styles[status] || styles.gap || styles.none;
@@ -807,11 +801,10 @@ function DifferentiationScorecard() {
                 style={{ cursor: "pointer" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
                   <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, flex: 1 }}>{item.title}</div>
                   <span style={{
-                    fontSize: "9px", fontWeight: 700, color: mcoStyle.text,
-                    background: mcoStyle.bg, border: "1px solid " + mcoStyle.border,
+                    fontSize: "9px", fontWeight: 700, color: mcoPillStyle.text,
+                    background: mcoPillStyle.bg, border: "1px solid " + mcoPillStyle.border,
                     padding: "2px 7px", borderRadius: "3px", fontFamily: "Arial, monospace",
                   }}>MCO: {mcoStyle.label}</span>
                   <span style={{
@@ -820,25 +813,25 @@ function DifferentiationScorecard() {
                     transform: isExpanded ? "rotate(180deg)" : "none",
                   }}>▾</span>
                 </div>
-                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, paddingLeft: "16px" }}>{item.desc}</div>
-                {/* Summary counts */}
-                <div style={{ display: "flex", gap: "12px", paddingLeft: "16px", marginTop: "6px" }}>
-                  <span style={{ fontSize: "10px", color: "#1A7A4A", fontFamily: "Arial, monospace" }}>{leaders} leading</span>
-                  <span style={{ fontSize: "10px", color: "#0028A1", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "active").length} active</span>
-                  <span style={{ fontSize: "10px", color: "#A56500", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "early").length} early</span>
-                  <span style={{ fontSize: "10px", color: "#A8001A", fontFamily: "Arial, monospace" }}>{gaps} gap</span>
+                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65 }}>{item.desc}</div>
+                {/* Summary counts — all neutral gray */}
+                <div style={{ display: "flex", gap: "12px", marginTop: "6px" }}>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{leaders} leading</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "active").length} active</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "early").length} early</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{gaps} gap</span>
                 </div>
               </div>
 
               {isExpanded && (
-                <div style={{ marginTop: "10px", paddingLeft: "16px" }}>
-                  {/* MCO Position callout */}
+                <div style={{ marginTop: "10px" }}>
+                  {/* MCO Position callout — always Moody's blue */}
                   <div style={{
-                    background: mcoStyle.bg, border: "1px solid " + mcoStyle.border,
+                    background: mcoPillStyle.bg, border: "1px solid " + mcoPillStyle.border,
                     borderRadius: "6px", padding: "10px 12px", marginBottom: "12px",
-                    borderLeft: "3px solid " + mcoStyle.text,
+                    borderLeft: "3px solid " + mcoPillStyle.text,
                   }}>
-                    <div style={{ fontSize: "9px", fontWeight: 700, color: mcoStyle.text, letterSpacing: "0.1em", marginBottom: "4px", fontFamily: "Arial, monospace" }}>MCO POSITION</div>
+                    <div style={{ fontSize: "9px", fontWeight: 700, color: mcoPillStyle.text, letterSpacing: "0.1em", marginBottom: "4px", fontFamily: "Arial, monospace" }}>MCO POSITION</div>
                     <div style={{ fontSize: "11px", color: M.textDark, lineHeight: 1.65 }}>{item.mcoNote}</div>
                   </div>
 
@@ -894,13 +887,12 @@ function StandardsScorecard() {
                 style={{ cursor: "pointer" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                  <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />
                   <div style={{ fontSize: "12px", fontWeight: 700, color: M.textDark, flex: 1 }}>{item.title}</div>
                   <span style={{
                     fontSize: "9px", fontWeight: 700,
-                    color: stdStatusStyles[mcoStatus].text,
-                    background: stdStatusStyles[mcoStatus].bg,
-                    border: "1px solid " + stdStatusStyles[mcoStatus].border,
+                    color: mcoPillStyle.text,
+                    background: mcoPillStyle.bg,
+                    border: "1px solid " + mcoPillStyle.border,
                     padding: "2px 7px", borderRadius: "3px", fontFamily: "Arial, monospace",
                   }}>MCO: {stdStatusStyles[mcoStatus].label}</span>
                   <span style={{
@@ -909,18 +901,18 @@ function StandardsScorecard() {
                     transform: isExpanded ? "rotate(180deg)" : "none",
                   }}>▾</span>
                 </div>
-                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65, paddingLeft: "16px" }}>{item.desc}</div>
-                {/* Summary counts */}
-                <div style={{ display: "flex", gap: "12px", paddingLeft: "16px", marginTop: "6px" }}>
-                  <span style={{ fontSize: "10px", color: "#1A7A4A", fontFamily: "Arial, monospace" }}>{adopted} adopted</span>
-                  <span style={{ fontSize: "10px", color: "#0028A1", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "piloting").length} piloting</span>
-                  <span style={{ fontSize: "10px", color: "#A56500", fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "planned").length} planned</span>
-                  <span style={{ fontSize: "10px", color: "#A8001A", fontFamily: "Arial, monospace" }}>{notStarted} not started</span>
+                <div style={{ fontSize: "11px", color: "#4A5568", lineHeight: 1.65 }}>{item.desc}</div>
+                {/* Summary counts — all neutral gray */}
+                <div style={{ display: "flex", gap: "12px", marginTop: "6px" }}>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{adopted} adopted</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "piloting").length} piloting</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{item.peers.filter(p => p.status === "planned").length} planned</span>
+                  <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>{notStarted} not started</span>
                 </div>
               </div>
 
               {isExpanded && (
-                <div style={{ marginTop: "10px", paddingLeft: "16px" }}>
+                <div style={{ marginTop: "10px" }}>
                   {/* Peer grid */}
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "6px" }}>
                     {item.peers.map(p => (
@@ -1093,7 +1085,21 @@ export default function Dashboard() {
               defaultOpen={false}
               accentColor={M.primary}
             >
-              <WhatsNewBanner />
+              <div style={{
+                background: M.white, border: "1px solid " + M.border,
+                borderRadius: "6px", padding: "14px 18px",
+              }}>
+                {whatsNew.map((item, i) => (
+                  <div key={i} style={{
+                    fontSize: "12px", color: "#4A5568", lineHeight: 1.75,
+                    paddingLeft: "16px", position: "relative",
+                    marginBottom: i < whatsNew.length - 1 ? "8px" : "0",
+                  }}>
+                    <span style={{ position: "absolute", left: "4px", top: "0", color: M.primary, fontWeight: 700 }}>·</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
             </CollapsibleSection>
 
             {/* ── 3. CROSS-GROUP THEMES (collapsible) ─────────────── */}
@@ -1140,27 +1146,29 @@ export default function Dashboard() {
               </div>
             </CollapsibleSection>
 
-            {/* ── 6. DIFFERENTIATION OPPORTUNITIES (collapsible) ── */}
-            <CollapsibleSection
-              title="DIFFERENTIATION OPPORTUNITIES"
-              subtitle="competitive scorecard"
-              description="Five AI themes where MCO could win or lose ground, with every peer's execution status and MCO's current position called out."
-              defaultOpen={false}
-              accentColor={M.primary}
-            >
-              <DifferentiationScorecard />
-            </CollapsibleSection>
+            {/* ── 6 + 7. DIFFERENTIATION OPPORTUNITIES + EMERGING STANDARDS ── */}
+            {/* Side-by-side 2-column grid on wider screens */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))", gap: "16px" }}>
+              <CollapsibleSection
+                title="DIFFERENTIATION OPPORTUNITIES"
+                subtitle="competitive scorecard"
+                description="Five AI themes where MCO could win or lose ground, with every peer's execution status and MCO's current position called out."
+                defaultOpen={false}
+                accentColor={M.navy}
+              >
+                <DifferentiationScorecard />
+              </CollapsibleSection>
 
-            {/* ── 7. EMERGING STANDARDS (collapsible) ────────────── */}
-            <CollapsibleSection
-              title="EMERGING STANDARDS"
-              subtitle="adoption scorecard"
-              description="Adoption scorecard for new AI protocols and practices — MCP, governance, consumption pricing, AI-adjusted guidance, and agentic compliance."
-              defaultOpen={false}
-              accentColor={M.navy}
-            >
-              <StandardsScorecard />
-            </CollapsibleSection>
+              <CollapsibleSection
+                title="EMERGING STANDARDS"
+                subtitle="adoption scorecard"
+                description="Adoption scorecard for new AI protocols and practices — MCP, governance, consumption pricing, AI-adjusted guidance, and agentic compliance."
+                defaultOpen={false}
+                accentColor={M.navy}
+              >
+                <StandardsScorecard />
+              </CollapsibleSection>
+            </div>
 
           </>
         )}
