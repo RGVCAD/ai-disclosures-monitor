@@ -6,11 +6,13 @@
 
 export const lastUpdated = "April 13, 2026";
 export const whatsNew = [
+  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel beyond Moody's, LSEG, and the Big 4 hyperscalers",
+  "Meta debuts Muse Spark (Apr 8): first closed, frontier AI model from Meta Superintelligence Labs since the $14.3B Scale AI investment; rolls out across Meta platforms and Ray-Ban Display glasses; positioned to compete with Claude, GPT, and Gemini on reasoning and multimodality",
+  "Accenture acquires Keepler Data Tech (Apr 8): Spain-based AI/data engineering firm with 240+ specialists joins Accenture — bolts onto AI Refinery and the 85K+ AI/data specialist workforce",
   "UK regulators rush to assess Claude Mythos cyber risks (Apr 12): Bank of England, FCA, and Treasury officials in urgent talks with the National Cyber Security Centre; expected to brief major UK banks, insurers and exchanges within two weeks on vulnerabilities discovered by Anthropic's unreleased frontier model",
   "Moody's Agentic Solutions goes live in Anthropic's Claude (Apr 9): purpose-built MCP application brings credit analysis agents (memo generation, peer comparisons, scorecard assessments) and compliance agents (entity profiling, ownership mapping, adverse media screening, sanctions checks) natively into Claude Desktop, Claude.ai, and Claude Enterprise — grounded in 600M entities and 2B ownership links",
   "Anthropic launches Claude Managed Agents (Apr 8): suite of composable APIs for building and hosting cloud-hosted AI agents, with secure code execution and session tracing; public beta on the Claude Platform — direct enterprise-agent competition with OpenAI and Google",
   "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
-  "Anthropic Project Glasswing + Claude Mythos Preview (Apr 7): cybersecurity initiative with 12 partners (AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks); $100M in usage credits; thousands of zero-day vulnerabilities discovered including a 27-year-old OpenBSD bug; model deemed too powerful for public release",
 ];
 
 export const peers = [
@@ -339,8 +341,8 @@ export const aiBig4 = [
     theme: "Open-Weights Llama + Personal Superintelligence",
     status: "frontrunner",
     statusLabel: "Frontrunner",
-    aiSummary: "Meta is pursuing an AI-first strategy anchored by Meta Superintelligence Labs (formed June 2025), led by former Scale AI CEO Alexandr Wang. Core pillars: (1) Llama open-weights family — 1.2B+ downloads with Llama 4 released April 2025, (2) Meta AI assistant reaching 1B monthly active users in May 2025, (3) AI-driven ad ranking via Andromeda, Lattice, and GEM delivering measurable quality and conversion lifts, and (4) Reality Labs devices (Ray-Ban Display + Neural Band) shipping in September 2025. Meta closed a $14.3B Scale AI investment in June 2025 to secure AI data and talent.",
-    keyFact: "Meta AI crossed 1B monthly active users in May 2025. Llama downloads surpassed 1.2B by April 2026. 2026 CapEx guided at $115–135B vs. $72B in 2025 — nearly doubling — concentrated on frontier model training and inference infrastructure.",
+    aiSummary: "Meta is pursuing an AI-first strategy anchored by Meta Superintelligence Labs (formed June 2025), led by former Scale AI CEO Alexandr Wang. Core pillars: (1) Muse Spark — first closed, frontier AI model from Superintelligence Labs, debuted Apr 8, 2026 across Meta platforms and Ray-Ban Display glasses, (2) Llama open-weights family — 1.2B+ downloads with Llama 4 released April 2025, (3) Meta AI assistant reaching 1B monthly active users in May 2025, (4) AI-driven ad ranking via Andromeda, Lattice, and GEM delivering measurable quality and conversion lifts, and (5) Reality Labs devices (Ray-Ban Display + Neural Band) shipping in September 2025. Meta closed a $14.3B Scale AI investment in June 2025 to secure AI data and talent.",
+    keyFact: "Muse Spark launched Apr 8, 2026 — Meta's first closed frontier model from Superintelligence Labs, positioned against Claude, GPT, and Gemini. Meta AI crossed 1B monthly active users in May 2025. Llama downloads surpassed 1.2B by April 2026. 2026 CapEx guided at $115–135B vs. $72B in 2025 — nearly doubling — concentrated on frontier model training and inference infrastructure.",
     quote: "I'm looking forward to advancing personal superintelligence for people around the world in 2026.",
     speaker: "CEO Mark Zuckerberg",
     source: "Meta Q4 2025 Earnings",
@@ -370,8 +372,8 @@ export const otherFirms = [
     theme: "Enterprise Reinvention & Managed AI Services",
     status: "frontrunner",
     statusLabel: "Frontrunner",
-    aiSummary: "Accenture is the largest enterprise AI implementation partner in the world. GenAI bookings reached $5.9B in FY2025 (doubled from $3B the prior year) and an additional $2.2B in Q1 FY2026, bringing cumulative advanced AI bookings to $11.5B by Q2 FY2026. 550,000+ employees are trained in GenAI fundamentals and 85,000+ are AI/data specialists. AI Refinery for Industry has 3,000+ reusable agents deployed across 1,300+ clients. Strategic partnerships with Anthropic, OpenAI, NVIDIA, Google, and Microsoft span training, joint offerings, and dedicated business groups.",
-    keyFact: "Q2 FY2026 record bookings of $22.1B; revenues $18.0B (+8% USD, +4% local currency). FY2026 revenue guidance raised to 3–5% local-currency growth (4–6% ex-federal). Accenture is discontinuing separate GenAI bookings reporting after Q1 FY2026 as AI embeds across the entire portfolio.",
+    aiSummary: "Accenture is the largest enterprise AI implementation partner in the world. GenAI bookings reached $5.9B in FY2025 (doubled from $3B the prior year) and an additional $2.2B in Q1 FY2026, bringing cumulative advanced AI bookings to $11.5B by Q2 FY2026. 550,000+ employees are trained in GenAI fundamentals and 85,000+ are AI/data specialists. AI Refinery for Industry has 3,000+ reusable agents deployed across 1,300+ clients. Strategic partnerships with Anthropic, OpenAI, NVIDIA, Google, and Microsoft span training, joint offerings, and dedicated business groups. Apr 9, 2026: Accenture and Anthropic launched Cyber.AI, a Claude-powered cybersecurity solution deepening the Anthropic business group. Apr 8, 2026: Accenture acquired Keepler Data Tech (240+ Spain-based AI/data engineers).",
+    keyFact: "Q2 FY2026 record bookings of $22.1B; revenues $18.0B (+8% USD, +4% local currency). FY2026 revenue guidance raised to 3–5% local-currency growth (4–6% ex-federal). Accenture is discontinuing separate GenAI bookings reporting after Q1 FY2026 as AI embeds across the entire portfolio. Cyber.AI (with Anthropic) launched Apr 9, 2026; Keepler Data Tech acquired Apr 8, 2026.",
     quote: "Gen AI alone is just a tool.",
     speaker: "CEO Julie Sweet",
     source: "diginomica — Gen AI seems so simple, right?",
