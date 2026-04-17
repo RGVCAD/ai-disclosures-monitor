@@ -4,15 +4,15 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 13, 2026";
+export const lastUpdated = "April 17, 2026";
 export const whatsNew = [
-  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel beyond Moody's, LSEG, and the Big 4 hyperscalers",
+  "Salesforce FY2026 proxy ties exec comp to Agentforce (Apr 16): first public company to formally link C-suite incentive pay to agentic AI strategic execution; introduces Agentic Work Unit (AWU) as platform KPI — 2.4B AWUs to date, 771M in Q4 (+57% QoQ), elastic AWU-to-token ratio that bends in Salesforce's favor on margin; $50B buyback authorized; board adds AI oversight committee",
+  "NEW: Differentiation Opportunity — Agentic Outcome Metrics: combining AWU-style output metrics with clear financial outcomes (revenue-per-AWU, AWU-to-expansion ratio, cost-per-outcome vs. cost-per-token) to give investors a richer agentic economics narrative than tokens or ARR alone — directly instructive for MCO's Research Assistant and Agentic Solutions disclosure strategy",
+  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel",
   "Meta debuts Muse Spark (Apr 8): first closed, frontier AI model from Meta Superintelligence Labs since the $14.3B Scale AI investment; rolls out across Meta platforms and Ray-Ban Display glasses; positioned to compete with Claude, GPT, and Gemini on reasoning and multimodality",
-  "Accenture acquires Keepler Data Tech (Apr 8): Spain-based AI/data engineering firm with 240+ specialists joins Accenture — bolts onto AI Refinery and the 85K+ AI/data specialist workforce",
   "UK regulators rush to assess Claude Mythos cyber risks (Apr 12): Bank of England, FCA, and Treasury officials in urgent talks with the National Cyber Security Centre; expected to brief major UK banks, insurers and exchanges within two weeks on vulnerabilities discovered by Anthropic's unreleased frontier model",
   "Moody's Agentic Solutions goes live in Anthropic's Claude (Apr 9): purpose-built MCP application brings credit analysis agents (memo generation, peer comparisons, scorecard assessments) and compliance agents (entity profiling, ownership mapping, adverse media screening, sanctions checks) natively into Claude Desktop, Claude.ai, and Claude Enterprise — grounded in 600M entities and 2B ownership links",
   "Anthropic launches Claude Managed Agents (Apr 8): suite of composable APIs for building and hosting cloud-hosted AI agents, with secure code execution and session tracing; public beta on the Claude Platform — direct enterprise-agent competition with OpenAI and Google",
-  "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
 ];
 
 export const peers = [
@@ -390,22 +390,22 @@ export const otherFirms = [
     accent: "#4A5568",
     tag: "#F0F4FF",
     tagText: "#0028A1",
-    headline: "Agentforce ARR Hits $800M (+169% YoY) in 15 Months; 29K Deals Closed",
-    metric: "29K",
-    metricLabel: "Agentforce deals closed since launch (Q4 FY2026)",
-    theme: "Agentforce 360 — Agentic CRM Platform",
+    headline: "FY2026 Proxy Ties Exec Comp to Agentforce; AWU Becomes First Agentic AI KPI in a Public-Company Incentive Plan",
+    metric: "2.4B",
+    metricLabel: "Agentic Work Units (AWUs) executed — 771M in Q4 alone (+57% QoQ)",
+    theme: "Agentforce 360 + AWU Disclosure Framework",
     status: "frontrunner",
     statusLabel: "Frontrunner",
-    aiSummary: "Salesforce has repositioned as 'the Agentic Enterprise' platform, with Agentforce as the centrepiece. Agentforce ARR reached $800M in Q4 FY2026 (+169% YoY), 15 months after launch, with 29,000 cumulative deals closed. Combined Agentforce + Data 360 + Informatica (acquired Nov 2025) ARR reached $2.9B (+200% YoY). Agentforce 360 — announced at Dreamforce in October 2025 — adds Voice, Agent Script, Agentforce Builder, and Agentforce Studio. Consumption pricing ($2/conversation, later shifted to Flex Credits) is the most closely watched pricing experiment in enterprise SaaS.",
-    keyFact: "Q4 FY2026: 29,000 Agentforce deals closed; 20 trillion tokens consumed; 2.4 billion agentic work units executed; Agentforce + Data 360 + Informatica combined ARR $2.9B (+200% YoY). FY2027 revenue guidance $45.8–46.2B (10–11% growth). FY2030 revenue target raised to $63B.",
+    aiSummary: "Salesforce's FY2026 proxy (DEF 14A, filed Apr 16, 2026) is a landmark disclosure: executive incentive compensation is now directly linked to 'profitable growth and strategic execution of Agentforce and Data Cloud initiatives,' making CRM the first major public company to tie C-suite pay to agentic AI operational metrics. The proxy introduces the Agentic Work Unit (AWU) — one discrete task accomplished by an AI agent (prompt processed, reasoning chain completed, or tool invoked) — as the platform-level KPI alongside tokens processed. 2.4B AWUs to date; 771M in Q4 (+57% QoQ); 20T tokens consumed. The AWU-to-token ratio is elastic: as the platform matures, more AWUs are produced per token, meaning the efficiency curve bends in Salesforce's favor on gross margin over time. Pricing evolved from $2/conversation → $0.10/action Flex Credits → $125/user/month unmetered (AWU as the internal utilization metric). CEO's FY26 equity award: 67% PRSUs + 33% performance options, paying out solely on financial results and relative TSR. Board now 77% independent with specialized committees for cybersecurity, AI oversight, and business transformation.",
+    keyFact: "FY2026 proxy (Apr 16): exec comp redesigned to reward Agentforce + Data Cloud strategic execution. AWU introduced as the first agentic AI KPI in a public-company compensation plan. $50B share buyback authorized. 34M shares added to 2013 Equity Incentive Plan. FY2026: $41.5B revenue; $39.4B subscription; 34.1% non-GAAP op margin; $12.52 non-GAAP EPS; $15.0B OCF. Agentforce ARR $800M (+169% YoY); 29K deals; combined Agentforce + Data 360 + Informatica ARR $2.9B (+200% YoY). FY2027 guidance: $45.8–46.2B (10–11% growth). FY2030 target: $63B.",
     quote: "I think it just became an $800 million business.",
     speaker: "CEO Marc Benioff",
-    source: "Salesforce Q4 FY2026 Earnings",
-    sourceDate: "Feb 25, 2026",
-    sourceUrl: "https://www.salesforce.com/news/press-releases/2026/02/25/fy26-q4-earnings/",
-    guidance: "FY2027 rev $45.8–46.2B (10–11%); FY2030 target raised to $63B; Agentforce + Data 360 + Informatica the primary growth vectors",
-    risk: "Operating margin compression (22% Q4 vs. 26% prior year) from R&D ramp; consumption-pricing model still maturing; intensifying competition from Microsoft Copilot and Google Agentspace",
-    mcoComparison: "Salesforce is not directly competitive with Moody's, but Agentforce is the single most-watched template for how an incumbent enterprise software company productizes agentic AI: $800M ARR in 15 months on a consumption pricing model with 29,000 deals closed. MCO's Agentic Solutions (Research Assistant, Smart APIs, KYC automation) follow the same playbook of embedding AI agents into existing workflows rather than selling standalone copilots. Both companies are betting that value migrates from seat-based SaaS to outcome-based agentic consumption — Salesforce's execution curve is directly instructive for MCO's GenAI monetization roadmap.",
+    source: "Salesforce FY2026 Proxy (DEF 14A) + Q4 FY2026 Earnings",
+    sourceDate: "Apr 16, 2026 / Feb 25, 2026",
+    sourceUrl: "https://www.stocktitan.net/sec-filings/CRM/def-14a-salesforce-inc-definitive-proxy-statement-4fca99c61208.html",
+    guidance: "FY2027 rev $45.8–46.2B (10–11%); FY2030 target raised to $63B; $50B buyback; exec comp tied to Agentforce execution",
+    risk: "AWU as a metric faces skepticism — critics call it a 'vanity metric' without standardized definition or third-party auditability. Operating margin compressed to 22% in Q4 (vs. 26% prior year) from R&D ramp. The elastic AWU-to-token ratio means Salesforce controls the denominator of its own efficiency narrative. Competition from Microsoft Copilot and Google Agentspace intensifying.",
+    mcoComparison: "Salesforce's FY2026 proxy is a disclosure watershed: the first public company to formally tie executive compensation to agentic AI strategic execution and to introduce a platform-level agentic output metric (AWU). For MCO, the implications are threefold: (1) Revenue signal — AWU growth (771M in Q4, +57% QoQ) can be mapped to Agentforce ARR ($800M, +169% YoY) to derive an implied revenue-per-AWU, giving investors a consumption-economics framework that MCO could adopt for Research Assistant and Agentic Solutions; (2) Customer expansion — the 29K deals and $2.9B combined ARR (+200% YoY) demonstrate that agentic metrics correlate with land-and-expand velocity, a pattern MCO should quantify for its own GenAI adopter cohort (currently growing at 2x the MA average); (3) Cost efficiency — the elastic AWU-to-token ratio (more work per token as the platform matures) is the single most important margin insight: if MCO can show that its agentic workflows produce more decision-grade outputs per inference dollar over time, it builds a compounding margin story that subscription pricing alone cannot communicate. The opportunity is to combine AWU-style outcome metrics with clear financial outcomes — tying agentic output volume to revenue conversion, customer retention/expansion, and cost-per-outcome trends — to give investors a richer picture of AI's economic impact than either tokens or ARR alone.",
   },
 ];
 
@@ -862,6 +862,26 @@ export const differentiationMap = [
     ],
   },
   {
+    title: "Agentic Outcome Metrics — Combining AWU With Clear Financial Outcomes",
+    color: "#CC2030",
+    desc: "Salesforce's FY2026 proxy introduced the Agentic Work Unit (AWU) as the first platform-level agentic output metric in a public-company executive compensation plan. The opportunity for MCO and peers is to go further: combine AWU-style output metrics with clear financial outcomes (revenue conversion, customer expansion/retention, cost-per-outcome trends) to give investors a richer picture of AI's economic impact than tokens or ARR alone. The company that defines the 'agentic P&L' — mapping output volume to margin — wins the investor narrative.",
+    mcoPosition: "early",
+    mcoNote: "MCO has the raw ingredients but hasn't assembled them into a disclosure framework yet. The GenAI adopter cohort growing at 2x the MA average is a retention/expansion signal; Research Assistant's 100K+ interactions could be converted to an outcome metric; and Agentic Solutions' $3M+ tier-1 bank deal (40 hrs → ~2 min) is a cost-per-outcome proof point. The gap: MCO reports none of these as a unified agentic economics narrative. Three specific analytics MCO could build: (1) Revenue-per-AWU — map agentic output volume (credit memos generated, KYC screens completed) to incremental ARR to derive an implied revenue per unit of agentic work, comparable to CRM's implied ~$0.33/AWU; (2) AWU-to-expansion ratio — correlate agentic adoption intensity (interactions per client) with upsell/cross-sell velocity and net retention rate, proving that agentic usage drives land-and-expand; (3) Cost-per-outcome vs. cost-per-token — track the elastic ratio between inference cost (tokens) and decision-grade outputs (agentic outcomes) over time to show a compounding margin story where each generation of model efficiency produces more decisions per dollar spent.",
+    peers: [
+      { ticker: "CRM", status: "leading", evidence: "First public company to tie exec comp to agentic AI execution and introduce AWU as platform KPI. 2.4B AWUs to date; 771M in Q4 (+57% QoQ); elastic AWU-to-token ratio bends in Salesforce's favor on margin. $800M Agentforce ARR implies ~$0.33 revenue per AWU at current run rate." },
+      { ticker: "VRSK", status: "active", evidence: "XactGen generates near-complete claims estimates — a clear outcome metric (claim processed, not token consumed). 7 of top 10 homeowners insurers adopted. Could quantify cost-per-claim-processed vs. manual baseline." },
+      { ticker: "MCO", status: "early", evidence: "Research Assistant: 100K+ interactions (output metric exists but not tied to revenue). Agentic Solutions: $3M+ bank deal with 40 hrs → 2 min cycle-time (cost-per-outcome proof point). GenAI cohort 2x ARR growth (expansion signal). None yet unified into an agentic economics framework." },
+      { ticker: "TRI", status: "early", evidence: "CoCounsel: 1M users, 107 countries — interaction volume exists but not framed as an outcome metric. 28% AI ACV is a revenue-attribution metric but not outcome-based." },
+      { ticker: "NDAQ", status: "early", evidence: "Digital Sanctions Analyst: 80%+ workload reduction is an outcome metric. 350+ clients. Could convert to cost-per-screening or alerts-per-agent-hour." },
+      { ticker: "LSEG", status: "early", evidence: "60+ institutions on MCP but no outcome metrics disclosed. Consumption pricing in development — could become AWU-equivalent if tied to query outcomes." },
+      { ticker: "SPGI", status: "gap", evidence: "No agentic output metrics disclosed. AI framed as internal efficiency (>50% workflows automated) without outcome-level KPIs for investors." },
+      { ticker: "FDS", status: "gap", evidence: "85K+ users on AI Document Search but no outcome metrics. MCP server live but utilization not quantified as outcomes." },
+      { ticker: "MSCI", status: "gap", evidence: "$15-20M AI revenue from 25 products but no outcome metrics. AI contribution framed as product count, not output volume." },
+      { ticker: "CSGP", status: "gap", evidence: "Homes AI drives 3.8x longer sessions (engagement metric) but no outcome-based framework for investor communication." },
+      { ticker: "IT", status: "gap", evidence: "No AI output metrics. AskGartner is assistive-only. Gartner predicts >50% of enterprises will abandon copilots but hasn't shipped its own outcome measurement." },
+    ],
+  },
+  {
     title: "AI-Powered Cross-Sell Into Adjacent Markets",
     color: "#0028A1",
     desc: "Using AI to lower the cost of entering adjacent verticals, expanding TAM without proportional cost increases. The companies with the broadest data estates and most flexible AI infrastructure capture new markets fastest.",
@@ -944,11 +964,12 @@ export const standardsAdoption = [
   {
     title: "Consumption-Based AI Pricing Models",
     color: "#0028A1",
-    desc: "Transitioning from flat subscription to usage-based pricing for AI features. Aligns revenue with customer value — an agentic workflow that saves one client 100 hours and another 1,000 should be priced differently.",
+    desc: "Transitioning from flat subscription to usage-based pricing for AI features. Salesforce's AWU framework (Apr 2026 proxy) is now the reference case: pricing evolved from $2/conversation → $0.10/action Flex Credits → $125/user/month unmetered, with AWU as the internal utilization metric. The elastic AWU-to-token ratio means more work per inference dollar over time — a compounding margin dynamic that pure subscription cannot capture.",
     peers: [
+      { ticker: "CRM", status: "adopted", evidence: "AWU is the first platform-level consumption metric tied to exec comp. Pricing evolved through 3 models in 18 months. $125/user/month wraps unmetered access; AWU tracks internal utilization. 2.4B AWUs at ~$0.33 implied revenue/AWU." },
       { ticker: "LSEG", status: "piloting", evidence: "Hybrid consumption + subscription model in development for MCP data access and AI agent queries." },
       { ticker: "NDAQ", status: "piloting", evidence: "Enterprise AI platform pricing evolving. Verafin moving toward per-workflow pricing for agentic workers." },
-      { ticker: "MCO", status: "planned", evidence: "GenAI sold as subscription upgrade (2x ARR growth for adopters). No consumption-based or per-interaction pricing disclosed." },
+      { ticker: "MCO", status: "planned", evidence: "GenAI sold as subscription upgrade (2x ARR growth for adopters). No consumption-based or per-interaction pricing disclosed. AWU-style metrics could be built from Research Assistant interactions and Agentic Solutions workflows." },
       { ticker: "TRI", status: "planned", evidence: "CoCounsel is subscription. No consumption pricing disclosed but scale of 1M users could support it." },
       { ticker: "VRSK", status: "planned", evidence: "Transactional AI modules exist but full consumption model not restructured." },
       { ticker: "SPGI", status: "none", evidence: "Traditional subscription model. AI features bundled into existing platforms." },
