@@ -7,12 +7,10 @@
 export const lastUpdated = "April 17, 2026";
 export const whatsNew = [
   "Salesforce FY2026 proxy ties exec comp to Agentforce (Apr 16): first public company to formally link C-suite incentive pay to agentic AI strategic execution; introduces Agentic Work Unit (AWU) as platform KPI — 2.4B AWUs to date, 771M in Q4 (+57% QoQ), elastic AWU-to-token ratio that bends in Salesforce's favor on margin; $50B buyback authorized; board adds AI oversight committee",
-  "NEW: Differentiation Opportunity — Agentic Outcome Metrics: track CRM's AWU quarter over quarter to test whether AWU-to-revenue, AWU-to-expansion, and AWU-to-cost relationships hold; if they do, MCO can define its own outcome metrics grounded in auditable, high-value workflows (credit memos, KYC screens, compliance assessments) rather than generic 'work units'",
-  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel",
-  "Meta debuts Muse Spark (Apr 8): first closed, frontier AI model from Meta Superintelligence Labs since the $14.3B Scale AI investment; rolls out across Meta platforms and Ray-Ban Display glasses; positioned to compete with Claude, GPT, and Gemini on reasoning and multimodality",
   "UK regulators rush to assess Claude Mythos cyber risks (Apr 12): Bank of England, FCA, and Treasury officials in urgent talks with the National Cyber Security Centre; expected to brief major UK banks, insurers and exchanges within two weeks on vulnerabilities discovered by Anthropic's unreleased frontier model",
+  "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
   "Moody's Agentic Solutions goes live in Anthropic's Claude (Apr 9): purpose-built MCP application brings credit analysis agents (memo generation, peer comparisons, scorecard assessments) and compliance agents (entity profiling, ownership mapping, adverse media screening, sanctions checks) natively into Claude Desktop, Claude.ai, and Claude Enterprise — grounded in 600M entities and 2B ownership links",
-  "Anthropic launches Claude Managed Agents (Apr 8): suite of composable APIs for building and hosting cloud-hosted AI agents, with secure code execution and session tracing; public beta on the Claude Platform — direct enterprise-agent competition with OpenAI and Google",
+  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel",
 ];
 
 export const peers = [
