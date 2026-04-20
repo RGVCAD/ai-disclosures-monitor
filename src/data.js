@@ -995,3 +995,63 @@ export const standardsAdoption = [
     ],
   },
 ];
+
+
+// ─── EXECUTIVE BRIEF ─────────────────────────────────────────────────────────
+// Three-section strategic summary updated each refresh cycle. Written in prose,
+// sourced claims tagged (disclosed) or (inferred), hypotheses flagged.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const executiveBrief = {
+  date: "April 20, 2026",
+  sections: [
+    {
+      id: "winning",
+      title: "Where We're Winning",
+      icon: "▲",
+      accentColor: "#1A7A4A",
+      content: [
+        "Moody's now has Agentic Solutions live on three distribution channels — Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces — which is the broadest agentic distribution surface in the DAIS peer group (disclosed). LSEG has more quantified MCP adoption (67 institutions as of Feb 20) but distributes data, not end-to-end workflows; FactSet has a production MCP server with 120+ clients but is still in alpha on agentic banking workflows.",
+        "MCO is the only peer with autonomous credit and compliance agents running natively inside a frontier AI platform and available for direct purchase on a hyperscaler marketplace. The AWS Marketplace listing also matters for a practical reason: it removes procurement friction for AWS-native enterprises who may not yet use Claude — a distribution move, not just a product move.",
+        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group (disclosed). Thomson Reuters at 28% AI ACV is the closest comparable — but note that TRI grew from 15% a year ago, so the trajectory gap is narrowing (disclosed, TRI Q4 2025 earnings).",
+      ],
+      sources: [
+        { label: "MCO AWS Marketplace", url: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-decision-grade-credit-intelligence-to-aws-marketplace.html" },
+        { label: "MCO Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+        { label: "TRI Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+      ],
+    },
+    {
+      id: "exposed",
+      title: "Where We're Exposed",
+      icon: "◆",
+      accentColor: "#CC2030",
+      content: [
+        "The disclosure gap on outcome metrics widened this cycle. Salesforce's FY2026 proxy (Apr 16) formally tied executive compensation to Agentforce strategic execution and introduced the Agentic Work Unit as a platform KPI — making CRM the first public company with an agentic AI outcome metric in its comp plan (disclosed). When analysts hear '2.4 billion agentic work units' from Salesforce and hear nothing equivalent from MCO, the silence understates our actual operational lead.",
+        "AI-attributed margin guidance remains a gap. Thomson Reuters guides 100bps/yr of EBITDA expansion from AI through 2028 (disclosed). S&P Global targets >20% run-rate expense reduction by 2027 (disclosed). Nasdaq targets $100M in AI efficiencies by year-end 2027 (disclosed). MCO's AI impact on margins is real but not broken out in forward guidance.",
+        "MCP adoption quantification: LSEG discloses 67 institutions connected via MCP (disclosed, Feb 2026). MCO hasn't published a client count for Agentic Solutions, which makes it harder for investors to compare distribution velocity head-to-head. The AWS Marketplace listing helps but adoption metrics remain undisclosed.",
+      ],
+      sources: [
+        { label: "CRM FY2026 Proxy (DEF 14A)", url: "https://www.stocktitan.net/sec-filings/CRM/def-14a-salesforce-inc-definitive-proxy-statement-4fca99c61208.html" },
+        { label: "TRI Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+        { label: "LSEG FY 2025 Results", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+      ],
+    },
+    {
+      id: "moving",
+      title: "What's Moving Fast Enough to Matter This Quarter",
+      icon: "►",
+      accentColor: "#0028A1",
+      content: [
+        "Three DAIS earnings calls hit April 23–29: Nasdaq Q1 (Apr 23), S&P Global Q1 (Apr 28), Verisk Q1 (Apr 29). This is the first opportunity to hear updated AI commentary from these peers since their last reports — and the first cycle where Salesforce's AWU framework exists as a comparison benchmark. What to listen for: any peer introducing AI-attributed margin guidance, consumption pricing language, or agentic output metrics. If one of them does, the bar moves for everyone.",
+        "Anthropic released Claude Opus 4.7 (Apr 16) — 87.6% on SWE-bench Verified, outperforming GPT-5.4 and Gemini 3.1 Pro on tool use — and launched Claude Design (Apr 17), a visual creation tool that sent Figma stock down 7.3% (disclosed). The pace of Anthropic product releases is accelerating at the same moment regulatory uncertainty around Claude is peaking: US federal appeals oral arguments are set for May, and UK regulators are expected to brief banks on Claude Mythos cyber risks within two weeks (disclosed, Apr 12). MCO's deepening Claude integration is strategically correct but the concentration risk warrants monitoring (inferred).",
+        "Gartner published a finding on April 16 that organizations with successful AI initiatives invest up to 4x more in data and analytics foundations than those that fail (disclosed). This validates the structural thesis that data-rich companies — MCO, SPGI, LSEG, VRSK — have a durable advantage, and gives MCO's IR team an external citation for earnings call narratives.",
+      ],
+      sources: [
+        { label: "Anthropic Claude Opus 4.7", url: "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/" },
+        { label: "Gartner: AI + Data Foundations", url: "https://www.gartner.com/en/newsroom/press-releases/2026-04-16-gartner-says-organizations-with-successful-ai-initiatives-invest-up-to-four-times-more-in-data-and-analytics-foundations" },
+        { label: "NDAQ Q1 2026 Earnings Date", url: "https://www.globenewswire.com/news-release/2026/04/01/3266978/6948/en/Nasdaq-to-Hold-First-Quarter-2026-Investor-Conference-Call.html" },
+      ],
+    },
+  ],
+};

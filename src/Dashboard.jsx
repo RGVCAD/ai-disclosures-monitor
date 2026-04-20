@@ -29,7 +29,7 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, aiBig4WhatsNew, aiBig4CycleThemes, aiBig4CycleSummaries, differentiationMap, standardsAdoption } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, aiBig4WhatsNew, aiBig4CycleThemes, aiBig4CycleSummaries, differentiationMap, standardsAdoption, executiveBrief } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
@@ -1016,6 +1016,7 @@ export default function Dashboard() {
           {/* Tabs */}
           <div style={{ display: "flex", gap: "3px" }}>
             {[
+              { id: "brief", label: "Executive Brief", sub: "strategic summary", count: executiveBrief.sections.length, accent: true },
               { id: "peers", label: "Peers", sub: `${peers.length} companies`, count: peers.length },
               { id: "natives", label: "AI Big 4", sub: `${aiBig4.length} companies`, count: aiBig4.length },
               { id: "otherfirms", label: "Other Firms", sub: `${otherFirms.length} companies`, count: otherFirms.length },
@@ -1047,6 +1048,119 @@ export default function Dashboard() {
 
       {/* ── CONTENT ────────────────────────────────────────────────── */}
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "22px 28px 40px" }}>
+
+        {/* EXECUTIVE BRIEF TAB */}
+        {activeTab === "brief" && (
+          <div>
+            {/* Brief header banner */}
+            <div style={{
+              background: M.white, border: "1px solid " + M.border,
+              borderRadius: "8px", padding: "24px 28px 20px", marginBottom: "20px",
+              borderTop: "3px solid " + M.primary,
+            }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "16px" }}>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
+                    <span style={{
+                      background: M.primary, color: "#FFF",
+                      fontSize: "9px", fontWeight: 800, letterSpacing: "0.12em",
+                      padding: "3px 10px", borderRadius: "3px",
+                      fontFamily: "Arial, monospace",
+                    }}>EXECUTIVE BRIEF</span>
+                    <span style={{ fontSize: "10px", color: M.midGray, fontFamily: "Arial, monospace" }}>
+                      Week of {executiveBrief.date}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: "20px", fontWeight: 800, color: M.textDark, lineHeight: 1.2, fontFamily: "Arial, sans-serif" }}>
+                    MCO AI Disclosures Monitor
+                  </div>
+                  <div style={{ fontSize: "12px", color: "#6B7A8F", marginTop: "6px", lineHeight: 1.6, maxWidth: "680px" }}>
+                    Strategic summary for leadership — three questions, sourced claims, flagged hypotheses. Updated each refresh cycle.
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: "20px", paddingTop: "4px" }}>
+                  {executiveBrief.sections.map(s => (
+                    <div key={s.id} style={{ textAlign: "center" }}>
+                      <div style={{ fontSize: "20px", fontWeight: 800, color: s.accentColor, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.icon}</div>
+                      <div style={{ fontSize: "8px", color: M.midGray, letterSpacing: "0.08em", marginTop: "4px", maxWidth: "80px", fontFamily: "Arial, monospace" }}>{s.title.toUpperCase().slice(0, 16)}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Brief sections */}
+            {executiveBrief.sections.map((section, si) => (
+              <div key={section.id} style={{
+                background: M.white, border: "1px solid " + M.border,
+                borderRadius: "8px", overflow: "hidden",
+                marginBottom: si < executiveBrief.sections.length - 1 ? "16px" : "20px",
+              }}>
+                {/* Section header */}
+                <div style={{
+                  background: section.accentColor,
+                  padding: "14px 24px",
+                  display: "flex", alignItems: "center", gap: "12px",
+                }}>
+                  <span style={{
+                    fontSize: "18px", color: "#FFF",
+                    fontWeight: 800, lineHeight: 1,
+                    opacity: 0.7,
+                  }}>{section.icon}</span>
+                  <span style={{
+                    fontSize: "14px", fontWeight: 700, color: "#FFF",
+                    letterSpacing: "0.03em", fontFamily: "Arial, sans-serif",
+                  }}>{section.title}</span>
+                </div>
+
+                {/* Section body */}
+                <div style={{ padding: "20px 28px 24px" }}>
+                  {section.content.map((paragraph, pi) => (
+                    <p key={pi} style={{
+                      fontSize: "13px", color: "#3A4A5E", lineHeight: 1.85,
+                      marginBottom: pi < section.content.length - 1 ? "16px" : "0",
+                      marginTop: 0,
+                      fontFamily: "Arial, sans-serif",
+                    }}>
+                      {paragraph}
+                    </p>
+                  ))}
+
+                  {/* Sources */}
+                  {section.sources && section.sources.length > 0 && (
+                    <div style={{
+                      marginTop: "16px", paddingTop: "12px",
+                      borderTop: "1px solid " + M.border,
+                      display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap",
+                    }}>
+                      <span style={{ fontSize: "9px", color: M.midGray, letterSpacing: "0.1em", fontWeight: 700, fontFamily: "Arial, monospace" }}>SOURCES:</span>
+                      {section.sources.map((src, si2) => (
+                        <a key={si2} href={src.url} target="_blank" rel="noreferrer"
+                          style={{
+                            fontSize: "10px", color: M.lightBlue, textDecoration: "none",
+                            borderBottom: "1px solid " + M.skyBlue,
+                            fontFamily: "Arial, monospace",
+                          }}>
+                          {src.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+
+            {/* Methodology note */}
+            <div style={{
+              background: M.offWhite, border: "1px solid " + M.border,
+              borderRadius: "6px", padding: "12px 18px",
+            }}>
+              <div style={{ fontSize: "10px", color: M.midGray, lineHeight: 1.7, fontFamily: "Arial, monospace" }}>
+                <strong style={{ color: "#6B7A8F" }}>Reading this brief:</strong> Claims tagged <em>(disclosed)</em> are sourced from primary filings, earnings transcripts, or official press releases. Claims tagged <em>(inferred)</em> are analytical conclusions drawn from disclosed data — treat as hypotheses. This brief is generated during each dashboard refresh cycle and reflects the data available at that time.
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* PEER GROUP TAB */}
         {activeTab === "peers" && (
