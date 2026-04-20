@@ -4,13 +4,13 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 17, 2026";
+export const lastUpdated = "April 20, 2026";
 export const whatsNew = [
-  "Salesforce FY2026 proxy ties exec comp to Agentforce (Apr 16): first public company to formally link C-suite incentive pay to agentic AI strategic execution; introduces Agentic Work Unit (AWU) as platform KPI — 2.4B AWUs to date, 771M in Q4 (+57% QoQ), elastic AWU-to-token ratio that bends in Salesforce's favor on margin; $50B buyback authorized; board adds AI oversight committee",
-  "UK regulators rush to assess Claude Mythos cyber risks (Apr 12): Bank of England, FCA, and Treasury officials in urgent talks with the National Cyber Security Centre; expected to brief major UK banks, insurers and exchanges within two weeks on vulnerabilities discovered by Anthropic's unreleased frontier model",
-  "Anthropic signs multiyear CoreWeave compute deal (Apr 10): agreement to rent CoreWeave AI data center capacity to build and deploy Claude models — adds a new hyperscale compute supplier alongside Amazon, Google and Microsoft",
-  "Moody's Agentic Solutions goes live in Anthropic's Claude (Apr 9): purpose-built MCP application brings credit analysis agents (memo generation, peer comparisons, scorecard assessments) and compliance agents (entity profiling, ownership mapping, adverse media screening, sanctions checks) natively into Claude Desktop, Claude.ai, and Claude Enterprise — grounded in 600M entities and 2B ownership links",
-  "Accenture + Anthropic launch Cyber.AI (Apr 9): joint cybersecurity solution powered by Claude to help enterprises secure and scale AI-driven security operations — deepens Accenture's Anthropic business group and extends the Claude-enterprise distribution flywheel",
+  "Moody's Agentic Solutions now on AWS Marketplace (Apr 16): MAS Credit Memo workflow available for purchase — adds AWS as a third distribution channel alongside Anthropic Claude and Databricks/OpenAI partner marketplaces; additional credit and compliance capabilities to follow",
+  "Anthropic releases Claude Opus 4.7 + launches Claude Design (Apr 16–17): Opus 4.7 scores 87.6% on SWE-bench (outperforms GPT-5.4 and Gemini 3.1 Pro on tool use), 3x image resolution; Claude Design is a visual creation tool for prototypes, slides, and design systems — Figma stock fell 7.3% on the announcement",
+  "Gartner: successful AI orgs invest 4x more in data foundations (Apr 16): research finding validates the structural advantage of data-rich companies (MCO, SPGI, LSEG, VRSK) in the AI era — organizations that underinvest in data and analytics foundations are the ones whose AI initiatives stall",
+  "Salesforce FY2026 proxy ties exec comp to Agentforce (Apr 16): first public company to formally link C-suite incentive pay to agentic AI strategic execution; introduces Agentic Work Unit (AWU) as platform KPI — 2.4B AWUs to date, 771M in Q4 (+57% QoQ); $50B buyback authorized; board adds AI oversight committee",
+  "Upcoming earnings: Nasdaq Q1 (Apr 23), S&P Global Q1 (Apr 28), Verisk Q1 (Apr 29) — first opportunity to hear updated AI commentary and guidance from three DAIS peers this cycle",
 ];
 
 export const peers = [
@@ -21,14 +21,14 @@ export const peers = [
     accent: "#0028A1",
     tag: "#F0F4FF",
     tagText: "#0028A1",
-    headline: "40% of MA Portfolio Now GenAI-Enabled; Agentic Solutions Live",
+    headline: "40% of MA Portfolio GenAI-Enabled; Agentic Solutions Now on 3 Distribution Channels",
     metric: "40%",
     metricLabel: "of MA product ARR with GenAI enablement",
-    theme: "Agentic Solutions / MCP",
+    theme: "Agentic Solutions / Multi-Platform Distribution",
     status: "leader",
     statusLabel: "Leader",
-    aiSummary: "Moody's is scaling 'decision-grade contextual intelligence' into customer workflows via proprietary APIs, MCP servers, and specialized AI agents. Agentic Solutions now available natively in Anthropic's Claude (Apr 9) via purpose-built MCP application — credit analysis and compliance agents run directly in Claude Desktop, Claude.ai, and Claude Enterprise. GenAI-adopter customer ARR is growing at 2x the rate of Moody's Analytics overall. Research Assistant became the fastest-adopted product in company history with 100K+ interactions.",
-    keyFact: "Moody's Analytics ARR reached $3.5B (up 8% YoY). 96% of MA revenue is recurring. Private credit revenue up 60% YoY. Agentic Solutions live in Anthropic Claude via MCP (Apr 9); partnerships with Databricks and OpenAI for additional MCP server distribution. Data estate covers 600M+ entities and 2B ownership links globally. Moody's also deploying Claude Enterprise internally.",
+    aiSummary: "Moody's is scaling 'decision-grade contextual intelligence' into customer workflows via proprietary APIs, MCP servers, and specialized AI agents across three distribution channels: (1) Anthropic Claude — Agentic Solutions live natively via purpose-built MCP application since Apr 9, (2) AWS Marketplace — MAS Credit Memo workflow available for purchase since Apr 16, with additional credit and compliance capabilities to follow, and (3) Databricks/OpenAI partner marketplaces. GenAI-adopter customer ARR is growing at 2x the rate of Moody's Analytics overall. Research Assistant became the fastest-adopted product in company history with 100K+ interactions.",
+    keyFact: "Moody's Analytics ARR reached $3.5B (up 8% YoY). 96% of MA revenue is recurring. Private credit revenue up 60% YoY. Agentic Solutions now available on three platforms: Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces. MAS Credit Memo is the initial AWS offering — transforms 40-hr manual credit memos into automated, explainable, source-traceable outputs. Data estate covers 600M+ entities and 2B ownership links globally. Moody's also deploying Claude Enterprise internally.",
     quote: "Generative AI represents a once-in-a-generation opportunity to enhance how companies navigate the ever-evolving world of exponential risk.",
     speaker: "CEO Rob Fauber",
     source: "MCO Q4 2025 Earnings Call",
@@ -270,8 +270,8 @@ export const aiBig4 = [
     theme: "Enterprise-First / Claude + Claude Code",
     status: "frontrunner",
     statusLabel: "Frontrunner",
-    aiSummary: "Enterprise AI market leader by revenue share. 85% of revenue from business customers — the inverse of OpenAI. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). 500+ customers spending $1M+/yr. 8 of Fortune 10 are customers. Three-year revenue growth: ~$0 → $1B → ~$10B → $14B. IPO preparations underway. Claude Managed Agents launched Apr 8 in public beta — composable APIs for cloud-hosted agents with secure code execution and session tracing. Project Glasswing (Apr 7): Claude Mythos Preview deployed for cybersecurity with 12 major tech/finance partners; found thousands of zero-day vulnerabilities; model deemed too powerful for public release.",
-    keyFact: "$30B Series G led by GIC & Coatue closed Feb 12, 2026. Partners include Microsoft ($5B), NVIDIA ($10B), Amazon ($4B), Google. The Claude Partner Network launched with $100M investment (Mar 2026). Claude Code: 4% of all public GitHub commits worldwide. Project Glasswing: $100M in usage credits + $4M to open-source security orgs. Apr 10: signed multiyear CoreWeave compute deal, adding a new hyperscale supplier alongside AWS, Google, and Microsoft. Partners include: AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks.",
+    aiSummary: "Enterprise AI market leader by revenue share. 85% of revenue from business customers — the inverse of OpenAI. Claude Code hit $2.5B ARR (doubled since Jan 2026 alone). 500+ customers spending $1M+/yr. 8 of Fortune 10 are customers. Three-year revenue growth: ~$0 → $1B → ~$10B → $14B. IPO preparations underway. Claude Opus 4.7 released Apr 16 — 87.6% on SWE-bench Verified (outperforms GPT-5.4 and Gemini 3.1 Pro on tool use and computer interaction), 3x image resolution increase. Claude Design launched Apr 17 — visual creation tool for prototypes, slides, and design systems from conversation; Figma stock fell 7.3% on the news. Claude Managed Agents launched Apr 8 in public beta. Project Glasswing (Apr 7): Claude Mythos Preview deployed for cybersecurity with 12 major tech/finance partners; thousands of zero-day vulnerabilities discovered; model deemed too powerful for public release.",
+    keyFact: "Claude Opus 4.7 (Apr 16): 87.6% SWE-bench, outperforms GPT-5.4 and Gemini 3.1 Pro on tool use. Claude Design (Apr 17): visual creation product, powered by Opus 4.7, available to Pro/Max/Team/Enterprise. $30B Series G led by GIC & Coatue closed Feb 12, 2026. Partners include Microsoft ($5B), NVIDIA ($10B), Amazon ($4B), Google. The Claude Partner Network launched with $100M investment (Mar 2026). Claude Code: 4% of all public GitHub commits worldwide. Project Glasswing: $100M in usage credits + $4M to open-source security orgs. Apr 10: signed multiyear CoreWeave compute deal. Partners include: AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, Nvidia, Palo Alto Networks.",
     quote: "Claude is increasingly becoming critical to how businesses work.",
     speaker: "CFO Krishna Rao",
     source: "Anthropic Series G Announcement",
@@ -657,7 +657,7 @@ export const cycleCompanySummaries = [
   { ticker: "CSGP", summary: "Homes AI launched: 3.8x longer sessions, 7x more leads, 64% bounce rate reduction. 115M monthly unique visitors. $100M annualized agent revenue. 50% of software dev dedicated to AI." },
   { ticker: "MSCI", summary: "Acquired Vantager for AI-native private markets diligence (Mar 2) and PM Insights for secondary market data covering $5.5T+ market cap (Apr 7). IndexAI Insights launched with ChatGPT and Claude connectors. 25 AI products generating $15-20M. Targeting 5-15% opex reduction for reinvestment." },
   { ticker: "NDAQ", summary: "Agentic AI Workforce: 350+ clients, 80%+ workload reduction. $100M AI efficiency target by 2027. Verafin enterprise signings 4x YoY. First to exceed $5B net revenue." },
-  { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028. Apr 7: new research reinforced the thesis — only 28% of I&O AI use cases meet ROI, 20% fail outright — plus an agentic-SCM TAM forecast of $53B by 2030." },
+  { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028. Apr 7: only 28% of I&O AI use cases meet ROI, 20% fail outright; agentic-SCM TAM $53B by 2030. Apr 16: new research — orgs with successful AI invest up to 4x more in data & analytics foundations, validating data-company structural advantage." },
   { ticker: "FDS", summary: "Second C-suite change tied to AI strategy: Joshua Warren named CFO effective Apr 13 (from Envestnet / BlackRock), succeeding Helen Shan — follows Mar 4 Kate Stepp CAIO appointment. AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
 ];
 
@@ -810,7 +810,7 @@ export const differentiationMap = [
     mcoNote: "MCO's Apr 9 launch of Agentic Solutions natively in Anthropic's Claude via purpose-built MCP app is a significant step — credit analysis and compliance agents now run directly inside Claude Desktop/Enterprise. Also distributing via Databricks and OpenAI. LSEG still leads on quantified adoption (60+ institutions) but MCO's deep integration (interactive reports inline, 600M entities + 2B ownership links) is differentiated. The opportunity is to quantify client adoption numbers.",
     peers: [
       { ticker: "LSEG", status: "leading", evidence: "60+ institutions on MCP. Partners: Anthropic, OpenAI, Microsoft, Databricks, Snowflake, Rogo. 33 petabytes accessible. MaaS marketplace live." },
-      { ticker: "MCO", status: "leading", evidence: "Agentic Solutions live natively in Anthropic's Claude via purpose-built MCP app (Apr 9). Credit analysis + compliance agents render interactive reports inline. Also distributing via Databricks, OpenAI. 600M+ entities, 2B ownership links. Client adoption not yet quantified." },
+      { ticker: "MCO", status: "leading", evidence: "Three distribution channels live: Anthropic Claude via MCP app (Apr 9), AWS Marketplace with MAS Credit Memo (Apr 16), and Databricks/OpenAI partner marketplaces. 600M+ entities, 2B ownership links. Client adoption not yet quantified but distribution surface is now the broadest in the DAIS peer group." },
       { ticker: "FDS", status: "active", evidence: "First production-grade MCP server for financial intelligence. 120+ clients engaged. 800+ institutional users in Explorer beta." },
       { ticker: "MSCI", status: "active", evidence: "AI connectors for ChatGPT and Claude. IndexAI Insights launched. Expansion planned to Private Assets." },
       { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent integrated with Google Gemini. SparkAIR GenAI suite for institutional clients. No MCP server announced." },
