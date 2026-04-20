@@ -1078,14 +1078,6 @@ export default function Dashboard() {
                     Strategic summary for leadership — three questions, sourced claims, flagged hypotheses. Updated each refresh cycle.
                   </div>
                 </div>
-                <div style={{ display: "flex", gap: "20px", paddingTop: "4px" }}>
-                  {executiveBrief.sections.map(s => (
-                    <div key={s.id} style={{ textAlign: "center" }}>
-                      <div style={{ fontSize: "20px", fontWeight: 800, color: s.accentColor, fontFamily: "Arial, monospace", lineHeight: 1 }}>{s.icon}</div>
-                      <div style={{ fontSize: "8px", color: M.midGray, letterSpacing: "0.08em", marginTop: "4px", maxWidth: "80px", fontFamily: "Arial, monospace" }}>{s.title.toUpperCase().slice(0, 16)}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 
