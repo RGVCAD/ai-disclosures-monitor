@@ -4,12 +4,12 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 20, 2026";
+export const lastUpdated = "April 22, 2026";
 export const whatsNew = [
+  "MSCI Q1 2026 earnings beat (Apr 21): revenue $850.8M (+14.1% YoY), EPS $4.55 vs. $4.43 est; CEO Fernandez says 'every new product has an AI component' — AI-specific revenue tracking becoming irrelevant; IndexAI Insights live on ChatGPT and Claude with hundreds of clients; launched as many new products in Q1 as in all of FY2025; VantageR acquisition closed for AI-native private markets diligence; ESG ratings fully revamped with AI",
+  "Moody's Q1 2026 earnings (Apr 22): beat estimates, reiterated full-year guidance (Adj. EPS $16.40–$17.00); no new AI metrics disclosed beyond previously reported figures",
   "Moody's Agentic Solutions now on AWS Marketplace (Apr 16): MAS Credit Memo workflow available for purchase — adds AWS as a third distribution channel alongside Anthropic Claude and Databricks/OpenAI partner marketplaces; additional credit and compliance capabilities to follow",
   "Anthropic releases Claude Opus 4.7 + launches Claude Design (Apr 16–17): Opus 4.7 scores 87.6% on SWE-bench (outperforms GPT-5.4 and Gemini 3.1 Pro on tool use), 3x image resolution; Claude Design is a visual creation tool for prototypes, slides, and design systems — Figma stock fell 7.3% on the announcement",
-  "Gartner: successful AI orgs invest 4x more in data foundations (Apr 16): research finding validates the structural advantage of data-rich companies (MCO, SPGI, LSEG, VRSK) in the AI era — organizations that underinvest in data and analytics foundations are the ones whose AI initiatives stall",
-  "Salesforce FY2026 proxy ties exec comp to Agentforce (Apr 16): first public company to formally link C-suite incentive pay to agentic AI strategic execution; introduces Agentic Work Unit (AWU) as platform KPI — 2.4B AWUs to date, 771M in Q4 (+57% QoQ); $50B buyback authorized; board adds AI oversight committee",
   "Upcoming earnings: Nasdaq Q1 (Apr 23), S&P Global Q1 (Apr 28), Verisk Q1 (Apr 29) — first opportunity to hear updated AI commentary and guidance from three DAIS peers this cycle",
 ];
 
@@ -28,13 +28,13 @@ export const peers = [
     status: "leader",
     statusLabel: "Leader",
     aiSummary: "Moody's is scaling 'decision-grade contextual intelligence' into customer workflows via proprietary APIs, MCP servers, and specialized AI agents across three distribution channels: (1) Anthropic Claude — Agentic Solutions live natively via purpose-built MCP application since Apr 9, (2) AWS Marketplace — MAS Credit Memo workflow available for purchase since Apr 16, with additional credit and compliance capabilities to follow, and (3) Databricks/OpenAI partner marketplaces. GenAI-adopter customer ARR is growing at 2x the rate of Moody's Analytics overall. Research Assistant became the fastest-adopted product in company history with 100K+ interactions.",
-    keyFact: "Moody's Analytics ARR reached $3.5B (up 8% YoY). 96% of MA revenue is recurring. Private credit revenue up 60% YoY. Agentic Solutions now available on three platforms: Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces. MAS Credit Memo is the initial AWS offering — transforms 40-hr manual credit memos into automated, explainable, source-traceable outputs. Data estate covers 600M+ entities and 2B ownership links globally. Moody's also deploying Claude Enterprise internally.",
+    keyFact: "Moody's Analytics ARR reached $3.5B (up 8% YoY). 96% of MA revenue is recurring. Private credit revenue up 60% YoY. Agentic Solutions now available on three platforms: Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces. MAS Credit Memo is the initial AWS offering — transforms 40-hr manual credit memos into automated, explainable, source-traceable outputs. Data estate covers 600M+ entities and 2B ownership links globally. Moody's also deploying Claude Enterprise internally. Q1 2026 earnings (Apr 22): beat estimates, reiterated full-year guidance — no new AI metrics disclosed.",
     quote: "Generative AI represents a once-in-a-generation opportunity to enhance how companies navigate the ever-evolving world of exponential risk.",
     speaker: "CEO Rob Fauber",
     source: "MCO Q4 2025 Earnings Call",
     sourceDate: "Feb 18, 2026",
     sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/",
-    guidance: "High-single-digit rev growth; Adj. op. margin 52–53%; Adj. EPS $16.40–17.00; FCF $2.8–3.0B",
+    guidance: "High-single-digit rev growth; Adj. op. margin 52–53%; Adj. EPS $16.40–17.00; FCF $2.8–3.0B (reiterated Q1 2026)",
     risk: "Competition from SPGI in AI-driven analytics; regulatory scrutiny on rating agencies; cyclical exposure to debt issuance volumes",
     mcoComparison: "Moody's is the benchmark for this peer set on GenAI monetization: 40% of MA product ARR is GenAI-enabled, the GenAI adopter cohort ARR is growing at 2x the MA average, and Research Assistant is the fastest-adopted product in company history. The MCP distribution partnerships with Anthropic, Databricks, and OpenAI, combined with the Token Integration Engine on Canton, push Moody's further ahead of peers still framing AI as an internal efficiency play.",
   },
@@ -165,22 +165,22 @@ export const peers = [
     accent: "#C97B00",
     tag: "#FFF8EC",
     tagText: "#A56500",
-    headline: "AI Savings → Reinvested Into Products, Not Margin",
-    metric: "25",
-    metricLabel: "AI-powered new products launched in 2025",
-    theme: "AI-Funded Product Innovation Flywheel",
-    status: "laggard",
-    statusLabel: "Laggard",
-    aiSummary: "Distinctive and deliberate strategy: AI cost savings (targeting 5–15% opex reduction) are to be fully reinvested into new product development rather than taken as margin expansion. 3–4 year AI journey already underway internally. AI used for ESG controversy analysis, private asset data gathering, and factor model development.",
-    keyFact: "~$15–20M in AI product revenue from 25 new AI-powered products in 2025 — small but accelerating. CEO Fernandez calls MSCI 'a total AI machine.' $3B additional share repurchase authorized in Q3 2025. Acquired PM Insights (Apr 7, 2026) for private markets secondary data covering $5.5T+ market cap.",
-    quote: "If we apply AI dramatically and lower our operating run-the-business expenses by 5%, 10%, 15%, all of that money can go into investing into the change in the business.",
+    headline: "Q1 2026: 'Every New Product Has an AI Component' — AI Revenue Tracking Now Irrelevant",
+    metric: "Q1=Q0",
+    metricLabel: "launched as many products in Q1 as all of FY2025",
+    theme: "AI-Everywhere Product Acceleration",
+    status: "active",
+    statusLabel: "Active",
+    aiSummary: "Q1 2026 earnings (Apr 21) marked a strategic inflection: CEO Fernandez declared AI-specific revenue tracking 'almost irrelevant' because every new product now has an AI component (AI-native, AI-powered, or AI-enabled). Product launch velocity exploded — Q1 alone matched FY2025's full-year output. IndexAI Insights live on ChatGPT and Claude with hundreds of clients. ESG rating system fully revamped with AI. VantageR acquisition (Feb 27) adds AI-native private markets diligence. AI driving significant efficiencies in data capture and private asset operations.",
+    keyFact: "Q1 2026: Revenue $850.8M (+14.1% YoY), EPS $4.55 (beat $4.43 est). Organic revenue growth 13%+, Adj. EBITDA growth ~19%. IndexAI Insights launched Feb with hundreds of clients on ChatGPT and Claude. Product launch rate: Q1 = full FY2025. Three bolt-on acquisitions: Compass Financial Technologies, VantageR (AI-native private markets, Feb 27), PM Insights ($5.5T+ secondary data, Apr 7). AI used to shift from human-led to machine-assisted custom index creation. $7T+ in ETF-linked index AUM.",
+    quote: "Every new product we're launching has an AI component to it — some are AI-native, some AI-powered, some AI-enabled. Tracking AI-specific revenue is becoming almost irrelevant.",
     speaker: "CEO Henry Fernandez",
-    source: "MSCI Q3 2025 Earnings Call",
-    sourceDate: "Oct 28, 2025",
-    sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/10/28/msci-msci-q3-2025-earnings-call-transcript/",
-    guidance: "$3.3B+ run rate; private markets & wealth management as AI growth vectors; ~$7T index-linked AUM",
-    risk: "AI product revenue (~$15–20M) still small vs. total revenue; near-term margin compression as investment cycle ramps; Q1 2026 operating income down ~5%",
-    mcoComparison: "MSCI's explicit decision to reinvest 5–15% AI opex savings into new products — rather than taking the savings as margin — is a structurally different capital allocation choice than MCO's margin-accretive GenAI ramp. Both are pushing hard into private markets (MSCI's Vantager + PM Insights acquisitions mirror MCO's private credit push), and the IndexAI Insights connectors in ChatGPT and Claude are a direct competitive parallel to MCO's MCP server distribution. MCO's near-term earnings profile looks cleaner; MSCI's bet is on a longer-duration product flywheel.",
+    source: "MSCI Q1 2026 Earnings Call",
+    sourceDate: "Apr 21, 2026",
+    sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/",
+    guidance: "$850.8M Q1 rev (+14.1% YoY); private markets & wealth management as AI growth vectors; ~$7T+ index-linked AUM",
+    risk: "AI revenue still not separately quantified (by design); near-term margin compression as investment cycle ramps; acquisitions need integration execution",
+    mcoComparison: "MSCI's Q1 2026 marks a genuine strategic shift: from 'AI as a separate product category ($15–20M)' to 'AI is in everything we ship.' The product launch velocity (Q1 = full FY2025) validates the reinvestment thesis. IndexAI Insights connectors on ChatGPT and Claude are a direct parallel to MCO's MCP distribution — both are racing to embed proprietary data into third-party AI platforms. MCO leads on quantified AI monetization (~$200M adopter cohort ARR, 97% retention); MSCI leads on AI-driven product velocity. The VantageR acquisition mirrors MCO's private credit push. Different capital allocation philosophies, but both credible.",
   },
   {
     ticker: "NDAQ",
@@ -415,7 +415,7 @@ export const financials = [
   { name: "LSEG", ticker: "LSEG", reportedGrowth: 5.8, organicGrowth: 7.1, adjMargin: 50.3, source: "LSEG FY 2025 Results", sourceUrl: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
   { name: "Verisk", ticker: "VRSK", reportedGrowth: 6.6, organicGrowth: 6.6, adjMargin: 56.0, source: "VRSK Q4 2025 Earnings", sourceUrl: "https://www.stocktitan.net/news/VRSK/verisk-reports-fourth-quarter-and-full-year-2025-financial-b4bhfuj9ttxi.html" },
   { name: "CoStar", ticker: "CSGP", reportedGrowth: 19.0, organicGrowth: 19.0, adjMargin: 13.8, source: "CSGP FY 2025 Earnings", sourceUrl: "https://www.costargroup.com/press-room/2026/costar-group-full-year-2025-revenue-increased-19-year-over-year-net-income-7" },
-  { name: "MSCI", ticker: "MSCI", reportedGrowth: 10.6, organicGrowth: 10.2, adjMargin: 62.2, source: "MSCI Q4 2025 Earnings", sourceUrl: "https://ir.msci.com/news-releases/news-release-details/msci-reports-financial-results-fourth-quarter-and-full-year-2025" },
+  { name: "MSCI", ticker: "MSCI", reportedGrowth: 14.1, organicGrowth: 13.0, adjMargin: 62.2, source: "MSCI Q1 2026 Earnings", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
   { name: "Nasdaq", ticker: "NDAQ", reportedGrowth: 13.0, organicGrowth: 12.0, adjMargin: 56.0, source: "NDAQ Q4 2025 Earnings", sourceUrl: "https://www.nasdaq.com/newsroom/nasdaq-q4-earnings-outstanding-2025-nasdaq-exceeds-5-billion-net-revenue-first-time" },
   { name: "Gartner", ticker: "IT", reportedGrowth: 4.0, organicGrowth: 3.7, adjMargin: 24.8, source: "Gartner FY 2025 Earnings", sourceUrl: "https://news.alphastreet.com/gartner-inc-it-q4-2025-earnings-call-transcript/" },
   { name: "FactSet", ticker: "FDS", reportedGrowth: 7.1, organicGrowth: 6.8, adjMargin: 35.0, source: "FDS Q2 FY2026 Earnings (Feb 28 qtr)", sourceUrl: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
@@ -438,6 +438,7 @@ export const disclosures = [
   // Q1 2026
   { date: "Mar 18, 2026", company: "Moody's", ticker: "MCO", quarter: "Q1 2026", summary: "Token Integration Engine™ (TIE) launched: Moody's Ratings becomes first credit rating agency to bring independent credit analysis to blockchain financial infrastructure. TIE operates a node on the Canton Network, ingesting analytical data and distributing credit insights on-chain. Issuer-led participation model preserves rating integrity. Plan to expand to additional blockchain networks and instrument types.", source: "Moody's TIE Launch Press Release", sourceUrl: "https://ir.moodys.com/press-releases/news-details/2026/Moodys-Ratings-Becomes-First-Credit-Rating-Agency-to-Bring-Independent-Credit-Analysis-to-Blockchain-Financial-Infrastructure/default.aspx" },
   { date: "Apr 9, 2026", company: "Moody's", ticker: "MCO", quarter: "Q2 2026", summary: "Moody's Agentic Solutions (MAS) now available natively in Anthropic's Claude — including Claude Desktop, Claude.ai, and Claude Enterprise — through a purpose-built Model Context Protocol (MCP) application. At launch, credit analysis agents support memo generation, peer comparisons, and scorecard assessments; compliance agents cover entity profiling, ownership structure mapping, adverse media screening, and sanctions checks. All outputs rendered as interactive reports directly within Claude. Grounded in 600M entities and 2B ownership links. Moody's also deploying Claude Enterprise, Claude Code, and Claude Desktop internally to accelerate product development.", source: "Moody's-Anthropic MAS Press Release", sourceUrl: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-credit-and-compliance-workflows-directly-into-anthropics-claude.html" },
+  { date: "Apr 22, 2026", company: "Moody's", ticker: "MCO", quarter: "Q1 2026", summary: "Q1 2026 earnings: beat estimates, reiterated full-year guidance (Adj. EPS $16.40–$17.00, high-single-digit rev growth). No new AI metrics disclosed beyond previously reported Q4 2025 figures.", source: "MCO Q1 2026 Earnings", sourceUrl: "https://ir.moodys.com/financials/quarterly-results/default.aspx" },
 
   // ── SPGI — S&P Global ─────────────────────────────────────────────
   { date: "Feb 10, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q4 2025", summary: "Management called 2025 a 'breakthrough year for AI.' 66% of all 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts generated. 10%+ of enterprise applications eliminated through AI automation. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027.", source: "SPGI Q4 2025 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
@@ -483,6 +484,7 @@ export const disclosures = [
   { date: "Jan 28, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q4 2025", summary: "25 AI-powered products launched in 2025 generating $15-20M in revenue. 120+ internal AI projects underway. CEO Fernandez: transformation into 'total AI machine.' Data production throughput doubled. Data production costs reduced 25%. 11 consecutive years of double-digit adjusted EPS growth.", source: "MSCI Q4 2025 Earnings", sourceUrl: "https://ir.msci.com/news-releases/news-release-details/msci-reports-financial-results-fourth-quarter-and-full-year-2025" },
   { date: "Jan 28, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q4 2025", summary: "Q4 2025: 10%+ organic revenue growth, 13%+ adjusted EBITDA growth, ~12% adjusted EPS growth. Total run rate $3.3B+ (13% growth). Index-linked AUM ~$7 trillion. Run-rate operating expense reduction targets: 5%, 10%, 15% in phased approach through 2026.", source: "MSCI Q4 2025 Financial Results", sourceUrl: "https://ir.msci.com/news-releases/news-release-details/msci-reports-financial-results-fourth-quarter-and-full-year-2025" },
   { date: "Sep 2025", company: "MSCI", ticker: "MSCI", quarter: "Q3 2025", summary: "AI Portfolio Insights launched: combines generative AI with advanced analytics for portfolio risk/return analysis. MSCI Global AI Index launched Oct 15, 2025 tracking 100 leading global AI companies. AI-ESG firms shown to improve ratings 2.3x faster with 147 bps average financing cost reduction.", source: "MSCI AI Portfolio Insights Launch", sourceUrl: "https://www.msci.com/data-and-analytics/risk-management-solutions/ai-portfolio-insights" },
+  { date: "Apr 21, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q1 2026", summary: "Q1 2026 earnings beat: revenue $850.8M (+14.1% YoY), EPS $4.55 vs. $4.43 est. Organic revenue growth 13%+, Adj. EBITDA growth ~19%. CEO Fernandez: 'every new product has an AI component' — AI-native, AI-powered, or AI-enabled — making AI-specific revenue tracking 'almost irrelevant.' IndexAI Insights live on ChatGPT and Claude with hundreds of clients. Product launch velocity: Q1 alone matched full FY2025 output. AI shifting custom index creation from human-led to machine-assisted. ESG rating system fully revamped with AI. Three bolt-on acquisitions: Compass Financial Technologies, VantageR (AI-native private markets diligence), PM Insights. $7T+ in ETF-linked index AUM.", source: "MSCI Q1 2026 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
   { date: "Apr 7, 2026", company: "MSCI", ticker: "MSCI", quarter: "Q2 2026", summary: "Acquired PM Insights: specialist private markets data and analytics firm providing daily secondary market reference data — pricing, valuation, transaction and liquidity data for private company securities. Aggregates proprietary data from institutional broker-dealers and bank secondary desks covering $5.5T+ estimated market cap. Advances MSCI's strategy to bring institutional-grade data and pricing transparency to private asset investing. Results reported within Index segment.", source: "MSCI PM Insights Acquisition", sourceUrl: "https://www.msci.com/discover-msci/media-room/msci-advances-transparency-in-private-markets-with-acquisition-of-pm-insights" },
 
   // ── NDAQ — Nasdaq ─────────────────────────────────────────────────
@@ -649,13 +651,13 @@ export const cycleThemes = [
 ];
 
 export const cycleCompanySummaries = [
-  { ticker: "MCO", summary: "Agentic Solutions now live natively in Anthropic's Claude via purpose-built MCP app (Apr 9) — credit analysis + compliance agents run directly in Claude Desktop/Enterprise. $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). MCP servers also via Databricks, OpenAI. New Q4 metrics: 97% GenAI retention, +18 NPS uplift, 5x productivity gains. CreditLens ~20% growth, ~67% revenue uplift on AI upgrade. TIE blockchain credit analysis launched (Mar 18). Moody's deploying Claude Enterprise internally." },
+  { ticker: "MCO", summary: "Agentic Solutions now live natively in Anthropic's Claude via purpose-built MCP app (Apr 9) — credit analysis + compliance agents run directly in Claude Desktop/Enterprise. AWS Marketplace launch (Apr 16). $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). Q4 2025 metrics: 97% GenAI retention, +18 NPS uplift, 5x productivity gains. CreditLens ~20% growth, ~67% revenue uplift on AI upgrade. TIE blockchain credit analysis launched (Mar 18). Q1 2026 earnings (Apr 22): beat estimates, reiterated guidance — no new AI metrics." },
   { ticker: "SPGI", summary: "Acquired Enertel AI for power forecasting. Capital IQ Pro expanded with Drift AI and ProntoNLP. 66% of employees on Spark Assist. Google Cloud multi-year partnership for agentic innovation." },
   { ticker: "TRI", summary: "CoCounsel hit 1M users. Proprietary 'Thomson' LLM for summer 2026. Smokeball partnership for small/mid-size law. 28% AI ACV (up from 15%). New CFO joining May." },
   { ticker: "LSEG", summary: "MCP expanded to M365 Copilot. MaaS marketplace launched with Societe Generale. 60+ institutions on MCP. 350K users migrated to Workspace. EBITDA margin surpassed 50%." },
   { ticker: "VRSK", summary: "Investor Day: 6-8% OCC revenue growth targets (2026-2028). XactGen agentic claims launched. 22 AI modules released (beat target). Insurance fraud study: 76% of insurers see more sophisticated manipulated media." },
   { ticker: "CSGP", summary: "Homes AI launched: 3.8x longer sessions, 7x more leads, 64% bounce rate reduction. 115M monthly unique visitors. $100M annualized agent revenue. 50% of software dev dedicated to AI." },
-  { ticker: "MSCI", summary: "Acquired Vantager for AI-native private markets diligence (Mar 2) and PM Insights for secondary market data covering $5.5T+ market cap (Apr 7). IndexAI Insights launched with ChatGPT and Claude connectors. 25 AI products generating $15-20M. Targeting 5-15% opex reduction for reinvestment." },
+  { ticker: "MSCI", summary: "Q1 2026 earnings beat (Apr 21): revenue $850.8M (+14.1%), EPS $4.55. CEO Fernandez: 'every new product has an AI component' — AI revenue tracking 'almost irrelevant.' Product velocity: Q1 = full FY2025. IndexAI Insights live on ChatGPT/Claude with hundreds of clients. ESG ratings revamped with AI. Custom index creation now machine-assisted. VantageR + PM Insights + Compass acquisitions. $7T+ ETF-linked AUM." },
   { ticker: "NDAQ", summary: "Agentic AI Workforce: 350+ clients, 80%+ workload reduction. $100M AI efficiency target by 2027. Verafin enterprise signings 4x YoY. First to exceed $5B net revenue." },
   { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028. Apr 7: only 28% of I&O AI use cases meet ROI, 20% fail outright; agentic-SCM TAM $53B by 2030. Apr 16: new research — orgs with successful AI invest up to 4x more in data & analytics foundations, validating data-company structural advantage." },
   { ticker: "FDS", summary: "Second C-suite change tied to AI strategy: Joshua Warren named CFO effective Apr 13 (from Envestnet / BlackRock), succeeding Helen Shan — follows Mar 4 Kate Stepp CAIO appointment. AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
@@ -797,7 +799,7 @@ export const differentiationMap = [
       { ticker: "CSGP", status: "active", evidence: "Homes AI: full real estate search experience via natural language. 3.8x longer sessions." },
       { ticker: "FDS", status: "active", evidence: "AI for Banking in alpha: automates deal processes, pitch materials, memos. Mercury AI chatbot live." },
       { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent with Google Gemini. SparkAIR for querying proprietary datasets. Not yet agentic at customer-facing level." },
-      { ticker: "MSCI", status: "early", evidence: "AI Portfolio Insights launched but still assistive, not autonomous. Focus on data production automation internally." },
+      { ticker: "MSCI", status: "active", evidence: "Q1 2026: AI shifting custom index creation from human-led to machine-assisted. ESG ratings fully revamped with AI. Product launch velocity exploded (Q1 = full FY2025). Still primarily assistive rather than autonomous, but accelerating." },
       { ticker: "LSEG", status: "early", evidence: "AI Copilot agents piloted via Microsoft Copilot Studio. Not yet agentic-grade for client workflows." },
       { ticker: "IT", status: "gap", evidence: "AskGartner is conversational but assistive-only. Apr 2 prediction: >50% of enterprises will abandon copilots — but Gartner itself hasn't shipped agentic products." },
     ],
@@ -812,7 +814,7 @@ export const differentiationMap = [
       { ticker: "LSEG", status: "leading", evidence: "60+ institutions on MCP. Partners: Anthropic, OpenAI, Microsoft, Databricks, Snowflake, Rogo. 33 petabytes accessible. MaaS marketplace live." },
       { ticker: "MCO", status: "leading", evidence: "Three distribution channels live: Anthropic Claude via MCP app (Apr 9), AWS Marketplace with MAS Credit Memo (Apr 16), and Databricks/OpenAI partner marketplaces. 600M+ entities, 2B ownership links. Client adoption not yet quantified but distribution surface is now the broadest in the DAIS peer group." },
       { ticker: "FDS", status: "active", evidence: "First production-grade MCP server for financial intelligence. 120+ clients engaged. 800+ institutional users in Explorer beta." },
-      { ticker: "MSCI", status: "active", evidence: "AI connectors for ChatGPT and Claude. IndexAI Insights launched. Expansion planned to Private Assets." },
+      { ticker: "MSCI", status: "active", evidence: "IndexAI Insights live on ChatGPT and Claude with hundreds of clients in first 2 months. Expansion planned to Private Assets. VantageR acquisition adds AI-native private markets diligence layer." },
       { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent integrated with Google Gemini. SparkAIR GenAI suite for institutional clients. No MCP server announced." },
       { ticker: "TRI", status: "early", evidence: "Building proprietary 'Thomson' LLM rather than distributing via third-party models. Data layer strategy focused on owned platforms." },
       { ticker: "VRSK", status: "gap", evidence: "No MCP or third-party AI distribution strategy disclosed. Data access remains through Verisk-owned platforms." },
@@ -835,7 +837,7 @@ export const differentiationMap = [
       { ticker: "VRSK", status: "early", evidence: "Transactional AI modules exist but pricing model not restructured for AI specifically." },
       { ticker: "SPGI", status: "gap", evidence: "Traditional subscription model. AI features bundled into existing platforms." },
       { ticker: "FDS", status: "gap", evidence: "ASV subscription model. AI features included in existing workstation pricing." },
-      { ticker: "MSCI", status: "gap", evidence: "$15-20M AI revenue from 25 products but pricing model not disclosed as consumption-based." },
+      { ticker: "MSCI", status: "gap", evidence: "CEO Fernandez says AI-specific revenue tracking is 'almost irrelevant' since every product now has AI. No consumption pricing disclosed — AI is embedded, not separately priced." },
       { ticker: "CSGP", status: "gap", evidence: "Agent subscription model ($100M annualized). Homes AI free to consumers." },
       { ticker: "IT", status: "gap", evidence: "Contract Value subscription model. No AI-specific consumption pricing." },
     ],
@@ -874,7 +876,7 @@ export const differentiationMap = [
       { ticker: "LSEG", status: "early", evidence: "60+ institutions on MCP. Consumption pricing in development — could become an outcome metric if tied to query results rather than query volume." },
       { ticker: "SPGI", status: "gap", evidence: "AI framed as internal efficiency (>50% workflows automated). No outcome-level KPIs disclosed for investors." },
       { ticker: "FDS", status: "gap", evidence: "85K+ users on AI Document Search, MCP server live. Utilization not quantified as outcomes." },
-      { ticker: "MSCI", status: "gap", evidence: "$15-20M AI revenue from 25 products. AI contribution framed as product count, not output volume or outcomes." },
+      { ticker: "MSCI", status: "gap", evidence: "AI now in every product but CEO explicitly stopped tracking AI-specific revenue — framed as product velocity, not outcome metrics. No AWU-equivalent disclosed." },
       { ticker: "CSGP", status: "gap", evidence: "Homes AI drives 3.8x longer sessions (engagement metric) but no outcome-based framework." },
       { ticker: "IT", status: "gap", evidence: "No AI output metrics. AskGartner is assistive. Gartner predicts >50% of enterprises will abandon copilots but hasn't shipped its own outcome measurement." },
     ],
@@ -1003,7 +1005,7 @@ export const standardsAdoption = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const executiveBrief = {
-  date: "April 20, 2026",
+  date: "April 22, 2026",
   sections: [
     {
       id: "winning",
