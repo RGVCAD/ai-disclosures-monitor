@@ -588,14 +588,14 @@ export const disclosures = [
 // Updated by the daily refresh task alongside disclosures.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const cycleWindow = "Jan 13 – Apr 13, 2026";
+export const cycleWindow = "Jan 13 – Apr 24, 2026";
 
 export const cycleThemes = [
   {
     theme: "Agentic AI Products",
     color: "#1A7A4A",
     highlights: [
-      { ticker: "NDAQ", text: "Agentic AI Workforce: 350+ clients adopted, 80%+ AML alert workload reduction. Digital Sanctions Analyst and Enhanced Due Diligence Analyst both live. Targeting hundreds of AI agents globally in 2026, thousands by 2027." },
+      { ticker: "NDAQ", text: "Q1 2026 (Apr 23): agentic AI workforce now 500+ clients (up 40% since Investor Day). Verafin exceeded 2,800 clients ($12T assets), 21% FCM revenue growth. GenAI drug trafficking analytic launching this quarter — embeds generative AI with OSINT and social media data." },
       { ticker: "VRSK", text: "XactGen launched: agentic AI producing near-complete claims estimates from aerial imagery and policyholder photos. 22 customer-facing AI modules released in 2025 (beat target), 25 planned for 2026." },
       { ticker: "TRI", text: "CoCounsel hit 1M users across 107 countries. Proprietary 'Thomson' LLM announced for summer 2026 — outperforming general models on 4 of 10 legal task benchmarks. Next-gen CoCounsel entering beta Apr 20." },
       { ticker: "MCO", text: "Agentic Solutions now live natively in Anthropic's Claude (Apr 9) via purpose-built MCP app — credit analysis and compliance agents run directly in Claude Desktop/Enterprise. Signed $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). MCP servers also distributed via Databricks, OpenAI." },
@@ -606,9 +606,9 @@ export const cycleThemes = [
     theme: "MCP & Data Distribution",
     color: "#4899D4",
     highlights: [
-      { ticker: "LSEG", text: "Expanded Microsoft partnership: LSEG data now in M365 Copilot (Teams, Excel). 33 petabytes accessible via MCP. Model-as-a-Service marketplace launched with Societe Generale. 60+ institutions connected." },
+      { ticker: "LSEG", text: "Q1 2026 (Apr 23): MCP adoption surged to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% via Claude, 45% direct, 15% ChatGPT/Snowflake/Databricks. Asia 40%, EMEA 35%, US 25%. Workspace AI products serving ~3,000 users. MaaS marketplace live with SocGen. LSEG data in M365 Copilot." },
       { ticker: "FDS", text: "First production-grade MCP server for real-time financial intelligence. 120+ clients actively engaged. API call volume at 3x February levels by March." },
-      { ticker: "MSCI", text: "IndexAI Insights launched with AI connectors for ChatGPT and Claude. MSCI app available in both OpenAI and Anthropic ecosystems." },
+      { ticker: "MSCI", text: "Q1 2026 (Apr 21): IndexAI Insights live on ChatGPT and Claude with hundreds of clients. CEO Fernandez: 'every new product has an AI component' — AI revenue tracking 'almost irrelevant.' Product launch velocity: Q1 matched full FY2025." },
       { ticker: "MCO", text: "Agentic Solutions live natively in Claude via purpose-built MCP app (Apr 9) — interactive reports rendered inline. Also distributing via Databricks, OpenAI. Data estate: 600M+ entities, 2B ownership links. Moody's also deploying Claude Enterprise internally." },
     ],
   },
@@ -638,7 +638,9 @@ export const cycleThemes = [
       { ticker: "TRI", text: "AI-enabled products reached 28% of ACV (up from 15% a year ago). 85%+ employees using Open Arena. 80%+ engineers using AI coding tools. $200M+ annual AI investment." },
       { ticker: "SPGI", text: "66% of 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts. 10%+ of enterprise applications eliminated. Targeting 20%+ run-rate expense reduction by 2027." },
       { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
-      { ticker: "NDAQ", text: "Verafin enterprise signings quadrupled YoY. 1,300+ clients using GenAI Entity Research Copilot. $1B+ in check fraud caught in 2025. Targeting $100M in AI-driven efficiencies by 2027." },
+      { ticker: "NDAQ", text: "Q1 2026 (Apr 23): agentic AI workforce 500+ clients (up 40%). FinTech revenue $517M (+18%, record). ACV bookings 50%+ YoY. Verafin: 2,800+ clients, $12T assets, 21% FCM revenue growth. $100M AI efficiency target by 2027." },
+      { ticker: "LSEG", text: "Q1 2026 (Apr 23): MCP customers surged to 154 (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% access via Claude. Workspace AI Search (~1,500 users) and AI Deep Research (~1,600 users) launched. Guidance raised." },
+      { ticker: "MSCI", text: "Q1 2026 (Apr 21): AI now in every new product — CEO stopped tracking AI-specific revenue. Launched as many products in Q1 as full FY2025. IndexAI Insights: hundreds of clients on ChatGPT and Claude. ESG ratings fully revamped with AI." },
     ],
   },
   {
@@ -646,7 +648,7 @@ export const cycleThemes = [
     color: "#CC2030",
     highlights: [
       { ticker: "SPGI", text: "Spark Assist GenAI platform: 66% of all 40,000 employees active. 10%+ of enterprise applications eliminated. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027." },
-      { ticker: "LSEG", text: "350,000+ users migrated from Eikon to Workspace. 4,000 employees deployed on ChatGPT Enterprise. Workspace GenAI rolling out to all users H1 2026." },
+      { ticker: "LSEG", text: "350,000+ users migrated from Eikon to Workspace. 4,000 employees on ChatGPT Enterprise. Workspace AI Search and AI Deep Research now serving ~3,000 users (Q1 2026). Aiming to triple Deep Research adoption in Q2." },
       { ticker: "FDS", text: "4 internal AI tools delivering 25%+ reduction in manual data curation. AI coding assistants authoring ~20% of successful code commits. 80% cost reduction in vectorizing client data." },
     ],
   },
@@ -1015,13 +1017,13 @@ export const executiveBrief = {
       icon: "▲",
       accentColor: "#1A7A4A",
       content: [
-        "Moody's now has Agentic Solutions live on three distribution channels — Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces — which is the broadest agentic distribution surface in the DAIS peer group (disclosed). LSEG has more quantified MCP adoption (67 institutions as of Feb 20) but distributes data, not end-to-end workflows; FactSet has a production MCP server with 120+ clients but is still in alpha on agentic banking workflows.",
+        "Moody's now has Agentic Solutions live on three distribution channels — Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces — which is the broadest agentic workflow distribution surface in the DAIS peer group. LSEG now has far more quantified MCP adoption (154 customers, up from 9 in Dec 2025, with 40% accessing via Claude) but distributes data, not end-to-end workflows; FactSet has a production MCP server with 120+ clients but is still in alpha on agentic banking workflows (disclosed).",
         "MCO is the only peer with autonomous credit and compliance agents running natively inside a frontier AI platform and available for direct purchase on a hyperscaler marketplace. The AWS Marketplace listing also matters for a practical reason: it removes procurement friction for AWS-native enterprises who may not yet use Claude — a distribution move, not just a product move.",
-        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group (disclosed). Thomson Reuters at 28% AI ACV is the closest comparable — but note that TRI grew from 15% a year ago, so the trajectory gap is narrowing (disclosed, TRI Q4 2025 earnings).",
+        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group (disclosed). Thomson Reuters at 28% AI ACV is the closest comparable — but note that TRI grew from 15% a year ago, so the trajectory gap is narrowing (disclosed, TRI Q4 2025 earnings). MSCI's Q1 2026 earnings marked an inflection: CEO Fernandez declared AI-specific revenue tracking 'almost irrelevant' because every product now has AI — validating AI pervasion but making head-to-head metric comparison harder (disclosed, Apr 21).",
       ],
       sources: [
         { label: "MCO AWS Marketplace", url: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-decision-grade-credit-intelligence-to-aws-marketplace.html" },
-        { label: "MCO Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+        { label: "MSCI Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
         { label: "TRI Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
       ],
     },
@@ -1031,14 +1033,14 @@ export const executiveBrief = {
       icon: "◆",
       accentColor: "#CC2030",
       content: [
-        "The disclosure gap on outcome metrics widened this cycle. Salesforce's FY2026 proxy (Apr 16) formally tied executive compensation to Agentforce strategic execution and introduced the Agentic Work Unit as a platform KPI — making CRM the first public company with an agentic AI outcome metric in its comp plan (disclosed). When analysts hear '2.4 billion agentic work units' from Salesforce and hear nothing equivalent from MCO, the silence understates our actual operational lead.",
-        "AI-attributed margin guidance remains a gap. Thomson Reuters guides 100bps/yr of EBITDA expansion from AI through 2028 (disclosed). S&P Global targets >20% run-rate expense reduction by 2027 (disclosed). Nasdaq targets $100M in AI efficiencies by year-end 2027 (disclosed). MCO's AI impact on margins is real but not broken out in forward guidance.",
-        "MCP adoption quantification: LSEG discloses 67 institutions connected via MCP (disclosed, Feb 2026). MCO hasn't published a client count for Agentic Solutions, which makes it harder for investors to compare distribution velocity head-to-head. The AWS Marketplace listing helps but adoption metrics remain undisclosed.",
+        "The MCP adoption quantification gap widened sharply this cycle. LSEG's Q1 2026 update (Apr 23) disclosed 154 MCP customers (90 connected + 64 onboarding), up from just 9 in December 2025 — and broke the data down by platform (40% Claude, 45% direct, 15% other), geography (Asia 40%, EMEA 35%, US 25%), and customer type (buyside 50%, sellside 30%, corporates 20%). This is the most granular AI distribution metric any DAIS peer has published. MCO hasn't disclosed a client count for Agentic Solutions, which makes it impossible for investors to compare distribution velocity head-to-head (disclosed).",
+        "AI-attributed margin guidance remains a gap. Thomson Reuters guides 100bps/yr of EBITDA expansion from AI through 2028 (disclosed). S&P Global targets >20% run-rate expense reduction by 2027 (disclosed). Nasdaq targets $100M in AI efficiencies by year-end 2027 and just posted 21% EPS growth with FinTech revenue +18% — showing concrete AI-driven financial results (disclosed, Apr 23). MCO's AI impact on margins is real but not broken out in forward guidance.",
+        "Nasdaq's agentic AI workforce hit 500+ clients (up 40% since Investor Day) with Verafin exceeding 2,800 clients across $12T in assets and 21% FCM revenue growth (disclosed, Apr 23). This is the most direct competitive overlap with MCO's KYC and compliance agentic workflows. The upcoming GenAI drug trafficking analytic expands Nasdaq's agentic product surface area into a new category — MCO should monitor whether this creates whitespace or overlap.",
       ],
       sources: [
+        { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+        { label: "NDAQ Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
         { label: "CRM FY2026 Proxy (DEF 14A)", url: "https://www.stocktitan.net/sec-filings/CRM/def-14a-salesforce-inc-definitive-proxy-statement-4fca99c61208.html" },
-        { label: "TRI Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
-        { label: "LSEG FY 2025 Results", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
       ],
     },
     {
@@ -1047,14 +1049,14 @@ export const executiveBrief = {
       icon: "►",
       accentColor: "#0028A1",
       content: [
-        "Three DAIS earnings calls hit April 23–29: Nasdaq Q1 (Apr 23), S&P Global Q1 (Apr 28), Verisk Q1 (Apr 29). This is the first opportunity to hear updated AI commentary from these peers since their last reports — and the first cycle where Salesforce's AWU framework exists as a comparison benchmark. What to listen for: any peer introducing AI-attributed margin guidance, consumption pricing language, or agentic output metrics. If one of them does, the bar moves for everyone.",
+        "Earnings season is delivering real signal. LSEG's MCP adoption (9 → 154 customers in 4 months) validated the MCP distribution thesis faster than expected — and the 40% Claude share is a concrete proof point for Anthropic's enterprise positioning that benefits MCO's Claude-first strategy. Nasdaq's 500+ agentic clients and 21% FCM revenue growth show AI driving topline, not just efficiency. Two more earnings calls remain: S&P Global Q1 (Apr 28) and Verisk Q1 (Apr 29). What to listen for: any peer introducing AI-attributed margin guidance, consumption pricing language, or agentic output metrics. If one of them does, the bar moves for everyone.",
         "Anthropic released Claude Opus 4.7 (Apr 16) — 87.6% on SWE-bench Verified, outperforming GPT-5.4 and Gemini 3.1 Pro on tool use — and launched Claude Design (Apr 17), a visual creation tool that sent Figma stock down 7.3% (disclosed). The pace of Anthropic product releases is accelerating at the same moment regulatory uncertainty around Claude is peaking: US federal appeals oral arguments are set for May, and UK regulators are expected to brief banks on Claude Mythos cyber risks within two weeks (disclosed, Apr 12). MCO's deepening Claude integration is strategically correct but the concentration risk warrants monitoring (inferred).",
         "Gartner published a finding on April 16 that organizations with successful AI initiatives invest up to 4x more in data and analytics foundations than those that fail (disclosed). This validates the structural thesis that data-rich companies — MCO, SPGI, LSEG, VRSK — have a durable advantage, and gives MCO's IR team an external citation for earnings call narratives.",
       ],
       sources: [
-        { label: "Anthropic Claude Opus 4.7", url: "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/" },
+        { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+        { label: "NDAQ Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
         { label: "Gartner: AI + Data Foundations", url: "https://www.gartner.com/en/newsroom/press-releases/2026-04-16-gartner-says-organizations-with-successful-ai-initiatives-invest-up-to-four-times-more-in-data-and-analytics-foundations" },
-        { label: "NDAQ Q1 2026 Earnings Date", url: "https://www.globenewswire.com/news-release/2026/04/01/3266978/6948/en/Nasdaq-to-Hold-First-Quarter-2026-Investor-Conference-Call.html" },
       ],
     },
   ],
