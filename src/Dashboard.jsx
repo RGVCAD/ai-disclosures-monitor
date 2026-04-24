@@ -33,12 +33,13 @@ import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosur
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
+  active:      { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", dot: "#0028A1" },
   laggard:     { bg: "#FEF3E0", text: "#A56500", border: "#F5D8A8", dot: "#C97B00" },
   frontrunner: { bg: "#F0F4FF", text: "#0028A1", border: "#A8BCE8", dot: "#0028A1" },
 };
 
 function Badge({ status, label }) {
-  const s = statusConfig[status] || statusConfig.building;
+  const s = statusConfig[status] || statusConfig.laggard;
   return (
     <span style={{
       display: "inline-flex", alignItems: "center", gap: "5px",
