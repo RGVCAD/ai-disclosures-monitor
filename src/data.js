@@ -4,13 +4,14 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 24, 2026";
+export const lastUpdated = "April 28, 2026";
 export const whatsNew = [
   "LSEG Q1 2026 trading update (Apr 23): MCP adoption surges to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025; 40% of MCP access via Claude, 45% direct, 15% ChatGPT/Snowflake/Databricks; Workspace AI products serving ~3,000 users; guidance raised to upper half of 6.5–7.5% organic growth; record Q1 revenue (+9.8% OCC)",
   "Nasdaq Q1 2026 earnings (Apr 23): net revenue $1.4B (+13%), ARR $3.2B (+12%), EPS $0.96 (+21%); agentic AI workforce now 500+ clients (up 40% since Investor Day); FinTech revenue $517M (+18%); Verafin 2,800+ clients, $12T assets, 21% FCM revenue growth; GenAI drug trafficking analytic launching this quarter",
   "MSCI Q1 2026 earnings beat (Apr 21): revenue $850.8M (+14.1% YoY), EPS $4.55 vs. $4.43 est; CEO Fernandez says 'every new product has an AI component' — AI-specific revenue tracking becoming irrelevant; IndexAI Insights live on ChatGPT and Claude with hundreds of clients; launched as many new products in Q1 as in all of FY2025",
   "Moody's Q1 2026 earnings (Apr 22): beat estimates, reiterated full-year guidance (Adj. EPS $16.40–$17.00); no new AI metrics disclosed beyond previously reported figures",
-  "Upcoming earnings: S&P Global Q1 (Apr 28), Verisk Q1 (Apr 29) — next opportunity to hear updated AI commentary from DAIS peers",
+  "S&P Global Q1 2026 earnings (Apr 28): revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), margin 51.8% (+100bps); 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar; MI AI-product ACV growing 1.3x non-AI customers, Energy AI-product ACV growing 2x; Capital IQ Pro evolving to AI-native with Chat IQ, Document Intelligence, Chart Explainer, Drift.AI; exploring Agent-to-Agent Protocol (A2A); MCP and S&P Global Plug-ins for Claude Cowork listed as scale capabilities",
+  "Upcoming earnings: Verisk Q1 (Apr 29) — next opportunity to hear updated AI commentary from DAIS peers",
 ];
 
 export const peers = [
@@ -45,22 +46,22 @@ export const peers = [
     accent: "#001A6E",
     tag: "#F0F1F8",
     tagText: "#001A6E",
-    headline: ">50% of Data Workflows Now Automated",
-    metric: ">50%",
-    metricLabel: "of data workflows automated via AI",
-    theme: "AI as Internal Efficiency Engine",
+    headline: "Q1 2026: 300+ Kensho LLM-Ready API Customers; Capital IQ Pro Going AI-Native",
+    metric: "300+",
+    metricLabel: "customers on Kensho LLM-Ready APIs (API volume doubled Feb→Mar)",
+    theme: "AI Data Distribution / AI-Native Platform",
     status: "leader",
     statusLabel: "Leader",
-    aiSummary: "AI is primarily an internal efficiency driver today — over half of workflows automated, 10%+ of applications eliminated in 2025. Three strategic pillars at Nov 2025 Investor Day: Advance Market Leadership, Expand High-Growth Adjacencies, and Amplify AI. External AI products are growing but secondary to private markets expansion.",
-    keyFact: "Enterprise Data Office targeting >20% run-rate expense reduction by end of 2027. ACV Growth in Market Intelligence: 6.5–7% for two consecutive quarters — accelerating.",
-    quote: "Amplify Enterprise Capabilities and AI: Expedite value creation for our customers by deploying more capabilities at scale across the enterprise.",
-    speaker: "Investor Day Materials",
-    source: "SPGI Investor Day 2025",
-    sourceDate: "Nov 13, 2025",
-    sourceUrl: "https://investor.spglobal.com/news-releases/news-details/2025/SP-Global-to-Present-Next-Phase-of-its-Growth-Strategy-and-Medium-Term-Financial-Targets-at-Investor-Day-2025/default.aspx",
-    guidance: "6–8% organic CCY rev growth; 9–10% Adj. EPS growth; Mobility spin-off filing Q2 2026",
-    risk: "AI product narrative less developed vs. TRI/VRSK; Mobility spin creates near-term noise; higher-than-expected bond issuance assumptions in guidance",
-    mcoComparison: "SPGI leads MCO on internal AI efficiency — 66% of 40,000 employees on Spark Assist, >50% of workflows automated, and a 20%+ run-rate expense reduction target by 2027. External AI product velocity is catching up (ChatIQ, Kensho/Gemini, Enertel AI, Capital IQ Pro expansion) but lacks MCO's quantified external ARR flywheel. SPGI's AI story is framed as operating leverage; MCO's is framed as product monetization — reflecting where each company sees its moat.",
+    aiSummary: "Q1 2026 marked SPGI's pivot from AI-as-efficiency to AI-as-product. 300+ customers now under contract or in trial for Kensho LLM-Ready APIs, with API call volume doubling from February to March. MI ACV among AI product customers growing at 1.3x the rate of non-AI customers; Energy AI-product ACV growing at 2x. Capital IQ Pro is evolving from web-based to AI-native platform with Chat IQ, Document Intelligence, Chart Explainer, and Drift.AI. SPGI is exploring Agent-to-Agent Protocol (A2A) and listed MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork as AI-at-scale distribution capabilities.",
+    keyFact: "Revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), Adj. operating margin 51.8% (+100bps). MI revenue $1.30B (+8%). Kensho LLM-Ready APIs: 300+ customers, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP and Claude Cowork Plug-ins listed as scale capabilities. CERA Titan: AI-native upstream data platform. Guidance reiterated: 6–8% OCC revenue growth, EPS $19.40–$19.65.",
+    quote: "We are also seeing fast-paced adoption of our AI functionality and are advancing our leadership as we rapidly innovate and partner to help customers unlock the potential of AI.",
+    speaker: "CEO Martina Cheung",
+    source: "SPGI Q1 2026 Earnings",
+    sourceDate: "Apr 28, 2026",
+    sourceUrl: "https://investor.spglobal.com/quarterly-earnings",
+    guidance: "6–8% OCC rev growth; EPS $19.40–$19.65; Mobility spin-off filing Q2 2026; 10–35bps margin expansion",
+    risk: "Kensho LLM-Ready API customer count (300+) includes trials — conversion rate not disclosed; A2A and MCP references are aspirational with no client counts; Mobility spin creates near-term noise",
+    mcoComparison: "SPGI's Q1 2026 earnings shifted its AI narrative from internal efficiency to external product traction: 300+ Kensho LLM-Ready API customers with doubling API volume, and quantified AI-product ACV premiums (1.3x MI, 2x Energy) for the first time. This is the closest SPGI has come to MCO's 'AI monetization flywheel' framing. However, MCO still leads on agentic workflow depth (autonomous credit memos, compliance agents running in Claude) while SPGI's AI products remain primarily assistive (Chat IQ, Document Intelligence). SPGI's mention of MCP and Claude Cowork Plug-ins signals convergence on the same distribution channels MCO pioneered.",
   },
   {
     ticker: "TRI",
@@ -410,7 +411,7 @@ export const otherFirms = [
 
 export const financials = [
   { name: "Moody's", ticker: "MCO", reportedGrowth: 8.9, organicGrowth: 8.0, adjMargin: 51.1, source: "MCO Q4 2025 Earnings", sourceUrl: "https://ir.moodys.com/press-releases/news-details/2026/Moodys-Corporation-Reports-Results-for-Fourth-Quarter-and-Full-Year-2025/default.aspx" },
-  { name: "S&P Global", ticker: "SPGI", reportedGrowth: 8.0, organicGrowth: 8.0, adjMargin: 50.4, source: "SPGI Q4 2025 Earnings", sourceUrl: "https://investor.spglobal.com/news-releases/news-release-details/2026/SP-Global-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx" },
+  { name: "S&P Global", ticker: "SPGI", reportedGrowth: 10.0, organicGrowth: 9.0, adjMargin: 51.8, source: "SPGI Q1 2026 Earnings", sourceUrl: "https://investor.spglobal.com/quarterly-earnings" },
   { name: "Thomson Reuters", ticker: "TRI", reportedGrowth: 3.0, organicGrowth: 7.0, adjMargin: 39.2, source: "TRI Q4 2025 Earnings", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
   { name: "LSEG", ticker: "LSEG", reportedGrowth: 9.8, organicGrowth: 9.8, adjMargin: 50.3, source: "LSEG Q1 2026 Trading Update", sourceUrl: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
   { name: "Verisk", ticker: "VRSK", reportedGrowth: 6.6, organicGrowth: 6.6, adjMargin: 56.0, source: "VRSK Q4 2025 Earnings", sourceUrl: "https://www.stocktitan.net/news/VRSK/verisk-reports-fourth-quarter-and-full-year-2025-financial-b4bhfuj9ttxi.html" },
@@ -447,6 +448,8 @@ export const disclosures = [
   { date: "Dec 10, 2025", company: "S&P Global", ticker: "SPGI", quarter: "Q4 2025", summary: "Multi-year strategic partnership with Google Cloud for agentic AI innovation. Kensho Data Retrieval Agent integrated with Google Gemini Enterprise. Unifying proprietary data on BigQuery. SparkAIR GenAI suite for querying proprietary datasets launched for institutional clients.", source: "SPGI Google Cloud Partnership", sourceUrl: "https://press.spglobal.com/2025-12-10-S-P-Global-Advances-AI-Powered-Enterprise-Transformation-Through-Strategic-Partnership-with-Google-Cloud" },
   { date: "Mar 12, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q1 2026", summary: "Capital IQ Pro expanded with new AI capabilities: ProntoNLP sentiment analytics integration, Drift AI for Excel-based natural-language financial modeling, 4M+ structured securities added, security-level fixed income ownership data, Visible Alpha biopharma analytics, and 20,000 private-markets documents added to Document Intelligence. Accelerating AI feature velocity for institutional research workflows.", source: "SPGI Capital IQ Pro AI Expansion", sourceUrl: "https://press.spglobal.com/2026-03-12-S-P-Global-Enhances-Capital-IQ-Pro-with-Expanded-Fixed-Income-and-Biopharma-Analytics" },
   { date: "Mar 18, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q1 2026", summary: "Completed acquisition of Enertel AI Corporation — AI/ML-driven short-term power price forecasting for North American electricity markets. S&P Global Energy now delivers real-time AI-powered nodal price forecasts for physical power traders, utilities, and asset operators. Addresses the AI-datacenter energy demand forecasting use case directly.", source: "SPGI Enertel AI Acquisition", sourceUrl: "https://press.spglobal.com/2026-03-18-S-P-Global-Acquires-Enertel-AI-Corporation-to-Enhance-Power-Market-Offering" },
+  // Q1 2026 Earnings
+  { date: "Apr 28, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q1 2026", summary: "Q1 2026 earnings: revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), Adj. operating margin 51.8% (+100bps). 300+ customers under contract or in trial for Kensho LLM-Ready APIs — API call volume doubled from February to March. MI ACV among AI product customers growing at 1.3x the rate of non-AI customers; Energy AI-product ACV growing at 2x. Capital IQ Pro evolving from web-based to AI-native platform: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring Agent-to-Agent Protocol (A2A). MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork listed as AI-at-scale distribution capabilities. CERA Titan launched as AI-native upstream data platform. Guidance reiterated: 6–8% OCC revenue growth, EPS $19.40–$19.65.", source: "SPGI Q1 2026 Earnings", sourceUrl: "https://investor.spglobal.com/quarterly-earnings" },
 
   // ── TRI — Thomson Reuters ─────────────────────────────────────────
   { date: "Feb 24, 2026", company: "Thomson Reuters", ticker: "TRI", quarter: "Q1 2026", summary: "CoCounsel reached 1 million users across 107 countries — nearly 3 years after launch. Stock surged 11-14% on announcement. Milestone driven by legal, tax, accounting, audit, risk, and compliance adoption globally.", source: "TRI CoCounsel 1M Users", sourceUrl: "https://www.prnewswire.com/news-releases/one-million-professionals-turn-to-cocounsel-as-thomson-reuters-scales-ai-for-regulated-industries-302694903.html" },
@@ -588,7 +591,7 @@ export const disclosures = [
 // Updated by the daily refresh task alongside disclosures.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const cycleWindow = "Jan 13 – Apr 24, 2026";
+export const cycleWindow = "Jan 13 – Apr 28, 2026";
 
 export const cycleThemes = [
   {
@@ -608,6 +611,7 @@ export const cycleThemes = [
     highlights: [
       { ticker: "LSEG", text: "Q1 2026 (Apr 23): MCP adoption surged to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% via Claude, 45% direct, 15% ChatGPT/Snowflake/Databricks. Asia 40%, EMEA 35%, US 25%. Workspace AI products serving ~3,000 users. MaaS marketplace live with SocGen. LSEG data in M365 Copilot." },
       { ticker: "FDS", text: "First production-grade MCP server for real-time financial intelligence. 120+ clients actively engaged. API call volume at 3x February levels by March." },
+      { ticker: "SPGI", text: "Q1 2026 (Apr 28): 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar. MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork listed as AI-at-scale distribution capabilities. Exploring Agent-to-Agent Protocol (A2A) for Capital IQ Pro." },
       { ticker: "MSCI", text: "Q1 2026 (Apr 21): IndexAI Insights live on ChatGPT and Claude with hundreds of clients. CEO Fernandez: 'every new product has an AI component' — AI revenue tracking 'almost irrelevant.' Product launch velocity: Q1 matched full FY2025." },
       { ticker: "MCO", text: "Agentic Solutions live natively in Claude via purpose-built MCP app (Apr 9) — interactive reports rendered inline. Also distributing via Databricks, OpenAI. Data estate: 600M+ entities, 2B ownership links. Moody's also deploying Claude Enterprise internally." },
     ],
@@ -624,7 +628,7 @@ export const cycleThemes = [
     theme: "Acquisitions & Partnerships",
     color: "#C97B00",
     highlights: [
-      { ticker: "SPGI", text: "Acquired Enertel AI Corporation (Mar 18) — AI/ML-driven short-term power price forecasting for North American electricity markets. Capital IQ Pro expanded with Drift AI for Excel-based financial modeling and ProntoNLP sentiment analytics." },
+      { ticker: "SPGI", text: "Q1 2026 (Apr 28): 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring Agent-to-Agent Protocol (A2A). MCP and Claude Cowork Plug-ins listed as scale capabilities. Acquired Enertel AI (Mar 18) for power forecasting. CERA Titan: AI-native upstream data platform." },
       { ticker: "MSCI", text: "Acquired Vantager (Mar 2) for AI-native private markets diligence and PM Insights (Apr 7) for secondary market data covering $5.5T+ market cap. Accelerating end-to-end private markets data strategy." },
       { ticker: "TRI", text: "Smokeball partnership (Mar 25): integrates CoCounsel Legal with practice management for small/mid-size law firms. Real-time data connector syncs documents across platforms." },
       { ticker: "CSGP", text: "Matterport integration delivering 40x more detail views on listings. Subscribers with Matterport show 37% higher renewal rates." },
@@ -636,7 +640,7 @@ export const cycleThemes = [
     highlights: [
       { ticker: "MCO", text: "New Q4 2025 metrics (Feb 18): 97% retention rate for GenAI product customers, +18 NPS uplift for CreditView Research Assistant adopters, 5x customer-reported productivity improvements. CreditLens: ~20% annual growth with ~67% avg revenue uplift on AI-enabled upgrade." },
       { ticker: "TRI", text: "AI-enabled products reached 28% of ACV (up from 15% a year ago). 85%+ employees using Open Arena. 80%+ engineers using AI coding tools. $200M+ annual AI investment." },
-      { ticker: "SPGI", text: "66% of 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts. 10%+ of enterprise applications eliminated. Targeting 20%+ run-rate expense reduction by 2027." },
+      { ticker: "SPGI", text: "Q1 2026 (Apr 28): 300+ customers on Kensho LLM-Ready APIs, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native platform. 66% of 40,000 employees on Spark Assist. Targeting 20%+ run-rate expense reduction by 2027." },
       { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
       { ticker: "NDAQ", text: "Q1 2026 (Apr 23): agentic AI workforce 500+ clients (up 40%). FinTech revenue $517M (+18%, record). ACV bookings 50%+ YoY. Verafin: 2,800+ clients, $12T assets, 21% FCM revenue growth. $100M AI efficiency target by 2027." },
       { ticker: "LSEG", text: "Q1 2026 (Apr 23): MCP customers surged to 154 (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% access via Claude. Workspace AI Search (~1,500 users) and AI Deep Research (~1,600 users) launched. Guidance raised." },
@@ -647,7 +651,7 @@ export const cycleThemes = [
     theme: "Internal AI Deployment",
     color: "#CC2030",
     highlights: [
-      { ticker: "SPGI", text: "Spark Assist GenAI platform: 66% of all 40,000 employees active. 10%+ of enterprise applications eliminated. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027." },
+      { ticker: "SPGI", text: "Spark Assist GenAI platform: 66% of all 40,000 employees active. 10%+ of enterprise applications eliminated. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027. Q1 2026: Adj. operating margin hit 51.8% (+100bps) — internal AI efficiency contributing to margin expansion." },
       { ticker: "LSEG", text: "350,000+ users migrated from Eikon to Workspace. 4,000 employees on ChatGPT Enterprise. Workspace AI Search and AI Deep Research now serving ~3,000 users (Q1 2026). Aiming to triple Deep Research adoption in Q2." },
       { ticker: "FDS", text: "4 internal AI tools delivering 25%+ reduction in manual data curation. AI coding assistants authoring ~20% of successful code commits. 80% cost reduction in vectorizing client data." },
     ],
@@ -656,7 +660,7 @@ export const cycleThemes = [
 
 export const cycleCompanySummaries = [
   { ticker: "MCO", summary: "Agentic Solutions now live natively in Anthropic's Claude via purpose-built MCP app (Apr 9) — credit analysis + compliance agents run directly in Claude Desktop/Enterprise. AWS Marketplace launch (Apr 16). $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). Q4 2025 metrics: 97% GenAI retention, +18 NPS uplift, 5x productivity gains. CreditLens ~20% growth, ~67% revenue uplift on AI upgrade. TIE blockchain credit analysis launched (Mar 18). Q1 2026 earnings (Apr 22): beat estimates, reiterated guidance — no new AI metrics." },
-  { ticker: "SPGI", summary: "Acquired Enertel AI for power forecasting. Capital IQ Pro expanded with Drift AI and ProntoNLP. 66% of employees on Spark Assist. Google Cloud multi-year partnership for agentic innovation." },
+  { ticker: "SPGI", summary: "Q1 2026 earnings (Apr 28): revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), margin 51.8% (+100bps). 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP + Claude Cowork Plug-ins listed as scale capabilities. CERA Titan AI-native upstream platform. Acquired Enertel AI (Mar 18). 66% of employees on Spark Assist. Google Cloud partnership for agentic innovation." },
   { ticker: "TRI", summary: "CoCounsel hit 1M users. Proprietary 'Thomson' LLM for summer 2026. Smokeball partnership for small/mid-size law. 28% AI ACV (up from 15%). New CFO joining May." },
   { ticker: "LSEG", summary: "Q1 2026 (Apr 23): MCP adoption surged to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% via Claude, 45% direct, 15% ChatGPT/other. Workspace AI products serving ~3,000 users. Guidance raised to upper half of 6.5–7.5%. Record Q1 revenue (+9.8% OCC). MaaS marketplace live with SocGen. LSEG data in M365 Copilot." },
   { ticker: "VRSK", summary: "Investor Day: 6-8% OCC revenue growth targets (2026-2028). XactGen agentic claims launched. 22 AI modules released (beat target). Insurance fraud study: 76% of insurers see more sophisticated manipulated media." },
@@ -802,7 +806,7 @@ export const differentiationMap = [
       { ticker: "TRI", status: "leading", evidence: "CoCounsel: 1M users, end-to-end legal research. Next-gen agentic beta Apr 2026." },
       { ticker: "CSGP", status: "active", evidence: "Homes AI: full real estate search experience via natural language. 3.8x longer sessions." },
       { ticker: "FDS", status: "active", evidence: "AI for Banking in alpha: automates deal processes, pitch materials, memos. Mercury AI chatbot live." },
-      { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent with Google Gemini. SparkAIR for querying proprietary datasets. Not yet agentic at customer-facing level." },
+      { ticker: "SPGI", status: "active", evidence: "Q1 2026: Capital IQ Pro evolving to AI-native with Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring Agent-to-Agent Protocol (A2A). 300+ customers on Kensho LLM-Ready APIs. Moving from assistive to agentic but not yet autonomous." },
       { ticker: "MSCI", status: "active", evidence: "Q1 2026: AI shifting custom index creation from human-led to machine-assisted. ESG ratings fully revamped with AI. Product launch velocity exploded (Q1 = full FY2025). Still primarily assistive rather than autonomous, but accelerating." },
       { ticker: "LSEG", status: "active", evidence: "Workspace AI Search (~1,500 users) and AI Deep Research (~1,600 users) launched Q1 2026. AI Search targets broad adoption (GA Q2), Deep Research aims to 3x in Q2. Still assistive rather than autonomous, but scaling fast." },
       { ticker: "IT", status: "gap", evidence: "AskGartner is conversational but assistive-only. Apr 2 prediction: >50% of enterprises will abandon copilots — but Gartner itself hasn't shipped agentic products." },
@@ -819,7 +823,7 @@ export const differentiationMap = [
       { ticker: "MCO", status: "leading", evidence: "Three distribution channels live: Anthropic Claude via MCP app (Apr 9), AWS Marketplace with MAS Credit Memo (Apr 16), and Databricks/OpenAI partner marketplaces. 600M+ entities, 2B ownership links. Client adoption not yet quantified but distribution surface is now the broadest in the DAIS peer group." },
       { ticker: "FDS", status: "active", evidence: "First production-grade MCP server for financial intelligence. 120+ clients engaged. 800+ institutional users in Explorer beta." },
       { ticker: "MSCI", status: "active", evidence: "IndexAI Insights live on ChatGPT and Claude with hundreds of clients in first 2 months. Expansion planned to Private Assets. VantageR acquisition adds AI-native private markets diligence layer." },
-      { ticker: "SPGI", status: "early", evidence: "Kensho Data Retrieval Agent integrated with Google Gemini. SparkAIR GenAI suite for institutional clients. No MCP server announced." },
+      { ticker: "SPGI", status: "active", evidence: "Q1 2026: MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork listed as AI-at-scale distribution capabilities. 300+ Kensho LLM-Ready API customers. Exploring A2A protocol. Kensho Data Retrieval Agent with Google Gemini. Significant progress from 'no MCP' to active multi-platform presence." },
       { ticker: "TRI", status: "early", evidence: "Building proprietary 'Thomson' LLM rather than distributing via third-party models. Data layer strategy focused on owned platforms." },
       { ticker: "VRSK", status: "gap", evidence: "No MCP or third-party AI distribution strategy disclosed. Data access remains through Verisk-owned platforms." },
       { ticker: "NDAQ", status: "gap", evidence: "AI products are Nasdaq-hosted (Verafin). No third-party data distribution via MCP or equivalent." },
@@ -878,7 +882,7 @@ export const differentiationMap = [
       { ticker: "TRI", status: "early", evidence: "CoCounsel: 1M users, 107 countries. 28% AI ACV is revenue-attribution but not outcome-based. Interaction volume exists but not framed as an output metric." },
       { ticker: "NDAQ", status: "active", evidence: "Agentic AI workforce 500+ clients with 80%+ workload reduction. Verafin 21% FCM revenue growth proves monetization. ACV bookings 50%+ YoY. Could convert to cost-per-screening or alerts-per-agent-hour." },
       { ticker: "LSEG", status: "active", evidence: "154 MCP customers (up from 9 in Dec 2025). Now disclosing platform breakdown (40% Claude, 45% direct, 15% other), geography, and customer type — the most granular AI adoption metrics in the peer group. Consumption pricing in development." },
-      { ticker: "SPGI", status: "gap", evidence: "AI framed as internal efficiency (>50% workflows automated). No outcome-level KPIs disclosed for investors." },
+      { ticker: "SPGI", status: "early", evidence: "Q1 2026: First quantified AI-product ACV premiums (1.3x MI, 2x Energy vs. non-AI customers). 300+ Kensho API customers. Margin hit 51.8% (+100bps). AI impact on topline becoming more measurable but no standalone AI KPI guidance yet." },
       { ticker: "FDS", status: "gap", evidence: "85K+ users on AI Document Search, MCP server live. Utilization not quantified as outcomes." },
       { ticker: "MSCI", status: "gap", evidence: "AI now in every product but CEO explicitly stopped tracking AI-specific revenue — framed as product velocity, not outcome metrics. No AWU-equivalent disclosed." },
       { ticker: "CSGP", status: "gap", evidence: "Homes AI drives 3.8x longer sessions (engagement metric) but no outcome-based framework." },
@@ -923,7 +927,7 @@ export const standardsAdoption = [
       { ticker: "MCO", status: "adopted", evidence: "Agentic Solutions live natively in Claude via purpose-built MCP app (Apr 9). Also distributing via Databricks, OpenAI partner marketplaces." },
       { ticker: "FDS", status: "adopted", evidence: "Production-grade MCP server. 120+ clients. API volume 3x growth in one month." },
       { ticker: "MSCI", status: "piloting", evidence: "AI connectors for ChatGPT and Claude. IndexAI Insights launched. MCP-like access layer." },
-      { ticker: "SPGI", status: "piloting", evidence: "Kensho Data Retrieval Agent with Google Gemini. SparkAIR for institutional queries. No formal MCP server." },
+      { ticker: "SPGI", status: "active", evidence: "Q1 2026: MCP and Claude Cowork Plug-ins listed as production AI distribution capabilities. Kensho LLM-Ready APIs serving 300+ customers. A2A protocol exploration. Grounding Agent for AI data delivery." },
       { ticker: "TRI", status: "planned", evidence: "Building proprietary 'Thomson' LLM — prioritizing owned data layer over third-party distribution." },
       { ticker: "VRSK", status: "none", evidence: "No MCP or equivalent third-party AI data distribution disclosed." },
       { ticker: "NDAQ", status: "none", evidence: "AI products hosted on Nasdaq platforms. No third-party data API strategy." },
@@ -1009,7 +1013,7 @@ export const standardsAdoption = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const executiveBrief = {
-  date: "April 24, 2026",
+  date: "April 28, 2026",
   sections: [
     {
       id: "winning",
@@ -1017,14 +1021,14 @@ export const executiveBrief = {
       icon: "▲",
       accentColor: "#1A7A4A",
       content: [
-        "Moody's now has Agentic Solutions live on three distribution channels — Anthropic Claude via MCP (Apr 9), AWS Marketplace (Apr 16), and Databricks/OpenAI partner marketplaces — which is the broadest agentic workflow distribution surface in the DAIS peer group. LSEG now has far more quantified MCP adoption (154 customers, up from 9 in Dec 2025, with 40% accessing via Claude) but distributes data, not end-to-end workflows; FactSet has a production MCP server with 120+ clients but is still in alpha on agentic banking workflows (disclosed).",
-        "MCO is the only peer with autonomous credit and compliance agents running natively inside a frontier AI platform and available for direct purchase on a hyperscaler marketplace. The AWS Marketplace listing also matters for a practical reason: it removes procurement friction for AWS-native enterprises who may not yet use Claude — a distribution move, not just a product move.",
-        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group (disclosed). Thomson Reuters at 28% AI ACV is the closest comparable — but note that TRI grew from 15% a year ago, so the trajectory gap is narrowing (disclosed, TRI Q4 2025 earnings). MSCI's Q1 2026 earnings marked an inflection: CEO Fernandez declared AI-specific revenue tracking 'almost irrelevant' because every product now has AI — validating AI pervasion but making head-to-head metric comparison harder (disclosed, Apr 21).",
+        "Moody's remains the only DAIS peer with autonomous agentic workflows — credit memos, compliance screening — running natively inside a frontier AI platform (Claude) and available for purchase on AWS Marketplace. SPGI's Q1 2026 earnings (Apr 28) disclosed MCP and Claude Cowork Plug-ins as AI distribution capabilities and is exploring Agent-to-Agent Protocol (A2A), but its products remain assistive (Chat IQ, Document Intelligence, Drift.AI) rather than autonomous. MCO's agentic depth advantage is holding even as SPGI converges on the same distribution channels.",
+        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group. SPGI disclosed its first AI-product ACV premiums this quarter — MI AI-product customers growing at 1.3x and Energy at 2x vs. non-AI customers — which validates the AI-monetization thesis but still falls short of MCO's standalone GenAI cohort disclosure. Thomson Reuters at 28% AI ACV is the closest comparable; MSCI's CEO declared AI revenue tracking 'almost irrelevant' (Apr 21).",
+        "MCO's three-channel distribution (Claude MCP, AWS Marketplace, Databricks/OpenAI) is the broadest agentic surface in the peer group. SPGI is now entering the same MCP/Claude ecosystem, but with data APIs (300+ Kensho customers) rather than end-to-end workflows. LSEG has 154 MCP customers but distributes data, not agentic agents. FactSet has 120+ MCP clients but remains in alpha on banking workflows.",
       ],
       sources: [
-        { label: "MCO AWS Marketplace", url: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-decision-grade-credit-intelligence-to-aws-marketplace.html" },
+        { label: "SPGI Q1 2026 Earnings", url: "https://investor.spglobal.com/quarterly-earnings" },
         { label: "MSCI Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
-        { label: "TRI Q4 2025 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+        { label: "MCO AWS Marketplace", url: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-decision-grade-credit-intelligence-to-aws-marketplace.html" },
       ],
     },
     {
@@ -1033,14 +1037,14 @@ export const executiveBrief = {
       icon: "◆",
       accentColor: "#CC2030",
       content: [
-        "The MCP adoption quantification gap widened sharply this cycle. LSEG's Q1 2026 update (Apr 23) disclosed 154 MCP customers (90 connected + 64 onboarding), up from just 9 in December 2025 — and broke the data down by platform (40% Claude, 45% direct, 15% other), geography (Asia 40%, EMEA 35%, US 25%), and customer type (buyside 50%, sellside 30%, corporates 20%). This is the most granular AI distribution metric any DAIS peer has published. MCO hasn't disclosed a client count for Agentic Solutions, which makes it impossible for investors to compare distribution velocity head-to-head (disclosed).",
-        "AI-attributed margin guidance remains a gap. Thomson Reuters guides 100bps/yr of EBITDA expansion from AI through 2028 (disclosed). S&P Global targets >20% run-rate expense reduction by 2027 (disclosed). Nasdaq targets $100M in AI efficiencies by year-end 2027 and just posted 21% EPS growth with FinTech revenue +18% — showing concrete AI-driven financial results (disclosed, Apr 23). MCO's AI impact on margins is real but not broken out in forward guidance.",
-        "Nasdaq's agentic AI workforce hit 500+ clients (up 40% since Investor Day) with Verafin exceeding 2,800 clients across $12T in assets and 21% FCM revenue growth (disclosed, Apr 23). This is the most direct competitive overlap with MCO's KYC and compliance agentic workflows. The upcoming GenAI drug trafficking analytic expands Nasdaq's agentic product surface area into a new category — MCO should monitor whether this creates whitespace or overlap.",
+        "SPGI's Q1 2026 earnings closed the AI-product quantification gap significantly. For the first time, SPGI disclosed 300+ customers on Kensho LLM-Ready APIs with API volume doubling month-over-month, and quantified AI-product ACV premiums (1.3x MI, 2x Energy). Combined with their mention of MCP and Claude Cowork Plug-ins as production capabilities, SPGI is no longer an 'internal efficiency only' AI story. MCO still has the deeper quantification (40% ARR, 2x cohort growth, 97% retention) but the narrative gap is narrowing.",
+        "The MCP adoption quantification gap remains. LSEG disclosed 154 MCP customers with granular breakdowns by platform, geography, and customer type — the most detailed AI distribution metric any peer has published. SPGI listed MCP as a capability but didn't disclose customer counts. MCO hasn't disclosed a client count for Agentic Solutions, making investor comparison impossible.",
+        "SPGI's Adj. operating margin hit 51.8% (+100bps YoY), surpassing MCO's 51.1%. With SPGI guiding 10–35bps of further expansion and attributing it partly to AI efficiency, the margin story is becoming a competitive vector. MCO's AI impact on margins is real but remains unquantified in forward guidance — Thomson Reuters guides 100bps/yr, Nasdaq targets $100M in AI efficiencies by 2027.",
       ],
       sources: [
+        { label: "SPGI Q1 2026 Earnings", url: "https://investor.spglobal.com/quarterly-earnings" },
         { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
         { label: "NDAQ Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
-        { label: "CRM FY2026 Proxy (DEF 14A)", url: "https://www.stocktitan.net/sec-filings/CRM/def-14a-salesforce-inc-definitive-proxy-statement-4fca99c61208.html" },
       ],
     },
     {
@@ -1049,13 +1053,13 @@ export const executiveBrief = {
       icon: "►",
       accentColor: "#0028A1",
       content: [
-        "Earnings season is delivering real signal. LSEG's MCP adoption (9 → 154 customers in 4 months) validated the MCP distribution thesis faster than expected — and the 40% Claude share is a concrete proof point for Anthropic's enterprise positioning that benefits MCO's Claude-first strategy. Nasdaq's 500+ agentic clients and 21% FCM revenue growth show AI driving topline, not just efficiency. Two more earnings calls remain: S&P Global Q1 (Apr 28) and Verisk Q1 (Apr 29). What to listen for: any peer introducing AI-attributed margin guidance, consumption pricing language, or agentic output metrics. If one of them does, the bar moves for everyone.",
-        "Anthropic released Claude Opus 4.7 (Apr 16) — 87.6% on SWE-bench Verified, outperforming GPT-5.4 and Gemini 3.1 Pro on tool use — and launched Claude Design (Apr 17), a visual creation tool that sent Figma stock down 7.3% (disclosed). The pace of Anthropic product releases is accelerating at the same moment regulatory uncertainty around Claude is peaking: US federal appeals oral arguments are set for May, and UK regulators are expected to brief banks on Claude Mythos cyber risks within two weeks (disclosed, Apr 12). MCO's deepening Claude integration is strategically correct but the concentration risk warrants monitoring (inferred).",
-        "Gartner published a finding on April 16 that organizations with successful AI initiatives invest up to 4x more in data and analytics foundations than those that fail (disclosed). This validates the structural thesis that data-rich companies — MCO, SPGI, LSEG, VRSK — have a durable advantage, and gives MCO's IR team an external citation for earnings call narratives.",
+        "Q1 2026 earnings season is nearly complete and the AI disclosure landscape has shifted materially. SPGI's pivot from 'AI as internal efficiency' to quantifying external AI product traction (300+ Kensho API customers, AI-product ACV premiums, MCP/Claude Cowork distribution) means all four major DAIS peers — MCO, SPGI, LSEG, and NDAQ — now have disclosed external AI product metrics. One earnings call remains: Verisk Q1 (Apr 29). Listen for: AI-attributed margin guidance, consumption pricing, or agentic output metrics.",
+        "The convergence on MCP as a distribution standard is accelerating. This cycle saw LSEG at 154 MCP customers (40% via Claude), SPGI listing MCP and Claude Cowork Plug-ins as scale capabilities, FactSet at 120+ MCP clients, and MCO live on Claude MCP since Apr 9. This validates MCO's early bet on Anthropic's ecosystem — but also means the MCP distribution channel is becoming table stakes rather than a differentiator. The next competitive frontier is likely agentic workflow depth (autonomous vs. assistive) and consumption-based pricing.",
+        "SPGI's exploration of Agent-to-Agent Protocol (A2A) for Capital IQ Pro is worth monitoring. A2A enables AI agents from different vendors to communicate directly — if SPGI succeeds, their agents could orchestrate with MCO's agents (or compete). This is an early signal of an interoperability standard that could reshape how financial data companies distribute AI capabilities.",
       ],
       sources: [
+        { label: "SPGI Q1 2026 Earnings", url: "https://investor.spglobal.com/quarterly-earnings" },
         { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
-        { label: "NDAQ Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
         { label: "Gartner: AI + Data Foundations", url: "https://www.gartner.com/en/newsroom/press-releases/2026-04-16-gartner-says-organizations-with-successful-ai-initiatives-invest-up-to-four-times-more-in-data-and-analytics-foundations" },
       ],
     },
