@@ -1007,6 +1007,146 @@ export const standardsAdoption = [
 ];
 
 
+// ─── TEARSHEET — QUANTITATIVE AI DISCLOSURES COMPARISON ─────────────────────
+// Single-page side-by-side view of every quantitative AI metric disclosed by
+// Moody's and its DAIS peers. Each datapoint carries its own source + date.
+// Updated by the refresh task whenever new earnings or disclosures are processed.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const tearsheetCategories = [
+  {
+    category: "External AI product adoption",
+    metrics: [
+      {
+        label: "AI product customers / users",
+        values: {
+          MCO: { text: "~$200M GenAI adopter cohort ARR", source: "MCO Q4 2025 Earnings", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          SPGI: { text: "300+ Kensho LLM-Ready API customers", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
+          TRI: { text: "1M CoCounsel users (107 countries)", source: "TRI CoCounsel Milestone", date: "Feb 24, 2026", url: "https://www.prnewswire.com/news-releases/one-million-professionals-turn-to-cocounsel-as-thomson-reuters-scales-ai-for-regulated-industries-302694903.html" },
+          LSEG: { text: "154 MCP customers (90 connected + 64 onboarding)", source: "LSEG Q1 2026 Trading Update", date: "Apr 23, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+          NDAQ: { text: "500+ agentic AI workforce clients (+40%)", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+          MSCI: { text: "Hundreds of IndexAI Insights clients on ChatGPT & Claude", source: "MSCI Q1 2026 Earnings", date: "Apr 21, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
+          VRSK: { text: "XactGen: 7 of top 10 homeowners insurers", source: "VRSK 2026 Investor Day", date: "Mar 5, 2026", url: "https://www.verisk.com/company/newsroom/verisk-reiterates-its-growth-targets-and-outlines-strategy-for-its-next-phase-of-compounding-growth-at-2026-investor-day/" },
+          FDS: { text: "120+ MCP clients; 85K+ AI Document Search users", source: "FDS Q2 FY2026 Earnings", date: "Mar 31, 2026", url: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
+        },
+      },
+      {
+        label: "AI adoption velocity",
+        values: {
+          MCO: { text: "Research Assistant: 100K+ interactions; fastest-adopted product in company history", source: "MCO Research Assistant Brief", date: "Feb 18, 2026", url: "https://www.moodys.com/web/en/us/site-assets/genai-research-assistant-financial-services.pdf" },
+          SPGI: { text: "API call volume doubled Feb → Mar 2026", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
+          TRI: { text: "CoCounsel: 0 → 1M users in ~3 years", source: "TRI CoCounsel Milestone", date: "Feb 24, 2026", url: "https://www.prnewswire.com/news-releases/one-million-professionals-turn-to-cocounsel-as-thomson-reuters-scales-ai-for-regulated-industries-302694903.html" },
+          LSEG: { text: "MCP: 9 → 154 customers in 4 months", source: "LSEG Q1 2026 Trading Update", date: "Apr 23, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+          NDAQ: { text: "ACV bookings +50% YoY", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+        },
+      },
+    ],
+  },
+  {
+    category: "AI revenue & monetization",
+    metrics: [
+      {
+        label: "AI share of revenue",
+        values: {
+          MCO: { text: "40% of MA ARR GenAI-enabled", source: "MCO Q4 2025 Earnings", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          TRI: { text: "28% of ACV AI-enabled (up from 15%)", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+          MSCI: { text: "CEO: AI revenue tracking 'almost irrelevant' — every product has AI", source: "MSCI Q1 2026 Earnings", date: "Apr 21, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
+        },
+      },
+      {
+        label: "AI customer economics",
+        values: {
+          MCO: { text: "2x ARR growth for GenAI customers; 97% retention; +18 NPS uplift", source: "MCO Q4 2025 Earnings Presentation", date: "Feb 18, 2026", url: "https://s203.q4cdn.com/694693571/files/doc_financials/2025/q4/4Q25-Earnings-Presentation-vFINAL.pdf" },
+          SPGI: { text: "MI AI-product ACV at 1.3x; Energy at 2x vs. non-AI customers", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
+          NDAQ: { text: "Verafin: 2,800+ clients, $12T assets, 21% FCM revenue growth", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+        },
+      },
+      {
+        label: "AI revenue uplift per customer",
+        values: {
+          MCO: { text: "CreditLens: ~67% avg revenue uplift on AI upgrade; ~20% annual growth", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          NDAQ: { text: "FinTech: $517M (+18%, record quarter)", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+          CSGP: { text: "Homes AI: 3.8x longer sessions, 7x more leads, 64% bounce rate reduction", source: "CSGP FY 2025 Earnings", date: "Feb 17, 2026", url: "https://www.costargroup.com/press-room/2026/costar-group-full-year-2025-revenue-increased-19-year-over-year-net-income-7" },
+        },
+      },
+    ],
+  },
+  {
+    category: "Distribution channels (MCP / AI platforms)",
+    metrics: [
+      {
+        label: "MCP / API distribution",
+        values: {
+          MCO: { text: "Claude MCP (Apr 9), AWS Marketplace (Apr 16), Databricks, OpenAI", source: "Moody's-Anthropic MAS", date: "Apr 9, 2026", url: "https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-credit-and-compliance-workflows-directly-into-anthropics-claude.html" },
+          SPGI: { text: "MCP, Grounding Agent, Claude Cowork Plug-ins; A2A protocol (exploring)", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
+          LSEG: { text: "154 MCP customers; 40% Claude, 45% direct, 15% other", source: "LSEG Q1 2026 Trading Update", date: "Apr 23, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+          FDS: { text: "First production-grade MCP server; 120+ clients; API volume 3x Feb→Mar", source: "FDS Q2 FY2026 Earnings", date: "Mar 31, 2026", url: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
+          MSCI: { text: "IndexAI Insights live on ChatGPT and Claude", source: "MSCI Q1 2026 Earnings", date: "Apr 21, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
+        },
+      },
+    ],
+  },
+  {
+    category: "Internal AI deployment",
+    metrics: [
+      {
+        label: "Employee AI adoption",
+        values: {
+          SPGI: { text: "66% of 40K employees on Spark Assist", source: "SPGI Q4 2025 Earnings Call", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+          TRI: { text: "85%+ on Open Arena; 80%+ engineers on AI coding tools", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+          LSEG: { text: "4,000 on ChatGPT Enterprise; 350K migrated to Workspace", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          FDS: { text: "48 of top 50 clients using 3+ AI solutions; ~20% of code commits from AI", source: "FDS Q2 FY2026 Earnings", date: "Mar 31, 2026", url: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
+        },
+      },
+      {
+        label: "Productivity / efficiency impact",
+        values: {
+          MCO: { text: "5x customer-reported productivity; credit memos 40 hrs → ~2 min", source: "MCO Q4 2025 Earnings Presentation", date: "Feb 18, 2026", url: "https://s203.q4cdn.com/694693571/files/doc_financials/2025/q4/4Q25-Earnings-Presentation-vFINAL.pdf" },
+          SPGI: { text: ">50% workflows automated; 10%+ apps eliminated", source: "SPGI Q4 2025 Earnings Call", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+          TRI: { text: "AI saves UK lawyers 3 hrs/wk (£12K/yr per lawyer)", source: "TRI Future of Professionals Report", date: "Feb 5, 2026", url: "https://www.thomsonreuters.com/en/resources/reports/future-of-professionals.html" },
+          FDS: { text: "25%+ reduction in manual data curation; 80% cost reduction in vectorizing", source: "FDS Q2 FY2026 Earnings", date: "Mar 31, 2026", url: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html" },
+          NDAQ: { text: "$100M AI efficiency target by 2027", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+        },
+      },
+    ],
+  },
+  {
+    category: "AI investment & margin impact",
+    metrics: [
+      {
+        label: "AI investment",
+        values: {
+          SPGI: { text: "$1B+ cumulative since 2018 (incl. ~$550M Kensho acquisition)", source: "SPGI Q4 2025 Earnings Call", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+          TRI: { text: "$200M+/yr (doubled from $100M in 2023)", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+        },
+      },
+      {
+        label: "AI-attributed margin guidance",
+        values: {
+          SPGI: { text: "20%+ run-rate expense reduction by 2027; margin 51.8% (+100bps)", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
+          TRI: { text: "100bps/yr EBITDA expansion through 2028", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
+          LSEG: { text: "80–100bps EBITDA margin expansion guided", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          NDAQ: { text: "$100M AI efficiencies by 2027; EPS +21% YoY", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+        },
+      },
+    ],
+  },
+  {
+    category: "Data estate / competitive moat",
+    metrics: [
+      {
+        label: "Proprietary data scale",
+        values: {
+          MCO: { text: "600M+ entities, 2B ownership links globally", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          LSEG: { text: "33PB data; 90% non-replicable; 575 exchange connections", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          NDAQ: { text: "$12T in assets monitored (Verafin)", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+          VRSK: { text: "Proprietary insurance data; 22 AI modules released (beat target)", source: "VRSK 2026 Investor Day", date: "Mar 5, 2026", url: "https://www.verisk.com/company/newsroom/verisk-reiterates-its-growth-targets-and-outlines-strategy-for-its-next-phase-of-compounding-growth-at-2026-investor-day/" },
+        },
+      },
+    ],
+  },
+];
+
 // ─── EXECUTIVE BRIEF ─────────────────────────────────────────────────────────
 // Three-section strategic summary updated each refresh cycle. Written in prose,
 // sourced claims tagged (disclosed) or (inferred), hypotheses flagged.

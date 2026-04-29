@@ -29,7 +29,7 @@ const M = {
   surface:    "#EEF2F8",
 };
 
-import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, aiBig4WhatsNew, aiBig4CycleThemes, aiBig4CycleSummaries, differentiationMap, standardsAdoption, executiveBrief } from "./data.js";
+import { lastUpdated, whatsNew, peers, aiBig4, otherFirms, financials, disclosures, cycleWindow, cycleThemes, cycleCompanySummaries, otherFirmsWhatsNew, otherFirmsCycleThemes, otherFirmsCycleSummaries, aiBig4WhatsNew, aiBig4CycleThemes, aiBig4CycleSummaries, differentiationMap, standardsAdoption, executiveBrief, tearsheetCategories } from "./data.js";
 
 const statusConfig = {
   leader:      { bg: "#EDFAF3", text: "#1A7A4A", border: "#A8DFC0", dot: "#1A7A4A" },
@@ -268,58 +268,63 @@ function ThemeGrid({ themes }) {
 }
 
 
-function FinancialsTable() {
-  const [sortKey, setSortKey] = useState("ticker");
-  const [sortDir, setSortDir] = useState(1);
+const TEARSHEET_TICKERS = ["MCO", "SPGI", "TRI", "LSEG", "NDAQ", "MSCI", "VRSK", "CSGP", "FDS"];
 
-  const handleSort = (key) => {
-    if (sortKey === key) setSortDir(d => d * -1);
-    else { setSortKey(key); setSortDir(key === "ticker" || key === "name" ? 1 : -1); }
-  };
-
-  const sorted = [...financials].sort((a, b) => {
-    const av = a[sortKey], bv = b[sortKey];
-    if (typeof av === "string") return av.localeCompare(bv) * sortDir;
-    return (av - bv) * sortDir;
-  });
-
-  const cols = [
-    { key: "ticker", label: "Ticker", w: "70px" },
-    { key: "name", label: "Company", w: "140px" },
-    { key: "reportedGrowth", label: "Reported Rev Growth", w: "auto" },
-    { key: "organicGrowth", label: "Organic CCY Growth", w: "auto" },
-    { key: "adjMargin", label: "Adj. Operating Margin", w: "auto" },
-    { key: "source", label: "Source", w: "auto" },
-  ];
-
+function TearsheetTable() {
   return (
-    <div style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", overflowX: "auto" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", whiteSpace: "nowrap" }}>
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", tableLayout: "fixed" }}>
+        <colgroup>
+          <col style={{ width: "14%" }} />
+          {TEARSHEET_TICKERS.map(t => (
+            <col key={t} style={{ width: (86 / TEARSHEET_TICKERS.length) + "%" }} />
+          ))}
+        </colgroup>
         <thead>
           <tr style={{ background: M.navy }}>
-            {cols.map(c => (
-              <th key={c.key} onClick={() => handleSort(c.key)} style={{
-                padding: "10px 12px", textAlign: c.key === "ticker" || c.key === "name" || c.key === "source" ? "left" : "right",
-                color: "#FFF", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
-                cursor: "pointer", userSelect: "none", width: c.w, whiteSpace: "nowrap",
-              }}>
-                {c.label} {sortKey === c.key ? (sortDir > 0 ? "▲" : "▼") : ""}
-              </th>
+            <th style={{ padding: "10px 8px", textAlign: "left", color: "#FFF", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em" }}></th>
+            {TEARSHEET_TICKERS.map(t => (
+              <th key={t} style={{
+                padding: "10px 6px", textAlign: "center", color: t === "MCO" ? "#FFF" : "rgba(255,255,255,0.75)",
+                fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+                background: t === "MCO" ? M.primary : M.navy,
+              }}>{t}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {sorted.map((f, i) => (
-            <tr key={f.ticker} style={{ background: i % 2 === 0 ? M.white : M.offWhite, borderBottom: "1px solid " + M.border }}>
-              <td style={{ padding: "8px 12px", fontWeight: 700, color: M.primary }}>{f.ticker}</td>
-              <td style={{ padding: "8px 12px", color: M.textDark }}>{f.name}</td>
-              <td style={{ padding: "8px 12px", textAlign: "right", fontWeight: 600, color: f.reportedGrowth >= 8 ? M.green : f.reportedGrowth < 5 ? M.red : M.textDark }}>{f.reportedGrowth}%</td>
-              <td style={{ padding: "8px 12px", textAlign: "right", fontWeight: 600, color: f.organicGrowth >= 8 ? M.green : f.organicGrowth < 5 ? M.red : M.textDark }}>{f.organicGrowth}%</td>
-              <td style={{ padding: "8px 12px", textAlign: "right", fontWeight: 600, color: M.textDark }}>{f.adjMargin}%</td>
-              <td style={{ padding: "8px 12px" }}>
-                <a href={f.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ fontSize: "10px", color: M.lightBlue, textDecoration: "none", borderBottom: "1px solid " + M.skyBlue }}>{f.source} ↗</a>
-              </td>
-            </tr>
+          {tearsheetCategories.map((cat, ci) => (
+            <>
+              <tr key={"cat-" + ci}>
+                <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
+                  padding: "8px 8px 6px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+                  color: M.primary, background: M.surface, borderTop: ci > 0 ? "2px solid " + M.border : "none",
+                  fontFamily: "Arial, sans-serif",
+                }}>{cat.category.toUpperCase()}</td>
+              </tr>
+              {cat.metrics.map((metric, mi) => (
+                <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
+                  <td style={{ padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600, verticalAlign: "top", lineHeight: "1.4" }}>{metric.label}</td>
+                  {TEARSHEET_TICKERS.map(ticker => {
+                    const v = metric.values[ticker];
+                    if (!v) return <td key={ticker} style={{ padding: "6px", verticalAlign: "top", textAlign: "center" }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
+                    return (
+                      <td key={ticker} style={{
+                        padding: "6px 6px 8px", verticalAlign: "top",
+                        background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
+                      }}>
+                        <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
+                        <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
+                          display: "inline-block", marginTop: "3px",
+                          fontSize: "9px", color: M.lightBlue, textDecoration: "none",
+                          borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
+                        }}>{v.source} · {v.date} ↗</a>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </>
           ))}
         </tbody>
       </table>
@@ -1022,7 +1027,7 @@ export default function Dashboard() {
               { id: "natives", label: "AI Big 4", sub: `${aiBig4.length} companies`, count: aiBig4.length },
               { id: "otherfirms", label: "Other Firms", sub: `${otherFirms.length} companies`, count: otherFirms.length },
               { id: "timeline", label: "AI Disclosures", sub: "by date", count: disclosures.length },
-              { id: "financials", label: "Peer Financials", sub: "peer comparison", count: financials.length },
+              { id: "tearsheet", label: "Tearsheet", sub: "quantitative metrics", count: tearsheetCategories.reduce((a, c) => a + c.metrics.length, 0) },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
                 background: activeTab === tab.id ? M.white : "transparent",
@@ -1280,59 +1285,22 @@ export default function Dashboard() {
         )}
 
 
-        {/* FINANCIALS TAB */}
-        {activeTab === "financials" && (
-          <div style={{ position: "relative" }}>
-            {/* WIP WATERMARK OVERLAY */}
-            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", zIndex: 10 }}>
-              <div style={{
-                fontSize: "220px",
-                fontWeight: 900,
-                fontFamily: "Arial, sans-serif",
-                color: "rgba(220, 38, 38, 0.13)",
-                letterSpacing: "30px",
-                transform: "rotate(-25deg)",
-                userSelect: "none",
-              }}>WIP</div>
+        {/* TEARSHEET TAB */}
+        {activeTab === "tearsheet" && (
+          <>
+            <SectionBanner
+              title="AI DISCLOSURES TEARSHEET — QUANTITATIVE METRICS"
+              subtitle={<>Every quantitative AI metric disclosed by Moody's and DAIS peers, with individual source links. Click any source to verify the datapoint. A dash (—) means the company has not publicly reported that metric.</>}
+              stats={[
+                { value: tearsheetCategories.reduce((a, c) => a + c.metrics.length, 0), label: "METRICS TRACKED", color: M.primary },
+                { value: TEARSHEET_TICKERS.length, label: "COMPANIES", color: M.green },
+              ]}
+            />
+            <TearsheetTable />
+            <div style={{ marginTop: "12px", fontSize: "10px", color: M.midGray, fontFamily: "Arial, sans-serif", lineHeight: "1.5" }}>
+              Sources are linked individually per datapoint. All figures from primary company filings, earnings calls, press releases, or investor presentations. Updated {lastUpdated}.
             </div>
-            <>
-              <SectionBanner
-                title="FINANCIAL COMPARISON — 10 PEER COMPANIES"
-                subtitle={<>Reported revenue growth, organic constant-currency revenue growth, and adjusted operating margin from most recent full-year results. <strong>All figures from primary earnings releases.</strong></>}
-                stats={[
-                  { value: Math.max(...financials.map(f => f.organicGrowth)).toFixed(1) + "%", label: "HIGHEST ORG. GROWTH", color: M.green },
-                  { value: Math.max(...financials.map(f => f.adjMargin)).toFixed(1) + "%", label: "HIGHEST ADJ. MARGIN", color: M.primary },
-                ]}
-              />
-
-              {/* Bar Charts */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "14px", marginBottom: "20px" }}>
-                {[
-                  { key: "reportedGrowth", label: "Reported Revenue Growth (%)", color: M.lightBlue },
-                  { key: "organicGrowth", label: "Organic CCY Revenue Growth (%)", color: M.green },
-                  { key: "adjMargin", label: "Adjusted Operating Margin (%)", color: M.primary },
-                ].map(chart => (
-                  <div key={chart.key} style={{ background: M.white, border: "1px solid " + M.border, borderRadius: "8px", padding: "16px" }}>
-                    <div style={{ fontSize: "11px", fontWeight: 700, color: M.textDark, marginBottom: "14px", fontFamily: "Arial, sans-serif" }}>{chart.label}</div>
-                    {[...financials].sort((a, b) => b[chart.key] - a[chart.key]).map(f => (
-                      <div key={f.ticker} style={{ marginBottom: "6px" }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
-                          <span style={{ fontSize: "10px", color: M.textDark }}>{f.ticker}</span>
-                          <span style={{ fontSize: "10px", fontWeight: 600, color: chart.color, fontFamily: "Arial, monospace" }}>{f[chart.key]}%</span>
-                        </div>
-                        <div style={{ height: "6px", background: M.offWhite, borderRadius: "3px", border: "1px solid " + M.border }}>
-                          <div style={{ height: "100%", width: Math.max(2, (f[chart.key] / Math.max(...financials.map(x => x[chart.key]))) * 100) + "%", background: chart.color, borderRadius: "3px", transition: "width 0.3s" }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-
-              {/* Sortable Table */}
-              <FinancialsTable />
-            </>
-          </div>
+          </>
         )}
 
         {/* AI NATIVES TAB */}
