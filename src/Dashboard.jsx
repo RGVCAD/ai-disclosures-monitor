@@ -963,7 +963,7 @@ export default function Dashboard() {
   const [expandedPeers, setExpandedPeers] = useState({});
   const [expandedNatives, setExpandedNatives] = useState({});
   const [expandedOther, setExpandedOther] = useState({});
-  const [activeTab, setActiveTab] = useState("peers");
+  const [activeTab, setActiveTab] = useState("tearsheet");
 
   const togglePeer = i => setExpandedPeers(p => ({ ...p, [i]: !p[i] }));
   const toggleNative = i => setExpandedNatives(p => ({ ...p, [i]: !p[i] }));
@@ -1022,12 +1022,12 @@ export default function Dashboard() {
           {/* Tabs */}
           <div style={{ display: "flex", gap: "3px" }}>
             {[
+              { id: "tearsheet", label: "Tearsheet", sub: "quantitative metrics", count: tearsheetCategories.reduce((a, c) => a + c.metrics.length, 0) },
               { id: "brief", label: "Executive Brief", sub: "strategic summary", count: executiveBrief.sections.length, accent: true },
               { id: "peers", label: "Peers", sub: `${peers.length} companies`, count: peers.length },
               { id: "natives", label: "AI Big 4", sub: `${aiBig4.length} companies`, count: aiBig4.length },
               { id: "otherfirms", label: "Other Firms", sub: `${otherFirms.length} companies`, count: otherFirms.length },
               { id: "timeline", label: "AI Disclosures", sub: "by date", count: disclosures.length },
-              { id: "tearsheet", label: "Tearsheet", sub: "quantitative metrics", count: tearsheetCategories.reduce((a, c) => a + c.metrics.length, 0) },
             ].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
                 background: activeTab === tab.id ? M.white : "transparent",
@@ -1296,9 +1296,45 @@ export default function Dashboard() {
                 { value: TEARSHEET_TICKERS.length, label: "COMPANIES", color: M.green },
               ]}
             />
-            <TearsheetTable />
-            <div style={{ marginTop: "12px", fontSize: "10px", color: M.midGray, fontFamily: "Arial, sans-serif", lineHeight: "1.5" }}>
-              Sources are linked individually per datapoint. All figures from primary company filings, earnings calls, press releases, or investor presentations. Updated {lastUpdated}.
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "10px" }}>
+              <button
+                onClick={() => {
+                  const style = document.createElement("style");
+                  style.id = "tearsheet-print";
+                  style.textContent = `
+                    @media print {
+                      @page { size: landscape; margin: 0.4in; }
+                      body * { visibility: hidden !important; }
+                      #tearsheet-print-area, #tearsheet-print-area * { visibility: visible !important; }
+                      #tearsheet-print-area { position: absolute; left: 0; top: 0; width: 100%; }
+                      #tearsheet-print-area table { font-size: 9px !important; }
+                      #tearsheet-print-area a { color: ${M.primary} !important; text-decoration: none !important; border: none !important; }
+                    }
+                  `;
+                  document.head.appendChild(style);
+                  window.print();
+                  setTimeout(() => { const el = document.getElementById("tearsheet-print"); if (el) el.remove(); }, 1000);
+                }}
+                style={{
+                  background: M.white, border: "1px solid " + M.border, borderRadius: "6px",
+                  padding: "6px 14px", cursor: "pointer", fontSize: "11px", fontWeight: 700,
+                  color: M.primary, fontFamily: "Arial, sans-serif",
+                  display: "flex", alignItems: "center", gap: "6px",
+                }}
+              >
+                <span style={{ fontSize: "13px" }}>&#128438;</span> Print to PDF
+              </button>
+            </div>
+            <div id="tearsheet-print-area">
+              <div style={{ display: "none" }} className="print-header">
+                <div style={{ fontSize: "14px", fontWeight: 700, color: M.navy, marginBottom: "4px", fontFamily: "Arial, sans-serif" }}>AI Disclosures Tearsheet — Quantitative Metrics</div>
+                <div style={{ fontSize: "10px", color: M.midGray, marginBottom: "12px", fontFamily: "Arial, sans-serif" }}>MCO AI Disclosures Monitor · Updated {lastUpdated}</div>
+              </div>
+              <style>{`@media print { .print-header { display: block !important; } }`}</style>
+              <TearsheetTable />
+              <div style={{ marginTop: "8px", fontSize: "9px", color: M.midGray, fontFamily: "Arial, sans-serif", lineHeight: "1.5" }}>
+                Sources are linked individually per datapoint. All figures from primary company filings, earnings calls, press releases, or investor presentations. Updated {lastUpdated}.
+              </div>
             </div>
           </>
         )}
