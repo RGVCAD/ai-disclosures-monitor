@@ -24,7 +24,7 @@ export const peers = [
     tagText: "#0028A1",
     headline: "40% of MA Portfolio GenAI-Enabled; Agentic Solutions Now on 3 Distribution Channels",
     metric: "40%",
-    metricLabel: "of MA product ARR with GenAI enablement",
+    metricLabel: "of MA product ARR with GenAI enablement (first disclosed Q2 2025; unchanged since)",
     theme: "Agentic Solutions / Multi-Platform Distribution",
     status: "leader",
     statusLabel: "Leader",
@@ -1048,7 +1048,7 @@ export const tearsheetCategories = [
       {
         label: "AI share of revenue",
         values: {
-          MCO: { text: "40% of MA ARR GenAI-enabled", source: "MCO Q4 2025 Earnings", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          MCO: { text: "40% of MA ARR GenAI-enabled (first disclosed Q2 2025; unchanged since)", source: "MCO Q2 2025 Earnings", date: "Jul 23, 2025", url: "https://www.fool.com/earnings/call-transcripts/2025/07/23/moodys-mco-q2-2025-earnings-call-transcript/" },
           TRI: { text: "28% of ACV AI-enabled (up from 15%)", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
           MSCI: { text: "CEO: AI revenue tracking 'almost irrelevant' — every product has AI", source: "MSCI Q1 2026 Earnings", date: "Apr 21, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/21/msci-msci-q1-2026-earnings-call-transcript/" },
         },
@@ -1056,7 +1056,7 @@ export const tearsheetCategories = [
       {
         label: "AI customer economics",
         values: {
-          MCO: { text: "2x ARR growth for GenAI customers; 97% retention; +18 NPS uplift", source: "MCO Q4 2025 Earnings Presentation", date: "Feb 18, 2026", url: "https://s203.q4cdn.com/694693571/files/doc_financials/2025/q4/4Q25-Earnings-Presentation-vFINAL.pdf" },
+          MCO: { text: "2x ARR growth for GenAI customers; 97% retention; +18 NPS uplift (Q4 2025 metrics; not updated in Q1 2026)", source: "MCO Q4 2025 Earnings Presentation", date: "Feb 18, 2026", url: "https://s203.q4cdn.com/694693571/files/doc_financials/2025/q4/4Q25-Earnings-Presentation-vFINAL.pdf" },
           SPGI: { text: "MI AI-product ACV at 1.3x; Energy at 2x vs. non-AI customers", source: "SPGI Q1 2026 Earnings", date: "Apr 28, 2026", url: "https://investor.spglobal.com/quarterly-earnings" },
           NDAQ: { text: "Verafin: 2,800+ clients, $12T assets, 21% FCM revenue growth", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
         },
@@ -1162,7 +1162,7 @@ export const executiveBrief = {
       accentColor: "#1A7A4A",
       content: [
         "Moody's remains the only DAIS peer with autonomous agentic workflows — credit memos, compliance screening — running natively inside a frontier AI platform (Claude) and available for purchase on AWS Marketplace. SPGI's Q1 2026 earnings (Apr 28) disclosed MCP and Claude Cowork Plug-ins as AI distribution capabilities and is exploring Agent-to-Agent Protocol (A2A), but its products remain assistive (Chat IQ, Document Intelligence, Drift.AI) rather than autonomous. MCO's agentic depth advantage is holding even as SPGI converges on the same distribution channels.",
-        "The 40% GenAI-enabled ARR and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group. SPGI disclosed its first AI-product ACV premiums this quarter — MI AI-product customers growing at 1.3x and Energy at 2x vs. non-AI customers — which validates the AI-monetization thesis but still falls short of MCO's standalone GenAI cohort disclosure. Thomson Reuters at 28% AI ACV is the closest comparable; MSCI's CEO declared AI revenue tracking 'almost irrelevant' (Apr 21).",
+        "The 40% GenAI-enabled ARR (first disclosed Q2 2025, reiterated through Q4 2025 without update, and not refreshed in Q1 2026) and 2x adopter cohort growth rate remain the strongest quantified monetization metrics in the peer group — but the staleness of the 40% figure is becoming a gap in the disclosure narrative. SPGI disclosed its first AI-product ACV premiums this quarter — MI AI-product customers growing at 1.3x and Energy at 2x vs. non-AI customers — which validates the AI-monetization thesis but still falls short of MCO's standalone GenAI cohort disclosure. Thomson Reuters at 28% AI ACV is the closest comparable; MSCI's CEO declared AI revenue tracking 'almost irrelevant' (Apr 21).",
         "MCO's three-channel distribution (Claude MCP, AWS Marketplace, Databricks/OpenAI) is the broadest agentic surface in the peer group. SPGI is now entering the same MCP/Claude ecosystem, but with data APIs (300+ Kensho customers) rather than end-to-end workflows. LSEG has 154 MCP customers but distributes data, not agentic agents. FactSet has 120+ MCP clients but remains in alpha on banking workflows.",
       ],
       sources: [
