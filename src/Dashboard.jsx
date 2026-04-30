@@ -297,11 +297,11 @@ function TearsheetTable() {
   // an outer scroll container would block the sticky thead from pinning to
   // the viewport top as the page scrolls.
   return (
-    <table className="tearsheet-table" style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", tableLayout: "fixed" }}>
+    <table className="tearsheet-table" style={{ width: "100%", borderCollapse: "collapse", fontSize: "12px", fontFamily: "Arial, sans-serif", tableLayout: "fixed" }}>
       <colgroup>
-        <col style={{ width: "14%" }} />
+        <col style={{ width: "10%" }} />
         {TEARSHEET_TICKERS.map(t => (
-          <col key={t} style={{ width: (86 / TEARSHEET_TICKERS.length) + "%" }} />
+          <col key={t} style={{ width: (90 / TEARSHEET_TICKERS.length) + "%" }} />
         ))}
       </colgroup>
       <thead className="tearsheet-thead">
@@ -338,9 +338,10 @@ function TearsheetTable() {
             {cat.metrics.map((metric, mi) => (
               <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: cc.tint }}>
                 <td style={{
-                  padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600,
-                  verticalAlign: "top", lineHeight: "1.4",
+                  padding: "8px 8px", fontSize: "11px", color: M.midGray, fontWeight: 600,
+                  verticalAlign: "top", lineHeight: "1.35",
                   background: cc.tint, borderLeft: COL_SEPARATOR,
+                  wordWrap: "break-word", whiteSpace: "normal",
                 }}>{metric.label}</td>
                 {TEARSHEET_TICKERS.map(ticker => {
                   const v = metric.values[ticker];
@@ -355,7 +356,7 @@ function TearsheetTable() {
                       background: cc.tint,
                       borderLeft: COL_SEPARATOR,
                     }}>
-                      <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
+                      <div style={{ fontSize: "12px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
                       <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
                         display: "inline-block", marginTop: "3px",
                         fontSize: "9px", color: M.lightBlue, textDecoration: "none",
