@@ -4,8 +4,9 @@
 // Dashboard.jsx imports from here and never needs to be touched by the refresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const lastUpdated = "April 28, 2026";
+export const lastUpdated = "April 30, 2026";
 export const whatsNew = [
+  "Proprietary data moat — SPGI & FDS disclosures (Apr 30 review): SPGI CEO Cheung re-confirmed >95% of revenue is derived from proprietary sources (proprietary benchmarks, differentiated data, critical workflow tools), with <5% of total company revenue from non-enhanced public data and only ~12% of Market Intelligence flagged as 'not as proprietary' (Q4 2025 call); FactSet management stated >90% of ASV is composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts — examples include portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, FactSet Fundamentals (Q1 FY2026 call, Dec 18, 2025). Both peers explicitly framing proprietary data as their AI defensibility moat.",
   "LSEG Q1 2026 trading update (Apr 23): MCP adoption surges to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025; 40% of MCP access via Claude, 45% direct, 15% ChatGPT/Snowflake/Databricks; Workspace AI products serving ~3,000 users; guidance raised to upper half of 6.5–7.5% organic growth; record Q1 revenue (+9.8% OCC)",
   "Nasdaq Q1 2026 earnings (Apr 23): net revenue $1.4B (+13%), ARR $3.2B (+12%), EPS $0.96 (+21%); agentic AI workforce now 500+ clients (up 40% since Investor Day); FinTech revenue $517M (+18%); Verafin 2,800+ clients, $12T assets, 21% FCM revenue growth; GenAI drug trafficking analytic launching this quarter",
   "MSCI Q1 2026 earnings beat (Apr 21): revenue $850.8M (+14.1% YoY), EPS $4.55 vs. $4.43 est; CEO Fernandez says 'every new product has an AI component' — AI-specific revenue tracking becoming irrelevant; IndexAI Insights live on ChatGPT and Claude with hundreds of clients; launched as many new products in Q1 as in all of FY2025",
@@ -46,22 +47,22 @@ export const peers = [
     accent: "#001A6E",
     tag: "#F0F1F8",
     tagText: "#001A6E",
-    headline: "Q1 2026: 300+ Kensho LLM-Ready API Customers; Capital IQ Pro Going AI-Native",
-    metric: "300+",
-    metricLabel: "customers on Kensho LLM-Ready APIs (API volume doubled Feb→Mar)",
-    theme: "AI Data Distribution / AI-Native Platform",
+    headline: ">95% of Revenue from Proprietary Sources; 300+ Kensho LLM-Ready API Customers",
+    metric: ">95%",
+    metricLabel: "of revenue derived from proprietary sources (CEO Martina Cheung, Q4 2025 call)",
+    theme: "Proprietary Data Moat / AI-Native Platform",
     status: "leader",
     statusLabel: "Leader",
-    aiSummary: "Q1 2026 marked SPGI's pivot from AI-as-efficiency to AI-as-product. 300+ customers now under contract or in trial for Kensho LLM-Ready APIs, with API call volume doubling from February to March. MI ACV among AI product customers growing at 1.3x the rate of non-AI customers; Energy AI-product ACV growing at 2x. Capital IQ Pro is evolving from web-based to AI-native platform with Chat IQ, Document Intelligence, Chart Explainer, and Drift.AI. SPGI is exploring Agent-to-Agent Protocol (A2A) and listed MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork as AI-at-scale distribution capabilities.",
-    keyFact: "Revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), Adj. operating margin 51.8% (+100bps). MI revenue $1.30B (+8%). Kensho LLM-Ready APIs: 300+ customers, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP and Claude Cowork Plug-ins listed as scale capabilities. CERA Titan: AI-native upstream data platform. Guidance reiterated: 6–8% OCC revenue growth, EPS $19.40–$19.65.",
-    quote: "We are also seeing fast-paced adoption of our AI functionality and are advancing our leadership as we rapidly innovate and partner to help customers unlock the potential of AI.",
+    aiSummary: "SPGI is anchoring its AI defensibility narrative on proprietary data scale. CEO Cheung disclosed that >95% of revenue is derived from proprietary sources — proprietary benchmarks, differentiated data, and critical workflow tools — with <5% of total company revenue from non-enhanced public data and only ~12% of Market Intelligence flagged as 'not as proprietary as the rest of it.' Q1 2026 marked SPGI's pivot from AI-as-efficiency to AI-as-product: 300+ customers now under contract or in trial for Kensho LLM-Ready APIs, with API call volume doubling from February to March. MI AI-product ACV growing at 1.3x non-AI customers; Energy AI-product ACV at 2x. Capital IQ Pro is evolving from web-based to AI-native (Chat IQ, Document Intelligence, Chart Explainer, Drift.AI). Exploring Agent-to-Agent Protocol (A2A) and listed MCP, Grounding Agent, and S&P Global Plug-ins for Claude Cowork as AI-at-scale distribution capabilities.",
+    keyFact: "Proprietary data moat: >95% of revenue derived from proprietary sources; <5% of total company revenue from non-enhanced public data; only ~12% of Market Intelligence flagged as 'not as proprietary' (Q4 2025 call, reaffirmed). Q1 2026: Revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), Adj. operating margin 51.8% (+100bps). MI revenue $1.30B (+8%). Kensho LLM-Ready APIs: 300+ customers, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP and Claude Cowork Plug-ins listed as scale capabilities. CERA Titan: AI-native upstream data platform. Guidance reiterated: 6–8% OCC revenue growth, EPS $19.40–$19.65.",
+    quote: "Over 95% of the revenue is derived from proprietary sources.",
     speaker: "CEO Martina Cheung",
-    source: "SPGI Q1 2026 Earnings",
-    sourceDate: "Apr 28, 2026",
-    sourceUrl: "https://investor.spglobal.com/quarterly-earnings",
+    source: "SPGI Q4 2025 Earnings Call",
+    sourceDate: "Feb 10, 2026",
+    sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/",
     guidance: "6–8% OCC rev growth; EPS $19.40–$19.65; Mobility spin-off filing Q2 2026; 10–35bps margin expansion",
-    risk: "Kensho LLM-Ready API customer count (300+) includes trials — conversion rate not disclosed; A2A and MCP references are aspirational with no client counts; Mobility spin creates near-term noise",
-    mcoComparison: "SPGI's Q1 2026 earnings shifted its AI narrative from internal efficiency to external product traction: 300+ Kensho LLM-Ready API customers with doubling API volume, and quantified AI-product ACV premiums (1.3x MI, 2x Energy) for the first time. This is the closest SPGI has come to MCO's 'AI monetization flywheel' framing. However, MCO still leads on agentic workflow depth (autonomous credit memos, compliance agents running in Claude) while SPGI's AI products remain primarily assistive (Chat IQ, Document Intelligence). SPGI's mention of MCP and Claude Cowork Plug-ins signals convergence on the same distribution channels MCO pioneered.",
+    risk: "Kensho LLM-Ready API customer count (300+) includes trials — conversion rate not disclosed; A2A and MCP references are aspirational with no client counts; Mobility spin creates near-term noise; the >95% proprietary figure is self-defined and not externally audited",
+    mcoComparison: "SPGI is now leaning hardest in the peer group on the proprietary data narrative as its AI defensibility moat: >95% of revenue from proprietary sources, <5% from non-enhanced public data, only ~12% of MI 'not as proprietary' — explicitly framed as protection against AI/workflow disintermediation. This is directionally consistent with MCO's 600M+ entity / 2B ownership-link estate, but SPGI is the first DAIS peer to explicitly quantify proprietary content as a share of total revenue. Combined with Q1 2026's 300+ Kensho LLM-Ready API customers and quantified AI-product ACV premiums (1.3x MI, 2x Energy), the gap between MCO and SPGI on the AI monetization story is narrowing. MCO still leads on agentic workflow depth (autonomous credit memos, compliance agents running in Claude) while SPGI's AI products remain primarily assistive. SPGI's mention of MCP and Claude Cowork Plug-ins signals convergence on the same distribution channels MCO pioneered.",
   },
   {
     ticker: "TRI",
@@ -238,22 +239,22 @@ export const peers = [
     accent: "#0028A1",
     tag: "#F0F4FF",
     tagText: "#0028A1",
-    headline: "85K+ Users on AI Document Search; Organic ASV Accelerates to +6.7%",
-    metric: "85K+",
-    metricLabel: "users on AI Document Search beta (Mar 2026)",
-    theme: "AI-Amplified Workstation",
+    headline: ">90% of ASV from Proprietary Solutions; 85K+ Users on AI Document Search",
+    metric: ">90%",
+    metricLabel: "of ASV from proprietary client-facing solutions and proprietary data/tools enriched by experts",
+    theme: "Proprietary Data Moat / AI-Amplified Workstation",
     status: "laggard",
     statusLabel: "Laggard",
-    aiSummary: "Methodical, margin-disciplined approach accelerating. Q2 FY2026 (ended Feb 28) delivered organic revenue growth of 6.8% — strongest in 5+ quarters — driven by institutional buy-side and wealth management. AI Document Search deployed to 85K+ users in March 2026. Mercury AI chatbot for pitch decks and research live. First production-grade MCP server for real-time financial intelligence in Explorer beta (800+ institutional users). CEO's 'amplify, not replace' framing is deliberate positioning for institutional clients wary of disruption.",
-    keyFact: "Q2 FY2026: Revenue $611M (+7.1%), organic ASV $2,449M (+6.7%), adj. EPS $4.46 (+4.2%). Raised FY2026 guidance: GAAP rev $2.45–2.47B, adj. EPS $17.25–17.75. Fiscal year ends August 31.",
-    quote: "AI doesn't replace what makes FactSet essential. It amplifies it.",
-    speaker: "CEO Sanoke Viswanathan",
-    source: "FDS Q2 FY2026 Earnings",
-    sourceDate: "Mar 31, 2026",
-    sourceUrl: "https://www.globenewswire.com/news-release/2026/03/31/3265310/7768/en/FactSet-Reports-Results-for-Second-Quarter-2026.html",
+    aiSummary: "Methodical, margin-disciplined approach accelerating. Management disclosed >90% of ASV is composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts — examples include portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, and FactSet Fundamentals. Q2 FY2026 (ended Feb 28) delivered organic revenue growth of 6.8% — strongest in 5+ quarters — driven by institutional buy-side and wealth management. AI Document Search deployed to 85K+ users in March 2026. Mercury AI chatbot for pitch decks and research live. First production-grade MCP server for real-time financial intelligence (120+ clients). CEO's 'amplify, not replace' framing positions FactSet for institutional clients wary of disruption — anchored on the proprietary content moat.",
+    keyFact: "Proprietary data moat: >90% of ASV composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts (portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, FactSet Fundamentals — Q1 FY2026 call, Dec 18, 2025). Q2 FY2026: Revenue $611M (+7.1%), organic ASV $2,449M (+6.7%), adj. EPS $4.46 (+4.2%). Raised FY2026 guidance: GAAP rev $2.45–2.47B, adj. EPS $17.25–17.75. Fiscal year ends August 31.",
+    quote: "Over 90% of our ASV [is] composed of proprietary client-facing solutions, and proprietary data and tools enriched by subject matter experts.",
+    speaker: "Management — FactSet Q1 FY2026 Earnings Call",
+    source: "FDS Q1 FY2026 Earnings Call",
+    sourceDate: "Dec 18, 2025",
+    sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/",
     guidance: "FY2026 (to Aug 2026): Organic ASV +5.4–6.7%; GAAP rev $2.45–2.47B; Adj. EPS $17.25–17.75 (raised)",
-    risk: "Adjusted operating margin contracted to 35.0% (from 36.3% prior year) as AI/tech investment ramps; GAAP EPS declined 4.5% YoY; competitive pressure from Bloomberg, LSEG, and AI-native entrants",
-    mcoComparison: "FactSet's AI platform build-out is accelerating: 85K+ users on AI Document Search, a production-grade MCP server, Mercury AI chatbot, AI for Banking (with Finster AI), ComplyAdvantage integration for KYC/AML, and AI Doc Ingest for Cobalt. The 'amplify, not replace' framing and the elevation of Kate Stepp to first Chief AI Officer signal AI is now the primary strategic axis. FactSet lags MCO on external GenAI ARR monetization but is closing fast on distribution (MCP, Explorer, Workstation). Margin compression (35.0% from 36.3%) is the cost of this investment cycle.",
+    risk: "Adjusted operating margin contracted to 35.0% (from 36.3% prior year) as AI/tech investment ramps; GAAP EPS declined 4.5% YoY; competitive pressure from Bloomberg, LSEG, and AI-native entrants; the >90% ASV proprietary figure is self-defined (denominator is ASV, not total revenue) and not externally audited",
+    mcoComparison: "FactSet's AI build-out is accelerating: 85K+ users on AI Document Search, production-grade MCP server with 120+ clients, Mercury AI, AI for Banking with Finster AI, ComplyAdvantage integration, and AI Doc Ingest for Cobalt. The 'amplify, not replace' framing — anchored on >90% of ASV being proprietary — is deliberately positioned to defend institutional accounts against AI-native disruptors. The proprietary data narrative is structurally similar to SPGI's >95% claim (though FDS uses ASV as the denominator, not total revenue) and to MCO's 600M+ entity estate. The elevation of Kate Stepp to first Chief AI Officer (Mar 4) and Joshua Warren as new CFO (Apr 13) signal AI is now the primary strategic axis. FactSet lags MCO on external GenAI ARR monetization but is closing fast on distribution (MCP, Explorer, Workstation). Margin compression (35.0% from 36.3%) is the cost of this investment cycle.",
   },
 ];
 
@@ -442,6 +443,7 @@ export const disclosures = [
   { date: "Apr 22, 2026", company: "Moody's", ticker: "MCO", quarter: "Q1 2026", summary: "Q1 2026 earnings: beat estimates, reiterated full-year guidance (Adj. EPS $16.40–$17.00, high-single-digit rev growth). No new AI metrics disclosed beyond previously reported Q4 2025 figures.", source: "MCO Q1 2026 Earnings", sourceUrl: "https://ir.moodys.com/financials/quarterly-results/default.aspx" },
 
   // ── SPGI — S&P Global ─────────────────────────────────────────────
+  { date: "Feb 10, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q4 2025", summary: "Proprietary data moat disclosure: CEO Martina Cheung stated >95% of revenue is derived from proprietary sources — proprietary benchmarks, differentiated data, and critical workflow tools. <5% of total company revenue comes from non-enhanced public data. Within Market Intelligence, only ~12% of the business is described as 'not as proprietary as the rest of it.' Framed explicitly as the company's defensibility argument against AI/workflow disintermediation.", source: "SPGI Q4 2025 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
   { date: "Feb 10, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q4 2025", summary: "Management called 2025 a 'breakthrough year for AI.' 66% of all 40,000 employees actively using Spark Assist GenAI platform. ~3,000 reusable AI prompts generated. 10%+ of enterprise applications eliminated through AI automation. Enterprise Data Office targeting 20%+ run-rate expense reduction by 2027.", source: "SPGI Q4 2025 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
   { date: "Feb 10, 2026", company: "S&P Global", ticker: "SPGI", quarter: "Q4 2025", summary: "iLEVEL Automated Data Ingestion: 20% of iLEVEL customers opted in within 6 months. Commodity Insights with Microsoft Copilot: 95% faster data extraction. $1B+ cumulative AI investment since 2018 (including ~$550M Kensho acquisition). Record 50.4% adjusted operating margins.", source: "SPGI Q4 2025 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
   { date: "Oct 22, 2025", company: "S&P Global", ticker: "SPGI", quarter: "Q3 2025", summary: "Capital IQ Pro AI launches: ChatIQ (GenAI assistant for company/industry analysis), Document Intelligence 2.0 (analyzes document repositories with precise citations), Natural Language Screening, Multi-Document ChatIQ. Market Intelligence organic growth 8% constant currency — strongest in 6 quarters.", source: "SPGI Capital IQ Pro AI Launch", sourceUrl: "https://press.spglobal.com/2025-10-22-S-P-Global-Redefines-Financial-Insights-with-New-AI-Powered-Multi-Document-Research-and-Analysis-Tool-in-Capital-IQ-Pro-ChatIQ" },
@@ -506,6 +508,7 @@ export const disclosures = [
   { date: "Feb 3, 2026", company: "Gartner", ticker: "IT", quarter: "Q4 2025", summary: "200,000+ annual conversations between Gartner experts and IT community. IT Symposium/Xpo drew 8,000+ technology leaders. But Contract Value grew only 1% YoY (4% excluding U.S. federal government). AskGartner completed full rollout from beta in October 2025.", source: "Gartner Q4 2025 Earnings", sourceUrl: "https://seekingalpha.com/article/4837423-gartner-inc-it-q4-2025-earnings-call-transcript" },
 
   // ── FDS — FactSet ─────────────────────────────────────────────────
+  { date: "Dec 18, 2025", company: "FactSet", ticker: "FDS", quarter: "Q1 FY2026", summary: "Proprietary data moat disclosure: management stated >90% of ASV is composed of proprietary client-facing solutions and proprietary data and tools enriched by subject matter experts. Examples cited include portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, and FactSet Fundamentals. Framed in the context of enterprise AI: FactSet positioned as one of the few companies trusted to integrate external and private data at scale with strict data ownership entitlements and security compliance.", source: "FactSet Q1 FY2026 Earnings Call", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
   { date: "Dec 18, 2025", company: "FactSet", ticker: "FDS", quarter: "Q1 FY2026", summary: "45%+ sequential growth in AI product adoption. Revenue $608M (+6.9% YoY). Adjusted EPS $4.51 (beat $4.35 forecast). Mercury AI chatbot launched for pitch decks, research, memos. Conversational API powered by Mercury available for client integration.", source: "FactSet Q1 FY2026 Earnings", sourceUrl: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
   { date: "Dec 16, 2025", company: "FactSet", ticker: "FDS", quarter: "Q1 FY2026", summary: "First production-grade MCP server for real-time financial intelligence announced. 45 firms and 800+ institutional users in successful Explorer beta program. Asia-Pacific: 8% organic ASV growth driven partly by AI-ready data demand. GenAI Data Packages consolidating critical data feeds.", source: "FactSet AI-Ready Data MCP Server", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-meets-demand-for-ai-ready-data-first-announce-mcp-sans-intermediary" },
   { date: "Feb 4, 2026", company: "FactSet", ticker: "FDS", quarter: "Q2 FY2026", summary: "AI Doc Ingest for Cobalt launched: private capital clients can now extract and structure portfolio company data from unstructured documents (PDFs, spreadsheets, scanned reports) directly into the Cobalt Portfolio Monitoring platform. Eliminates manual data entry for private credit and equity managers. Extends FactSet's AI-first data strategy into the private markets workflow.", source: "FactSet AI Doc Ingest for Cobalt Launch", sourceUrl: "https://investor.factset.com/news-releases/news-release-details/factset-launches-ai-doc-ingest-cobalt-transforming-private" },
@@ -591,9 +594,19 @@ export const disclosures = [
 // Updated by the daily refresh task alongside disclosures.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const cycleWindow = "Jan 13 – Apr 28, 2026";
+export const cycleWindow = "Jan 30 – Apr 30, 2026";
 
 export const cycleThemes = [
+  {
+    theme: "Proprietary Data Moat",
+    color: "#001A6E",
+    highlights: [
+      { ticker: "SPGI", text: "Q4 2025 call: CEO Cheung disclosed >95% of revenue is derived from proprietary sources (proprietary benchmarks, differentiated data, critical workflow tools). <5% of total company revenue from non-enhanced public data; only ~12% of Market Intelligence flagged as 'not as proprietary.' Framed explicitly as defensibility against AI/workflow disintermediation." },
+      { ticker: "FDS", text: "Q1 FY2026 call (Dec 18, 2025): management disclosed >90% of ASV composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts. Examples cited: portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, FactSet Fundamentals. Framed as enterprise-AI defensibility — one of the few companies trusted to integrate external and private data at scale." },
+      { ticker: "MCO", text: "Data estate: 600M+ entities, 2B ownership links globally; 40+ years of credit history; the substrate underpinning Research Assistant and Agentic Solutions. MCO has not yet disclosed proprietary content as a quantified share of revenue — disclosure precedent now set by SPGI and FDS." },
+      { ticker: "LSEG", text: "FY 2025: 90% of data revenue from non-replicable content (45% real-time via 575 exchange connections, 25% specialized/exclusive, 10% curated public). 33 petabytes of LSEG data accessible via M365 Copilot." },
+    ],
+  },
   {
     theme: "Agentic AI Products",
     color: "#1A7A4A",
@@ -640,8 +653,8 @@ export const cycleThemes = [
     highlights: [
       { ticker: "MCO", text: "New Q4 2025 metrics (Feb 18): 97% retention rate for GenAI product customers, +18 NPS uplift for CreditView Research Assistant adopters, 5x customer-reported productivity improvements. CreditLens: ~20% annual growth with ~67% avg revenue uplift on AI-enabled upgrade." },
       { ticker: "TRI", text: "AI-enabled products reached 28% of ACV (up from 15% a year ago). 85%+ employees using Open Arena. 80%+ engineers using AI coding tools. $200M+ annual AI investment." },
-      { ticker: "SPGI", text: "Q1 2026 (Apr 28): 300+ customers on Kensho LLM-Ready APIs, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native platform. 66% of 40,000 employees on Spark Assist. Targeting 20%+ run-rate expense reduction by 2027." },
-      { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target." },
+      { ticker: "SPGI", text: "Q1 2026 (Apr 28): 300+ customers on Kensho LLM-Ready APIs, API volume doubled Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native platform. 66% of 40,000 employees on Spark Assist. Targeting 20%+ run-rate expense reduction by 2027. Data moat: >95% of revenue from proprietary sources, <5% from non-enhanced public data." },
+      { ticker: "FDS", text: "48 of top 50 clients using 3+ FactSet AI solutions. AI coding assistants authoring ~20% of code commits. 25%+ reduction in manual data curation. Already captured 50%+ of FY2026 productivity target. Data moat: >90% of ASV from proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts (Q1 FY2026 call)." },
       { ticker: "NDAQ", text: "Q1 2026 (Apr 23): agentic AI workforce 500+ clients (up 40%). FinTech revenue $517M (+18%, record). ACV bookings 50%+ YoY. Verafin: 2,800+ clients, $12T assets, 21% FCM revenue growth. $100M AI efficiency target by 2027." },
       { ticker: "LSEG", text: "Q1 2026 (Apr 23): MCP customers surged to 154 (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% access via Claude. Workspace AI Search (~1,500 users) and AI Deep Research (~1,600 users) launched. Guidance raised." },
       { ticker: "MSCI", text: "Q1 2026 (Apr 21): AI now in every new product — CEO stopped tracking AI-specific revenue. Launched as many products in Q1 as full FY2025. IndexAI Insights: hundreds of clients on ChatGPT and Claude. ESG ratings fully revamped with AI." },
@@ -660,7 +673,7 @@ export const cycleThemes = [
 
 export const cycleCompanySummaries = [
   { ticker: "MCO", summary: "Agentic Solutions now live natively in Anthropic's Claude via purpose-built MCP app (Apr 9) — credit analysis + compliance agents run directly in Claude Desktop/Enterprise. AWS Marketplace launch (Apr 16). $3M+ tier-1 bank deal (credit memos 40 hrs to ~2 min). Q4 2025 metrics: 97% GenAI retention, +18 NPS uplift, 5x productivity gains. CreditLens ~20% growth, ~67% revenue uplift on AI upgrade. TIE blockchain credit analysis launched (Mar 18). Q1 2026 earnings (Apr 22): beat estimates, reiterated guidance — no new AI metrics." },
-  { ticker: "SPGI", summary: "Q1 2026 earnings (Apr 28): revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), margin 51.8% (+100bps). 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP + Claude Cowork Plug-ins listed as scale capabilities. CERA Titan AI-native upstream platform. Acquired Enertel AI (Mar 18). 66% of employees on Spark Assist. Google Cloud partnership for agentic innovation." },
+  { ticker: "SPGI", summary: "Proprietary data moat (Q4 2025 call): CEO Cheung disclosed >95% of revenue from proprietary sources, <5% from non-enhanced public data, only ~12% of MI 'not as proprietary' — explicit defensibility argument against AI disintermediation. Q1 2026 earnings (Apr 28): revenue $4.17B (+10%), Adj. EPS $4.97 (+14%), margin 51.8% (+100bps). 300+ customers on Kensho LLM-Ready APIs with API volume doubling Feb→Mar. MI AI-product ACV growing 1.3x, Energy AI-product ACV growing 2x vs. non-AI customers. Capital IQ Pro evolving to AI-native: Chat IQ, Document Intelligence, Chart Explainer, Drift.AI. Exploring A2A protocol. MCP + Claude Cowork Plug-ins listed as scale capabilities. CERA Titan AI-native upstream platform. Acquired Enertel AI (Mar 18). 66% of employees on Spark Assist. Google Cloud partnership for agentic innovation." },
   { ticker: "TRI", summary: "CoCounsel hit 1M users. Proprietary 'Thomson' LLM for summer 2026. Smokeball partnership for small/mid-size law. 28% AI ACV (up from 15%). New CFO joining May." },
   { ticker: "LSEG", summary: "Q1 2026 (Apr 23): MCP adoption surged to 154 customers (90 connected + 64 onboarding), up from 9 in Dec 2025. 40% via Claude, 45% direct, 15% ChatGPT/other. Workspace AI products serving ~3,000 users. Guidance raised to upper half of 6.5–7.5%. Record Q1 revenue (+9.8% OCC). MaaS marketplace live with SocGen. LSEG data in M365 Copilot." },
   { ticker: "VRSK", summary: "Investor Day: 6-8% OCC revenue growth targets (2026-2028). XactGen agentic claims launched. 22 AI modules released (beat target). Insurance fraud study: 76% of insurers see more sophisticated manipulated media." },
@@ -668,7 +681,7 @@ export const cycleCompanySummaries = [
   { ticker: "MSCI", summary: "Q1 2026 earnings beat (Apr 21): revenue $850.8M (+14.1%), EPS $4.55. CEO Fernandez: 'every new product has an AI component' — AI revenue tracking 'almost irrelevant.' Product velocity: Q1 = full FY2025. IndexAI Insights live on ChatGPT/Claude with hundreds of clients. ESG ratings revamped with AI. Custom index creation now machine-assisted. VantageR + PM Insights + Compass acquisitions. $7T+ ETF-linked AUM." },
   { ticker: "NDAQ", summary: "Q1 2026 (Apr 23): Agentic AI workforce 500+ clients (up 40%). Net revenue $1.4B (+13%), ARR $3.2B (+12%), EPS $0.96 (+21%). FinTech revenue $517M (+18%, record). Verafin 2,800+ clients, $12T assets, 21% FCM growth. GenAI drug trafficking analytic launching this quarter. ACV bookings 50%+ YoY. SEC approved 23/5 trading Dec 6." },
   { ticker: "IT", summary: "AskGartner: 500K+ questions answered, higher renewal rates for users. CV grew only 1% (4% ex-federal). Stock down ~35% YTD. Apr 2: predicted >50% of enterprises will abandon copilots for outcome-focused workflows by 2028. Apr 7: only 28% of I&O AI use cases meet ROI, 20% fail outright; agentic-SCM TAM $53B by 2030. Apr 16: new research — orgs with successful AI invest up to 4x more in data & analytics foundations, validating data-company structural advantage." },
-  { ticker: "FDS", summary: "Second C-suite change tied to AI strategy: Joshua Warren named CFO effective Apr 13 (from Envestnet / BlackRock), succeeding Helen Shan — follows Mar 4 Kate Stepp CAIO appointment. AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
+  { ticker: "FDS", summary: "Proprietary data moat (Q1 FY2026 call, Dec 18, 2025): >90% of ASV composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts — examples include portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, FactSet Fundamentals. Framed as enterprise-AI defensibility. Second C-suite change tied to AI strategy: Joshua Warren named CFO effective Apr 13 (from Envestnet / BlackRock), succeeding Helen Shan — follows Mar 4 Kate Stepp CAIO appointment. AI Document Search at 85K+ users. AI for Banking alpha with Finster AI. MCP server with 120+ clients. Raised FY2026 guidance. Q2 organic revenue +6.8% — strongest in 5+ quarters." },
 ];
 
 // ─── OTHER FIRMS CYCLE BRIEFING ──────────────────────────────────────────
@@ -793,6 +806,25 @@ export const aiBig4CycleSummaries = [
 // ────────────────────────────────────────────────────────────────────────────
 
 export const differentiationMap = [
+  {
+    title: "Quantifying the Proprietary Data Moat",
+    color: "#001A6E",
+    desc: "Disclosing what share of revenue (or ASV) is derived from proprietary content vs. non-enhanced public data — the cleanest single number an investor can use to assess AI/disintermediation risk. SPGI and FactSet have set the disclosure precedent: each is now framing proprietary content share as their primary defensibility argument against frontier-model commoditization. The opportunity is for MCO to define the equivalent metric for its own business and put it on the map before peers force a different denominator on the conversation.",
+    mcoPosition: "early",
+    mcoNote: "MCO has the underlying assets — 600M+ entities, 2B ownership links, 40+ years of credit history, regulator-recognized rating opinions — but has not yet disclosed proprietary content as a quantified share of revenue. With SPGI now publicly anchored on >95% and FactSet on >90% of ASV, the disclosure precedent is set in the peer group. The next step for MCO is to define the right denominator (MA ARR? total revenue? ratings vs. analytics separately?), and pair the number with a defensible methodology so it doesn't get challenged as marketing. The strategic upside: MCO's proprietary share is plausibly higher than SPGI's because Moody's Investors Service revenue is fundamentally non-replicable (regulator-recognized credit opinions), and Moody's Analytics ARR has minimal exposure to commodity public data. A well-constructed disclosure would directly counter the AI-disintermediation narrative.",
+    peers: [
+      { ticker: "SPGI", status: "leading", evidence: ">95% of revenue from proprietary sources (proprietary benchmarks, differentiated data, critical workflow tools); <5% from non-enhanced public data; ~12% of Market Intelligence 'not as proprietary as the rest of it.' CEO Cheung framed this explicitly as defensibility against AI/workflow disintermediation in Q4 2025 call." },
+      { ticker: "FDS", status: "leading", evidence: ">90% of ASV composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts. Examples cited: portfolio analytics, FactSet Performance Solutions, CUSIP, Revere, FactSet Fundamentals (Q1 FY2026 call, Dec 18, 2025)." },
+      { ticker: "LSEG", status: "active", evidence: "90% of data revenue from non-replicable content (45% real-time via 575 exchange connections, 25% specialized/exclusive, 10% curated public). Disclosed at FY 2025 results (Feb 26, 2026)." },
+      { ticker: "MCO", status: "early", evidence: "Data estate disclosed (600M+ entities, 2B ownership links) but proprietary content share of revenue not yet quantified. Disclosure precedent now set by SPGI and FDS." },
+      { ticker: "TRI", status: "early", evidence: "Heavy reliance on proprietary legal/tax content described qualitatively; specific share of revenue not disclosed." },
+      { ticker: "VRSK", status: "early", evidence: "Proprietary insurance data described as competitive moat at Investor Day; specific share of revenue not disclosed." },
+      { ticker: "MSCI", status: "gap", evidence: "CEO Fernandez framing AI as 'in everything we ship'; proprietary content share not disclosed as a separate metric." },
+      { ticker: "NDAQ", status: "gap", evidence: "Proprietary data sets exist (Verafin transaction graph) but not framed as a share-of-revenue moat metric." },
+      { ticker: "CSGP", status: "gap", evidence: "Proprietary CRE and residential data described qualitatively; no quantified share-of-revenue disclosure." },
+      { ticker: "IT", status: "gap", evidence: "Proprietary research content behind paywall; no quantified disclosure of proprietary content share." },
+    ],
+  },
   {
     title: "Agentic Workflows That Replace, Not Assist",
     color: "#1A7A4A",
@@ -1143,6 +1175,15 @@ export const tearsheetCategories = [
           VRSK: { text: "Proprietary insurance data; 22 AI modules released (beat target)", source: "VRSK 2026 Investor Day", date: "Mar 5, 2026", url: "https://www.verisk.com/company/newsroom/verisk-reiterates-its-growth-targets-and-outlines-strategy-for-its-next-phase-of-compounding-growth-at-2026-investor-day/" },
         },
       },
+      {
+        label: "Proprietary content share of revenue / ASV",
+        values: {
+          SPGI: { text: ">95% of revenue from proprietary sources; <5% from non-enhanced public data; ~12% of MI 'not as proprietary'", source: "SPGI Q4 2025 Earnings Call (CEO Cheung)", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+          FDS: { text: ">90% of ASV from proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts", source: "FDS Q1 FY2026 Earnings Call", date: "Dec 18, 2025", url: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
+          LSEG: { text: "90% of data revenue from non-replicable content (45% real-time, 25% specialized/exclusive, 10% curated public)", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          MCO: { text: "Not yet quantified as a share of revenue; data estate covers 600M+ entities and 2B ownership links — disclosure precedent now set by SPGI and FDS", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+        },
+      },
     ],
   },
 ];
@@ -1153,7 +1194,7 @@ export const tearsheetCategories = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const executiveBrief = {
-  date: "April 28, 2026",
+  date: "April 30, 2026",
   sections: [
     {
       id: "winning",
@@ -1177,14 +1218,15 @@ export const executiveBrief = {
       icon: "◆",
       accentColor: "#CC2030",
       content: [
-        "SPGI's Q1 2026 earnings closed the AI-product quantification gap significantly. For the first time, SPGI disclosed 300+ customers on Kensho LLM-Ready APIs with API volume doubling month-over-month, and quantified AI-product ACV premiums (1.3x MI, 2x Energy). Combined with their mention of MCP and Claude Cowork Plug-ins as production capabilities, SPGI is no longer an 'internal efficiency only' AI story. MCO still has the deeper quantification (40% ARR, 2x cohort growth, 97% retention) but the narrative gap is narrowing.",
-        "The MCP adoption quantification gap remains. LSEG disclosed 154 MCP customers with granular breakdowns by platform, geography, and customer type — the most detailed AI distribution metric any peer has published. SPGI listed MCP as a capability but didn't disclose customer counts. MCO hasn't disclosed a client count for Agentic Solutions, making investor comparison impossible.",
-        "SPGI's Adj. operating margin hit 51.8% (+100bps YoY), surpassing MCO's 51.1%. With SPGI guiding 10–35bps of further expansion and attributing it partly to AI efficiency, the margin story is becoming a competitive vector. MCO's AI impact on margins is real but remains unquantified in forward guidance — Thomson Reuters guides 100bps/yr, Nasdaq targets $100M in AI efficiencies by 2027.",
+        "SPGI and FactSet have set a new disclosure precedent that MCO has not yet matched: quantifying proprietary content as a share of revenue. CEO Cheung disclosed that >95% of SPGI revenue is derived from proprietary sources, with <5% from non-enhanced public data and only ~12% of Market Intelligence flagged as 'not as proprietary' (Q4 2025 call). FactSet management disclosed that >90% of ASV is composed of proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts (Q1 FY2026 call). Both peers are now explicitly framing proprietary content as their AI defensibility moat. MCO has the underlying assets — 600M+ entities, 2B ownership links, regulator-recognized rating opinions — but has not yet articulated the equivalent metric for its own business. The risk is that investors anchor on SPGI's and FDS's numbers without an MCO comparator.",
+        "SPGI's Q1 2026 earnings also closed the AI-product quantification gap significantly. SPGI disclosed 300+ customers on Kensho LLM-Ready APIs with API volume doubling month-over-month, and quantified AI-product ACV premiums (1.3x MI, 2x Energy). Combined with the >95% proprietary disclosure and MCP / Claude Cowork Plug-ins as production capabilities, SPGI is no longer an 'internal efficiency only' AI story. MCO still has the deeper quantification on agentic monetization (40% ARR, 2x cohort growth, 97% retention) but the narrative gap is narrowing.",
+        "The MCP adoption quantification gap remains. LSEG disclosed 154 MCP customers with granular breakdowns by platform, geography, and customer type. SPGI listed MCP as a capability but didn't disclose customer counts. MCO hasn't disclosed a client count for Agentic Solutions, making investor comparison impossible. Layered on the proprietary-content disclosure gap, MCO is exposed on two complementary investor questions: 'how proprietary is the data?' and 'how many clients are using the AI products?'",
       ],
       sources: [
+        { label: "SPGI Q4 2025 Earnings Call (Cheung)", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+        { label: "FDS Q1 FY2026 Earnings Call", url: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
         { label: "SPGI Q1 2026 Earnings", url: "https://investor.spglobal.com/quarterly-earnings" },
         { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
-        { label: "NDAQ Q1 2026 Earnings", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
       ],
     },
     {
@@ -1193,13 +1235,14 @@ export const executiveBrief = {
       icon: "►",
       accentColor: "#0028A1",
       content: [
+        "The proprietary-data-moat narrative is now an active competitive theme. SPGI (>95% of revenue from proprietary sources) and FactSet (>90% of ASV from proprietary solutions) have both publicly anchored their AI defensibility on this single number, framed explicitly against AI/workflow disintermediation. LSEG has long held a similar disclosure (90% of data revenue non-replicable). MCO's natural response is to define the equivalent metric for its own business — likely strongest as a share of MA ARR or analytics revenue, given that Moody's Investors Service revenue is fundamentally non-replicable. The decision is not whether to track this internally but whether to disclose it before peers force a less favorable denominator on the conversation.",
         "Q1 2026 earnings season is nearly complete and the AI disclosure landscape has shifted materially. SPGI's pivot from 'AI as internal efficiency' to quantifying external AI product traction (300+ Kensho API customers, AI-product ACV premiums, MCP/Claude Cowork distribution) means all four major DAIS peers — MCO, SPGI, LSEG, and NDAQ — now have disclosed external AI product metrics. One earnings call remains: Verisk Q1 (Apr 29). Listen for: AI-attributed margin guidance, consumption pricing, or agentic output metrics.",
-        "The convergence on MCP as a distribution standard is accelerating. This cycle saw LSEG at 154 MCP customers (40% via Claude), SPGI listing MCP and Claude Cowork Plug-ins as scale capabilities, FactSet at 120+ MCP clients, and MCO live on Claude MCP since Apr 9. This validates MCO's early bet on Anthropic's ecosystem — but also means the MCP distribution channel is becoming table stakes rather than a differentiator. The next competitive frontier is likely agentic workflow depth (autonomous vs. assistive) and consumption-based pricing.",
-        "SPGI's exploration of Agent-to-Agent Protocol (A2A) for Capital IQ Pro is worth monitoring. A2A enables AI agents from different vendors to communicate directly — if SPGI succeeds, their agents could orchestrate with MCO's agents (or compete). This is an early signal of an interoperability standard that could reshape how financial data companies distribute AI capabilities.",
+        "The convergence on MCP as a distribution standard is accelerating. This cycle saw LSEG at 154 MCP customers (40% via Claude), SPGI listing MCP and Claude Cowork Plug-ins as scale capabilities, FactSet at 120+ MCP clients, and MCO live on Claude MCP since Apr 9. This validates MCO's early bet on Anthropic's ecosystem — but also means the MCP distribution channel is becoming table stakes rather than a differentiator. The next competitive frontier is likely agentic workflow depth (autonomous vs. assistive), proprietary-content disclosure, and consumption-based pricing.",
       ],
       sources: [
-        { label: "SPGI Q1 2026 Earnings", url: "https://investor.spglobal.com/quarterly-earnings" },
-        { label: "LSEG Q1 2026 Trading Update", url: "https://www.lseg.com/en/investor-relations/financial-results/trading-update-23-april-2026" },
+        { label: "SPGI Q4 2025 Earnings Call (Cheung)", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+        { label: "FDS Q1 FY2026 Earnings Call", url: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
+        { label: "LSEG FY 2025 Results", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
         { label: "Gartner: AI + Data Foundations", url: "https://www.gartner.com/en/newsroom/press-releases/2026-04-16-gartner-says-organizations-with-successful-ai-initiatives-invest-up-to-four-times-more-in-data-and-analytics-foundations" },
       ],
     },
