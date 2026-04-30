@@ -270,6 +270,33 @@ function ThemeGrid({ themes }) {
 
 const TEARSHEET_TICKERS = ["MCO", "SPGI", "TRI", "LSEG", "NDAQ", "MSCI", "VRSK", "CSGP", "FDS"];
 
+// Brand-style accent per ticker (used as the 2px left border on each company cell).
+// Duplicates from the peers data file have been deliberately differentiated so
+// every column reads as visually distinct in the tearsheet view.
+const TICKER_ACCENTS = {
+  MCO:  "#0028A1", // Moody's blue
+  SPGI: "#001A6E", // S&P navy
+  TRI:  "#FA6400", // Thomson Reuters orange (differentiated from MCO blue)
+  LSEG: "#4899D4", // LSEG sky blue
+  NDAQ: "#0095A8", // Nasdaq teal
+  MSCI: "#C97B00", // MSCI gold
+  VRSK: "#1A7A4A", // Verisk green
+  CSGP: "#7B4FA6", // CoStar purple
+  FDS:  "#1F3A5F", // FactSet slate (differentiated from MCO blue)
+};
+
+// Per-category color: used as the full-width category banner background and
+// (lightened) as a tint on the row label cell.
+const CATEGORY_COLORS = {
+  "External AI product adoption":              { bar: "#0028A1", tint: "#F4F7FD" },
+  "AI revenue & monetization":                 { bar: "#1A7A4A", tint: "#F2F9F4" },
+  "Data estate / competitive moat":            { bar: "#001A6E", tint: "#F0F2F8" },
+  "Distribution channels (MCP / AI platforms)":{ bar: "#4899D4", tint: "#F4F9FD" },
+  "Internal AI deployment":                    { bar: "#CC2030", tint: "#FCF3F4" },
+  "AI investment & margin impact":             { bar: "#C97B00", tint: "#FAF6EE" },
+};
+const CATEGORY_FALLBACK = { bar: M.primary, tint: M.surface };
+
 function TearsheetTable() {
   return (
     <div style={{ overflowX: "auto" }}>
@@ -292,39 +319,51 @@ function TearsheetTable() {
             ))}
           </tr>
         </thead>
-        {tearsheetCategories.map((cat, ci) => (
-          <tbody key={"cat-tbody-" + ci} className={"tearsheet-cat tearsheet-cat-" + ci}>
-            <tr>
-              <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
-                padding: "8px 8px 6px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
-                color: M.primary, background: M.surface, borderTop: ci > 0 ? "2px solid " + M.border : "none",
-                fontFamily: "Arial, sans-serif",
-              }}>{cat.category.toUpperCase()}</td>
-            </tr>
-            {cat.metrics.map((metric, mi) => (
-              <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
-                <td style={{ padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600, verticalAlign: "top", lineHeight: "1.4" }}>{metric.label}</td>
-                {TEARSHEET_TICKERS.map(ticker => {
-                  const v = metric.values[ticker];
-                  if (!v) return <td key={ticker} style={{ padding: "6px", verticalAlign: "top", textAlign: "center" }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
-                  return (
-                    <td key={ticker} style={{
-                      padding: "6px 6px 8px", verticalAlign: "top",
-                      background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
-                    }}>
-                      <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
-                      <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
-                        display: "inline-block", marginTop: "3px",
-                        fontSize: "9px", color: M.lightBlue, textDecoration: "none",
-                        borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
-                      }}>{v.source} · {v.date} ↗</a>
-                    </td>
-                  );
-                })}
+        {tearsheetCategories.map((cat, ci) => {
+          const cc = CATEGORY_COLORS[cat.category] || CATEGORY_FALLBACK;
+          return (
+            <tbody key={"cat-tbody-" + ci} className={"tearsheet-cat tearsheet-cat-" + ci}>
+              <tr>
+                <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
+                  padding: "8px 10px 7px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+                  color: "#FFFFFF", background: cc.bar,
+                  fontFamily: "Arial, sans-serif",
+                }}>{cat.category.toUpperCase()}</td>
               </tr>
-            ))}
-          </tbody>
-        ))}
+              {cat.metrics.map((metric, mi) => (
+                <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
+                  <td style={{
+                    padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600,
+                    verticalAlign: "top", lineHeight: "1.4",
+                    background: cc.tint, borderLeft: "3px solid " + cc.bar,
+                  }}>{metric.label}</td>
+                  {TEARSHEET_TICKERS.map(ticker => {
+                    const v = metric.values[ticker];
+                    const accent = TICKER_ACCENTS[ticker] || M.navy;
+                    if (!v) return <td key={ticker} style={{
+                      padding: "6px", verticalAlign: "top", textAlign: "center",
+                      borderLeft: "2px solid " + accent,
+                    }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
+                    return (
+                      <td key={ticker} style={{
+                        padding: "6px 6px 8px", verticalAlign: "top",
+                        background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
+                        borderLeft: "2px solid " + accent,
+                      }}>
+                        <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
+                        <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
+                          display: "inline-block", marginTop: "3px",
+                          fontSize: "9px", color: M.lightBlue, textDecoration: "none",
+                          borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
+                        }}>{v.source} · {v.date} ↗</a>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          );
+        })}
       </table>
     </div>
   );
@@ -1286,14 +1325,6 @@ export default function Dashboard() {
         {/* TEARSHEET TAB */}
         {activeTab === "tearsheet" && (
           <>
-            <SectionBanner
-              title="AI DISCLOSURES TEARSHEET — QUANTITATIVE METRICS"
-              subtitle={<>Every quantitative AI metric disclosed by Moody's and DAIS peers, with individual source links. Click any source to verify the datapoint. A dash (—) means the company has not publicly reported that metric.</>}
-              stats={[
-                { value: tearsheetCategories.reduce((a, c) => a + c.metrics.length, 0), label: "METRICS TRACKED", color: M.primary },
-                { value: TEARSHEET_TICKERS.length, label: "COMPANIES", color: M.green },
-              ]}
-            />
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "10px" }}>
               <button
                 onClick={() => {
@@ -1306,6 +1337,15 @@ export default function Dashboard() {
                       #tearsheet-print-area, #tearsheet-print-area * { visibility: visible !important; }
                       #tearsheet-print-area { position: absolute; left: 0; top: 0; width: 100%; }
 
+                      /* Force browser to print background colors and borders so the
+                         category bars, row tints, MCO column highlight, and ticker
+                         left-border accents survive Save-as-PDF. */
+                      #tearsheet-print-area, #tearsheet-print-area * {
+                        -webkit-print-color-adjust: exact !important;
+                        print-color-adjust: exact !important;
+                        color-adjust: exact !important;
+                      }
+
                       /* Tighten the table for print */
                       #tearsheet-print-area table { font-size: 8.5px !important; line-height: 1.25 !important; }
                       #tearsheet-print-area thead { display: table-header-group; }
@@ -1313,13 +1353,24 @@ export default function Dashboard() {
                       #tearsheet-print-area td { padding: 4px 5px !important; line-height: 1.25 !important; }
                       #tearsheet-print-area td > div { font-size: 8.5px !important; line-height: 1.3 !important; }
 
-                      /* Cleaner source attribution: smaller, no underline border, gray */
-                      #tearsheet-print-area a { color: #666 !important; text-decoration: none !important; border: none !important; font-size: 7px !important; margin-top: 1px !important; line-height: 1.15 !important; }
+                      /* Source attribution: keep visible blue + underlined so it's
+                         clickable in the saved PDF. Smaller font, lighter underline. */
+                      #tearsheet-print-area a {
+                        color: #1A6FA0 !important;
+                        text-decoration: underline !important;
+                        border-bottom: none !important;
+                        font-size: 7.5px !important;
+                        margin-top: 2px !important;
+                        line-height: 1.2 !important;
+                      }
 
-                      /* Category headers: tighter, prevent orphans */
-                      #tearsheet-print-area .tearsheet-cat td[colspan] { padding: 5px 6px 4px !important; font-size: 9px !important; }
+                      /* Category banner headers: tighter, prevent orphans */
+                      #tearsheet-print-area .tearsheet-cat td[colspan] { padding: 5px 8px 4px !important; font-size: 9px !important; }
 
-                      /* Pagination: keep each category together; force page break before category 3 (Distribution channels) */
+                      /* Pagination: keep each category together; force page break
+                         before category index 3 (Distribution channels) so page 1
+                         carries External AI / AI Revenue / Data Estate, and page 2
+                         carries Distribution / Internal AI / Investment. */
                       #tearsheet-print-area .tearsheet-cat { page-break-inside: avoid; break-inside: avoid; }
                       #tearsheet-print-area .tearsheet-cat-3 { page-break-before: always; break-before: page; }
                       #tearsheet-print-area tr { page-break-inside: avoid; break-inside: avoid; }
