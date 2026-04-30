@@ -285,6 +285,13 @@ const CATEGORY_FALLBACK = { bar: M.primary, tint: M.surface };
 // Uniform light-gray separator between company columns.
 const COL_SEPARATOR = "1px solid " + M.border;
 
+// Compact year format for tearsheet source-link strings: "Apr 28, 2026" -> "Apr 28, '26",
+// "MCO Q4 2025 Earnings Call" -> "MCO Q4 '25 Earnings Call", "FactSet FY2026" -> "FactSet FY'26".
+// Negative lookarounds keep us from clipping into longer digit runs like "12025" or part numbers.
+// Only affects the rendered string in the tearsheet source link; data.js keeps the canonical
+// date/source strings so the disclosures timeline and other tabs are unaffected.
+const shortYear = (s) => (s || "").replace(/(?<!\d)20(\d{2})(?!\d)/g, "'$1");
+
 function TearsheetTable() {
   // No overflow wrapper — the table is tableLayout: fixed at 100% width and
   // an outer scroll container would block the sticky thead from pinning to
@@ -353,7 +360,7 @@ function TearsheetTable() {
                         display: "inline-block", marginTop: "3px",
                         fontSize: "9px", color: M.lightBlue, textDecoration: "none",
                         borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
-                      }}>{v.source} · {v.date} ↗</a>
+                      }}>{shortYear(v.source)} · {shortYear(v.date)} ↗</a>
                     </td>
                   );
                 })}
