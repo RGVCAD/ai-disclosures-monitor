@@ -270,21 +270,6 @@ function ThemeGrid({ themes }) {
 
 const TEARSHEET_TICKERS = ["MCO", "SPGI", "TRI", "LSEG", "NDAQ", "MSCI", "VRSK", "CSGP", "FDS"];
 
-// Brand-style accent per ticker (used as the 2px left border on each company cell).
-// Duplicates from the peers data file have been deliberately differentiated so
-// every column reads as visually distinct in the tearsheet view.
-const TICKER_ACCENTS = {
-  MCO:  "#0028A1", // Moody's blue
-  SPGI: "#001A6E", // S&P navy
-  TRI:  "#FA6400", // Thomson Reuters orange (differentiated from MCO blue)
-  LSEG: "#4899D4", // LSEG sky blue
-  NDAQ: "#0095A8", // Nasdaq teal
-  MSCI: "#C97B00", // MSCI gold
-  VRSK: "#1A7A4A", // Verisk green
-  CSGP: "#7B4FA6", // CoStar purple
-  FDS:  "#1F3A5F", // FactSet slate (differentiated from MCO blue)
-};
-
 // Per-category color: used as the full-width category banner background and
 // (lightened) as a tint on the row label cell.
 const CATEGORY_COLORS = {
@@ -297,75 +282,87 @@ const CATEGORY_COLORS = {
 };
 const CATEGORY_FALLBACK = { bar: M.primary, tint: M.surface };
 
+// Uniform light-gray separator between company columns.
+const COL_SEPARATOR = "1px solid " + M.border;
+
 function TearsheetTable() {
+  // No overflow wrapper — the table is tableLayout: fixed at 100% width and
+  // an outer scroll container would block the sticky thead from pinning to
+  // the viewport top as the page scrolls.
   return (
-    <div style={{ overflowX: "auto" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", tableLayout: "fixed" }}>
-        <colgroup>
-          <col style={{ width: "14%" }} />
+    <table className="tearsheet-table" style={{ width: "100%", borderCollapse: "collapse", fontSize: "11px", fontFamily: "Arial, sans-serif", tableLayout: "fixed" }}>
+      <colgroup>
+        <col style={{ width: "14%" }} />
+        {TEARSHEET_TICKERS.map(t => (
+          <col key={t} style={{ width: (86 / TEARSHEET_TICKERS.length) + "%" }} />
+        ))}
+      </colgroup>
+      <thead className="tearsheet-thead">
+        <tr>
+          <th className="tearsheet-th" style={{
+            padding: "10px 8px", textAlign: "left", color: "#FFF", fontWeight: 700,
+            fontSize: "10px", letterSpacing: "0.06em",
+            background: M.navy,
+            position: "sticky", top: 0, zIndex: 5,
+          }}></th>
           {TEARSHEET_TICKERS.map(t => (
-            <col key={t} style={{ width: (86 / TEARSHEET_TICKERS.length) + "%" }} />
+            <th key={t} className="tearsheet-th" style={{
+              padding: "10px 6px", textAlign: "center",
+              color: t === "MCO" ? "#FFF" : "rgba(255,255,255,0.75)",
+              fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+              background: t === "MCO" ? M.primary : M.navy,
+              borderLeft: COL_SEPARATOR,
+              position: "sticky", top: 0, zIndex: 5,
+            }}>{t}</th>
           ))}
-        </colgroup>
-        <thead>
-          <tr style={{ background: M.navy }}>
-            <th style={{ padding: "10px 8px", textAlign: "left", color: "#FFF", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em" }}></th>
-            {TEARSHEET_TICKERS.map(t => (
-              <th key={t} style={{
-                padding: "10px 6px", textAlign: "center", color: t === "MCO" ? "#FFF" : "rgba(255,255,255,0.75)",
-                fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
-                background: t === "MCO" ? M.primary : M.navy,
-              }}>{t}</th>
-            ))}
-          </tr>
-        </thead>
-        {tearsheetCategories.map((cat, ci) => {
-          const cc = CATEGORY_COLORS[cat.category] || CATEGORY_FALLBACK;
-          return (
-            <tbody key={"cat-tbody-" + ci} className={"tearsheet-cat tearsheet-cat-" + ci}>
-              <tr>
-                <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
-                  padding: "8px 10px 7px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
-                  color: "#FFFFFF", background: cc.bar,
-                  fontFamily: "Arial, sans-serif",
-                }}>{cat.category.toUpperCase()}</td>
+        </tr>
+      </thead>
+      {tearsheetCategories.map((cat, ci) => {
+        const cc = CATEGORY_COLORS[cat.category] || CATEGORY_FALLBACK;
+        return (
+          <tbody key={"cat-tbody-" + ci} className={"tearsheet-cat tearsheet-cat-" + ci}>
+            <tr>
+              <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
+                padding: "8px 10px 7px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+                color: "#FFFFFF", background: cc.bar,
+                fontFamily: "Arial, sans-serif",
+              }}>{cat.category.toUpperCase()}</td>
+            </tr>
+            {cat.metrics.map((metric, mi) => (
+              <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: cc.tint }}>
+                <td style={{
+                  padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600,
+                  verticalAlign: "top", lineHeight: "1.4",
+                  background: cc.tint, borderLeft: "3px solid " + cc.bar,
+                }}>{metric.label}</td>
+                {TEARSHEET_TICKERS.map(ticker => {
+                  const v = metric.values[ticker];
+                  if (!v) return <td key={ticker} style={{
+                    padding: "6px", verticalAlign: "top", textAlign: "center",
+                    background: cc.tint,
+                    borderLeft: COL_SEPARATOR,
+                  }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
+                  return (
+                    <td key={ticker} style={{
+                      padding: "6px 6px 8px", verticalAlign: "top",
+                      background: cc.tint,
+                      borderLeft: COL_SEPARATOR,
+                    }}>
+                      <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
+                      <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
+                        display: "inline-block", marginTop: "3px",
+                        fontSize: "9px", color: M.lightBlue, textDecoration: "none",
+                        borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
+                      }}>{v.source} · {v.date} ↗</a>
+                    </td>
+                  );
+                })}
               </tr>
-              {cat.metrics.map((metric, mi) => (
-                <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
-                  <td style={{
-                    padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600,
-                    verticalAlign: "top", lineHeight: "1.4",
-                    background: cc.tint, borderLeft: "3px solid " + cc.bar,
-                  }}>{metric.label}</td>
-                  {TEARSHEET_TICKERS.map(ticker => {
-                    const v = metric.values[ticker];
-                    const accent = TICKER_ACCENTS[ticker] || M.navy;
-                    if (!v) return <td key={ticker} style={{
-                      padding: "6px", verticalAlign: "top", textAlign: "center",
-                      borderLeft: "2px solid " + accent,
-                    }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
-                    return (
-                      <td key={ticker} style={{
-                        padding: "6px 6px 8px", verticalAlign: "top",
-                        background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
-                        borderLeft: "2px solid " + accent,
-                      }}>
-                        <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
-                        <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
-                          display: "inline-block", marginTop: "3px",
-                          fontSize: "9px", color: M.lightBlue, textDecoration: "none",
-                          borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
-                        }}>{v.source} · {v.date} ↗</a>
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          );
-        })}
-      </table>
-    </div>
+            ))}
+          </tbody>
+        );
+      })}
+    </table>
   );
 }
 
@@ -1348,8 +1345,10 @@ export default function Dashboard() {
 
                       /* Tighten the table for print */
                       #tearsheet-print-area table { font-size: 8.5px !important; line-height: 1.25 !important; }
-                      #tearsheet-print-area thead { display: table-header-group; }
-                      #tearsheet-print-area thead th { padding: 6px 4px !important; font-size: 9px !important; }
+                      /* Make sure the sticky ticker header repeats on each printed page
+                         rather than freezing at one position. */
+                      #tearsheet-print-area thead { display: table-header-group !important; }
+                      #tearsheet-print-area thead th { position: static !important; padding: 6px 4px !important; font-size: 9px !important; }
                       #tearsheet-print-area td { padding: 4px 5px !important; line-height: 1.25 !important; }
                       #tearsheet-print-area td > div { font-size: 8.5px !important; line-height: 1.3 !important; }
 
