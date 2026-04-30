@@ -292,41 +292,39 @@ function TearsheetTable() {
             ))}
           </tr>
         </thead>
-        <tbody>
-          {tearsheetCategories.map((cat, ci) => (
-            <>
-              <tr key={"cat-" + ci}>
-                <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
-                  padding: "8px 8px 6px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
-                  color: M.primary, background: M.surface, borderTop: ci > 0 ? "2px solid " + M.border : "none",
-                  fontFamily: "Arial, sans-serif",
-                }}>{cat.category.toUpperCase()}</td>
+        {tearsheetCategories.map((cat, ci) => (
+          <tbody key={"cat-tbody-" + ci} className={"tearsheet-cat tearsheet-cat-" + ci}>
+            <tr>
+              <td colSpan={TEARSHEET_TICKERS.length + 1} style={{
+                padding: "8px 8px 6px", fontWeight: 700, fontSize: "10px", letterSpacing: "0.06em",
+                color: M.primary, background: M.surface, borderTop: ci > 0 ? "2px solid " + M.border : "none",
+                fontFamily: "Arial, sans-serif",
+              }}>{cat.category.toUpperCase()}</td>
+            </tr>
+            {cat.metrics.map((metric, mi) => (
+              <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
+                <td style={{ padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600, verticalAlign: "top", lineHeight: "1.4" }}>{metric.label}</td>
+                {TEARSHEET_TICKERS.map(ticker => {
+                  const v = metric.values[ticker];
+                  if (!v) return <td key={ticker} style={{ padding: "6px", verticalAlign: "top", textAlign: "center" }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
+                  return (
+                    <td key={ticker} style={{
+                      padding: "6px 6px 8px", verticalAlign: "top",
+                      background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
+                    }}>
+                      <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
+                      <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
+                        display: "inline-block", marginTop: "3px",
+                        fontSize: "9px", color: M.lightBlue, textDecoration: "none",
+                        borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
+                      }}>{v.source} · {v.date} ↗</a>
+                    </td>
+                  );
+                })}
               </tr>
-              {cat.metrics.map((metric, mi) => (
-                <tr key={"m-" + ci + "-" + mi} style={{ borderBottom: "1px solid " + M.border, background: mi % 2 === 0 ? M.white : M.offWhite }}>
-                  <td style={{ padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600, verticalAlign: "top", lineHeight: "1.4" }}>{metric.label}</td>
-                  {TEARSHEET_TICKERS.map(ticker => {
-                    const v = metric.values[ticker];
-                    if (!v) return <td key={ticker} style={{ padding: "6px", verticalAlign: "top", textAlign: "center" }}><span style={{ fontSize: "10px", color: M.midGray, fontStyle: "italic" }}>—</span></td>;
-                    return (
-                      <td key={ticker} style={{
-                        padding: "6px 6px 8px", verticalAlign: "top",
-                        background: ticker === "MCO" ? "rgba(0,40,161,0.03)" : "transparent",
-                      }}>
-                        <div style={{ fontSize: "11px", color: M.textDark, lineHeight: "1.4", wordWrap: "break-word", whiteSpace: "normal" }}>{v.text}</div>
-                        <a href={v.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{
-                          display: "inline-block", marginTop: "3px",
-                          fontSize: "9px", color: M.lightBlue, textDecoration: "none",
-                          borderBottom: "1px solid " + M.skyBlue, lineHeight: "1.3",
-                        }}>{v.source} · {v.date} ↗</a>
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </>
-          ))}
-        </tbody>
+            ))}
+          </tbody>
+        ))}
       </table>
     </div>
   );
@@ -1303,12 +1301,28 @@ export default function Dashboard() {
                   style.id = "tearsheet-print";
                   style.textContent = `
                     @media print {
-                      @page { size: landscape; margin: 0.4in; }
+                      @page { size: landscape; margin: 0.35in; }
                       body * { visibility: hidden !important; }
                       #tearsheet-print-area, #tearsheet-print-area * { visibility: visible !important; }
                       #tearsheet-print-area { position: absolute; left: 0; top: 0; width: 100%; }
-                      #tearsheet-print-area table { font-size: 9px !important; }
-                      #tearsheet-print-area a { color: ${M.primary} !important; text-decoration: none !important; border: none !important; }
+
+                      /* Tighten the table for print */
+                      #tearsheet-print-area table { font-size: 8.5px !important; line-height: 1.25 !important; }
+                      #tearsheet-print-area thead { display: table-header-group; }
+                      #tearsheet-print-area thead th { padding: 6px 4px !important; font-size: 9px !important; }
+                      #tearsheet-print-area td { padding: 4px 5px !important; line-height: 1.25 !important; }
+                      #tearsheet-print-area td > div { font-size: 8.5px !important; line-height: 1.3 !important; }
+
+                      /* Cleaner source attribution: smaller, no underline border, gray */
+                      #tearsheet-print-area a { color: #666 !important; text-decoration: none !important; border: none !important; font-size: 7px !important; margin-top: 1px !important; line-height: 1.15 !important; }
+
+                      /* Category headers: tighter, prevent orphans */
+                      #tearsheet-print-area .tearsheet-cat td[colspan] { padding: 5px 6px 4px !important; font-size: 9px !important; }
+
+                      /* Pagination: keep each category together; force page break before category 3 (Distribution channels) */
+                      #tearsheet-print-area .tearsheet-cat { page-break-inside: avoid; break-inside: avoid; }
+                      #tearsheet-print-area .tearsheet-cat-3 { page-break-before: always; break-before: page; }
+                      #tearsheet-print-area tr { page-break-inside: avoid; break-inside: avoid; }
                     }
                   `;
                   document.head.appendChild(style);

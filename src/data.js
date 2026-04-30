@@ -1104,6 +1104,29 @@ export const tearsheetCategories = [
     ],
   },
   {
+    category: "Data estate / competitive moat",
+    metrics: [
+      {
+        label: "Proprietary data scale",
+        values: {
+          MCO: { text: "600M+ entities, 2B ownership links globally", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+          LSEG: { text: "33PB data; 90% non-replicable; 575 exchange connections", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          NDAQ: { text: "$12T in assets monitored (Verafin)", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
+          VRSK: { text: "Proprietary insurance data; 22 AI modules released (beat target)", source: "VRSK 2026 Investor Day", date: "Mar 5, 2026", url: "https://www.verisk.com/company/newsroom/verisk-reiterates-its-growth-targets-and-outlines-strategy-for-its-next-phase-of-compounding-growth-at-2026-investor-day/" },
+        },
+      },
+      {
+        label: "Proprietary content share of revenue / ASV",
+        values: {
+          SPGI: { text: ">95% of revenue from proprietary sources; <5% from non-enhanced public data; ~12% of MI 'not as proprietary'", source: "SPGI Q4 2025 Earnings Call (CEO Cheung)", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
+          FDS: { text: ">90% of ASV from proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts", source: "FDS Q1 FY2026 Earnings Call", date: "Dec 18, 2025", url: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
+          LSEG: { text: "90% of data revenue from non-replicable content (45% real-time, 25% specialized/exclusive, 10% curated public)", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
+          MCO: { text: "Not yet quantified as a share of revenue; data estate covers 600M+ entities and 2B ownership links — disclosure precedent now set by SPGI and FDS", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
+        },
+      },
+    ],
+  },
+  {
     category: "Distribution channels (MCP / AI platforms)",
     metrics: [
       {
@@ -1159,29 +1182,6 @@ export const tearsheetCategories = [
           TRI: { text: "100bps/yr EBITDA expansion through 2028", source: "TRI Q4 2025 Earnings", date: "Feb 5, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/thomson-reuters-tri-q4-2025-earnings-transcript/" },
           LSEG: { text: "80–100bps EBITDA margin expansion guided", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
           NDAQ: { text: "$100M AI efficiencies by 2027; EPS +21% YoY", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
-        },
-      },
-    ],
-  },
-  {
-    category: "Data estate / competitive moat",
-    metrics: [
-      {
-        label: "Proprietary data scale",
-        values: {
-          MCO: { text: "600M+ entities, 2B ownership links globally", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
-          LSEG: { text: "33PB data; 90% non-replicable; 575 exchange connections", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
-          NDAQ: { text: "$12T in assets monitored (Verafin)", source: "NDAQ Q1 2026 Earnings", date: "Apr 23, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/04/23/nasdaq-ndaq-q1-2026-earnings-transcript/" },
-          VRSK: { text: "Proprietary insurance data; 22 AI modules released (beat target)", source: "VRSK 2026 Investor Day", date: "Mar 5, 2026", url: "https://www.verisk.com/company/newsroom/verisk-reiterates-its-growth-targets-and-outlines-strategy-for-its-next-phase-of-compounding-growth-at-2026-investor-day/" },
-        },
-      },
-      {
-        label: "Proprietary content share of revenue / ASV",
-        values: {
-          SPGI: { text: ">95% of revenue from proprietary sources; <5% from non-enhanced public data; ~12% of MI 'not as proprietary'", source: "SPGI Q4 2025 Earnings Call (CEO Cheung)", date: "Feb 10, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/10/sp-global-spgi-q4-2025-earnings-call-transcript/" },
-          FDS: { text: ">90% of ASV from proprietary client-facing solutions and proprietary data/tools enriched by subject matter experts", source: "FDS Q1 FY2026 Earnings Call", date: "Dec 18, 2025", url: "https://www.fool.com/earnings/call-transcripts/2025/12/18/factset-fds-q1-2026-earnings-call-transcript/" },
-          LSEG: { text: "90% of data revenue from non-replicable content (45% real-time, 25% specialized/exclusive, 10% curated public)", source: "LSEG FY 2025 Results", date: "Feb 26, 2026", url: "https://www.lseg.com/en/investor-relations/financial-results/2025-preliminary-results" },
-          MCO: { text: "Not yet quantified as a share of revenue; data estate covers 600M+ entities and 2B ownership links — disclosure precedent now set by SPGI and FDS", source: "MCO Q4 2025 Earnings Call", date: "Feb 18, 2026", url: "https://www.fool.com/earnings/call-transcripts/2026/02/18/moodys-mco-q4-2025-earnings-call-transcript/" },
         },
       },
     ],
