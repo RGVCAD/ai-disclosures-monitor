@@ -333,7 +333,7 @@ function TearsheetTable() {
                 <td style={{
                   padding: "8px 8px", fontSize: "10px", color: M.midGray, fontWeight: 600,
                   verticalAlign: "top", lineHeight: "1.4",
-                  background: cc.tint, borderLeft: "3px solid " + cc.bar,
+                  background: cc.tint, borderLeft: COL_SEPARATOR,
                 }}>{metric.label}</td>
                 {TEARSHEET_TICKERS.map(ticker => {
                   const v = metric.values[ticker];
